@@ -3,121 +3,825 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Glory - UX/UI Designer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400&display=swap" rel="stylesheet">
     <style>
-        body {
+        /* CSS Variables */
+        :root {
+            --white: #ffffff;
+            --text: #0a0614;
+            --text-light: #6a6f8e;
+            --primary: #2349ff;
+            --secondary: #c27cfa;
+            --border-color: #cad9ec;
+        }
+
+        /* Reset and Base Styles */
+        * {
             margin: 0;
-            padding: 20px;
-            font-family: monospace;
-            background: #ffffff;
-            color: #333333;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Heebo', sans-serif;
+            background-color: var(--white);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Font Faces - Using system fonts as fallback for custom fonts */
+        .font-buenos-aires {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+        }
+
+        .font-arizonia {
+            font-family: 'Brush Script MT', cursive;
+        }
+
+        /* Header/Navigation */
+        header {
+            position: relative;
+            width: 100%;
+            padding: 50px 0;
+            background: var(--white);
+        }
+
+        .nav-container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 128px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 32px;
+            color: var(--text);
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 600;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .btn-contact {
+            background-color: var(--primary);
+            color: var(--white) !important;
+            padding: 15px 30px;
+            border-radius: 100px;
+            font-weight: 600;
+        }
+
+        .btn-contact:hover {
+            background-color: #1a3acc;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 100px 128px;
+            min-height: 700px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             overflow: hidden;
         }
-        h1, p {
-            text-align: center;
+
+        .hero-background {
+            position: absolute;
+            top: -100px;
+            left: -200px;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.1;
         }
-        #rabbit {
-            position: fixed;
-            bottom: 50px;
-            left: -100px;
-            font-family: monospace;
-            white-space: pre;
-            line-height: 1.2;
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 612px;
+        }
+
+        .hero-title {
+            font-size: 96px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 30px;
+        }
+
+        .hero-description {
+            font-size: 18px;
+            line-height: 35px;
+            color: var(--text);
+            font-weight: 200;
+            margin-bottom: 30px;
+        }
+
+        .connect-text {
+            font-size: 25px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-top: 40px;
+        }
+
+        .hero-image {
+            position: relative;
+            z-index: 1;
+            width: 450px;
+            height: 600px;
+            border: 2px solid var(--secondary);
+            border-radius: 20px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 25px;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        /* Main Content Container */
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 128px;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 50px;
+            margin-top: 80px;
+        }
+
+        /* Working History Cards */
+        .work-card {
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 30px;
+            margin-bottom: 30px;
+            background: var(--white);
+            transition: box-shadow 0.3s;
+        }
+
+        .work-card:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .work-logo {
+            width: 55px;
+            height: 55px;
+            margin-bottom: 30px;
+            background: var(--white);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+        }
+
+        .work-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+
+        .work-meta {
+            font-size: 16px;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .work-meta span {
             font-size: 14px;
-            color: #333333;
+            margin: 0 5px;
+        }
+
+        .work-description {
+            font-size: 16px;
+            color: var(--text);
+            line-height: 1.6;
+            font-weight: 200;
+            margin-bottom: 12px;
+            padding-left: 15px;
+        }
+
+        .work-description::before {
+            content: "-";
+            margin-left: -15px;
+            margin-right: 8px;
+        }
+
+        /* Education & Certification Cards */
+        .edu-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .edu-card {
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 15px;
+            background: var(--white);
+            min-height: 215px;
+        }
+
+        .edu-logo {
+            width: 86px;
+            height: 41px;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .edu-title {
+            font-size: 20px;
+            font-weight: 400;
+            color: var(--text);
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .edu-info {
+            font-size: 16px;
+            color: var(--text-light);
+            font-weight: 200;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: sticky;
+            top: 20px;
+            height: fit-content;
+        }
+
+        .sidebar-card {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 30px 15px;
+            margin-bottom: 30px;
+        }
+
+        .skills-list {
+            list-style: none;
+        }
+
+        .skills-list li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 16px;
+            font-weight: 200;
+            color: var(--text);
+            margin-bottom: 20px;
+        }
+
+        .skills-list li::before {
+            content: "●";
+            color: var(--primary);
+            font-size: 10px;
+        }
+
+        /* Tools Grid */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            padding: 20px;
+        }
+
+        .tool-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tool-icon {
+            width: 55px;
+            height: 55px;
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--white);
+            font-size: 24px;
+        }
+
+        .tool-name {
+            font-size: 16px;
+            font-weight: 200;
+            color: var(--text);
+        }
+
+        /* Language Section */
+        .language-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .language-flag {
+            width: 55px;
+            height: 55px;
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+        }
+
+        .language-name {
+            font-size: 16px;
+            font-weight: 200;
+            color: var(--text);
+        }
+
+        /* Thank You Section */
+        .thankyou-section {
+            margin-top: 80px;
+            padding: 80px 0;
+        }
+
+        .thankyou-content h2 {
+            font-size: 70px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+
+        .thankyou-subtitle {
+            font-size: 16px;
+            font-weight: 400;
+            color: var(--text);
+            margin-bottom: 50px;
+        }
+
+        .thankyou-text {
+            font-size: 30px;
+            font-weight: 400;
+            color: var(--text);
+            line-height: 1.4;
+            max-width: 619px;
+            margin-bottom: 50px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 20px 40px;
+            border-radius: 100px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #1a3acc;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 20px 0;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            font-size: 12px;
+            color: rgba(136, 136, 136, 0.93);
+            text-decoration: none;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 16px;
+        }
+
+        .footer-social a {
+            font-size: 12px;
+            color: #888888;
+            text-decoration: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .nav-container,
+            .container,
+            .hero-section {
+                padding: 50px 60px;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: relative;
+            }
+
+            .hero-title {
+                font-size: 72px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .hero-section {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px 20px;
+            }
+
+            .hero-title {
+                font-size: 48px;
+            }
+
+            .hero-image {
+                width: 100%;
+                max-width: 350px;
+                height: 450px;
+                margin-top: 40px;
+            }
+
+            .edu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tools-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .thankyou-content h2 {
+                font-size: 48px;
+            }
+
+            .thankyou-text {
+                font-size: 24px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Welcome to My Portfolio</h1>
-    <p>Under construction - Coming soon! gloria</p>
-    <p>🚀 Portfolio site is live and connected to GitHub!</p>
-    
-    <div id="rabbit"></div>
+    <!-- Navigation -->
+    <header>
+        <div class="nav-container">
+            <div class="logo font-arizonia">Glory</div>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#contact" class="btn-contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="hero-content font-buenos-aires">
+            <h1 class="hero-title">Hi there! 👋🏻<br>I'm Glory</h1>
+            <p class="hero-description">
+                I'm an Industrial Designer turned UX Designer based in Phoenix, AZ. 
+                My passion is in creating human-centered designs that can improve our 
+                daily lives while creating a cross-cultural impact.
+            </p>
+            <p class="hero-description">
+                My past experience lends me the ability to communicate effectively 
+                across multiple divisions and collaborate efficiently in an agile 
+                working environment. That's why I would love to work with the next 
+                product team to design solutions that we are all proud of.
+            </p>
+            <p class="connect-text">Let's connect!</p>
+        </div>
+        <div class="hero-image">
+            <!-- Placeholder for user image -->
+            <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; font-size: 64px;">
+                👩‍💻
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="content-grid">
+            <!-- Left Column -->
+            <div class="main-content">
+                <!-- Working History -->
+                <section id="about">
+                    <h2 class="section-title font-buenos-aires">Working History</h2>
+                    
+                    <div class="work-card">
+                        <div class="work-logo">💼</div>
+                        <h3 class="work-title font-buenos-aires">UX/UI Designer</h3>
+                        <p class="work-meta font-buenos-aires">
+                            Upwork Inc <span>|</span> Sep 2019 - Present
+                        </p>
+                        <p class="work-description">
+                            Lorem ipsum dolor sit amet consectetur. Purus eu sed congue sed sodales enim 
+                            justo tellus vel. Lectus turpis tortor viverra condimentum ac. Proin molestie.
+                        </p>
+                        <p class="work-description">
+                            Lorem ipsum dolor sit amet consectetur. Purus eu sed congue sed sodales enim 
+                            justo tellus vel. Lectus turpis tortor viverra condimentum ac. Proin molestie.
+                        </p>
+                    </div>
+
+                    <div class="work-card">
+                        <div class="work-logo">🎨</div>
+                        <h3 class="work-title font-buenos-aires">UX/UI Designer</h3>
+                        <p class="work-meta font-buenos-aires">
+                            Upwork Inc <span>|</span> Sep 2019 - Present
+                        </p>
+                        <p class="work-description">
+                            Lorem ipsum dolor sit amet consectetur. Purus eu sed congue sed sodales enim 
+                            justo tellus vel. Lectus turpis tortor viverra condimentum ac. Proin molestie.
+                        </p>
+                        <p class="work-description">
+                            Lorem ipsum dolor sit amet consectetur. Purus eu sed congue sed sodales enim 
+                            justo tellus vel. Lectus turpis tortor viverra condimentum ac. Proin molestie.
+                        </p>
+                    </div>
+
+                    <div class="work-card">
+                        <div class="work-logo">✨</div>
+                        <h3 class="work-title font-buenos-aires">UX/UI Designer</h3>
+                        <p class="work-meta font-buenos-aires">
+                            Upwork Inc <span>|</span> Sep 2019 - Present
+                        </p>
+                        <p class="work-description">
+                            Lorem ipsum dolor sit amet consectetur. Purus eu sed congue sed sodales enim 
+                            justo tellus vel. Lectus turpis tortor viverra condimentum ac. Proin molestie.
+                        </p>
+                        <p class="work-description">
+                            Lorem ipsum dolor sit amet consectetur. Purus eu sed congue sed sodales enim 
+                            justo tellus vel. Lectus turpis tortor viverra condimentum ac. Proin molestie.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Education -->
+                <section style="margin-top: 60px;">
+                    <h2 class="section-title font-buenos-aires">Education</h2>
+                    <div class="edu-grid">
+                        <div class="edu-card">
+                            <div class="edu-logo">🎓</div>
+                            <h3 class="edu-title font-buenos-aires">
+                                User Experience Design<br>
+                                Master's
+                            </h3>
+                            <div class="edu-info font-buenos-aires">
+                                <p>Technische Hochschule Ingolstadt</p>
+                                <p>Mar 2020 - Present</p>
+                            </div>
+                        </div>
+                        <div class="edu-card">
+                            <div class="edu-logo">🎓</div>
+                            <h3 class="edu-title font-buenos-aires">
+                                Computer Science<br>
+                                Bachelor's
+                            </h3>
+                            <div class="edu-info font-buenos-aires">
+                                <p>University of Wah</p>
+                                <p>2012 - 2016</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Certifications -->
+                <section>
+                    <h2 class="section-title font-buenos-aires">Certifications</h2>
+                    <div class="edu-grid">
+                        <div class="edu-card" style="min-height: 186px;">
+                            <div class="edu-logo">📜</div>
+                            <h3 class="edu-title font-buenos-aires">UX Design Specialization</h3>
+                            <div class="edu-info font-buenos-aires">
+                                <p>Mar 2021 - jun 2021 | Coursera</p>
+                            </div>
+                        </div>
+                        <div class="edu-card" style="min-height: 186px;">
+                            <div class="edu-logo">📜</div>
+                            <h3 class="edu-title font-buenos-aires">Microsoft Office Certified</h3>
+                            <div class="edu-info font-buenos-aires">
+                                <p>Dec 2018</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Sidebar -->
+            <aside class="sidebar">
+                <!-- Design Skills -->
+                <div class="sidebar-card">
+                    <h3 class="section-title font-buenos-aires" style="margin-bottom: 20px;">Design Skills</h3>
+                    <ul class="skills-list font-buenos-aires">
+                        <li>User Interface Design</li>
+                        <li>User experience Design</li>
+                        <li>SaaS Apps Design</li>
+                        <li>Mobile Apps Design</li>
+                        <li>Web Design</li>
+                        <li>Design system</li>
+                        <li>Project management</li>
+                    </ul>
+                </div>
+
+                <!-- Working Tools -->
+                <div class="sidebar-card" style="padding: 30px 20px;">
+                    <h3 class="section-title font-buenos-aires" style="margin-bottom: 30px;">Working tools</h3>
+                    <div class="tools-grid">
+                        <div class="tool-item">
+                            <div class="tool-icon">🎨</div>
+                            <span class="tool-name font-buenos-aires">Figma</span>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon">📱</div>
+                            <span class="tool-name font-buenos-aires">Sketch</span>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon">✏️</div>
+                            <span class="tool-name font-buenos-aires">Illustrator</span>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon">🖼️</div>
+                            <span class="tool-name font-buenos-aires">Invision</span>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon">💭</div>
+                            <span class="tool-name font-buenos-aires">XMind</span>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon">🅱️</div>
+                            <span class="tool-name font-buenos-aires">Bootstrap</span>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon">📐</div>
+                            <span class="tool-name font-buenos-aires">Zeplin</span>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon">💬</div>
+                            <span class="tool-name font-buenos-aires">Slack</span>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon">📋</div>
+                            <span class="tool-name font-buenos-aires">Trello</span>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon">🔧</div>
+                            <span class="tool-name font-buenos-aires">Adobe XD</span>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon">🖌️</div>
+                            <span class="tool-name font-buenos-aires">Photoshop</span>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon">⚡</div>
+                            <span class="tool-name font-buenos-aires">Principal</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Language Skills -->
+                <div class="sidebar-card">
+                    <h3 class="section-title font-buenos-aires" style="margin-bottom: 20px;">Language Skills</h3>
+                    <div class="language-item">
+                        <div class="language-flag">🇩🇪</div>
+                        <span class="language-name font-buenos-aires">German</span>
+                    </div>
+                    <div class="language-item">
+                        <div class="language-flag">🇬🇧</div>
+                        <span class="language-name font-buenos-aires">English</span>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Thank You Section -->
+        <section class="thankyou-section" id="contact">
+            <div class="thankyou-content font-buenos-aires">
+                <h2>Thank You!</h2>
+                <p class="thankyou-subtitle">For sparing some time and review my work.</p>
+                <p class="thankyou-text">
+                    Do you have great idea and want to share. Let's make something amazing together
+                </p>
+                <a href="mailto:glory@example.com" class="btn-primary">Get in touch with me</a>
+            </div>
+
+            <!-- Footer -->
+            <footer>
+                <div class="footer-content">
+                    <div class="footer-links">
+                        <a href="#privacy">Privacy policy</a>
+                        <a href="#cookies">Cookies policy</a>
+                    </div>
+                    <div class="footer-social">
+                        <a href="#linkedin">LinkedIn</a>
+                        <a href="#behance">Behance</a>
+                        <a href="#dribbble">Dribbble</a>
+                    </div>
+                </div>
+            </footer>
+        </section>
+    </div>
 
     <script>
-        const rabbitFrames = [
-            // Frame 1 - Standing
-            `   (\\___/)
-   (o . o)
-   (> ^ <)
-   /|   |\\
-  (_|   |_)`,
-            // Frame 2 - Running 1
-            `   (\\___/)
-   (o . o)
-   (> ^ <)
-    |\\  /|
-   (_)  (_)`,
-            // Frame 3 - Jumping
-            `   (\\___/)
-   (^ w ^)
-   (> ^ <)
-    /   \\
-   /     \\`,
-            // Frame 4 - Running 2
-            `   (\\___/)
-   (o . o)
-   (> ^ <)
-   /|  |\\
-  (_)  (_)`,
-            // Frame 5 - Mid-air
-            `   (\\___/)
-   (o o o)
-   (> v <)
-    \\   /
-     \\ /`
-        ];
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
 
-        let position = -150;
-        let frameIndex = 0;
-        let time = 0;
-        const rabbitEl = document.getElementById('rabbit');
-        const speed = 4;
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-        function animate() {
-            time += 0.1;
-            
-            // Move rabbit horizontally
-            position += speed;
-            
-            // Loop back when off screen
-            if (position > window.innerWidth + 100) {
-                position = -150;
-                time = 0;
-            }
-            
-            // Calculate jump height with smoother curve
-            let jumpHeight = 0;
-            const jumpCycle = (position % 300) / 300;
-            
-            if (jumpCycle < 0.5) {
-                // Going up
-                jumpHeight = Math.sin(jumpCycle * Math.PI * 2) * 60;
-            }
-            
-            // Select frame based on jump height
-            if (jumpHeight > 40) {
-                frameIndex = 2; // Peak jump
-            } else if (jumpHeight > 20) {
-                frameIndex = 4; // Mid-air
-            } else if (jumpHeight > 5) {
-                frameIndex = 1; // Taking off
-            } else {
-                // Running on ground
-                frameIndex = Math.floor((position / 15) % 2) === 0 ? 1 : 3;
-            }
-            
-            // Apply position and animation
-            rabbitEl.style.left = position + 'px';
-            rabbitEl.style.bottom = (50 + Math.max(0, jumpHeight)) + 'px';
-            rabbitEl.textContent = rabbitFrames[frameIndex];
-            
-            requestAnimationFrame(animate);
-        }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
 
-        // Start animation
-        animate();
+        // Observe cards for animation
+        document.querySelectorAll('.work-card, .edu-card, .sidebar-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
     </script>
 </body>
 </html>
