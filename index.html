@@ -312,9 +312,14 @@
         }
 
         .skills-list li::before {
-            content: "●";
-            color: var(--primary);
-            font-size: 10px;
+            content: "";
+            width: 10px;
+            height: 10px;
+            background-image: url('assets/icons/circle-bullet.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            display: inline-block;
+            margin-right: 8px;
         }
 
         /* Tools Grid */
@@ -550,15 +555,17 @@
                 I see every project as an opportunity to create meaningful and engaging experiences that connect logic, emotion, and detail. I love solving complex and challenging design problems — that's the fuel that keeps my work inspiring and exciting.
             </p>
             <div style="display: flex; gap: 15px; margin-top: 30px;">
-                <a href="https://behance.net" target="_blank" style="width: 64px; height: 64px; border: 1px solid #eaeaea; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 24px; background: white;">🎨</a>
-                <a href="https://linkedin.com" target="_blank" style="width: 64px; height: 64px; border: 1px solid #eaeaea; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 24px; background: white;">💼</a>
+                <a href="https://behance.net" target="_blank" style="width: 64px; height: 64px; border: 1px solid #eaeaea; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; background: white; padding: 15px;">
+                    <img src="assets/icons/behance-icon.svg" alt="Behance" style="width: 100%; height: 100%; object-fit: contain;">
+                </a>
+                <a href="https://linkedin.com" target="_blank" style="width: 64px; height: 64px; border: 1px solid #eaeaea; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; background: white; padding: 15px;">
+                    <img src="assets/icons/linkedin-icon.svg" alt="LinkedIn" style="width: 100%; height: 100%; object-fit: contain;">
+                </a>
             </div>
         </div>
         <div class="hero-image">
-            <!-- Placeholder for user image -->
-            <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; font-size: 64px;">
-                👩‍💻
-            </div>
+            <!-- User image from Figma -->
+            <img src="assets/user-photo.png" alt="Gloria Angelova" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
     </section>
 
@@ -680,35 +687,51 @@
                     <h3 class="section-title font-buenos-aires" style="margin-bottom: 30px;">Working tools</h3>
                     <div class="tools-grid">
                         <div class="tool-item">
-                            <div class="tool-icon">🎨</div>
+                            <div class="tool-icon">
+                                <img src="assets/icons/figma-icon.svg" alt="Figma" style="width: 30px; height: 30px;">
+                            </div>
                             <span class="tool-name font-buenos-aires">Figma</span>
                         </div>
                         <div class="tool-item">
-                            <div class="tool-icon">🔧</div>
+                            <div class="tool-icon">
+                                <img src="assets/icons/adobe-xd-icon.png" alt="Adobe XD" style="width: 30px; height: 30px;">
+                            </div>
                             <span class="tool-name font-buenos-aires">Adobe XD</span>
                         </div>
                         <div class="tool-item">
-                            <div class="tool-icon">🅱️</div>
+                            <div class="tool-icon">
+                                <img src="assets/icons/bootstrap-icon.png" alt="Bootstrap" style="width: 30px; height: 30px;">
+                            </div>
                             <span class="tool-name font-buenos-aires">Bootstrap</span>
                         </div>
                         <div class="tool-item">
-                            <div class="tool-icon">✏️</div>
+                            <div class="tool-icon">
+                                <img src="assets/icons/illustrator-icon.png" alt="Illustrator" style="width: 30px; height: 30px;">
+                            </div>
                             <span class="tool-name font-buenos-aires">Illustrator</span>
                         </div>
                         <div class="tool-item">
-                            <div class="tool-icon">🖌️</div>
+                            <div class="tool-icon">
+                                <img src="assets/icons/photoshop-icon.png" alt="Photoshop" style="width: 30px; height: 30px;">
+                            </div>
                             <span class="tool-name font-buenos-aires">Photoshop</span>
                         </div>
                         <div class="tool-item">
-                            <div class="tool-icon">📐</div>
+                            <div class="tool-icon">
+                                <img src="assets/icons/illustrator-icon.png" alt="InDesign" style="width: 30px; height: 30px;">
+                            </div>
                             <span class="tool-name font-buenos-aires">In Design</span>
                         </div>
                         <div class="tool-item">
-                            <div class="tool-icon">💻</div>
+                            <div class="tool-icon">
+                                <img src="assets/icons/photoshop-icon.png" alt="HTML" style="width: 30px; height: 30px;">
+                            </div>
                             <span class="tool-name font-buenos-aires">HTML</span>
                         </div>
                         <div class="tool-item">
-                            <div class="tool-icon">🎯</div>
+                            <div class="tool-icon">
+                                <img src="assets/icons/illustrator-icon.png" alt="CSS" style="width: 30px; height: 30px;">
+                            </div>
                             <span class="tool-name font-buenos-aires">CSS</span>
                         </div>
                     </div>
@@ -720,21 +743,29 @@
                     <div style="display: flex; flex-direction: column; gap: 23px; padding: 10px 0;">
                         <div style="display: flex; justify-content: space-between;">
                             <div class="tool-item">
-                                <div class="tool-icon">🧵</div>
+                                <div class="tool-icon">
+                                    <img src="assets/icons/embroidery-icon.svg" alt="Embroidery" style="width: 30px; height: 30px;">
+                                </div>
                                 <span class="tool-name font-buenos-aires">Folk Embroidery</span>
                             </div>
                             <div class="tool-item">
-                                <div class="tool-icon">⛰️</div>
+                                <div class="tool-icon">
+                                    <img src="assets/icons/adobe-xd-icon.png" alt="Hiking" style="width: 30px; height: 30px;">
+                                </div>
                                 <span class="tool-name font-buenos-aires">Mountain Hiking</span>
                             </div>
                         </div>
                         <div style="display: flex; justify-content: space-between;">
                             <div class="tool-item">
-                                <div class="tool-icon">💃</div>
+                                <div class="tool-icon">
+                                    <img src="assets/icons/bootstrap-icon.png" alt="Paneuritmy" style="width: 30px; height: 30px;">
+                                </div>
                                 <span class="tool-name font-buenos-aires">Paneuritmy</span>
                             </div>
                             <div class="tool-item">
-                                <div class="tool-icon">📚</div>
+                                <div class="tool-icon">
+                                    <img src="assets/icons/embroidery-icon.svg" alt="Writing" style="width: 30px; height: 30px;">
+                                </div>
                                 <span class="tool-name font-buenos-aires">Writing children books</span>
                             </div>
                         </div>
