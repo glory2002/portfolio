@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gloria Angelova - Home</title>
+    <title>Gloria Angelova - Projects</title>
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <style>
         * {
@@ -72,11 +72,6 @@
             transition: all 0.3s ease;
         }
 
-        .header.scrolled .logo {
-            width: 90px;
-            height: 36px;
-        }
-
         .nav {
             display: flex;
             align-items: center;
@@ -90,11 +85,7 @@
             font-weight: 400;
             position: relative;
             padding-bottom: 5px;
-            transition: font-size 0.3s ease, color 0.3s ease;
-        }
-
-        .header.scrolled .nav-link {
-            font-size: 18px;
+            transition: color 0.3s ease;
         }
 
         .nav-link::after {
@@ -127,64 +118,9 @@
             padding-top: 99px;
         }
 
-        /* Hero Section */
-        .hero {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: left;
-            padding: 125px 60px 0;
-            background: white;
-            max-width: 1440px;
-            margin: 0 auto;
-        }
-
-        .hero-content {
-            max-width: 756px;
-        }
-
-        .hero h1 {
-            font-size: 54px;
-            font-weight: 400;
-            line-height: normal;
-            margin-bottom: 16px;
-        }
-
-        .hero h1 .highlight {
-            color: var(--secondary);
-        }
-
-        .hero p {
-            font-size: 32px;
-            font-weight: 300;
-            font-family: 'Buenos Aires', sans-serif;
-            line-height: 1.29;
-            margin-bottom: 20px;
-        }
-
-        .hero p .highlight {
-            font-weight: 400;
-            color: var(--secondary);
-        }
-
-        .view-work-link {
-            display: inline-block;
-            color: var(--secondary);
-            text-decoration: underline;
-            font-size: 18px;
-            font-weight: 400;
-            padding: 8px 0;
-            margin-bottom: 66px;
-        }
-
-        .view-work-link:hover {
-            opacity: 0.7;
-        }
-
         /* Projects Section */
         .projects-section {
-            padding: 48px 60px 0;
+            padding: 99px 100px 0;
             background: white;
             max-width: 1440px;
             margin: 0 auto;
@@ -298,43 +234,33 @@
             border-color: #002d86;
         }
 
-        /* Footer */
-        .footer {
-            padding: 80px 60px;
+        /* Thank You Section */
+        .thank-you-section {
+            padding: 100px 100px 0;
             background: white;
             max-width: 1440px;
             margin: 0 auto;
         }
 
-        .footer-content {
-            max-width: 1137px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .footer-main {
-            margin-bottom: 170px;
-        }
-
-        .footer-left {
+        .thank-you-content {
             max-width: 619px;
         }
 
-        .footer-title {
-            font-size: 70px;
+        .thank-you-title {
+            font-size: 54px;
             font-weight: 400;
-            line-height: normal;
+            line-height: 1;
             margin-bottom: 0;
         }
 
-        .footer-subtitle {
+        .thank-you-subtitle {
             font-size: 16px;
             font-weight: 400;
             line-height: normal;
-            margin-bottom: 50px;
+            margin-bottom: 64px;
         }
 
-        .footer-text {
+        .thank-you-text {
             font-size: 30px;
             font-weight: 400;
             line-height: 1.4;
@@ -360,6 +286,14 @@
 
         .btn-primary:hover {
             background: #002d86;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 90px 100px 80px;
+            background: white;
+            max-width: 1440px;
+            margin: 0 auto;
         }
 
         .footer-divider {
@@ -407,24 +341,15 @@
         <!-- Header -->
         <header class="header">
             <div class="logo-container">
-                <img src="assets/ga-logo.svg" alt="Gloria Logo" class="logo">
+                <img src="assets/ga-logo-projects.svg" alt="Gloria Logo" class="logo">
             </div>
             <nav class="nav">
-                <a href="index.html" class="nav-link active">Home</a>
+                <a href="index.html" class="nav-link">Home</a>
                 <a href="about.html" class="nav-link">About</a>
-                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="projects.html" class="nav-link active">Projects</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </nav>
         </header>
-
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Hello! <span class="highlight">I'm Gloria Angelova</span>.</h1>
-                <p>An <span class="highlight">UI/UX Designer</span> and curious mind blending design, technology, and human experience to craft intuitive and engaging digital products.</p>
-                <a href="#projects" class="view-work-link">View my work</a>
-            </div>
-        </section>
 
         <!-- Projects Section -->
         <section id="projects" class="projects-section">
@@ -472,27 +397,27 @@
             </div>
         </section>
 
+        <!-- Thank You Section -->
+        <section class="thank-you-section">
+            <div class="thank-you-content">
+                <h2 class="thank-you-title">Thank You!</h2>
+                <p class="thank-you-subtitle">For sparing some time and review my work.</p>
+                <p class="thank-you-text">Have an idea you're excited about?<br>Let's talk and see how we can make it real.</p>
+                <a href="mailto:gloria@example.com" class="btn-primary">Get in touch with me</a>
+            </div>
+        </section>
+
         <!-- Footer -->
         <footer id="contact" class="footer">
-            <div class="footer-content">
-                <div class="footer-main">
-                    <div class="footer-left">
-                        <h2 class="footer-title">Thank You!</h2>
-                        <p class="footer-subtitle">For sparing some time and review my work.</p>
-                        <p class="footer-text">Have an idea you're excited about?<br>Let's talk and see how we can make it real.</p>
-                        <a href="mailto:gloria@example.com" class="btn-primary">Get in touch with me</a>
-                    </div>
+            <hr class="footer-divider">
+            <div class="footer-bottom">
+                <div class="footer-links-left">
+                    <a href="#" class="footer-link">Privacy policy</a>
+                    <a href="#" class="footer-link">Cookies policy</a>
                 </div>
-                <hr class="footer-divider">
-                <div class="footer-bottom">
-                    <div class="footer-links-left">
-                        <a href="#" class="footer-link">Privacy policy</a>
-                        <a href="#" class="footer-link">Cookies policy</a>
-                    </div>
-                    <div class="footer-links-right">
-                        <a href="https://www.linkedin.com/in/gloria-angelova-9172aa99/" target="_blank" class="footer-link">LinkedIn</a>
-                        <a href="#" class="footer-link">Behance</a>
-                    </div>
+                <div class="footer-links-right">
+                    <a href="https://www.linkedin.com/in/gloria-angelova-9172aa99/" target="_blank" class="footer-link">LinkedIn</a>
+                    <a href="#" class="footer-link">Behance</a>
                 </div>
             </div>
         </footer>
@@ -511,3 +436,4 @@
     </script>
 </body>
 </html>
+
