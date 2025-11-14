@@ -3,841 +3,483 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gloria Angelova - UX/UI Designer Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400&display=swap" rel="stylesheet">
+    <title>Gloria Angelova - Home</title>
     <style>
-        /* CSS Variables */
-        :root {
-            --white: #ffffff;
-            --text: #0a0614;
-            --text-light: #6a6f8e;
-            --primary: #2349ff;
-            --secondary: #c27cfa;
-            --border-color: #cad9ec;
-        }
-
-        /* Reset and Base Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        @font-face {
+            font-family: 'Buenos Aires';
+            src: local('Buenos Aires');
+            font-weight: 300 400 600;
+        }
+
+        @font-face {
+            font-family: 'AOK Buenos Aires';
+            src: local('AOK Buenos Aires');
+            font-weight: 400 600;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            src: local('Roboto');
+            font-weight: 500;
+        }
+
+        :root {
+            --text: #0a0614;
+            --secondary: #0038a8;
+            --white: #ffffff;
+            --border: #cad9ec;
+        }
+
         body {
-            font-family: 'Heebo', sans-serif;
-            background-color: var(--white);
+            font-family: 'AOK Buenos Aires', 'Buenos Aires', Arial, sans-serif;
+            background: white;
             color: var(--text);
-            line-height: 1.6;
             overflow-x: hidden;
         }
 
-        /* Font Faces - Using system fonts as fallback for custom fonts */
-        .font-buenos-aires {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-        }
-
-        .font-arizonia {
-            font-family: 'Brush Script MT', cursive;
-        }
-
-        /* Header/Navigation */
-        header {
-            position: relative;
-            width: 100%;
-            padding: 50px 0;
-            background: var(--white);
-        }
-
-        .nav-container {
-            max-width: 1440px;
-            margin: 0 auto;
-            padding: 0 128px;
+        /* Header Section */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 99px;
+            background: white;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+            padding: 0 60px;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled {
+            height: 70px;
+            padding: 0 60px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         .logo {
-            font-family: 'Brush Script MT', cursive;
-            font-size: 32px;
-            color: var(--text);
+            width: 113.31px;
+            height: 48px;
+            transition: all 0.3s ease;
         }
 
-        nav {
+        .header.scrolled .logo {
+            width: 90px;
+            height: 38px;
+        }
+
+        .nav {
             display: flex;
-            gap: 30px;
             align-items: center;
+            gap: 22px;
         }
 
-        nav a {
-            text-decoration: none;
-            color: var(--text);
-            font-weight: 600;
-            font-size: 16px;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--primary);
-        }
-
-        .btn-contact {
-            background-color: var(--primary);
-            color: var(--white) !important;
-            padding: 15px 30px;
-            border-radius: 100px;
-            font-weight: 600;
-        }
-
-        .btn-contact:hover {
-            background-color: #1a3acc;
-        }
-
-        /* Hero Section */
-        .hero-section {
-            position: relative;
-            max-width: 1440px;
-            margin: 0 auto;
-            padding: 100px 128px;
-            min-height: 700px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            overflow: hidden;
-        }
-
-        .hero-background {
-            position: absolute;
-            top: -100px;
-            left: -200px;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            opacity: 0.1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 612px;
-        }
-
-        .hero-title {
-            font-size: 96px;
-            font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 30px;
-        }
-
-        .hero-description {
+        .nav-link {
             font-size: 18px;
-            line-height: 35px;
             color: var(--text);
-            font-weight: 200;
-            margin-bottom: 30px;
-        }
-
-        .connect-text {
-            font-size: 25px;
-            font-weight: 600;
-            color: var(--primary);
-            margin-top: 40px;
-        }
-
-        .hero-image {
+            text-decoration: none;
+            font-weight: 400;
             position: relative;
-            z-index: 1;
-            width: 450px;
-            height: 600px;
-            border: 2px solid var(--secondary);
-            border-radius: 20px;
-            overflow: hidden;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding-bottom: 5px;
+            transition: color 0.3s ease;
         }
 
-        .hero-image img {
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--secondary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
         }
 
-        /* Section Titles */
-        .section-title {
-            font-size: 25px;
-            font-weight: 600;
-            color: var(--text-light);
-            margin-bottom: 30px;
+        .nav-link.active::after {
+            width: 100%;
         }
 
-        /* Main Content Container */
+        .nav-link:hover {
+            color: var(--secondary);
+        }
+
+        /* Container */
         .container {
             max-width: 1440px;
             margin: 0 auto;
-            padding: 0 128px;
+            padding-top: 99px;
         }
 
-        .content-grid {
-            display: grid;
-            grid-template-columns: 1fr 350px;
-            gap: 50px;
-            margin-top: 80px;
-        }
-
-        /* Working History Cards */
-        .work-card {
-            border: 1px solid var(--border-color);
-            border-radius: 24px;
-            padding: 30px;
-            margin-bottom: 30px;
-            background: var(--white);
-            transition: box-shadow 0.3s;
-        }
-
-        .work-card:hover {
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-        }
-
-        .work-logo {
-            width: 55px;
-            height: 55px;
-            margin-bottom: 30px;
-            background: var(--white);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-        }
-
-        .work-title {
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--text);
-            margin-bottom: 8px;
-        }
-
-        .work-meta {
-            font-size: 16px;
-            color: var(--text-light);
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-
-        .work-meta span {
-            font-size: 14px;
-            margin: 0 5px;
-        }
-
-        .work-description {
-            font-size: 16px;
-            color: var(--text);
-            line-height: 1.6;
-            font-weight: 200;
-            margin-bottom: 12px;
-            padding-left: 15px;
-        }
-
-        .work-description::before {
-            content: "-";
-            margin-left: -15px;
-            margin-right: 8px;
-        }
-
-        .work-description.font-buenos-aires::before {
-            content: "";
-            margin-left: 0;
-            margin-right: 0;
-        }
-
-        /* Education & Certification Cards */
-        .edu-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-
-        .edu-card {
-            border: 1px solid var(--border-color);
-            border-radius: 24px;
-            padding: 15px;
-            background: var(--white);
-            min-height: 215px;
-        }
-
-        .edu-logo {
-            width: 86px;
-            height: 41px;
-            margin-bottom: 15px;
-            font-size: 24px;
-        }
-
-        .edu-title {
-            font-size: 20px;
-            font-weight: 400;
-            color: var(--text);
-            margin-bottom: 15px;
-            line-height: 1.3;
-        }
-
-        .edu-info {
-            font-size: 16px;
-            color: var(--text-light);
-            font-weight: 200;
-        }
-
-        /* Sidebar */
-        .sidebar {
-            position: sticky;
-            top: 20px;
-            height: fit-content;
-        }
-
-        .sidebar-card {
-            background: var(--white);
-            border: 1px solid var(--border-color);
-            border-radius: 24px;
-            padding: 30px 30px;
-            margin-bottom: 30px;
-        }
-
-        .skills-list {
-            list-style: none;
-        }
-
-        .skills-list li {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 16px;
-            font-weight: 200;
-            color: var(--text);
-            margin-bottom: 20px;
-        }
-
-        .skills-list li::before {
-            content: "";
-            width: 10px;
-            height: 10px;
-            background-image: url('assets/icons/circle-bullet.svg');
-            background-size: contain;
-            background-repeat: no-repeat;
-            display: inline-block;
-            margin-right: 8px;
-        }
-
-        /* Tools Grid */
-        .tools-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 50px 20px;
-            padding: 10px;
-        }
-
-        .tool-item {
+        /* Hero Section */
+        .hero {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 8px;
-        }
-
-        .tool-icon {
-            width: 55px;
-            height: 55px;
-            border: 1px solid var(--border-color);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
             justify-content: center;
-            background: var(--white);
-            font-size: 24px;
+            text-align: center;
+            padding: 125px 342px 0;
+            background: white;
         }
 
-        .tool-name {
-            font-size: 16px;
-            font-weight: 200;
-            color: var(--text);
+        .hero-content {
+            max-width: 756px;
         }
 
-        /* Language Section */
-        .language-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 15px;
+        .hero h1 {
+            font-size: 54px;
+            font-weight: 600;
+            line-height: normal;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 .highlight {
+            color: var(--secondary);
+        }
+
+        .hero p {
+            font-size: 32px;
+            font-weight: 300;
+            font-family: 'Buenos Aires', sans-serif;
+            line-height: 1.29;
             margin-bottom: 20px;
         }
 
-        .language-flag {
-            width: 55px;
-            height: 55px;
-            border: 1px solid var(--border-color);
-            border-radius: 50%;
+        .hero p .highlight {
+            font-weight: 400;
+            color: var(--secondary);
+        }
+
+        .view-work-link {
+            display: inline-block;
+            color: var(--secondary);
+            text-decoration: underline;
+            font-size: 18px;
+            font-weight: 400;
+            padding: 8px 0;
+            margin-bottom: 66px;
+        }
+
+        .view-work-link:hover {
+            opacity: 0.7;
+        }
+
+        /* Projects Section */
+        .projects-section {
+            padding: 48px 162px 0;
+            background: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 400;
+            line-height: normal;
+            margin-bottom: 4px;
+        }
+
+        .project-card {
+            display: flex;
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            overflow: hidden;
+            margin-bottom: 48px;
+            height: 524px;
+        }
+
+        .project-info {
+            flex: 1;
+            padding: 167px 56px;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .project-tag {
+            background: #e89f5c;
+            color: var(--text);
+            padding: 10px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 400;
+            font-family: 'Buenos Aires', sans-serif;
+            display: inline-block;
+            align-self: flex-start;
+            height: 35px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 32px;
         }
 
-        .language-name {
-            font-size: 16px;
-            font-weight: 200;
-            color: var(--text);
+        .project-info h3 {
+            font-size: 36px;
+            font-weight: 400;
+            line-height: normal;
         }
 
-        /* Thank You Section */
-        .thankyou-section {
-            margin-top: 80px;
-            padding: 80px 0;
-        }
-
-        .thankyou-content h2 {
-            font-size: 70px;
-            font-weight: 700;
-            color: var(--text);
-            margin-bottom: 10px;
-        }
-
-        .thankyou-subtitle {
+        .project-info p {
             font-size: 16px;
             font-weight: 400;
-            color: var(--text);
+            line-height: normal;
+        }
+
+        .project-image {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .project-image img {
+            position: absolute;
+            width: 132.83%;
+            height: 187.86%;
+            left: -32.83%;
+            top: -58.96%;
+            object-fit: cover;
+        }
+
+        .btn-secondary {
+            border: 1px solid #25282b;
+            color: #25282b;
+            padding: 8px 24px;
+            border-radius: 24px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            display: inline-block;
+            align-self: flex-start;
+            font-family: 'Roboto', sans-serif;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: #25282b;
+            color: white;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 80px 152px;
+            background: white;
+        }
+
+        .footer-content {
+            max-width: 1137px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .footer-main {
+            margin-bottom: 170px;
+        }
+
+        .footer-left {
+            max-width: 619px;
+        }
+
+        .footer-title {
+            font-size: 70px;
+            font-weight: 400;
+            line-height: normal;
+            margin-bottom: 0;
+        }
+
+        .footer-subtitle {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: normal;
             margin-bottom: 50px;
         }
 
-        .thankyou-text {
+        .footer-text {
             font-size: 30px;
             font-weight: 400;
-            color: var(--text);
             line-height: 1.4;
-            max-width: 619px;
             margin-bottom: 50px;
         }
 
         .btn-primary {
-            background-color: var(--primary);
+            background: var(--secondary);
             color: var(--white);
-            padding: 20px 40px;
+            padding: 15px 30px;
             border-radius: 100px;
+            text-decoration: none;
             font-size: 16px;
             font-weight: 600;
-            text-decoration: none;
+            transition: background 0.3s;
             display: inline-block;
-            transition: background-color 0.3s;
+            height: 60px;
+            width: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .btn-primary:hover {
-            background-color: #1a3acc;
+            background: #002d86;
         }
 
-        /* Footer */
-        footer {
-            border-top: 1px solid var(--border-color);
-            padding: 20px 0;
-            margin-top: 60px;
+        .footer-divider {
+            border: 0;
+            border-top: 1px solid #e5e5e5;
+            margin: 0 0 16px 0;
         }
 
-        .footer-content {
+        .footer-bottom {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .footer-links {
+        .footer-links-left {
             display: flex;
-            gap: 20px;
-        }
-
-        .footer-links a {
+            gap: 17px;
             font-size: 12px;
+            font-family: 'Buenos Aires', sans-serif;
+            font-weight: 300;
             color: rgba(136, 136, 136, 0.93);
-            text-decoration: none;
         }
 
-        .footer-social {
+        .footer-links-right {
             display: flex;
             gap: 16px;
+            font-size: 12px;
+            font-family: 'Buenos Aires', sans-serif;
+            font-weight: 300;
+            color: #888888;
         }
 
-        .footer-social a {
-            font-size: 12px;
-            color: #888888;
+        .footer-link {
+            color: inherit;
             text-decoration: none;
         }
 
-        /* Responsive Design */
-        @media (max-width: 1200px) {
-            .nav-container,
-            .container,
-            .hero-section {
-                padding: 50px 60px;
-            }
-
-            .content-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .sidebar {
-                position: relative;
-            }
-
-            .hero-title {
-                font-size: 72px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .hero-section {
-                flex-direction: column;
-                text-align: center;
-                padding: 30px 20px;
-            }
-
-            .hero-title {
-                font-size: 48px;
-            }
-
-            .hero-image {
-                width: 100%;
-                max-width: 350px;
-                height: 450px;
-                margin-top: 40px;
-            }
-
-            .edu-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .tools-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .thankyou-content h2 {
-                font-size: 48px;
-            }
-
-            .thankyou-text {
-                font-size: 24px;
-            }
-
-            .footer-content {
-                flex-direction: column;
-                gap: 20px;
-                text-align: center;
-            }
+        .footer-link:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <header>
-        <div class="nav-container">
-            <div class="logo font-buenos-aires" style="font-weight: 400; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;">Gloria Angelova</div>
-            <nav>
-                <a href="#portfolio">Portfolio</a>
-                <a href="#contact" class="btn-contact">Contact</a>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero-section" id="home">
-        <div class="hero-content font-buenos-aires">
-            <h1 class="hero-title">Hi there,<br>I'm Gloria!</h1>
-            <p class="hero-description">
-                UI/UX & Web Designer who believes that great design is a dialogue between aesthetics and function.
-            </p>
-            <p class="hero-description">
-                My experience across different areas of design has given me a broad, multidisciplinary perspective on the principles behind it — universal in nature, yet endlessly diverse in expression.
-            </p>
-            <p class="hero-description">
-                I see every project as an opportunity to create meaningful and engaging experiences that connect logic, emotion, and detail. I love solving complex and challenging design problems — that's the fuel that keeps my work inspiring and exciting.
-            </p>
-            <div style="display: flex; gap: 15px; margin-top: 30px;">
-                <a href="https://behance.net" target="_blank" style="width: 64px; height: 64px; border: 1px solid #eaeaea; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; background: white; padding: 15px;">
-                    <img src="assets/icons/behance-icon.svg" alt="Behance" style="width: 100%; height: 100%; object-fit: contain;">
-                </a>
-                <a href="https://linkedin.com" target="_blank" style="width: 64px; height: 64px; border: 1px solid #eaeaea; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; background: white; padding: 15px;">
-                    <img src="assets/icons/linkedin-icon.svg" alt="LinkedIn" style="width: 100%; height: 100%; object-fit: contain;">
-                </a>
-            </div>
-        </div>
-        <div class="hero-image">
-            <!-- User image from Figma -->
-            <img src="assets/user-photo.png" alt="Gloria Angelova" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
-    </section>
-
-    <!-- Main Content -->
     <div class="container">
-        <div class="content-grid">
-            <!-- Left Column -->
-            <div class="main-content">
-                <!-- Working History -->
-                <section id="portfolio">
-                    <h2 class="section-title font-buenos-aires">Working History</h2>
-                    
-                    <div class="work-card">
-                        <h3 class="work-title font-buenos-aires">UI & Web Designer</h3>
-                        <p class="work-meta font-buenos-aires">
-                            TINQIN <span>|</span> Jan 2020 - Dec 2025
-                        </p>
-                        <p class="work-description font-buenos-aires" style="margin-bottom: 10px;">
-                            <strong>TINQIN</strong> is a French software development company with a focus on the insurance sector.
-                        </p>
-                        <p class="work-description">
-                            Translating business requirements in to web design for a back-office web application;
-                        </p>
-                        <p class="work-description">
-                            Styling different visual elements of the app with HTML/CSS and the back-end and front-end team;
-                        </p>
-                        <p class="work-description">
-                            Implementation of a full design system for the application.
-                        </p>
-                    </div>
-
-                    <div class="work-card">
-                        <h3 class="work-title font-buenos-aires">UI/UX & Graphic Designer</h3>
-                        <p class="work-meta font-buenos-aires">
-                            Association of Copyright Content Creators <span>|</span> Feb 2019 - Dec 2019
-                        </p>
-                        <p class="work-description font-buenos-aires" style="margin-bottom: 10px;">
-                            <strong>ACCC</strong> is an association developing a partner network within the audiovisual content-production industry.
-                        </p>
-                        <p class="work-description">
-                            Delivering UX/UI design, wireframes and collaborate directly with the development;
-                        </p>
-                        <p class="work-description">
-                            Creating Online and Offline marketing materials.
-                        </p>
-                    </div>
-
-                    <div class="work-card">
-                        <h3 class="work-title font-buenos-aires">Front-End Ruby on Rails Junior Developer</h3>
-                        <p class="work-meta font-buenos-aires">
-                            Nedforce <span>|</span> Feb 2017 - Aug 2017
-                        </p>
-                        <p class="work-description font-buenos-aires" style="margin-bottom: 10px;">
-                            Company that develop and hosts valuable and high-quality web applications. Main customer: Dutch National Television NPO.
-                        </p>
-                        <p class="work-description">
-                            Developing Front-end of applications with HTML, CSS, JS and RoR;
-                        </p>
-                        <p class="work-description">
-                            UX design, wireframes and prototypes and implementation into code.
-                        </p>
-                    </div>
-
-                    <div class="work-card">
-                        <h3 class="work-title font-buenos-aires">Graphic Designer</h3>
-                        <p class="work-meta font-buenos-aires">
-                            Credo Capital <span>|</span> Sep 2011 - Apr 2014
-                        </p>
-                        <p class="work-description font-buenos-aires" style="margin-bottom: 10px;">
-                            Trading company that sells hygienic and cosmetic products.
-                        </p>
-                        <p class="work-description">
-                            Provide art direction for concept and design of products packaging;
-                        </p>
-                        <p class="work-description">
-                            Design marketing materials, brochures, advertising, internal communications, events materials, email communications, online campaigns materials etc.
-                        </p>
-                    </div>
-                </section>
-
+        <!-- Header -->
+        <header class="header">
+            <div class="logo-container">
+                <img src="assets/logo-to-2.svg" alt="Gloria Logo" class="logo">
             </div>
+            <nav class="nav">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="index.html" class="nav-link">Projects</a>
+                <a href="#" class="nav-link">Creations</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+        </header>
 
-            <!-- Right Sidebar -->
-            <aside class="sidebar">
-                <!-- Trainings & Courses -->
-                <h3 class="section-title font-buenos-aires" style="margin-bottom: 20px;">Trainigs & Courses</h3>
-                <div class="sidebar-card">
-                    <div style="display: flex; flex-direction: column; gap: 20px;">
-                        <p class="font-buenos-aires" style="font-size: 16px; line-height: 1.4; color: var(--text);">
-                            <strong>Vitaly Friedman's UX Training on Smart Interface Design Petterns</strong> <span style="font-weight: 400;">| 2022</span>
-                        </p>
-                        <p class="font-buenos-aires" style="font-size: 16px; line-height: 1.4; color: var(--text);">
-                            <strong>Telerik Academy - UX/UI Alpha Program</strong> <span style="font-weight: 400;">| 2019</span>
-                        </p>
-                        <p class="font-buenos-aires" style="font-size: 16px; line-height: 1.4; color: var(--text);">
-                            <strong>UX Training - Amsterdam</strong> <span style="font-weight: 400;">| 2018</span>
-                        </p>
-                        <p class="font-buenos-aires" style="font-size: 16px; line-height: 1.4; color: var(--text);">
-                            <strong>Web Development Bootcamp - Amsterdam</strong> <span style="font-weight: 400;">| 2016</span>
-                        </p>
-                    </div>
-                </div>
-
-                <!-- My Skills -->
-                <h3 class="section-title font-buenos-aires" style="margin-bottom: 20px;">My Skills</h3>
-                <div class="sidebar-card">
-                    <ul class="skills-list font-buenos-aires">
-                        <li>UI Design: enterprise & corporate software interfaces</li>
-                        <li>UX Collaboration: working with business analysts & dev teams</li>
-                        <li>Design Systems: creation, maintenance & UI audits</li>
-                        <li>UI Implementation: CSS styling & design-to-code handoff</li>
-                        <li>Workflow: Agile, Jira, Confluence, Miro</li>
-                        <li>AI-Assisted Design & Coding – using tools like Cursor</li>
-                    </ul>
-                </div>
-
-                <!-- Working Tools -->
-                <h3 class="section-title font-buenos-aires" style="margin-bottom: 30px;">Working tools</h3>
-                <div class="sidebar-card">
-                    <div class="tools-grid">
-                        <div class="tool-item">
-                            <div class="tool-icon">
-                                <img src="assets/icons/figma-icon.svg" alt="Figma" style="width: 30px; height: 30px;">
-                            </div>
-                            <span class="tool-name font-buenos-aires">Figma</span>
-                        </div>
-                        <div class="tool-item">
-                            <div class="tool-icon">
-                                <img src="assets/icons/adobe-xd-icon.png" alt="Adobe XD" style="width: 30px; height: 30px;">
-                            </div>
-                            <span class="tool-name font-buenos-aires">Adobe XD</span>
-                        </div>
-                        <div class="tool-item">
-                            <div class="tool-icon">
-                                <img src="assets/icons/bootstrap-icon.png" alt="Bootstrap" style="width: 30px; height: 30px;">
-                            </div>
-                            <span class="tool-name font-buenos-aires">Bootstrap</span>
-                        </div>
-                        <div class="tool-item">
-                            <div class="tool-icon">
-                                <img src="assets/icons/illustrator-icon.png" alt="Illustrator" style="width: 30px; height: 30px;">
-                            </div>
-                            <span class="tool-name font-buenos-aires">Illustrator</span>
-                        </div>
-                        <div class="tool-item">
-                            <div class="tool-icon">
-                                <img src="assets/icons/photoshop-icon.png" alt="Photoshop" style="width: 30px; height: 30px;">
-                            </div>
-                            <span class="tool-name font-buenos-aires">Photoshop</span>
-                        </div>
-                        <div class="tool-item">
-                            <div class="tool-icon">
-                                <img src="assets/icons/illustrator-icon.png" alt="InDesign" style="width: 30px; height: 30px;">
-                            </div>
-                            <span class="tool-name font-buenos-aires">In Design</span>
-                        </div>
-                        <div class="tool-item">
-                            <div class="tool-icon">
-                                <img src="assets/icons/photoshop-icon.png" alt="HTML" style="width: 30px; height: 30px;">
-                            </div>
-                            <span class="tool-name font-buenos-aires">HTML</span>
-                        </div>
-                        <div class="tool-item">
-                            <div class="tool-icon">
-                                <img src="assets/icons/illustrator-icon.png" alt="CSS" style="width: 30px; height: 30px;">
-                            </div>
-                            <span class="tool-name font-buenos-aires">CSS</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Passions -->
-                <h3 class="section-title font-buenos-aires" style="margin-bottom: 20px;">Passions</h3>
-                <div class="sidebar-card">
-                    <div style="display: flex; flex-direction: column; gap: 23px; padding: 10px 0;">
-                        <div style="display: flex; justify-content: space-between;">
-                            <div class="tool-item">
-                                <div class="tool-icon">
-                                    <img src="assets/icons/embroidery-icon.svg" alt="Embroidery" style="width: 30px; height: 30px;">
-                                </div>
-                                <span class="tool-name font-buenos-aires">Folk Embroidery</span>
-                            </div>
-                            <div class="tool-item">
-                                <div class="tool-icon">
-                                    <img src="assets/icons/adobe-xd-icon.png" alt="Hiking" style="width: 30px; height: 30px;">
-                                </div>
-                                <span class="tool-name font-buenos-aires">Mountain Hiking</span>
-                            </div>
-                        </div>
-                        <div style="display: flex; justify-content: space-between;">
-                            <div class="tool-item">
-                                <div class="tool-icon">
-                                    <img src="assets/icons/bootstrap-icon.png" alt="Paneuritmy" style="width: 30px; height: 30px;">
-                                </div>
-                                <span class="tool-name font-buenos-aires">Paneuritmy</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </aside>
-        </div>
-
-        <!-- Thank You Section -->
-        <section class="thankyou-section" id="contact">
-            <div class="thankyou-content font-buenos-aires">
-                <h2>Thank You!</h2>
-                <p class="thankyou-subtitle">For sparing some time and review my work.</p>
-                <p class="thankyou-text">
-                    Do you have great idea and want to share. Let's make something amazing together
-                </p>
-                <a href="mailto:gloria@example.com" class="btn-primary">Get in touch with me</a>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Hello! <span class="highlight">I'm Gloria Angelova</span>.</h1>
+                <p>An <span class="highlight">UI/UX Designer</span> and curious mind blending design, technology, and human experience to craft intuitive and elegant digital products.</p>
             </div>
-
-            <!-- Footer -->
-            <footer>
-                <div class="footer-content">
-                    <div class="footer-links">
-                        <a href="#privacy">Privacy policy</a>
-                        <a href="#cookies">Cookies policy</a>
-                    </div>
-                    <div class="footer-social">
-                        <a href="#linkedin">LinkedIn</a>
-                        <a href="#behance">Behance</a>
-                        <a href="#dribbble">Dribbble</a>
-                    </div>
-                </div>
-            </footer>
+            <a href="#projects" class="view-work-link">View my work</a>
         </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <div class="section-header">
+                <h2 class="section-title">Projects</h2>
+            </div>
+
+            <!-- Project 1 - Operational Workflow -->
+            <div class="project-card">
+                <div class="project-info">
+                    <span class="project-tag">Enterprise App Redesign</span>
+                    <h3>Operational Workflow</h3>
+                    <p>I created this personal project in order to show how to create an interface in Figma using a portfolio as an example.</p>
+                    <a href="#" class="btn-secondary">View Project</a>
+                </div>
+                <div class="project-image">
+                    <img src="assets/pexels-elly-fairytale.png" alt="Operational Workflow">
+                </div>
+            </div>
+
+            <!-- Project 2 - Internal platform -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="assets/pexels-elly-fairytale.png" alt="Internal platform">
+                </div>
+                <div class="project-info">
+                    <span class="project-tag">Enterprise Flow UX Development</span>
+                    <h3>Internal platform</h3>
+                    <p>I created this personal project in order to show how to create an interface in Figma using a portfolio as an example.</p>
+                    <a href="#" class="btn-secondary">View Project</a>
+                </div>
+            </div>
+
+            <!-- Project 3 - PMU platform -->
+            <div class="project-card">
+                <div class="project-info">
+                    <span class="project-tag">UI/UX Design</span>
+                    <h3>PMU platform | Tanya Hristova PMU master</h3>
+                    <p>I created this personal project in order to show how to create an interface in Figma using a portfolio as an example.</p>
+                    <a href="#" class="btn-secondary">View Project</a>
+                </div>
+                <div class="project-image">
+                    <img src="assets/pexels-elly-fairytale.png" alt="PMU platform">
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer id="contact" class="footer">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <div class="footer-left">
+                        <h2 class="footer-title">Thank You!</h2>
+                        <p class="footer-subtitle">For sparing some time and review my work.</p>
+                        <p class="footer-text">Have an idea you're excited about?<br>Let's talk and see how we can make it real.</p>
+                        <a href="mailto:gloria@example.com" class="btn-primary">Get in touch with me</a>
+                    </div>
+                </div>
+                <hr class="footer-divider">
+                <div class="footer-bottom">
+                    <div class="footer-links-left">
+                        <a href="#" class="footer-link">Privacy policy</a>
+                        <a href="#" class="footer-link">Cookies policy</a>
+                    </div>
+                    <div class="footer-links-right">
+                        <a href="https://www.linkedin.com/in/gloria-angelova-9172aa99/" target="_blank" class="footer-link">LinkedIn</a>
+                        <a href="#" class="footer-link">Behance</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
 
     <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Add animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe cards for animation
-        document.querySelectorAll('.work-card, .edu-card, .sidebar-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(card);
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
         });
     </script>
 </body>
