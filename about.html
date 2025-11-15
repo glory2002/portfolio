@@ -30,10 +30,17 @@
             font-weight: 400;
         }
 
+        :root {
+            --text: #0a0614;
+            --secondary: #0038a8;
+            --white: #ffffff;
+            --border: #cad9ec;
+        }
+
         body {
             font-family: 'AOK Buenos Aires', 'Buenos Aires', Arial, sans-serif;
             background: #ffffff;
-            color: #0a0614;
+            color: var(--text);
             overflow-x: hidden;
         }
 
@@ -56,7 +63,13 @@
         .header.scrolled {
             height: 70px;
             padding: 0 60px;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-container a {
+            display: inline-block;
+            text-decoration: none;
+            border: none;
         }
 
         .logo {
@@ -65,14 +78,6 @@
             transition: all 0.3s ease;
         }
 
-        .header.scrolled .logo {
-            width: 90px;
-            height: 36px;
-        }
-
-        .logo-container {
-            transition: all 0.3s ease;
-        }
 
         .nav {
             display: flex;
@@ -82,7 +87,7 @@
 
         .nav-link {
             font-size: 20px;
-            color: #0a0614;
+            color: var(--text);
             text-decoration: none;
             font-weight: 400;
             position: relative;
@@ -101,7 +106,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background-color: #0038a8;
+            background-color: var(--secondary);
             transition: width 0.3s ease;
         }
 
@@ -114,18 +119,20 @@
         }
 
         .nav-link:hover {
-            color: #0038a8;
+            color: var(--secondary);
         }
 
         /* Hero Section */
         .hero-about {
-            padding: 166px 60px 50px;
+            padding: 125px 100px 50px;
             background: white;
             display: flex;
             gap: 122px;
             align-items: center;
+            justify-content: center;
             max-width: 1440px;
             margin: 0 auto;
+            box-sizing: border-box;
         }
 
         .hero-content {
@@ -133,6 +140,10 @@
             max-width: 612px;
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 38px;
+            min-width: 0;
         }
 
         .hero-content > * {
@@ -140,12 +151,19 @@
             margin-right: 0;
         }
 
+        .hero-text-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
         .hero-content h1 {
             font-size: 54px;
             line-height: 1;
             font-weight: 400;
-            margin: 0 0 20px 0;
+            margin: 0;
             padding: 0;
+            font-family: 'AOK Buenos Aires', sans-serif;
         }
 
         .hero-description {
@@ -153,12 +171,16 @@
             font-size: 20px;
             font-weight: 300;
             line-height: 1.29;
-            margin: 0 0 38px 0;
+            margin: 0;
             color: #0a0614;
         }
 
-        .hero-description p {
+        .hero-description p:first-child {
             margin-bottom: 8px;
+        }
+        
+        .hero-description p:last-child {
+            margin-bottom: 0;
         }
 
         .hero-buttons {
@@ -171,13 +193,15 @@
         .btn-hero {
             background: #0038a8;
             color: white;
-            padding: 12px 24px;
+            padding: 10px 24px;
             border-radius: 100px;
             text-decoration: none;
             font-size: 16px;
             font-weight: 400;
+            font-family: 'AOK Buenos Aires', sans-serif;
             transition: background 0.3s;
             display: inline-block;
+            white-space: nowrap;
         }
 
         .btn-hero:hover {
@@ -188,15 +212,17 @@
             background: white;
             border: 1px solid #25282b;
             color: #25282b;
-            padding: 12px 24px;
+            padding: 10px 24px;
+            height: 36px;
             border-radius: 24px;
             text-decoration: none;
-            font-size: 16px;
+            font-size: 18px;
             font-weight: 500;
-            display: inline-block;
-            align-self: flex-start;
+            display: inline-flex;
+            align-items: center;
             font-family: 'Roboto', sans-serif;
             transition: all 0.3s;
+            white-space: nowrap;
         }
 
         .btn-secondary:hover {
@@ -206,27 +232,29 @@
         }
 
         .hero-image {
-            width: 512px;
-            height: 518px;
+            width: 402px;
+            height: 408px;
             border-radius: 20px;
             overflow: hidden;
             flex-shrink: 0;
+            position: relative;
         }
 
         .hero-image img {
             width: 131.4%;
             height: 195.72%;
-            margin-left: -5.07%;
-            margin-top: -14.58%;
+            position: absolute;
+            left: -5.07%;
+            top: -14.58%;
             object-fit: cover;
             object-position: center;
         }
 
         /* Main Content */
         .main-content {
-            padding: 80px 60px;
+            padding: 0 100px;
             display: flex;
-            gap: 80px;
+            gap: 70px;
             max-width: 1440px;
             margin: 0 auto;
             justify-content: flex-start;
@@ -365,22 +393,20 @@
         }
 
         .tools-grid {
-            display: flex;
-            gap: 14px;
-            justify-content: center;
-        }
-
-        .tool-column {
-            display: flex;
-            flex-direction: column;
-            gap: 50px;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            grid-template-rows: repeat(2, minmax(0, 1fr));
+            gap: 32px;
+            width: 100%;
         }
 
         .tool-item {
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
             gap: 5px;
+            position: relative;
         }
 
         .tool-icon {
@@ -395,6 +421,7 @@
         .tool-icon img {
             width: 100%;
             height: 100%;
+            display: block;
         }
 
         .tool-icon-circle {
@@ -406,17 +433,27 @@
             align-items: center;
             justify-content: center;
             background: white;
+            position: relative;
         }
 
         .tool-icon-circle img {
             width: 25px;
             height: 25px;
-            object-fit: contain;
+            object-fit: cover;
+            object-position: 50% 50%;
+            position: absolute;
+            left: 15px;
+            top: 15px;
         }
 
         .tool-name {
             font-size: 16px;
+            font-weight: 400;
+            font-family: 'AOK Buenos Aires', sans-serif;
             line-height: 1;
+            color: var(--text);
+            text-align: center;
+            white-space: nowrap;
         }
 
         .passion-card {
@@ -443,9 +480,8 @@
 
         /* Footer */
         .footer {
-            padding: 80px 60px;
-            background: white;
-            position: relative;
+            padding: 60px 100px 40px;
+            background: rgba(118, 118, 128, 0.07);
             max-width: 1440px;
             margin: 0 auto;
         }
@@ -453,32 +489,49 @@
         .footer-content {
             max-width: 1137px;
             margin: 0 auto;
+            position: relative;
         }
 
         .footer-main {
-            margin-bottom: 138px;
+            margin-bottom: 50px;
+        }
+
+        .footer-left {
+            max-width: 100%;
         }
 
         .footer-title {
             font-size: 54px;
             font-weight: 400;
-            line-height: 1;
-            margin-bottom: 0;
-            color: #0a0614;
-        }
-
-        .footer-subtitle {
-            font-size: 16px;
-            margin-bottom: 50px;
-            color: #0a0614;
+            line-height: normal;
+            margin-bottom: 24px;
         }
 
         .footer-text {
             font-size: 30px;
+            font-weight: 400;
+            line-height: normal;
+            margin-bottom: 24px;
+        }
+
+        .footer-contact-info {
+            font-size: 16px;
+            font-weight: 400;
             line-height: 1.4;
             margin-bottom: 50px;
-            max-width: 619px;
-            color: #0a0614;
+        }
+
+        .footer-contact-info p {
+            margin-bottom: 0;
+        }
+
+        .footer-contact-info a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .footer-contact-info a:hover {
+            text-decoration: underline;
         }
 
         .btn-primary {
@@ -505,8 +558,17 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-top: 16px;
-            border-top: 1px solid #e5e5e5;
+            gap: 16px;
+        }
+
+        .footer-copyright {
+            font-size: 12px;
+            font-weight: 400;
+            color: var(--text);
+        }
+
+        .footer-copyright p {
+            margin: 0;
         }
 
         .footer-links-left {
@@ -541,12 +603,14 @@
             cursor: pointer;
             gap: 5px;
             z-index: 1001;
+            background: white;
+            border: none;
         }
 
         .menu-toggle span {
             width: 25px;
             height: 3px;
-            background-color: #0a0614;
+            background-color: var(--text);
             transition: all 0.3s ease;
         }
 
@@ -575,17 +639,19 @@
             }
 
             .footer {
-                padding: 60px 40px;
+                padding: 60px 40px 40px;
             }
         }
 
         @media (max-width: 768px) {
             .header {
                 padding: 0 20px;
+                height: 70px;
             }
 
             .header.scrolled {
                 padding: 0 20px;
+                height: 70px;
             }
 
             .nav {
@@ -601,15 +667,22 @@
                 gap: 30px;
                 box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
                 transition: right 0.3s ease;
-                z-index: 1000;
+                z-index: 1001;
+                display: none;
             }
 
             .nav.active {
+                display: flex;
                 right: 0;
             }
 
             .menu-toggle {
                 display: flex;
+                position: relative;
+                z-index: 1002;
+                padding: 8px;
+                width: 40px;
+                height: 40px;
             }
 
             .logo {
@@ -663,7 +736,7 @@
             }
 
             .footer-title {
-                font-size: 36px;
+                font-size: 48px;
             }
 
             .footer-text {
@@ -709,7 +782,7 @@
             }
 
             .footer-title {
-                font-size: 28px;
+                font-size: 36px;
             }
 
             .footer-text {
@@ -717,12 +790,8 @@
             }
 
             .tools-grid {
-                flex-wrap: wrap;
                 gap: 20px;
-            }
-
-            .tool-column {
-                gap: 30px;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
         }
     </style>
@@ -731,7 +800,9 @@
     <!-- Header -->
     <header class="header">
         <div class="logo-container">
-            <img src="assets/ga-logo.svg" alt="Gloria" class="logo">
+            <a href="index.html">
+                <img src="assets/ga-logo.svg" alt="Gloria Logo" class="logo">
+            </a>
         </div>
         <button class="menu-toggle" aria-label="Toggle menu">
             <span></span>
@@ -748,20 +819,21 @@
 
     <!-- Hero Section -->
     <section class="hero-about">
+        <div class="hero-image">
+            <img src="assets/gloria-profile-new.png" alt="Gloria">
+        </div>
         <div class="hero-content">
-            <h1>Hi there, I'm Gloria!</h1>
-            <div class="hero-description">
-                <p>UI/UX & Web Designer who believes that great design is a dialogue between aesthetics and function.</p>
-                <p>My experience across different areas of design has given me a broad, multidisciplinary perspective on the principles behind it — universal in nature, yet endlessly diverse in expression.</p>
-                <p>I love solving complex and challenging design problems — that's the fuel that keeps my work inspiring and exciting.</p>
+            <div class="hero-text-section">
+                <h1>Hi there, I'm Gloria!</h1>
+                <div class="hero-description">
+                    <p>I grew up between art and engineering — my mother is an art teacher and my father is an engineer. Early on, I understood the difference between art and design: an artist solves their own problems, while a designer solves the problems of others.</p>
+                    <p>Today my focus is UI/UX, but my previous experience gives me a broader perspective as a designer. My approach is shaped by different disciplines: logic from product design, aesthetics from graphic design, and empathy from digital user experience. This allows me to create interfaces that are beautiful, meaningful, and emotionally engaging.</p>
+                </div>
             </div>
             <div class="hero-buttons">
                 <a href="https://www.linkedin.com/in/gloria-angelova-9172aa99/" target="_blank" class="btn-hero">Linkedin</a>
                 <a href="#" class="btn-secondary">Resume</a>
             </div>
-        </div>
-        <div class="hero-image">
-            <img src="assets/gloria-profile.png" alt="Gloria">
         </div>
     </section>
 
@@ -858,7 +930,7 @@
             <!-- Trainings & Courses -->
             <h2 class="section-title">Trainings & Courses</h2>
             <div class="card">
-                <div class="training-item">Vitaly Friedman's UX Training on Smart Interface Design Petterns | 2022</div>
+                <div class="training-item">Vitaly Friedman's UX Training on Smart Interface Design Patterns | 2022</div>
                 <div class="training-item">Telerik Academy - UX/UI Alpha Program | 2019</div>
                 <div class="training-item">UX Training - Amsterdam | 2018</div>
                 <div class="training-item">Web Development Bootcamp - Amsterdam | 2016</div>
@@ -902,47 +974,53 @@
                 <h2 class="section-title">Working tools</h2>
                 <div class="card">
                     <div class="tools-grid">
-                        <div class="tool-column">
-                            <div class="tool-item">
-                                <div class="tool-icon">
-                                    <img src="assets/figma-icon.svg" alt="Figma">
-                                </div>
-                                <div class="tool-name">Figma</div>
+                        <div class="tool-item">
+                            <div class="tool-icon">
+                                <img src="assets/figma-icon-new.svg" alt="Figma">
                             </div>
-                            <div class="tool-item">
-                                <div class="tool-icon">
-                                    <img src="assets/css-icon.svg" alt="CSS">
-                                </div>
-                                <div class="tool-name">CSS</div>
-                            </div>
+                            <div class="tool-name">Figma</div>
                         </div>
-                        <div class="tool-column">
-                            <div class="tool-item">
-                                <div class="tool-icon-circle">
-                                    <img src="assets/adobe-xd-icon.png" alt="Adobe XD">
-                                </div>
-                                <div class="tool-name">Adobe XD</div>
+                        <div class="tool-item">
+                            <div class="tool-icon-circle">
+                                <img src="assets/adobe-xd-icon-new.png" alt="Adobe XD">
                             </div>
-                            <div class="tool-item">
-                                <div class="tool-icon">
-                                    <img src="assets/html-icon.svg" alt="HTML">
-                                </div>
-                                <div class="tool-name">HTML</div>
-                            </div>
+                            <div class="tool-name">Adobe XD</div>
                         </div>
-                        <div class="tool-column">
-                            <div class="tool-item">
-                                <div class="tool-icon-circle">
-                                    <img src="assets/adobe-cc-icon.png" alt="Adobe CC">
-                                </div>
-                                <div class="tool-name">Adobe CC</div>
+                        <div class="tool-item">
+                            <div class="tool-icon-circle">
+                                <img src="assets/adobe-cc-icon-new.png" alt="Adobe CC">
                             </div>
-                            <div class="tool-item">
-                                <div class="tool-icon-circle">
-                                    <img src="assets/cursor-icon.png" alt="Cursor AI">
-                                </div>
-                                <div class="tool-name">Cursor</div>
+                            <div class="tool-name">Adobe CC</div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon-circle">
+                                <img src="assets/miro-logo.png" alt="Miro">
                             </div>
+                            <div class="tool-name">Miro</div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon">
+                                <img src="assets/css-icon-new.svg" alt="CSS">
+                            </div>
+                            <div class="tool-name">CSS</div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon">
+                                <img src="assets/html-icon-new.svg" alt="HTML">
+                            </div>
+                            <div class="tool-name">HTML</div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon-circle">
+                                <img src="assets/github-icon-new.png" alt="GitHub">
+                            </div>
+                            <div class="tool-name">GitHub</div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon-circle">
+                                <img src="assets/cursor-icon.png" alt="Cursor">
+                            </div>
+                            <div class="tool-name">Cursor</div>
                         </div>
                     </div>
                 </div>
@@ -974,20 +1052,18 @@
         <div class="footer-content">
             <div class="footer-main">
                 <div class="footer-left">
-                    <h2 class="footer-title">Thank You!</h2>
-                    <p class="footer-subtitle">For sparing some time and review my work.</p>
-                    <p class="footer-text">Have an idea you're excited about? Let's talk and see how we can make it real.</p>
-                    <a href="mailto:gloria@example.com" class="btn-primary">Get in touch with me</a>
+                    <h2 class="footer-title">Let's connect</h2>
+                    <p class="footer-text">I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
+                    <div class="footer-contact-info">
+                        <p><a href="mailto:glory.angelova@gmail.com">glory.angelova@gmail.com</a></p>
+                        <p><a href="tel:+31647355880">+31 6 47 355 880</a> | Netherlands</p>
+                    </div>
+                    <a href="mailto:glory.angelova@gmail.com" class="btn-primary">Get in touch with me</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <div class="footer-links-left">
-                    <a href="#" class="footer-link">Privacy policy</a>
-                    <a href="#" class="footer-link">Cookies policy</a>
-                </div>
-                <div class="footer-links-right">
-                    <a href="#" class="footer-link">LinkedIn</a>
-                    <a href="#" class="footer-link">Behance</a>
+                <div class="footer-copyright">
+                    <p>© Copyright Gloria Angelova</p>
                 </div>
             </div>
         </div>
