@@ -31,7 +31,7 @@
 
         body {
             font-family: 'AOK Buenos Aires', 'Buenos Aires', Arial, sans-serif;
-            background: white;
+                background: white;
             color: var(--text);
             overflow-x: hidden;
         }
@@ -44,7 +44,7 @@
             right: 0;
             height: 99px;
             background: white;
-            display: flex;
+                display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 0 60px;
@@ -123,7 +123,7 @@
         /* Hero Section */
         .hero {
             display: flex;
-            flex-direction: column;
+                flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: left;
@@ -171,7 +171,7 @@
             background: var(--secondary, #0038a8);
             color: var(--white, #ffffff);
             text-decoration: none;
-            font-size: 16px;
+                font-size: 16px;
             font-weight: 400;
             font-family: 'AOK Buenos Aires', sans-serif;
             padding: 16px 24px;
@@ -203,10 +203,11 @@
             font-weight: 400;
             line-height: normal;
             margin-bottom: 4px;
+            color: black;
         }
 
         .section-subtitle {
-            font-size: 20px;
+                font-size: 20px;
             font-weight: 300;
             font-family: 'Buenos Aires', sans-serif;
             line-height: 1.29;
@@ -215,7 +216,7 @@
 
         /* My Creative Voice Section */
         .creative-voice-section {
-            padding: 48px 100px 40px;
+            padding: 48px 100px 60px;
             background: white;
             max-width: 1440px;
             margin: 0 auto;
@@ -267,7 +268,7 @@
         }
 
         .project-info-vertical h3 {
-            font-size: 36px;
+                font-size: 24px;
             font-weight: 400;
             line-height: normal;
         }
@@ -294,7 +295,7 @@
             background: white;
             display: flex;
             flex-direction: column;
-            gap: 24px;
+                gap: 24px;
             justify-content: center;
             position: relative;
         }
@@ -324,18 +325,21 @@
 
         .project-tag.yellow {
             background: #ffe289;
+            color: #875F01;
         }
 
         .project-tag.green {
             background: #89ffd2;
+            color: #037562;
         }
 
         .project-tag.blue {
             background: #89dcff;
+            color: #006086;
         }
 
         .project-info h3 {
-            font-size: 36px;
+            font-size: 24px;
             font-weight: 400;
             line-height: normal;
         }
@@ -351,14 +355,14 @@
             width: 50%;
             overflow: hidden;
             position: relative;
-            height: 100%;
-            min-width: 0;
+                height: 100%;
+                min-width: 0;
         }
 
         .project-image img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+                object-fit: cover;
             object-position: center;
             display: block;
         }
@@ -399,7 +403,7 @@
 
         /* Footer */
         .footer {
-            padding: 60px 100px 40px;
+            padding: 30px 100px 40px;
             background: rgba(118, 118, 128, 0.07);
             width: 100%;
         }
@@ -532,7 +536,7 @@
         }
 
         .menu-toggle.active span:nth-child(1) {
-            transform: rotate(45deg) translate(8px, 8px);
+            transform: rotate(45deg) translateY(11px);
         }
 
         .menu-toggle.active span:nth-child(2) {
@@ -540,7 +544,7 @@
         }
 
         .menu-toggle.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -7px);
+            transform: rotate(-45deg) translateY(-11px);
         }
 
         /* Responsive Design */
@@ -558,7 +562,7 @@
             }
 
             .footer {
-                padding: 60px 40px 40px;
+                padding: 30px 40px 40px;
             }
 
             .project-card {
@@ -702,15 +706,20 @@
             }
 
             .project-info h3 {
-                font-size: 28px;
+                font-size: 24px;
+            }
+            
+            .project-info-vertical h3 {
+                font-size: 24px;
             }
 
             .section-title {
-                font-size: 28px;
+                font-size: 22px !important;
+                color: black;
             }
 
             .footer {
-                padding: 60px 20px;
+                padding: 30px 20px;
             }
 
             .footer-title {
@@ -740,7 +749,7 @@
 
         @media (max-width: 480px) {
             .hero {
-                padding: 60px 20px 0;
+                padding: 20px;
             }
 
             .hero h1 {
@@ -752,6 +761,10 @@
             }
 
             .project-info h3 {
+                font-size: 24px;
+            }
+            
+            .project-info-vertical h3 {
                 font-size: 24px;
             }
 
@@ -804,7 +817,7 @@
         }
 
         /* Header Section */
-        .header {
+            .header {
             position: fixed;
             top: 0;
             left: 0;
@@ -819,7 +832,7 @@
             transition: all 0.3s ease;
         }
 
-        .header.scrolled {
+            .header.scrolled {
             height: 70px;
             padding: 0 60px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -882,7 +895,7 @@
         }
 
         /* Hero Section */
-        .hero-about {
+            .hero-about {
             padding: 125px 100px 50px;
             background: white;
             display: flex;
@@ -894,7 +907,7 @@
             box-sizing: border-box;
         }
 
-        .hero-content {
+            .hero-content {
             flex: 1;
             max-width: 612px;
             margin: 0;
@@ -925,7 +938,7 @@
             font-family: 'AOK Buenos Aires', sans-serif;
         }
 
-        .hero-description {
+            .hero-description {
             font-family: 'Buenos Aires', Arial, sans-serif;
             font-size: 20px;
             font-weight: 300;
@@ -972,7 +985,7 @@
             color: #002d86;
         }
 
-        .hero-image {
+            .hero-image {
             width: 402px;
             height: 408px;
             border-radius: 20px;
@@ -992,8 +1005,8 @@
         }
 
         /* Main Content */
-        .main-content {
-            padding: 0 100px;
+            .main-content {
+            padding: 0 100px 60px;
             display: flex;
             gap: 70px;
             max-width: 1440px;
@@ -1014,7 +1027,7 @@
             padding-right: 0;
         }
 
-        .right-column {
+            .right-column {
             flex: 1;
             min-width: 350px;
             display: flex;
@@ -1044,10 +1057,10 @@
             margin-right: 0 !important;
         }
 
-        .section-title {
+            .section-title {
             font-size: 25px;
             font-weight: 600;
-            color: #6a6f8e;
+            color: black;
             margin: 0 0 12px 0;
             padding: 0;
             line-height: 40px;
@@ -1221,7 +1234,7 @@
 
         /* Footer */
         .footer {
-            padding: 60px 100px 40px;
+            padding: 30px 100px 40px;
             background: rgba(118, 118, 128, 0.07);
             width: 100%;
         }
@@ -1355,7 +1368,7 @@
         }
 
         .menu-toggle.active span:nth-child(1) {
-            transform: rotate(45deg) translate(8px, 8px);
+            transform: rotate(45deg) translateY(11px);
         }
 
         .menu-toggle.active span:nth-child(2) {
@@ -1363,7 +1376,7 @@
         }
 
         .menu-toggle.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -7px);
+            transform: rotate(-45deg) translateY(-11px);
         }
 
         /* Responsive Design */
@@ -1379,17 +1392,17 @@
             }
 
             .footer {
-                padding: 60px 40px 40px;
+                padding: 30px 40px 40px;
             }
         }
 
         @media (max-width: 768px) {
-            .header {
+        .header {
                 padding: 0 20px;
                 height: 70px;
             }
 
-            .header.scrolled {
+        .header.scrolled {
                 padding: 0 20px;
                 height: 70px;
             }
@@ -1430,13 +1443,13 @@
                 height: 36px;
             }
 
-            .hero-about {
+        .hero-about {
                 flex-direction: column;
                 padding: 120px 20px 50px;
                 gap: 40px;
             }
 
-            .hero-content {
+        .hero-content {
                 max-width: 100%;
             }
 
@@ -1444,11 +1457,11 @@
                 font-size: 36px;
             }
 
-            .hero-description {
+        .hero-description {
                 font-size: 18px;
             }
 
-            .hero-image {
+        .hero-image {
                 width: 100%;
                 max-width: 400px;
                 height: 400px;
@@ -1457,11 +1470,11 @@
 
             .main-content {
                 flex-direction: column;
-                padding: 60px 20px;
+                padding: 20px;
                 gap: 40px;
             }
 
-            .left-column {
+        .left-column {
                 width: 100%;
                 max-width: 100%;
             }
@@ -1472,7 +1485,7 @@
             }
 
             .footer {
-                padding: 60px 20px;
+                padding: 30px 20px;
             }
 
             .footer-title {
@@ -1515,6 +1528,7 @@
 
             .section-title {
                 font-size: 20px;
+                color: black;
             }
 
             .card {
@@ -1676,6 +1690,7 @@
             font-weight: 400;
             line-height: normal;
             margin-bottom: 4px;
+            color: black;
         }
 
         .section-subtitle {
@@ -1738,7 +1753,7 @@
         }
 
         .project-info h3 {
-            font-size: 36px;
+            font-size: 24px;
             font-weight: 400;
             line-height: normal;
         }
@@ -1811,7 +1826,7 @@
 
         /* Footer */
         .footer {
-            padding: 60px 100px 40px;
+            padding: 30px 100px 40px;
             background: rgba(118, 118, 128, 0.07);
             width: 100%;
         }
@@ -1914,7 +1929,7 @@
 
         /* My Creative Voice Section */
         .creative-voice-section {
-            padding: 48px 100px 40px;
+            padding: 48px 100px 60px;
             background: white;
             max-width: 1440px;
             margin: 0 auto;
@@ -1966,7 +1981,7 @@
         }
 
         .project-info-vertical h3 {
-            font-size: 36px;
+            font-size: 24px;
             font-weight: 400;
             line-height: normal;
         }
@@ -1990,7 +2005,7 @@
         }
 
         .menu-toggle.active span:nth-child(1) {
-            transform: rotate(45deg) translate(8px, 8px);
+            transform: rotate(45deg) translateY(11px);
         }
 
         .menu-toggle.active span:nth-child(2) {
@@ -1998,7 +2013,7 @@
         }
 
         .menu-toggle.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -7px);
+            transform: rotate(-45deg) translateY(-11px);
         }
 
         /* Responsive Design */
@@ -2008,7 +2023,7 @@
             }
 
             .footer {
-                padding: 60px 40px 40px;
+                padding: 30px 40px 40px;
             }
 
             .footer-title {
@@ -2131,15 +2146,20 @@
             }
 
             .project-info h3 {
-                font-size: 28px;
+                font-size: 24px;
+            }
+            
+            .project-info-vertical h3 {
+                font-size: 24px;
             }
 
             .section-title {
                 font-size: 28px;
+                color: black;
             }
 
             .footer {
-                padding: 60px 20px;
+                padding: 30px 20px;
             }
 
             .footer-title {
@@ -2184,6 +2204,10 @@
 
         @media (max-width: 480px) {
             .project-info h3 {
+                font-size: 24px;
+            }
+            
+            .project-info-vertical h3 {
                 font-size: 24px;
             }
 
