@@ -999,7 +999,9 @@
 
         .hero-buttons .btn-hero:hover,
         .hero-buttons .btn-secondary:hover {
-            color: #002d86;
+            color: #002d86 !important;
+            background: none !important;
+            border: none !important;
         }
 
             .hero-image {
