@@ -6,14 +6,16 @@
 
         @font-face {
             font-family: 'Buenos Aires';
-            src: local('Buenos Aires');
+            src: local('Buenos Aires'), local('BuenosAires');
             font-weight: 300 400 600;
+            font-display: swap;
         }
 
         @font-face {
             font-family: 'AOK Buenos Aires';
-            src: local('AOK Buenos Aires');
+            src: local('AOK Buenos Aires'), local('AOKBuenosAires');
             font-weight: 400 600;
+            font-display: swap;
         }
 
         @font-face {
@@ -30,10 +32,39 @@
         }
 
         body {
-            font-family: 'AOK Buenos Aires', 'Buenos Aires', Arial, sans-serif;
-                background: white;
+            font-family: 'AOK Buenos Aires', 'Buenos Aires', 'Montserrat', 'Inter', Arial, sans-serif;
+            background: white;
             color: var(--text);
             overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: calc(99px + 700px);
+            background-color: white;
+            background-image: 
+                linear-gradient(to bottom, 
+                    transparent 0%, 
+                    transparent 60%, 
+                    rgba(255, 255, 255, 0.3) 75%, 
+                    rgba(255, 255, 255, 0.6) 85%, 
+                    rgba(255, 255, 255, 0.85) 92%, 
+                    white 100%
+                ),
+                radial-gradient(circle at 10% 20%, rgba(255, 182, 193, 0.25) 0%, transparent 40%),
+                radial-gradient(circle at 30% 50%, rgba(173, 216, 230, 0.25) 0%, transparent 40%),
+                radial-gradient(circle at 50% 80%, rgba(255, 228, 181, 0.25) 0%, transparent 40%),
+                radial-gradient(circle at 70% 30%, rgba(221, 160, 221, 0.25) 0%, transparent 40%),
+                radial-gradient(circle at 90% 60%, rgba(255, 218, 185, 0.25) 0%, transparent 40%),
+                radial-gradient(circle at 20% 70%, rgba(176, 224, 230, 0.25) 0%, transparent 40%),
+                radial-gradient(circle at 80% 10%, rgba(255, 192, 203, 0.25) 0%, transparent 40%);
+            z-index: -1;
+            pointer-events: none;
         }
 
         /* Header Section */
@@ -43,7 +74,7 @@
             left: 0;
             right: 0;
             height: 99px;
-            background: white;
+            background: transparent;
                 display: flex;
             align-items: center;
             justify-content: space-between;
@@ -56,6 +87,7 @@
             height: 70px;
             padding: 0 60px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background: white;
         }
 
         .logo-container a {
@@ -118,31 +150,116 @@
             max-width: 1440px;
             margin: 0 auto;
             padding-top: 99px;
+            position: relative;
         }
 
         /* Hero Section */
         .hero {
+            position: relative;
             display: flex;
-                flex-direction: column;
             align-items: center;
             justify-content: center;
-            text-align: left;
-            padding: 125px 60px 0;
-            background: white;
-            max-width: 1440px;
-            margin: 0 auto;
+            padding: 125px 60px 125px;
+            background: transparent;
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+        }
+
+        .hero-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 55px;
+            max-width: 1012px;
+            width: 100%;
+        }
+
+        .hero-image-circle {
+            width: 260px;
+            height: 260px;
+            border-radius: 300px;
+            overflow: hidden;
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .hero-image-circle img {
+            width: 131.4%;
+            height: 195.72%;
+            object-fit: cover;
+            object-position: -5.07% -14.58%;
+            position: absolute;
+            top: -14.58%;
+            left: -5.07%;
+        }
+
+        .hero-image-circle:hover ~ .hero-content .hero-text-block h1 {
+            transform: translateY(-8px);
+            transition: transform 0.3s ease;
         }
 
         .hero-content {
+            flex: 1;
             max-width: 688px;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 36px;
+            min-width: 0;
+            text-align: left;
+        }
+
+        .hero-text-block {
             display: flex;
             flex-direction: column;
             gap: 16px;
+            width: 100%;
+            align-items: flex-start;
+        }
+
+        .hero-text-block h1 {
+            margin-bottom: 0;
+            transition: transform 0.3s ease;
+            font-family: 'AOK Buenos Aires', 'Buenos Aires', 'Montserrat', 'Inter', sans-serif !important;
+        }
+
+        .hero-description-lines {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .hero-description-line {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            height: 26px;
+            font-size: 32px;
+            font-weight: 300;
+            font-family: 'Buenos Aires', 'Montserrat', 'Inter', sans-serif;
+            line-height: 1.29;
+            color: var(--text);
+        }
+
+        .hero-description-line .separator {
+            margin: 0 4px;
+        }
+
+        .brain-icon {
+            width: 26px;
+            height: 26px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            margin-left: 8px;
         }
 
         .hero h1 {
             font-size: 54px;
             font-weight: 400;
+            font-family: 'AOK Buenos Aires', 'Buenos Aires', 'Montserrat', 'Inter', sans-serif;
             line-height: normal;
             margin-bottom: 0;
         }
@@ -154,7 +271,7 @@
         .hero p {
             font-size: 32px;
             font-weight: 300;
-            font-family: 'Buenos Aires', sans-serif;
+            font-family: 'Buenos Aires', 'Montserrat', 'Inter', sans-serif;
             line-height: 1.29;
             margin-bottom: 0;
         }
@@ -173,7 +290,7 @@
             text-decoration: none;
                 font-size: 16px;
             font-weight: 400;
-            font-family: 'AOK Buenos Aires', sans-serif;
+            font-family: 'Inter', 'AOK Buenos Aires', sans-serif;
             padding: 16px 24px;
             border-radius: 100px;
             transition: background 0.3s;
@@ -188,7 +305,7 @@
         /* Projects Section */
         .projects-section {
             padding: 48px 60px 40px;
-            background: white;
+            background: transparent;
             max-width: 1440px;
             margin: 0 auto;
         }
@@ -209,7 +326,7 @@
         .section-subtitle {
                 font-size: 20px;
             font-weight: 300;
-            font-family: 'Buenos Aires', sans-serif;
+            font-family: 'Buenos Aires', 'Montserrat', 'Inter', sans-serif;
             line-height: 1.29;
             color: var(--text);
         }
@@ -317,7 +434,7 @@
             border-radius: 20px;
             font-size: 12px;
             font-weight: 400;
-            font-family: 'Buenos Aires', sans-serif;
+            font-family: 'Buenos Aires', 'Montserrat', 'Inter', sans-serif;
             display: inline-flex;
             align-items: center;
             align-self: flex-start;
@@ -403,9 +520,26 @@
 
         /* Footer */
         .footer {
-            padding: 40px 100px 40px;
+            padding: 68px 100px 40px;
             background: rgba(118, 118, 128, 0.07);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(255, 182, 193, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 30% 50%, rgba(173, 216, 230, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 50% 80%, rgba(255, 228, 181, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 70% 30%, rgba(221, 160, 221, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 90% 60%, rgba(255, 218, 185, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 20% 70%, rgba(176, 224, 230, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 10%, rgba(255, 192, 203, 0.15) 0%, transparent 40%),
+                linear-gradient(to top, 
+                    rgba(255, 182, 193, 0.2) 0%, 
+                    rgba(173, 216, 230, 0.15) 20%, 
+                    transparent 60%
+                );
+            background-position: bottom;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
             width: 100%;
+            position: relative;
         }
 
         .footer-content {
@@ -467,6 +601,13 @@
         .footer-contact-links a {
             color: var(--text);
             text-decoration: none;
+            position: relative;
+        }
+
+        .footer-contact-links a:not(:last-child)::after {
+            content: '|';
+            margin-left: 24px;
+            color: var(--text);
         }
 
         .footer-contact-links a:hover {
@@ -541,7 +682,7 @@
             cursor: pointer;
             gap: 5px;
             z-index: 1001;
-            background: white;
+            background: none;
             border: none;
         }
 
@@ -606,6 +747,8 @@
             .header.scrolled {
                 padding: 0 20px;
                 height: 70px;
+                background-image: none;
+                background: white;
             }
 
             .nav {
@@ -637,6 +780,7 @@
                 padding: 8px;
                 width: 40px;
                 height: 40px;
+                justify-content: center;
             }
 
             .logo {
@@ -648,16 +792,51 @@
                 padding: 60px 20px 0;
             }
 
+            .hero-wrapper {
+                flex-direction: column;
+                gap: 30px;
+                align-items: center;
+            }
+
+            .hero-image-circle {
+                width: 200px;
+                height: 200px;
+            }
+
             .hero h1 {
                 font-size: 36px;
+                text-align: center;
             }
 
             .hero p {
                 font-size: 20px;
+                text-align: center;
             }
 
             .hero-content {
                 max-width: 100%;
+                align-items: center;
+                text-align: center;
+            }
+
+            .hero-text-block {
+                align-items: center;
+                text-align: center;
+            }
+
+            .hero-description-lines {
+                align-items: center;
+                justify-content: center;
+                gap: 4px;
+            }
+
+            .hero-description-line {
+                font-size: 16px;
+                justify-content: center;
+            }
+
+            .view-work-link {
+                align-self: center;
             }
 
             .creative-voice-section {
@@ -769,12 +948,49 @@
                 padding: 20px;
             }
 
+            .hero-wrapper {
+                flex-direction: column;
+                gap: 25px;
+            }
+
+            .hero-image-circle {
+                width: 180px;
+                height: 180px;
+            }
+
             .hero h1 {
                 font-size: 28px;
+                text-align: center;
             }
 
             .hero p {
                 font-size: 18px;
+                text-align: center;
+            }
+
+            .hero-content {
+                align-items: center;
+                text-align: center;
+            }
+
+            .hero-text-block {
+                align-items: center;
+                text-align: center;
+            }
+
+            .hero-description-lines {
+                align-items: center;
+                justify-content: center;
+                gap: 4px;
+            }
+
+            .hero-description-line {
+                font-size: 16px;
+                justify-content: center;
+            }
+
+            .view-work-link {
+                align-self: center;
             }
 
             .project-info h3 {
@@ -827,7 +1043,7 @@
         }
 
         body {
-            font-family: 'AOK Buenos Aires', 'Buenos Aires', Arial, sans-serif;
+            font-family: 'AOK Buenos Aires', 'Buenos Aires', 'Montserrat', 'Inter', Arial, sans-serif;
             background: #ffffff;
             color: var(--text);
             overflow-x: hidden;
@@ -840,7 +1056,7 @@
             left: 0;
             right: 0;
             height: 99px;
-            background: white;
+            background: transparent;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -853,6 +1069,7 @@
             height: 70px;
             padding: 0 60px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background: white;
         }
 
         .logo-container a {
@@ -914,7 +1131,9 @@
         /* Hero Section */
             .hero-about {
             padding: 125px 100px 50px;
-            background: white;
+            background: transparent;
+            position: relative;
+            z-index: 1;
             display: flex;
             gap: 122px;
             align-items: center;
@@ -931,7 +1150,7 @@
             padding: 0;
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 36px;
             min-width: 0;
         }
 
@@ -952,11 +1171,11 @@
             font-weight: 400;
             margin: 0;
             padding: 0;
-            font-family: 'AOK Buenos Aires', sans-serif;
+            font-family: 'AOK Buenos Aires', 'Buenos Aires', 'Montserrat', 'Inter', sans-serif !important;
         }
 
             .hero-description {
-            font-family: 'Buenos Aires', Arial, sans-serif;
+            font-family: 'Inter', 'Buenos Aires', Arial, sans-serif;
             font-size: 20px;
             font-weight: 300;
             line-height: 1.29;
@@ -983,31 +1202,32 @@
         .hero-buttons .btn-hero,
         .hero-buttons .btn-secondary {
             background: none;
-            border: none;
-            color: var(--secondary, #0038a8);
-            padding: 8px 0;
-            text-decoration: underline;
-            text-decoration-skip-ink: none;
-            text-underline-position: from-font;
+            border: 1px solid #25282b;
+            color: #25282b;
+            padding: 10px 24px;
+            border-radius: 24px;
+            text-decoration: none;
             font-size: 18px;
-            font-weight: 400;
-            font-family: 'AOK Buenos Aires', sans-serif;
-            transition: color 0.3s;
-            display: inline-block;
+            font-weight: 500;
+            font-family: 'Roboto', sans-serif;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
             white-space: nowrap;
         }
 
         .hero-buttons .btn-hero:hover,
         .hero-buttons .btn-secondary:hover {
-            color: #002d86 !important;
-            background: none !important;
-            border: none !important;
+            background: #002d86;
+            color: white;
+            border-color: #002d86;
         }
 
             .hero-image {
             width: 402px;
             height: 408px;
-            border-radius: 20px;
+            border-radius: 300px;
             overflow: hidden;
             flex-shrink: 0;
             position: relative;
@@ -1089,7 +1309,7 @@
             border-radius: 24px;
             padding: 24px;
             margin: 0 0 16px 0;
-            background: white;
+            background: transparent;
             width: 100%;
             box-sizing: border-box;
         }
@@ -1134,6 +1354,7 @@
         .job-item {
             display: flex;
             gap: 8px;
+            align-items: flex-start;
             margin-bottom: 14px;
             font-size: 16px;
             color: #0a0614;
@@ -1221,7 +1442,7 @@
         .tool-name {
             font-size: 16px;
             font-weight: 400;
-            font-family: 'AOK Buenos Aires', sans-serif;
+            font-family: 'Inter', 'AOK Buenos Aires', sans-serif;
             line-height: 1;
             color: var(--text);
             text-align: center;
@@ -1252,9 +1473,26 @@
 
         /* Footer */
         .footer {
-            padding: 40px 100px 40px;
+            padding: 68px 100px 40px;
             background: rgba(118, 118, 128, 0.07);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(255, 182, 193, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 30% 50%, rgba(173, 216, 230, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 50% 80%, rgba(255, 228, 181, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 70% 30%, rgba(221, 160, 221, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 90% 60%, rgba(255, 218, 185, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 20% 70%, rgba(176, 224, 230, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 10%, rgba(255, 192, 203, 0.15) 0%, transparent 40%),
+                linear-gradient(to top, 
+                    rgba(255, 182, 193, 0.2) 0%, 
+                    rgba(173, 216, 230, 0.15) 20%, 
+                    transparent 60%
+                );
+            background-position: bottom;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
             width: 100%;
+            position: relative;
         }
 
         .footer-content {
@@ -1316,6 +1554,13 @@
         .footer-contact-links a {
             color: var(--text);
             text-decoration: none;
+            position: relative;
+        }
+
+        .footer-contact-links a:not(:last-child)::after {
+            content: '|';
+            margin-left: 24px;
+            color: var(--text);
         }
 
         .footer-contact-links a:hover {
@@ -1364,7 +1609,7 @@
             display: flex;
             gap: 17px;
             font-size: 12px;
-            font-family: 'Buenos Aires', Arial, sans-serif;
+            font-family: 'Inter', 'Buenos Aires', Arial, sans-serif;
             color: rgba(136, 136, 136, 0.93);
         }
 
@@ -1372,7 +1617,7 @@
             display: flex;
             gap: 16px;
             font-size: 12px;
-            font-family: 'Buenos Aires', Arial, sans-serif;
+            font-family: 'Inter', 'Buenos Aires', Arial, sans-serif;
             color: #888888;
         }
 
@@ -1392,7 +1637,7 @@
             cursor: pointer;
             gap: 5px;
             z-index: 1001;
-            background: white;
+            background: none;
             border: none;
         }
 
@@ -1472,6 +1717,7 @@
                 padding: 8px;
                 width: 40px;
                 height: 40px;
+                justify-content: center;
             }
 
             .logo {
@@ -1594,14 +1840,16 @@
 
         @font-face {
             font-family: 'Buenos Aires';
-            src: local('Buenos Aires');
+            src: local('Buenos Aires'), local('BuenosAires');
             font-weight: 300 400 600;
+            font-display: swap;
         }
 
         @font-face {
             font-family: 'AOK Buenos Aires';
-            src: local('AOK Buenos Aires');
+            src: local('AOK Buenos Aires'), local('AOKBuenosAires');
             font-weight: 400 600;
+            font-display: swap;
         }
 
         @font-face {
@@ -1618,7 +1866,7 @@
         }
 
         body {
-            font-family: 'AOK Buenos Aires', 'Buenos Aires', Arial, sans-serif;
+            font-family: 'AOK Buenos Aires', 'Buenos Aires', 'Montserrat', 'Inter', Arial, sans-serif;
             background: white;
             color: var(--text);
             overflow-x: hidden;
@@ -1631,7 +1879,7 @@
             left: 0;
             right: 0;
             height: 99px;
-            background: white;
+            background: transparent;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -1644,6 +1892,7 @@
             height: 70px;
             padding: 0 60px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background: white;
         }
 
         .logo-container a {
@@ -1711,7 +1960,7 @@
         /* Projects Section */
         .projects-section {
             padding: 99px 60px 0;
-            background: white;
+            background: transparent;
             max-width: 1440px;
             margin: 0 auto;
         }
@@ -1735,7 +1984,7 @@
             line-height: 1.29;
             text-align: center;
             color: var(--text);
-            font-family: 'Buenos Aires', sans-serif;
+            font-family: 'Buenos Aires', 'Montserrat', 'Inter', sans-serif;
             margin-top: 4px;
         }
 
@@ -1770,7 +2019,7 @@
             border-radius: 20px;
             font-size: 12px;
             font-weight: 400;
-            font-family: 'Buenos Aires', sans-serif;
+            font-family: 'Buenos Aires', 'Montserrat', 'Inter', sans-serif;
             display: inline-flex;
             align-items: center;
             align-self: flex-start;
@@ -1862,9 +2111,26 @@
 
         /* Footer */
         .footer {
-            padding: 40px 100px 40px;
+            padding: 68px 100px 40px;
             background: rgba(118, 118, 128, 0.07);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(255, 182, 193, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 30% 50%, rgba(173, 216, 230, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 50% 80%, rgba(255, 228, 181, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 70% 30%, rgba(221, 160, 221, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 90% 60%, rgba(255, 218, 185, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 20% 70%, rgba(176, 224, 230, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 10%, rgba(255, 192, 203, 0.15) 0%, transparent 40%),
+                linear-gradient(to top, 
+                    rgba(255, 182, 193, 0.2) 0%, 
+                    rgba(173, 216, 230, 0.15) 20%, 
+                    transparent 60%
+                );
+            background-position: bottom;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
             width: 100%;
+            position: relative;
         }
 
         .footer-content {
@@ -1890,7 +2156,7 @@
             font-weight: 300;
             line-height: normal;
             margin-bottom: 0;
-            font-family: 'Buenos Aires', sans-serif;
+            font-family: 'Buenos Aires', 'Montserrat', 'Inter', sans-serif;
         }
 
         .footer-text {
@@ -1898,7 +2164,7 @@
             font-weight: 400;
             line-height: normal;
             margin-bottom: 24px;
-            font-family: 'Buenos Aires', sans-serif;
+            font-family: 'Buenos Aires', 'Montserrat', 'Inter', sans-serif;
         }
 
         .footer-contact-info {
@@ -1906,7 +2172,7 @@
             font-weight: 400;
             line-height: 1.4;
             margin-bottom: 50px;
-            font-family: 'Buenos Aires', sans-serif;
+            font-family: 'Buenos Aires', 'Montserrat', 'Inter', sans-serif;
         }
 
         .footer-contact-info p {
@@ -1933,7 +2199,7 @@
             font-size: 12px;
             font-weight: 400;
             color: var(--text);
-            font-family: 'Buenos Aires', sans-serif;
+            font-family: 'Buenos Aires', 'Montserrat', 'Inter', sans-serif;
             text-align: center;
         }
 
@@ -1945,7 +2211,7 @@
             display: flex;
             gap: 17px;
             font-size: 12px;
-            font-family: 'Buenos Aires', sans-serif;
+            font-family: 'Buenos Aires', 'Montserrat', 'Inter', sans-serif;
             font-weight: 300;
             color: rgba(136, 136, 136, 0.93);
         }
@@ -1954,7 +2220,7 @@
             display: flex;
             gap: 16px;
             font-size: 12px;
-            font-family: 'Buenos Aires', sans-serif;
+            font-family: 'Buenos Aires', 'Montserrat', 'Inter', sans-serif;
             font-weight: 300;
             color: #888888;
         }
@@ -2034,7 +2300,7 @@
             cursor: pointer;
             gap: 5px;
             z-index: 1001;
-            background: white;
+            background: none;
             border: none;
         }
 
@@ -2112,6 +2378,8 @@
             .header.scrolled {
                 padding: 0 20px;
                 height: 70px;
+                background-image: none;
+                background: white;
             }
 
             .nav {
@@ -2143,6 +2411,7 @@
                 padding: 8px;
                 width: 40px;
                 height: 40px;
+                justify-content: center;
             }
 
             .logo {
