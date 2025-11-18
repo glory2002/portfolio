@@ -243,7 +243,10 @@
         }
 
         .hero-description-line .separator {
-            margin: 0 4px;
+            margin: 0 12px;
+            color: var(--text);
+            font-weight: 300;
+            font-size: 1.3em;
         }
 
         .brain-icon {
@@ -640,9 +643,11 @@
         }
 
         .footer-contact-links a:not(:last-child)::after {
-            content: '|';
+            content: '•';
             margin-left: 24px;
             color: var(--text);
+            font-size: 1.3em;
+            font-weight: 300;
         }
 
         .footer-contact-links a:hover {
@@ -1113,14 +1118,14 @@
             border: none;
         }
 
-        .logo {
+            .logo {
             width: 113.31px;
             height: 44.79px;
             transition: all 0.3s ease;
         }
 
 
-        .nav {
+            .nav {
             display: flex;
             align-items: center;
             gap: 22px;
@@ -1596,9 +1601,11 @@
         }
 
         .footer-contact-links a:not(:last-child)::after {
-            content: '|';
+            content: '•';
             margin-left: 24px;
             color: var(--text);
+            font-size: 1.3em;
+            font-weight: 300;
         }
 
         .footer-contact-links a:hover {
