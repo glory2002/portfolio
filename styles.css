@@ -33,7 +33,7 @@
 
         body {
             font-family: 'AOK Buenos Aires', 'Buenos Aires', 'Montserrat', 'Inter', Arial, sans-serif;
-            background: white;
+                background: white;
             color: var(--text);
             overflow-x: hidden;
             position: relative;
@@ -198,7 +198,7 @@
         }
 
         .hero-content {
-            flex: 1;
+                flex: 1;
             max-width: 688px;
             margin: 0;
             padding: 0;
@@ -281,25 +281,60 @@
             color: var(--secondary);
         }
 
-        .view-work-link {
+        .primary-button-l {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             background: var(--secondary, #0038a8);
             color: var(--white, #ffffff);
             text-decoration: none;
-                font-size: 16px;
+                font-size: 18px;
             font-weight: 400;
-            font-family: 'Inter', 'AOK Buenos Aires', sans-serif;
+            line-height: 1.0;
+            font-family: 'AOK Buenos Aires', 'Inter', sans-serif;
             padding: 16px 24px;
+            border: 1px solid transparent;
             border-radius: 100px;
             transition: background 0.3s;
             width: auto;
             align-self: flex-start;
+            white-space: nowrap;
         }
 
-        .view-work-link:hover {
+        .primary-button-l:hover {
             background: #002d86;
+        }
+
+        .hero-buttons-home {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .secondary-button-l {
+            background: none;
+            border: 1px solid #25282b;
+            color: #25282b;
+            padding: 16px 24px;
+            border-radius: 24px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.0;
+            font-family: 'AOK Buenos Aires', 'Inter', sans-serif;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+            width: auto;
+            align-self: flex-start;
+        }
+
+        .secondary-button-l:hover {
+            background: #002d86;
+            color: white;
+            border-color: #002d86;
         }
 
         /* Projects Section */
@@ -581,7 +616,7 @@
 
         .footer-text {
             font-size: 30px;
-            font-weight: 400;
+            font-weight: 300;
             line-height: normal;
             margin-bottom: 0;
             text-align: center;
@@ -835,7 +870,7 @@
                 justify-content: center;
             }
 
-            .view-work-link {
+            .primary-button-l {
                 align-self: center;
             }
 
@@ -989,7 +1024,7 @@
                 justify-content: center;
             }
 
-            .view-work-link {
+            .primary-button-l {
                 align-self: center;
             }
 
@@ -1200,25 +1235,28 @@
         }
 
         .hero-buttons .btn-hero,
-        .hero-buttons .btn-secondary {
+        .hero-buttons .btn-secondary,
+        .hero-buttons .secondary-button-l {
             background: none;
             border: 1px solid #25282b;
             color: #25282b;
-            padding: 10px 24px;
+            padding: 16px 24px;
             border-radius: 24px;
             text-decoration: none;
             font-size: 18px;
-            font-weight: 500;
-            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            line-height: 1.0;
+            font-family: 'AOK Buenos Aires', 'Inter', sans-serif;
             transition: all 0.3s;
             display: inline-flex;
             align-items: center;
-            gap: 4px;
+            justify-content: center;
             white-space: nowrap;
         }
 
         .hero-buttons .btn-hero:hover,
-        .hero-buttons .btn-secondary:hover {
+        .hero-buttons .btn-secondary:hover,
+        .hero-buttons .secondary-button-l:hover {
             background: #002d86;
             color: white;
             border-color: #002d86;
@@ -1227,7 +1265,7 @@
             .hero-image {
             width: 402px;
             height: 408px;
-            border-radius: 300px;
+            border-radius: 50%;
             overflow: hidden;
             flex-shrink: 0;
             position: relative;
@@ -1534,7 +1572,7 @@
 
         .footer-text {
             font-size: 30px;
-            font-weight: 400;
+            font-weight: 300;
             line-height: normal;
             margin-bottom: 0;
             text-align: center;
@@ -1748,6 +1786,8 @@
                 max-width: 400px;
                 height: 400px;
                 margin: 0 auto;
+                border-radius: 50%;
+                overflow: hidden;
             }
 
             .main-content {
@@ -1806,6 +1846,8 @@
 
             .hero-image {
                 height: 300px;
+                border-radius: 50%;
+                overflow: hidden;
             }
 
             .section-title {
@@ -2161,7 +2203,7 @@
 
         .footer-text {
             font-size: 30px;
-            font-weight: 400;
+            font-weight: 300;
             line-height: normal;
             margin-bottom: 24px;
             font-family: 'Buenos Aires', 'Montserrat', 'Inter', sans-serif;
