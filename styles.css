@@ -97,8 +97,8 @@
         }
 
         .logo {
-            width: 113.31px;
-            height: 44.79px;
+            width: 46.97px;
+            height: 50.13px;
             transition: all 0.3s ease;
         }
 
@@ -204,9 +204,74 @@
             padding: 0;
             display: flex;
             flex-direction: column;
-            gap: 40px;
+            gap: 36px;
             min-width: 0;
             text-align: left;
+        }
+
+        /* Hero Text Block - New Design */
+        .hero-text-block-new {
+            display: flex;
+            flex-direction: column;
+            gap: 13px;
+            width: 100%;
+        }
+
+        .hero-title-section {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .hero-title-new {
+            font-size: 54px;
+            font-weight: 400;
+            font-family: 'AOK Buenos Aires', 'Buenos Aires', 'Montserrat', 'Inter', sans-serif;
+            line-height: 1;
+            color: var(--text);
+            margin: 0;
+        }
+
+        .hero-title-new .highlight {
+            color: var(--text);
+            font-weight: 400;
+        }
+
+        .hero-description-new {
+            font-size: 32px;
+            font-weight: 300;
+            font-family: 'Buenos Aires', 'AOK Buenos Aires', 'Montserrat', 'Inter', sans-serif;
+            line-height: 1.2;
+            height: 82px;
+            color: var(--text);
+            margin: 0;
+        }
+
+        .hero-status-badge {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 10px;
+            border-radius: 20px;
+            background: transparent;
+        }
+
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            background: #09e589;
+            border-radius: 20px;
+            flex-shrink: 0;
+        }
+
+        .status-text {
+            font-size: 22px !important;
+            font-weight: 400;
+            font-family: 'AOK Buenos Aires', 'Buenos Aires', 'Montserrat', 'Inter', sans-serif;
+            line-height: 1;
+            color: #00c171;
+            margin: 0;
+            white-space: nowrap;
         }
 
         .hero-text-block {
@@ -214,7 +279,7 @@
             flex-direction: column;
             gap: 16px;
             width: 100%;
-            align-items: flex-start;
+                align-items: flex-start;
             margin-bottom: 0;
         }
 
@@ -271,7 +336,7 @@
         }
 
         .hero h1 .highlight {
-            color: var(--secondary);
+            color: var(--text);
         }
 
         .hero p {
@@ -288,43 +353,47 @@
         }
 
         .primary-button-l {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--secondary, #0038a8);
-            color: var(--white, #ffffff);
+            background: #0038a8;
+            border: 1px solid #0038a8;
+            color: white;
+            padding: 16px 24px;
+            border-radius: 40px;
             text-decoration: none;
-                font-size: 18px;
+            font-size: 18px;
             font-weight: 400;
             line-height: 1.0;
             font-family: 'AOK Buenos Aires', 'Inter', sans-serif;
-            padding: 16px 24px;
-            border: 1px solid transparent;
-            border-radius: 40px;
-            transition: background 0.3s;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
             width: auto;
             align-self: flex-start;
-            white-space: nowrap;
         }
 
         .primary-button-l:hover {
             background: #002d86;
+            color: white;
+            border-color: #002d86;
         }
 
         .hero-buttons-home {
             display: flex;
-            gap: 16px;
+            gap: 8px;
             align-items: center;
         }
 
+
+
         .secondary-button-l {
-            background: none;
+                background: white;
             border: 1px solid #25282b;
             color: #25282b;
             padding: 16px 24px;
             border-radius: 40px;
             text-decoration: none;
-            font-size: 18px;
+                font-size: 18px;
             font-weight: 400;
             line-height: 1.0;
             font-family: 'AOK Buenos Aires', 'Inter', sans-serif;
@@ -352,12 +421,12 @@
         }
 
         .section-header {
-            text-align: center;
+            text-align: left;
             margin-bottom: 48px;
         }
 
         .section-title {
-            font-size: 26px;
+            font-size: 36px;
             font-weight: 100;
             line-height: normal;
             margin-bottom: 10px;
@@ -370,6 +439,7 @@
             font-family: 'Buenos Aires', 'Montserrat', 'Inter', sans-serif;
             line-height: 1.29;
             color: var(--text);
+            text-align: left;
         }
 
         /* Projects Grid Section */
@@ -378,8 +448,8 @@
             background: transparent;
             max-width: 1440px;
             margin: 0 auto;
-            display: flex;
-            flex-direction: column;
+                display: flex;
+                flex-direction: column;
             align-items: center;
             gap: 48px;
         }
@@ -387,7 +457,7 @@
         .section-header-grid {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
             gap: 4px;
             max-width: 756px;
             width: 100%;
@@ -420,7 +490,7 @@
         }
 
         .project-card-grid {
-            flex: 1;
+                flex: 1;
             border: 1px solid var(--border);
             border-radius: 24px;
             overflow: hidden;
@@ -486,7 +556,7 @@
         }
 
         .project-description-grid {
-            font-size: 16px;
+                font-size: 16px;
             font-weight: 400;
             font-family: 'AOK Buenos Aires', 'Buenos Aires', 'Montserrat', 'Inter', sans-serif;
             line-height: normal;
@@ -532,7 +602,15 @@
             position: absolute;
             inset: -3px;
             border-radius: 26px;
-            background: radial-gradient(ellipse at 92.295px 130.62px, rgba(255, 254, 236, 0.7) 0%, rgba(250, 230, 255, 0.5) 100%);
+            background: 
+                radial-gradient(circle at center, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 30%, transparent 60%),
+                radial-gradient(circle at 10% 20%, rgba(255, 182, 193, 0.12) 0%, transparent 35%),
+                radial-gradient(circle at 30% 50%, rgba(173, 216, 230, 0.12) 0%, transparent 35%),
+                radial-gradient(circle at 50% 80%, rgba(255, 228, 181, 0.12) 0%, transparent 35%),
+                radial-gradient(circle at 70% 30%, rgba(221, 160, 221, 0.12) 0%, transparent 35%),
+                radial-gradient(circle at 90% 60%, rgba(255, 218, 185, 0.12) 0%, transparent 35%),
+                radial-gradient(circle at 20% 70%, rgba(176, 224, 230, 0.12) 0%, transparent 35%),
+                radial-gradient(circle at 80% 10%, rgba(255, 192, 203, 0.12) 0%, transparent 35%);
             z-index: -1;
             opacity: 1;
         }
@@ -548,7 +626,15 @@
         }
 
         .project-card-vertical:hover {
-            background: radial-gradient(ellipse at 92.295px 130.62px, rgba(255, 254, 236, 0.84) 0%, rgba(250, 230, 255, 0.58) 100%);
+            background: 
+                radial-gradient(circle at center, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.6) 30%, transparent 60%),
+                radial-gradient(circle at 10% 20%, rgba(255, 182, 193, 0.12) 0%, transparent 35%),
+                radial-gradient(circle at 30% 50%, rgba(173, 216, 230, 0.12) 0%, transparent 35%),
+                radial-gradient(circle at 50% 80%, rgba(255, 228, 181, 0.12) 0%, transparent 35%),
+                radial-gradient(circle at 70% 30%, rgba(221, 160, 221, 0.12) 0%, transparent 35%),
+                radial-gradient(circle at 90% 60%, rgba(255, 218, 185, 0.12) 0%, transparent 35%),
+                radial-gradient(circle at 20% 70%, rgba(176, 224, 230, 0.12) 0%, transparent 35%),
+                radial-gradient(circle at 80% 10%, rgba(255, 192, 203, 0.12) 0%, transparent 35%);
             border: 1px solid #ffd8ea;
         }
 
@@ -607,9 +693,9 @@
         }
 
         .project-info-vertical .project-tag.yellow {
-            background: #ffefbf;
-            color: #875f01;
-            border: 1px solid #875f01;
+            background: white;
+            color: var(--text);
+            border: 1px solid var(--text);
         }
 
         .project-card {
@@ -651,10 +737,12 @@
         }
 
         .project-tag {
+            background: white;
             color: var(--text);
+            border: 1px solid var(--text);
             padding: 6px 8px;
             border-radius: 20px;
-            font-size: 12px;
+            font-size: 14px;
             font-weight: 400;
             font-family: 'Buenos Aires', 'Montserrat', 'Inter', sans-serif;
             display: inline-flex;
@@ -664,21 +752,21 @@
         }
 
         .project-tag.yellow {
-            background: #ffedb5;
-            color: #875f01;
-            border: 1px solid #875f01;
+            background: white;
+            color: var(--text);
+            border: 1px solid var(--text);
         }
 
         .project-tag.green {
-            background: #c4f5e3;
-            color: #037562;
-            border: 1px solid #037562;
+            background: white;
+            color: var(--text);
+            border: 1px solid var(--text);
         }
 
         .project-tag.blue {
-            background: #b9eaff;
-            color: #006086;
-            border: 1px solid #006086;
+            background: white;
+            color: var(--text);
+            border: 1px solid var(--text);
         }
 
         .project-info h3 {
@@ -717,7 +805,7 @@
             padding: 10px 24px;
             border-radius: 40px;
             text-decoration: none;
-            font-size: 18px;
+                font-size: 18px;
             font-weight: 500;
             display: inline-flex;
             align-items: center;
@@ -818,7 +906,7 @@
             gap: 24px;
             align-items: center;
             justify-content: center;
-            font-size: 20px;
+                font-size: 20px;
             font-weight: 400;
             line-height: 1.4;
             flex-wrap: wrap;
@@ -943,12 +1031,49 @@
                 padding: 100px 40px 0;
             }
 
+            .hero-wrapper {
+                gap: 40px;
+            }
+
+            .hero-image-circle {
+                width: 220px;
+                height: 220px;
+            }
+
             .creative-voice-section {
                 padding: 48px 40px 40px;
             }
 
             .projects-section {
                 padding: 48px 40px 0;
+            }
+
+            .project-card-gradient {
+                flex-wrap: wrap;
+            }
+
+            .project-image-gradient {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .hero-about {
+                padding: 50px 40px;
+                gap: 40px;
+            }
+
+            .main-content-new {
+                padding: 60px 40px;
+                gap: 40px;
+            }
+
+            .experience-section {
+                width: 100%;
+            }
+
+            .trainings-skills-section {
+                flex-direction: column;
+                gap: 20px;
             }
 
             .footer {
@@ -1035,8 +1160,8 @@
             }
 
             .logo {
-                width: 90px;
-                height: 36px;
+                width: 46.97px;
+                height: 50.13px;
             }
 
             .hero {
@@ -1093,6 +1218,10 @@
             .hero-description-line .separator {
                 margin: 0 8px;
                 font-size: 1.2em;
+            }
+
+            .hero-status-badge {
+                align-self: center;
             }
 
             .primary-button-l {
@@ -1169,7 +1298,7 @@
                 order: 1;
                 width: 100%;
                 height: 250px;
-                padding: 20px;
+                padding: 12px;
             }
 
             .project-image-gradient img {
@@ -1216,8 +1345,15 @@
                 font-size: 24px;
             }
 
-            .section-title {
-                font-size: 22px !important;
+            .section-title,
+            .experience-title,
+            .trainings-card .section-title,
+            .skills-card .section-title,
+            .main-content .section-title {
+                font-size: 22px;
+                font-weight: 100;
+                line-height: normal;
+                margin-bottom: 10px;
                 color: black;
             }
 
@@ -1303,6 +1439,10 @@
             .hero-description-line .separator {
                 margin: 0 8px;
                 font-size: 1.2em;
+            }
+
+            .hero-status-badge {
+                align-self: center;
             }
 
             .primary-button-l {
@@ -1407,8 +1547,8 @@
         }
 
             .logo {
-            width: 113.31px;
-            height: 44.79px;
+            width: 46.97px;
+            height: 50.13px;
             transition: all 0.3s ease;
         }
 
@@ -1458,16 +1598,16 @@
 
         /* Hero Section */
             .hero-about {
-            padding: 150px 100px 100px;
+            padding: 50px 60px;
             background: transparent;
             position: relative;
             z-index: 1;
             display: flex;
-            gap: 122px;
-            align-items: center;
+            gap: 26px;
+            align-items: flex-start;
             justify-content: center;
             max-width: 1440px;
-            margin: 0 auto;
+            margin: 99px auto 0;
             box-sizing: border-box;
         }
 
@@ -1476,6 +1616,15 @@
             display: flex;
             flex-direction: column;
             gap: 38px;
+            min-width: 0;
+            padding: 26px 0;
+        }
+
+        .hero-image-about {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             min-width: 0;
         }
 
@@ -1498,12 +1647,12 @@
             font-size: 18px;
             font-weight: 400;
             font-family: 'AOK Buenos Aires', 'Buenos Aires', 'Montserrat', 'Inter', sans-serif;
-            line-height: 1.31;
+            line-height: 1.4;
             color: var(--text);
         }
 
         .hero-description-about p {
-            margin: 0 0 6px 0;
+            margin: 0 0 17px 0;
         }
 
         .hero-description-about p:last-child {
@@ -1550,16 +1699,18 @@
             justify-content: center;
         }
 
-        .hero-image-about {
+        .hero-image-about-wrapper {
             width: 402px;
-            height: 408px;
+            height: 409px;
             border-radius: 300px;
             overflow: hidden;
-            flex-shrink: 0;
             position: relative;
+            padding: 28px;
+            box-sizing: border-box;
+            flex-shrink: 0;
         }
 
-        .hero-image-about img {
+        .hero-image-about-wrapper img {
             width: 131.4%;
             height: 195.72%;
             object-fit: cover;
@@ -1567,6 +1718,7 @@
             position: absolute;
             top: -14.58%;
             left: -5.07%;
+            border-radius: 300px;
         }
 
             .hero-content {
@@ -1627,8 +1779,8 @@
 
         .hero-buttons .btn-hero,
         .hero-buttons .btn-secondary,
-        .hero-buttons .secondary-button-l {
-            background: none;
+        .hero-buttons         .secondary-button-l {
+            background: white;
             border: 1px solid #25282b;
             color: #25282b;
             padding: 16px 24px;
@@ -1673,6 +1825,195 @@
         }
 
         /* Main Content */
+        /* Main Content - New Design */
+        .main-content-new {
+            padding: 100px 60px;
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        /* Experience Section */
+        .experience-section {
+            display: flex;
+            gap: 26px;
+            align-items: flex-start;
+        }
+
+        .experience-header {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .experience-header.sticky {
+            position: sticky;
+            top: var(--sticky-top, 99px); /* Header height - dynamically updated */
+            background: white;
+            z-index: 10;
+            padding-top: 28px;
+            padding-bottom: 20px;
+            align-self: flex-start;
+        }
+
+        .experience-title {
+            font-size: 36px;
+            font-weight: 100;
+            line-height: normal;
+            margin-bottom: 10px;
+            color: black;
+        }
+
+        .experience-subtitle {
+            font-size: 18px;
+            font-weight: 600;
+            font-family: 'AOK Buenos Aires', 'Buenos Aires', 'Montserrat', 'Inter', sans-serif;
+            line-height: normal;
+            color: var(--text);
+            margin: 0;
+        }
+
+        .experience-link {
+            text-decoration: underline;
+            color: var(--text);
+        }
+
+        .experience-list {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 26px;
+        }
+
+        .experience-item {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+            padding-bottom: 26px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .experience-date {
+            font-size: 18px;
+            font-weight: 400;
+            font-family: 'AOK Buenos Aires', 'Buenos Aires', 'Montserrat', 'Inter', sans-serif;
+            line-height: normal;
+            color: #6a6f8e;
+            margin: 0;
+        }
+
+        .experience-job-title {
+            font-size: 32px;
+            font-weight: 400;
+            font-family: 'AOK Buenos Aires', 'Buenos Aires', 'Montserrat', 'Inter', sans-serif;
+            line-height: normal;
+            color: var(--text);
+            margin: 0;
+        }
+
+        .experience-company {
+            font-size: 20px;
+            font-weight: 400;
+            font-family: 'AOK Buenos Aires', 'Buenos Aires', 'Montserrat', 'Inter', sans-serif;
+            line-height: normal;
+            color: var(--text);
+            margin: 0;
+        }
+
+        /* Trainings & Skills Section */
+        .trainings-skills-section {
+            display: flex;
+            gap: 26px;
+            align-items: stretch;
+        }
+
+        .trainings-card {
+            flex: 1;
+            padding: 20px;
+            border-radius: 24px;
+            background: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            min-height: 100%;
+        }
+
+        .skills-card {
+            flex: 1;
+            padding: 20px;
+            border-radius: 24px;
+            background: 
+                linear-gradient(to bottom, 
+                    transparent 0%, 
+                    transparent 60%, 
+                    rgba(255, 255, 255, 0.3) 75%, 
+                    rgba(255, 255, 255, 0.6) 85%, 
+                    rgba(255, 255, 255, 0.85) 92%, 
+                    white 100%
+                ),
+                radial-gradient(circle at 10% 20%, rgba(255, 182, 193, 0.25) 0%, transparent 40%),
+                radial-gradient(circle at 30% 50%, rgba(173, 216, 230, 0.25) 0%, transparent 40%),
+                radial-gradient(circle at 50% 80%, rgba(255, 228, 181, 0.25) 0%, transparent 40%),
+                radial-gradient(circle at 70% 30%, rgba(221, 160, 221, 0.25) 0%, transparent 40%),
+                radial-gradient(circle at 90% 60%, rgba(255, 218, 185, 0.25) 0%, transparent 40%),
+                radial-gradient(circle at 20% 70%, rgba(176, 224, 230, 0.25) 0%, transparent 40%),
+                radial-gradient(circle at 80% 10%, rgba(255, 192, 203, 0.25) 0%, transparent 40%);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            min-height: 100%;
+        }
+
+        .trainings-card .section-title,
+        .skills-card .section-title {
+            font-size: 36px;
+            font-weight: 100;
+            line-height: normal;
+            margin-bottom: 10px;
+            color: black;
+        }
+
+        .skills-card {
+            gap: 15px;
+        }
+
+        .trainings-list-new {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .training-item-new-format {
+            font-size: 20px;
+            font-weight: 400;
+            font-family: 'AOK Buenos Aires', 'Buenos Aires', 'Montserrat', 'Inter', sans-serif;
+            line-height: normal;
+            color: var(--text);
+            margin: 0;
+        }
+
+        .skills-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 11px;
+        }
+
+        .skill-tag {
+            background: white;
+            border: 1px solid var(--text);
+            padding: 10px 12px;
+            border-radius: 20px;
+            font-size: 18px;
+            font-weight: 400;
+            font-family: 'Buenos Aires', 'AOK Buenos Aires', 'Montserrat', 'Inter', sans-serif;
+            line-height: 1;
+            color: var(--text);
+            white-space: nowrap;
+        }
+
             .main-content {
             padding: 0 100px 60px;
             display: flex;
@@ -1811,12 +2152,11 @@
 
         /* Section Title Update for About Page */
         .main-content .section-title {
-            font-size: 32px;
-            font-weight: 600;
-            font-family: 'AOK Buenos Aires', 'Buenos Aires', 'Montserrat', 'Inter', sans-serif;
-            line-height: 40px;
-            margin-bottom: 12px;
-            color: var(--text);
+            font-size: 36px;
+            font-weight: 100;
+            line-height: normal;
+            margin-bottom: 10px;
+            color: black;
         }
 
         .left-column > h2.section-title + *,
@@ -2311,7 +2651,39 @@
         @media (max-width: 1024px) {
             .hero-about {
                 padding: 50px 40px;
-                gap: 60px;
+                gap: 40px;
+                margin-top: 99px;
+            }
+
+            .hero-content-about {
+                padding: 0;
+            }
+
+            .hero-image-about {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .hero-image-about-wrapper {
+                width: 100%;
+                max-width: 350px;
+                height: 350px;
+            }
+
+            .main-content-new {
+                padding: 60px 40px;
+                gap: 40px;
+            }
+
+            .experience-section {
+                width: 100%;
+            }
+
+            .trainings-skills-section {
+                flex-direction: column;
+                gap: 20px;
             }
 
             .main-content {
@@ -2368,18 +2740,20 @@
             }
 
             .logo {
-                width: 90px;
-                height: 36px;
+                width: 46.97px;
+                height: 50.13px;
             }
 
         .hero-about {
                 flex-direction: column;
-                padding: 120px 20px 50px;
+                padding: 80px 20px 50px;
                 gap: 40px;
+                margin-top: 70px;
             }
 
         .hero-content-about {
-                max-width: 100%;
+            max-width: 100%;
+            padding: 0;
             }
 
             .hero-title-about {
@@ -2395,8 +2769,38 @@
                 max-width: 400px;
                 height: 400px;
                 margin: 0 auto;
-                border-radius: 50%;
-                overflow: hidden;
+            }
+
+        .hero-image-about-wrapper {
+                width: 100%;
+                height: 100%;
+                max-width: 400px;
+                max-height: 400px;
+            }
+
+        .main-content-new {
+                padding: 40px 20px;
+                flex-direction: column;
+                gap: 40px;
+            }
+
+        .experience-section {
+                width: 100%;
+            }
+
+        .experience-header {
+                position: relative !important;
+                top: 0 !important;
+            }
+
+        .experience-header.sticky {
+                position: relative !important;
+                top: 0 !important;
+            }
+
+        .trainings-skills-section {
+                flex-direction: column;
+                width: 100%;
             }
 
             .main-content {
@@ -2412,7 +2816,7 @@
 
             .right-column {
                 width: 100%;
-                min-width: 0;
+            min-width: 0;
             }
 
             .footer {
@@ -2456,11 +2860,28 @@
             .hero-image {
                 height: 300px;
                 border-radius: 50%;
-                overflow: hidden;
+            overflow: hidden;
             }
 
-            .section-title {
+            .experience-header {
+                position: relative !important;
+                top: 0 !important;
+            }
+
+            .experience-header.sticky {
+                position: relative !important;
+                top: 0 !important;
+            }
+
+            .section-title,
+            .experience-title,
+            .trainings-card .section-title,
+            .skills-card .section-title,
+            .main-content .section-title {
                 font-size: 20px;
+                font-weight: 100;
+                line-height: normal;
+                margin-bottom: 10px;
                 color: black;
             }
 
@@ -2553,8 +2974,8 @@
         }
 
         .logo {
-            width: 113.31px;
-            height: 44.79px;
+            width: 46.97px;
+            height: 50.13px;
             transition: all 0.3s ease;
         }
 
@@ -2617,12 +3038,12 @@
         }
 
         .section-header {
-            text-align: center;
+            text-align: left;
             margin-bottom: 48px;
         }
 
         .section-title {
-            font-size: 26px;
+            font-size: 36px;
             font-weight: 100;
             line-height: normal;
             margin-bottom: 10px;
@@ -2633,7 +3054,7 @@
             font-size: 20px;
             font-weight: 300;
             line-height: 1.29;
-            text-align: center;
+            text-align: left;
             color: var(--text);
             font-family: 'Buenos Aires', 'Montserrat', 'Inter', sans-serif;
             margin-top: 4px;
@@ -2668,7 +3089,7 @@
             color: var(--text);
             padding: 6px 8px;
             border-radius: 20px;
-            font-size: 12px;
+            font-size: 14px;
             font-weight: 400;
             font-family: 'Buenos Aires', 'Montserrat', 'Inter', sans-serif;
             display: inline-flex;
@@ -2678,15 +3099,15 @@
         }
 
         .project-tag.yellow {
-            background: #ffedb5;
-            color: #875f01;
-            border: 1px solid #875f01;
+            background: white;
+            color: var(--text);
+            border: 1px solid var(--text);
         }
 
         .project-tag.green {
-            background: #c4f5e3;
-            color: #037562;
-            border: 1px solid #037562;
+            background: white;
+            color: var(--text);
+            border: 1px solid var(--text);
         }
 
         /* Gradient Project Card */
@@ -2702,7 +3123,15 @@
             position: absolute;
             inset: -3px;
             border-radius: 26px;
-            background: radial-gradient(ellipse at 92.295px 130.62px, rgba(255, 254, 236, 0.7) 0%, rgba(250, 230, 255, 0.5) 100%);
+            background: 
+                radial-gradient(circle at center, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 30%, transparent 60%),
+                radial-gradient(circle at 10% 20%, rgba(255, 182, 193, 0.12) 0%, transparent 35%),
+                radial-gradient(circle at 30% 50%, rgba(173, 216, 230, 0.12) 0%, transparent 35%),
+                radial-gradient(circle at 50% 80%, rgba(255, 228, 181, 0.12) 0%, transparent 35%),
+                radial-gradient(circle at 70% 30%, rgba(221, 160, 221, 0.12) 0%, transparent 35%),
+                radial-gradient(circle at 90% 60%, rgba(255, 218, 185, 0.12) 0%, transparent 35%),
+                radial-gradient(circle at 20% 70%, rgba(176, 224, 230, 0.12) 0%, transparent 35%),
+                radial-gradient(circle at 80% 10%, rgba(255, 192, 203, 0.12) 0%, transparent 35%);
             z-index: -1;
             opacity: 1;
         }
@@ -2718,7 +3147,15 @@
         }
 
         .project-card-gradient:hover {
-            background: radial-gradient(ellipse at 92.295px 130.62px, rgba(255, 254, 236, 0.84) 0%, rgba(250, 230, 255, 0.58) 100%);
+            background: 
+                radial-gradient(circle at center, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.6) 30%, transparent 60%),
+                radial-gradient(circle at 10% 20%, rgba(255, 182, 193, 0.12) 0%, transparent 35%),
+                radial-gradient(circle at 30% 50%, rgba(173, 216, 230, 0.12) 0%, transparent 35%),
+                radial-gradient(circle at 50% 80%, rgba(255, 228, 181, 0.12) 0%, transparent 35%),
+                radial-gradient(circle at 70% 30%, rgba(221, 160, 221, 0.12) 0%, transparent 35%),
+                radial-gradient(circle at 90% 60%, rgba(255, 218, 185, 0.12) 0%, transparent 35%),
+                radial-gradient(circle at 20% 70%, rgba(176, 224, 230, 0.12) 0%, transparent 35%),
+                radial-gradient(circle at 80% 10%, rgba(255, 192, 203, 0.12) 0%, transparent 35%);
             border: 1px solid #ffd8ea;
         }
 
@@ -2783,10 +3220,10 @@
         }
 
         .project-footer-gradient p {
-            font-size: 16px;
-            font-weight: 400;
-            font-family: 'AOK Buenos Aires', 'Buenos Aires', 'Montserrat', 'Inter', sans-serif;
-            line-height: normal;
+            font-size: 20px;
+            font-weight: 300;
+            font-family: 'Buenos Aires', 'Montserrat', 'Inter', sans-serif;
+            line-height: 1.29;
             color: var(--text);
             margin: 0;
         }
@@ -2794,7 +3231,7 @@
         .project-image-gradient {
             width: 620px;
             flex-shrink: 0;
-            padding: 28px;
+            padding: 12px;
             display: flex;
             flex-direction: column;
             gap: 10px;
@@ -2813,8 +3250,9 @@
         }
 
         .project-tag.blue {
-            background: #b9eaff;
-            border: 1px solid #006086;
+            background: white;
+            color: var(--text);
+            border: 1px solid var(--text);
         }
 
         .project-info h3 {
@@ -3118,6 +3556,19 @@
                 padding: 80px 40px 0;
             }
 
+            .creative-voice-section {
+                padding: 48px 40px 40px;
+            }
+
+            .project-card-gradient {
+                flex-wrap: wrap;
+            }
+
+            .project-image-gradient {
+                width: 100%;
+                max-width: 100%;
+            }
+
             .footer {
                 padding: 30px 40px 40px;
             }
@@ -3134,7 +3585,7 @@
                 padding: 48px 40px 40px;
             }
 
-            .project-card {
+        .project-card {
                 height: auto;
                 min-height: 400px;
             }
@@ -3148,7 +3599,7 @@
                 gap: 24px;
             }
 
-            .project-card-vertical {
+        .project-card-vertical {
                 height: auto;
                 min-height: 400px;
             }
@@ -3204,8 +3655,8 @@
             }
 
             .logo {
-                width: 90px;
-                height: 36px;
+                width: 46.97px;
+                height: 50.13px;
             }
 
             .projects-section {
@@ -3237,7 +3688,7 @@
                 order: 1;
                 width: 100%;
                 height: 250px;
-                padding: 20px;
+                padding: 12px;
             }
 
             .project-image-gradient img {
@@ -3252,7 +3703,7 @@
                 flex: 1;
             }
 
-            .project-image {
+        .project-image {
                 width: 100%;
                 height: 180px !important;
                 flex: none;
@@ -3268,16 +3719,23 @@
                 object-fit: cover;
             }
 
-            .project-info h3 {
+        .project-info h3 {
                 font-size: 24px;
             }
             
-            .project-info-vertical h3 {
+        .project-info-vertical h3 {
                 font-size: 24px;
             }
 
-            .section-title {
-                font-size: 28px;
+        .section-title,
+        .experience-title,
+        .trainings-card .section-title,
+        .skills-card .section-title,
+        .main-content .section-title {
+                font-size: 22px;
+                font-weight: 100;
+                line-height: normal;
+                margin-bottom: 10px;
                 color: black;
             }
 
@@ -3328,10 +3786,52 @@
         @media (max-width: 480px) {
             .project-info h3 {
                 font-size: 24px;
-            }
-            
+        }
+
             .project-info-vertical h3 {
                 font-size: 24px;
             }
 
+        }
+
+        /* Projects Page - White Background */
+        .projects-page {
+            background: white !important;
+        }
+
+        .projects-page::before {
+            display: none;
+        }
+
+        .projects-page .header {
+            background: white !important;
+        }
+
+        .projects-page .header.scrolled {
+            background: white !important;
+        }
+
+        .projects-page .hero {
+            background: white !important;
+        }
+
+        /* About Page - White Background */
+        .about-page {
+            background: white !important;
+        }
+
+        .about-page::before {
+            display: none;
+        }
+
+        .about-page .header {
+            background: white !important;
+        }
+
+        .about-page .header.scrolled {
+            background: white !important;
+        }
+
+        .about-page .hero {
+            background: white !important;
         }
