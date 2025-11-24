@@ -55,14 +55,7 @@
                     rgba(255, 255, 255, 0.6) 85%, 
                     rgba(255, 255, 255, 0.85) 92%, 
                     white 100%
-                ),
-                radial-gradient(circle at 10% 20%, rgba(255, 182, 193, 0.25) 0%, transparent 40%),
-                radial-gradient(circle at 30% 50%, rgba(173, 216, 230, 0.25) 0%, transparent 40%),
-                radial-gradient(circle at 50% 80%, rgba(255, 228, 181, 0.25) 0%, transparent 40%),
-                radial-gradient(circle at 70% 30%, rgba(221, 160, 221, 0.25) 0%, transparent 40%),
-                radial-gradient(circle at 90% 60%, rgba(255, 218, 185, 0.25) 0%, transparent 40%),
-                radial-gradient(circle at 20% 70%, rgba(176, 224, 230, 0.25) 0%, transparent 40%),
-                radial-gradient(circle at 80% 10%, rgba(255, 192, 203, 0.25) 0%, transparent 40%);
+                );
             z-index: -1;
             pointer-events: none;
         }
@@ -74,7 +67,13 @@
             left: 0;
             right: 0;
             height: 99px;
-            background: transparent;
+            background: rgba(255, 255, 255, 0.7);
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(255, 127, 127, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(173, 216, 230, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 20% 80%, rgba(255, 255, 153, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(3, 167, 99, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 70% 85%, rgba(255, 127, 127, 0.2) 0%, transparent 35%);
                 display: flex;
             align-items: center;
             justify-content: space-between;
@@ -88,6 +87,7 @@
             padding: 0 60px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             background: white;
+            background-image: none;
         }
 
         .logo-container a {
@@ -160,7 +160,13 @@
             align-items: center;
             justify-content: center;
             padding: 125px 60px 125px;
-            background: transparent;
+            background: rgba(255, 255, 255, 0.7);
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(255, 127, 127, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(173, 216, 230, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 20% 80%, rgba(255, 255, 153, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(3, 167, 99, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 70% 85%, rgba(255, 127, 127, 0.2) 0%, transparent 35%);
             width: 100vw;
             margin-left: calc(-50vw + 50%);
         }
@@ -176,20 +182,38 @@
         .hero-image-circle {
             width: 260px;
             height: 260px;
-            border-radius: 300px;
+            border-radius: 24px;
             overflow: hidden;
             flex-shrink: 0;
             position: relative;
+            background: white;
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(255, 127, 127, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(173, 216, 230, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 20% 80%, rgba(255, 255, 153, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(3, 167, 99, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 70% 85%, rgba(255, 127, 127, 0.2) 0%, transparent 35%);
+            padding: 0;
+        }
+
+        .hero-image-circle::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 20px;
+            overflow: hidden;
+            z-index: 1;
         }
 
         .hero-image-circle img {
-            width: 131.4%;
-            height: 195.72%;
+            width: 173.25%;
+            height: 258.06%;
             object-fit: cover;
-            object-position: -5.07% -14.58%;
             position: absolute;
-            top: -14.58%;
-            left: -5.07%;
+            top: -23.97%;
+            left: -25.59%;
+            border-radius: 20px;
+            z-index: 2;
         }
 
         .hero-image-circle:hover ~ .hero-content .hero-text-block h1 {
@@ -269,7 +293,7 @@
             font-weight: 400;
             font-family: 'AOK Buenos Aires', 'Buenos Aires', 'Montserrat', 'Inter', sans-serif;
             line-height: 1;
-            color: #00c171;
+            color: #03a763;
             margin: 0;
             white-space: nowrap;
         }
@@ -353,13 +377,13 @@
         }
 
         .primary-button-l {
-            background: #0038a8;
-            border: 1px solid #0038a8;
+            background: #E97676;
+            border: 1px solid #E97676;
             color: white;
             padding: 16px 24px;
             border-radius: 40px;
             text-decoration: none;
-            font-size: 18px;
+                font-size: 18px;
             font-weight: 400;
             line-height: 1.0;
             font-family: 'AOK Buenos Aires', 'Inter', sans-serif;
@@ -373,9 +397,10 @@
         }
 
         .primary-button-l:hover {
-            background: #002d86;
+            background: #E97676;
             color: white;
-            border-color: #002d86;
+            border-color: #E97676;
+            box-shadow: 1px 2px 14px #E97676;
         }
 
         .hero-buttons-home {
@@ -387,7 +412,7 @@
 
 
         .secondary-button-l {
-                background: white;
+            background: white;
             border: 1px solid #25282b;
             color: #25282b;
             padding: 16px 24px;
@@ -407,9 +432,10 @@
         }
 
         .secondary-button-l:hover {
-            background: #002d86;
+            background: #E97676;
             color: white;
-            border-color: #002d86;
+            border-color: #E97676;
+            box-shadow: 1px 2px 14px #E97676;
         }
 
         /* Projects Section */
@@ -627,14 +653,11 @@
 
         .project-card-vertical:hover {
             background: 
-                radial-gradient(circle at center, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.6) 30%, transparent 60%),
-                radial-gradient(circle at 10% 20%, rgba(255, 182, 193, 0.12) 0%, transparent 35%),
-                radial-gradient(circle at 30% 50%, rgba(173, 216, 230, 0.12) 0%, transparent 35%),
-                radial-gradient(circle at 50% 80%, rgba(255, 228, 181, 0.12) 0%, transparent 35%),
-                radial-gradient(circle at 70% 30%, rgba(221, 160, 221, 0.12) 0%, transparent 35%),
-                radial-gradient(circle at 90% 60%, rgba(255, 218, 185, 0.12) 0%, transparent 35%),
-                radial-gradient(circle at 20% 70%, rgba(176, 224, 230, 0.12) 0%, transparent 35%),
-                radial-gradient(circle at 80% 10%, rgba(255, 192, 203, 0.12) 0%, transparent 35%);
+                radial-gradient(circle at 30% 30%, rgba(255, 127, 127, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 70% 30%, rgba(173, 216, 230, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 30% 70%, rgba(255, 255, 153, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(3, 167, 99, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 60% 75%, rgba(255, 127, 127, 0.2) 0%, transparent 35%);
             border: 1px solid #ffd8ea;
         }
 
@@ -643,9 +666,9 @@
         }
 
         .project-card-vertical:hover .secondary-button-l {
-            background: #002d86;
+            background: #E97676;
             color: white;
-            border-color: #002d86;
+            border-color: #E97676;
         }
 
 
@@ -835,25 +858,15 @@
         /* Footer */
         .footer {
             padding: 68px 100px 40px;
-            background: rgba(118, 118, 128, 0.07);
+            background: white;
             background-image: 
-                radial-gradient(circle at 10% 20%, rgba(255, 182, 193, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 30% 50%, rgba(173, 216, 230, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 50% 80%, rgba(255, 228, 181, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 70% 30%, rgba(221, 160, 221, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 90% 60%, rgba(255, 218, 185, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 20% 70%, rgba(176, 224, 230, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 80% 10%, rgba(255, 192, 203, 0.15) 0%, transparent 40%),
-                linear-gradient(to top, 
-                    rgba(255, 182, 193, 0.2) 0%, 
-                    rgba(173, 216, 230, 0.15) 20%, 
-                    transparent 60%
-                );
-            background-position: bottom;
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
+                radial-gradient(circle at 15% 15%, rgba(255, 127, 127, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 85% 15%, rgba(173, 216, 230, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 15% 85%, rgba(255, 255, 153, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 85% 85%, rgba(3, 167, 99, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 90%, rgba(255, 127, 127, 0.2) 0%, transparent 35%);
             width: 100%;
-                position: relative;
+            position: relative;
         }
 
         .footer-content {
@@ -1412,7 +1425,7 @@
             }
 
             .hero-content {
-                align-items: center;
+            align-items: center;
                 text-align: center;
             }
 
@@ -1700,25 +1713,40 @@
         }
 
         .hero-image-about-wrapper {
-            width: 402px;
-            height: 409px;
-            border-radius: 300px;
+            width: 390px;
+            height: 390px;
+            border-radius: 24px;
             overflow: hidden;
             position: relative;
-            padding: 28px;
-            box-sizing: border-box;
+            background: white;
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(255, 127, 127, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(173, 216, 230, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 20% 80%, rgba(255, 255, 153, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(3, 167, 99, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 70% 85%, rgba(255, 127, 127, 0.2) 0%, transparent 35%);
+            padding: 0;
             flex-shrink: 0;
         }
 
-        .hero-image-about-wrapper img {
-            width: 131.4%;
-            height: 195.72%;
-            object-fit: cover;
-            object-position: -5.07% -14.58%;
+        .hero-image-about-wrapper::before {
+            content: '';
             position: absolute;
-            top: -14.58%;
-            left: -5.07%;
-            border-radius: 300px;
+            inset: 0;
+            border-radius: 20px;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .hero-image-about-wrapper img {
+            width: 173.25%;
+            height: 258.06%;
+            object-fit: cover;
+            position: absolute;
+            top: -23.97%;
+            left: -25.59%;
+            border-radius: 20px;
+            z-index: 2;
         }
 
             .hero-content {
@@ -1945,22 +1973,13 @@
             flex: 1;
             padding: 20px;
             border-radius: 24px;
-            background: 
-                linear-gradient(to bottom, 
-                    transparent 0%, 
-                    transparent 60%, 
-                    rgba(255, 255, 255, 0.3) 75%, 
-                    rgba(255, 255, 255, 0.6) 85%, 
-                    rgba(255, 255, 255, 0.85) 92%, 
-                    white 100%
-                ),
-                radial-gradient(circle at 10% 20%, rgba(255, 182, 193, 0.25) 0%, transparent 40%),
-                radial-gradient(circle at 30% 50%, rgba(173, 216, 230, 0.25) 0%, transparent 40%),
-                radial-gradient(circle at 50% 80%, rgba(255, 228, 181, 0.25) 0%, transparent 40%),
-                radial-gradient(circle at 70% 30%, rgba(221, 160, 221, 0.25) 0%, transparent 40%),
-                radial-gradient(circle at 90% 60%, rgba(255, 218, 185, 0.25) 0%, transparent 40%),
-                radial-gradient(circle at 20% 70%, rgba(176, 224, 230, 0.25) 0%, transparent 40%),
-                radial-gradient(circle at 80% 10%, rgba(255, 192, 203, 0.25) 0%, transparent 40%);
+            background: white;
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(255, 127, 127, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 75% 25%, rgba(173, 216, 230, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 25% 75%, rgba(255, 255, 153, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(3, 167, 99, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 65% 80%, rgba(255, 127, 127, 0.2) 0%, transparent 35%);
             display: flex;
             flex-direction: column;
             gap: 12px;
@@ -2459,23 +2478,13 @@
         /* Footer */
         .footer {
             padding: 68px 100px 40px;
-            background: rgba(118, 118, 128, 0.07);
+            background: white;
             background-image: 
-                radial-gradient(circle at 10% 20%, rgba(255, 182, 193, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 30% 50%, rgba(173, 216, 230, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 50% 80%, rgba(255, 228, 181, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 70% 30%, rgba(221, 160, 221, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 90% 60%, rgba(255, 218, 185, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 20% 70%, rgba(176, 224, 230, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 80% 10%, rgba(255, 192, 203, 0.15) 0%, transparent 40%),
-                linear-gradient(to top, 
-                    rgba(255, 182, 193, 0.2) 0%, 
-                    rgba(173, 216, 230, 0.15) 20%, 
-                    transparent 60%
-                );
-            background-position: bottom;
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
+                radial-gradient(circle at 15% 15%, rgba(255, 127, 127, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 85% 15%, rgba(173, 216, 230, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 15% 85%, rgba(255, 255, 153, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 85% 85%, rgba(3, 167, 99, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 90%, rgba(255, 127, 127, 0.2) 0%, transparent 35%);
             width: 100%;
             position: relative;
         }
@@ -2667,9 +2676,8 @@
             }
 
             .hero-image-about-wrapper {
-                width: 100%;
-                max-width: 350px;
-                height: 350px;
+                width: 390px;
+                height: 390px;
             }
 
             .main-content-new {
@@ -2772,10 +2780,8 @@
             }
 
         .hero-image-about-wrapper {
-                width: 100%;
-                height: 100%;
-                max-width: 400px;
-                max-height: 400px;
+                width: 260px;
+                height: 260px;
             }
 
         .main-content-new {
@@ -2849,15 +2855,15 @@
         }
 
         @media (max-width: 480px) {
-            .hero-content h1 {
+        .hero-content h1 {
                 font-size: 28px;
             }
 
-            .hero-description {
+        .hero-description {
                 font-size: 16px;
             }
 
-            .hero-image {
+        .hero-image {
                 height: 300px;
                 border-radius: 50%;
             overflow: hidden;
@@ -3148,14 +3154,11 @@
 
         .project-card-gradient:hover {
             background: 
-                radial-gradient(circle at center, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.6) 30%, transparent 60%),
-                radial-gradient(circle at 10% 20%, rgba(255, 182, 193, 0.12) 0%, transparent 35%),
-                radial-gradient(circle at 30% 50%, rgba(173, 216, 230, 0.12) 0%, transparent 35%),
-                radial-gradient(circle at 50% 80%, rgba(255, 228, 181, 0.12) 0%, transparent 35%),
-                radial-gradient(circle at 70% 30%, rgba(221, 160, 221, 0.12) 0%, transparent 35%),
-                radial-gradient(circle at 90% 60%, rgba(255, 218, 185, 0.12) 0%, transparent 35%),
-                radial-gradient(circle at 20% 70%, rgba(176, 224, 230, 0.12) 0%, transparent 35%),
-                radial-gradient(circle at 80% 10%, rgba(255, 192, 203, 0.12) 0%, transparent 35%);
+                radial-gradient(circle at 30% 30%, rgba(255, 127, 127, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 70% 30%, rgba(173, 216, 230, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 30% 70%, rgba(255, 255, 153, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(3, 167, 99, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 60% 75%, rgba(255, 127, 127, 0.2) 0%, transparent 35%);
             border: 1px solid #ffd8ea;
         }
 
@@ -3164,9 +3167,9 @@
         }
 
         .project-card-gradient:hover .secondary-button-l {
-            background: #002d86;
+            background: #E97676;
             color: white;
-            border-color: #002d86;
+            border-color: #E97676;
         }
 
         .project-info-gradient {
@@ -3330,23 +3333,13 @@
         /* Footer */
         .footer {
             padding: 68px 100px 40px;
-            background: rgba(118, 118, 128, 0.07);
+            background: white;
             background-image: 
-                radial-gradient(circle at 10% 20%, rgba(255, 182, 193, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 30% 50%, rgba(173, 216, 230, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 50% 80%, rgba(255, 228, 181, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 70% 30%, rgba(221, 160, 221, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 90% 60%, rgba(255, 218, 185, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 20% 70%, rgba(176, 224, 230, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 80% 10%, rgba(255, 192, 203, 0.15) 0%, transparent 40%),
-                linear-gradient(to top, 
-                    rgba(255, 182, 193, 0.2) 0%, 
-                    rgba(173, 216, 230, 0.15) 20%, 
-                    transparent 60%
-                );
-            background-position: bottom;
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
+                radial-gradient(circle at 15% 15%, rgba(255, 127, 127, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 85% 15%, rgba(173, 216, 230, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 15% 85%, rgba(255, 255, 153, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 85% 85%, rgba(3, 167, 99, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 90%, rgba(255, 127, 127, 0.2) 0%, transparent 35%);
             width: 100%;
             position: relative;
         }
