@@ -662,7 +662,7 @@ ul {
             max-width: 1200px;
             width: 100%;
             margin: 0 auto;
-    padding: 0 30px;
+    padding: 0 60px;
             display: flex;
     justify-content: space-between;
     margin-bottom: 60px;
@@ -673,14 +673,9 @@ ul {
                 flex: 1;
             display: flex;
                 flex-direction: column;
-    gap: 36px;
+    gap: 100px;
             align-items: flex-start;
-    width: 100%;
             }
-
-.connect-section .btn {
-    width: 100%;
-}
 
 .connect-text {
             display: flex;
@@ -708,8 +703,6 @@ ul {
 .contact-info-section {
             display: flex;
     gap: 50px;
-    width: 100%;
-    justify-content: space-between;
         }
 
 .contact-column {
@@ -721,7 +714,7 @@ ul {
 
 .contact-column h3 {
     font-family: var(--font-heading);
-            font-size: 16px;
+            font-size: 20px;
     font-weight: 600;
     line-height: 1.4;
             margin: 0;
@@ -729,7 +722,7 @@ ul {
         }
 
 .contact-column p, .contact-column a {
-            font-size: 14px;
+            font-size: 18px;
     font-weight: 300;
     line-height: 1.4;
             margin: 0;
@@ -761,7 +754,7 @@ ul {
             max-width: 1200px;
             width: 100%;
             margin: 0 auto;
-    padding: 0 30px;
+    padding: 0 60px;
             text-align: center;
             font-size: 12px;
             color: var(--white);
@@ -1331,13 +1324,38 @@ ul {
                 font-size: 20px;
             }
 
+    .footer-content {
+        padding: 0 30px;
+    }
+
+    .footer-bottom {
+        padding: 0 30px;
+    }
+
+    .connect-section {
+        width: 100%;
+        gap: 36px;
+    }
+
+    .connect-section .btn {
+        width: 100%;
+    }
+
     .contact-info-section {
-                flex-direction: row;
+        flex-direction: row;
         align-items: flex-start;
         gap: 30px;
         width: 100%;
         justify-content: space-between;
-            }
+    }
+
+    .contact-column h3 {
+        font-size: 16px;
+    }
+
+    .contact-column p, .contact-column a {
+        font-size: 14px;
+    }
 
     .about-hero-wrapper {
                 flex-direction: column;
