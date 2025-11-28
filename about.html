@@ -3,230 +3,298 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gloria - About</title>
+    <title>Gloria Angelova - About</title>
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <link rel="shortcut icon" href="assets/favicon.svg">
     <link rel="apple-touch-icon" href="assets/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Roboto:wght@500&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="about-page">
-    <!-- Header -->
-    <header class="header">
-        <div class="logo-container">
-            <a href="index.html">
-                <img src="assets/ga-logo.svg" alt="Gloria Logo" class="logo">
-            </a>
-        </div>
-        <button class="menu-toggle" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <nav class="nav">
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="about.html" class="nav-link active">About</a>
-            <a href="projects.html" class="nav-link">Projects</a>
-            <a href="#contact" class="nav-link">Contact</a>
-        </nav>
-    </header>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo-container">
+                    <a href="index.html">
+                        <img src="assets/ga-logo.svg" alt="Gloria Logo" class="logo">
+                    </a>
+                </div>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link active">About</a>
+                    <a href="projects.html" class="nav-link">Projects</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </header>
 
-    <!-- Hero Section -->
-    <section class="hero-about">
-        <div class="hero-content-about">
-            <div class="hero-text-section-about">
-                <h1 class="hero-title-about">Hi there, I'm Gloria!</h1>
-                <div class="hero-description-about">
-                    <p>Born and raised in Bulgaria, I now live in Eindhoven, the Netherlands.<br>I grew up between art and engineering — my mother is an art teacher and my father is an engineer — and I later graduated in Engineering Design. Early on, I understood the difference between art and design: an artist solves their own problems, while a designer solves the problems of others.</p>
-                    <p>Today, my focus is UI/UX, but my previous experience gives me a broader perspective as a designer. My approach is shaped by different disciplines: logic from product design, aesthetics from graphic design, and empathy from digital user experience. This helps me create interfaces that are useful, meaningful, and emotionally engaging.</p>
-                    <p>My motivation comes from challenges and change — they wake up my mind and push me to find the best solutions.</p>
-                    <p>When I'm not working, you can find me playing with my child, doing folk embroidery, practicing paneurhythmy, or spending time in nature.</p>
+        <!-- About Hero Section -->
+        <section class="about-hero">
+            <div class="about-hero-wrapper">
+                <div class="about-hero-content">
+                    <h1 class="about-hero-title-new">I'm a UI/UX Designer focused on clarity, structure, and intuitive user experiences.</h1>
+                    
+                    <div class="about-hero-description">
+                        <p>I'm a UI/UX Designer with a hybrid background in visual design, engineering reasoning, and product thinking.<br>Recently, I worked as a UI & Web Designer in a B2B company, designing large-scale corporate software products. This experience strengthened my ability to handle complex requirements, multi-step workflows, and enterprise-level design systems.</p>
+                        <p>I collaborated closely with dev team, as well as business analysts, turning technical constraints and business needs into clear, scalable UI solutions.</p>
+                        <p>Challenges motivate me — they sharpen my thinking and inspire me to solve problems in thoughtful and creative ways.</p>
+                    </div>
+
+                    <div class="about-hero-actions">
+                        <a href="https://www.linkedin.com/in/gloria-angelova-9172aa99/" target="_blank" class="btn btn-primary-gradient">LinkedIn</a>
+                        <a href="#" class="btn btn-secondary-outline">Resume</a>
+                    </div>
+                </div>
+                <div class="about-hero-image-container">
+                    <div class="about-hero-blobs">
+                        <div class="about-blob about-blob-1"></div>
+                        <div class="about-blob about-blob-2"></div>
+                    </div>
+                    <div class="about-hero-image-wrapper">
+                        <img src="assets/gloria-profile-about-new.png" alt="Gloria Angelova">
+                    </div>
                 </div>
             </div>
-            <div class="hero-buttons-about">
-                <a href="https://www.linkedin.com/in/gloria-angelova-9172aa99/" target="_blank" class="primary-button-l">LinkedIn</a>
-                <a href="#" class="secondary-button-l">Resume</a>
-            </div>
-        </div>
-        <div class="hero-image-about">
-            <div class="hero-image-about-wrapper">
-                <img src="assets/gloria-profile-hero-new.png" alt="Gloria Angelova">
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Main Content -->
-    <section class="main-content-new">
         <!-- Experience Section -->
-        <div class="experience-section">
-            <div class="experience-header">
-                <h2 class="experience-title">Experience</h2>
-                <p class="experience-subtitle">Check my <a href="https://www.linkedin.com/in/gloria-angelova-9172aa99/" target="_blank" class="experience-link">LinkedIn</a> or <a href="#" class="experience-link">Resume</a> to learn more details</p>
-            </div>
-            <div class="experience-list">
-                <div class="experience-item">
-                    <p class="experience-date">Jan 2020 – Dec 2025</p>
-                    <p class="experience-job-title">UI & Web Designer</p>
-                    <p class="experience-company">TINQIN</p>
-                </div>
-                <div class="experience-item">
-                    <p class="experience-date">Feb 2019 – Dec 2019</p>
-                    <p class="experience-job-title">UI/UX & Graphic Designer</p>
-                    <p class="experience-company">Association of Copyright Content Creators</p>
-                </div>
-                <div class="experience-item">
-                    <p class="experience-date">Feb 2017 – Aug 2017</p>
-                    <p class="experience-job-title">Junior Front-End Ruby on Rails Developer</p>
-                    <p class="experience-company">Nedforce</p>
-                </div>
-                <div class="experience-item">
-                    <p class="experience-date">Sep 2011 – Apr 2014</p>
-                    <p class="experience-job-title">Graphic Designer</p>
-                    <p class="experience-company">Credo Capital</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Trainings & Skills Section -->
-        <div class="trainings-skills-section">
-            <!-- Trainings & Courses -->
-            <div class="trainings-card">
-                <h2 class="section-title">Trainings & Courses</h2>
-                <div class="trainings-list-new">
-                    <p class="training-item-new-format">2022 / Vitaly Friedman's UX Training on Smart Interface Design Patterns</p>
-                    <p class="training-item-new-format">2019 / Telerik Academy - UX/UI Alpha Program</p>
-                    <p class="training-item-new-format">2018 / UX Training - Amsterdam</p>
-                    <p class="training-item-new-format">2016 / Web Development Bootcamp - Amsterdam</p>
+        <section class="about-experience">
+            <div class="about-experience-header">
+                <div class="about-experience-title-wrapper">
+                    <h2 class="section-title">Experience</h2>
+                    <p class="about-experience-subtitle">Check my <a href="https://www.linkedin.com/in/gloria-angelova-9172aa99/" target="_blank">LinkedIn</a> or <a href="#">Resume</a> to learn more details.</p>
                 </div>
             </div>
 
-            <!-- My Skills -->
-            <div class="skills-card">
-                <h2 class="section-title">My Skills</h2>
-                <div class="skills-tags">
-                    <span class="skill-tag">UI Design</span>
-                    <span class="skill-tag">UX Personas</span>
-                    <span class="skill-tag">Information Architecture</span>
-                    <span class="skill-tag">Design Systems</span>
-                    <span class="skill-tag">UI Implementation</span>
-                    <span class="skill-tag">UX Collaboration</span>
-                    <span class="skill-tag">AI-assisted workflow</span>
-                    <span class="skill-tag">Critical Thinking</span>
-                    <span class="skill-tag">Visual Design</span>
-                    <span class="skill-tag">Web Design</span>
-                    <span class="skill-tag">Prototyping</span>
-                    <span class="skill-tag">Branding</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="contact" class="footer">
-        <div class="footer-content">
-            <div class="footer-main">
-                <div class="footer-center">
-                    <div class="footer-header">
-                        <h2 class="footer-title">Feel free to reach out!</h2>
-                        <p class="footer-text">I'm always open to new opportunities and collaborations.</p>
+            <div class="experience-list-new">
+                <div class="experience-item-new">
+                    <div class="experience-company-info">
+                        <p class="experience-company">TINQIN</p>
+                        <p class="experience-date">Jan 2020 / Dec 2025</p>
                     </div>
-                    <div class="footer-contact-links">
-                        <a href="mailto:glory.angelova@gmail.com">glory.angelova@gmail.com</a>
-                        <a href="tel:+31647355880">+31 6 47 355 880</a>
-                        <a href="https://www.linkedin.com/in/gloria-angelova-9172aa99/" target="_blank">LinkedIn</a>
-                        <a href="#">Resume</a>
+                    <div class="experience-job-info">
+                        <h3 class="experience-job-title-new">UI & Web Designer</h3>
+                        <p class="experience-description">Translating business requirements in to web design for a back-office web application; Translating business requirements in to web design for a back-office web application;</p>
                     </div>
-                    <a href="mailto:glory.angelova@gmail.com" class="btn-primary">Get in touch with me</a>
+                </div>
+
+                <div class="experience-item-new">
+                    <div class="experience-company-info">
+                        <p class="experience-company">ACCC</p>
+                        <p class="experience-date">Feb 2019 / Dec 2</p>
+                    </div>
+                    <div class="experience-job-info">
+                        <h3 class="experience-job-title-new">UI/UX & Graphic Designer</h3>
+                        <p class="experience-description">Translating business requirements in to web design for a back-office web application; Translating business requirements in to web design for a back-office web application;</p>
+                    </div>
+                </div>
+
+                <div class="experience-item-new">
+                    <div class="experience-company-info">
+                        <p class="experience-company">Nedforce</p>
+                        <p class="experience-date">Feb 2017 / Aug 2017</p>
+                    </div>
+                    <div class="experience-job-info">
+                        <h3 class="experience-job-title-new">Junior Front-End Ruby on Rails Developer</h3>
+                        <p class="experience-description">Translating business requirements in to web design for a back-office web application; Translating business requirements in to web design for a back-office web application;</p>
+                    </div>
+                </div>
+
+                <div class="experience-item-new">
+                    <div class="experience-company-info">
+                        <p class="experience-company">Credo Capital</p>
+                        <p class="experience-date">Sep 2011 / Apr 2014</p>
+                    </div>
+                    <div class="experience-job-info">
+                        <h3 class="experience-job-title-new">Graphic Designer</h3>
+                        <p class="experience-description">Translating business requirements in to web design for a back-office web application; Translating business requirements in to web design for a back-office web application;</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education & Trainings Section -->
+        <section class="about-education-trainings">
+            <div class="education-trainings-card">
+                <h2 class="section-title">Education <span class="light-slash">&</span> Trainings</h2>
+                <div class="education-trainings-list">
+                    <div class="education-training-item">
+                        <div class="education-year">
+                            <p>2022</p>
+                        </div>
+                        <div class="education-name">
+                            <p>Vitaly Friedman's UX Training on Smart Interface Design Patterns</p>
+                        </div>
+                    </div>
+
+                    <div class="education-training-item">
+                        <div class="education-year">
+                            <p>2019</p>
+                        </div>
+                        <div class="education-name">
+                            <p>Telerik Academy / UX/UI Alpha Program</p>
+                        </div>
+                    </div>
+
+                    <div class="education-training-item">
+                        <div class="education-year">
+                            <p>2018</p>
+                        </div>
+                        <div class="education-name">
+                            <p>UX Training / Amsterdam</p>
+                        </div>
+                    </div>
+
+                    <div class="education-training-item">
+                        <div class="education-year">
+                            <p>2016</p>
+                        </div>
+                        <div class="education-name">
+                            <p>Web Development Bootcamp / Amsterdam</p>
+                        </div>
+                    </div>
+
+                    <div class="education-training-item">
+                        <div class="education-year">
+                            <p>2011 / 2012</p>
+                        </div>
+                        <div class="education-name">
+                            <p>MASTER OF SCIENCE / Product Design</p>
+                        </div>
+                    </div>
+
+                    <div class="education-training-item">
+                        <div class="education-year">
+                            <p>2005 / 2009</p>
+                        </div>
+                        <div class="education-name">
+                            <p>BACHELOR OF SCIENCE / Engineering Design</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- My Skills Section -->
+        <section class="about-skills-section">
+            <h2 class="section-title">My Skills</h2>
+            <div class="skills-tags">
+                <span class="skill-tag">UI Design</span>
+                <span class="skill-tag">UX Personas</span>
+                <span class="skill-tag">Information Architecture</span>
+                <span class="skill-tag">Design Systems</span>
+                <span class="skill-tag">UI Implementation</span>
+                <span class="skill-tag">UX Collaboration</span>
+                <span class="skill-tag">AI-assisted workflow</span>
+                <span class="skill-tag">Critical Thinking</span>
+                <span class="skill-tag">Visual Design</span>
+                <span class="skill-tag">Web Design</span>
+                <span class="skill-tag">Prototyping</span>
+                <span class="skill-tag">Branding</span>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer id="contact" class="footer">
+            <div class="footer-content">
+                <div class="connect-section">
+                    <div class="connect-text">
+                        <h2>Let's connect!</h2>
+                        <p>I'm always open to new opportunities and collaborations.</p>
+                    </div>
+                    <a href="mailto:glory.angelova@gmail.com" class="btn btn-primary-solid">Get in touch with me</a>
+                </div>
+                
+                <div class="contact-info-section">
+                    <div class="contact-column">
+                        <h3>Contact</h3>
+                        <p>Eindhoven / Netherlands</p>
+                        <p><a href="mailto:glory.angelova@gmail.com">glory.angelova@gmail.com</a></p>
+                        <p><a href="tel:+31647355880">+31 6 47 355 880</a></p>
+                    </div>
+                    <div class="contact-column">
+                        <h3>Social</h3>
+                        <p><a href="https://www.linkedin.com/in/gloria-angelova-9172aa99/" target="_blank">LinkedIn</a></p>
+                        <p><a href="#">Instagram</a></p>
+                        <p><a href="#">Facebook</a></p>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <div class="footer-copyright">
-                    <p>© Copyright Gloria Angelova 2025.</p>
-                </div>
+                <p>© Copyright Gloria Angelova / 2025</p>
             </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
 
     <script>
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('.header');
-            if (window.scrollY > 50) {
+        // Mobile menu functionality
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('.nav');
+        
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            nav.classList.toggle('active');
+            document.body.classList.toggle('no-scroll');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                nav.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+            });
+        });
+
+        // Sticky header with shadow on scroll
+        const header = document.querySelector('.header');
+        let lastScrollY = window.scrollY;
+        let isScrollingDown = false;
+        
+        function handleScroll() {
+            const currentScrollY = window.scrollY;
+            const isMobile = window.innerWidth <= 768;
+            
+            // Desktop: shadow on scroll
+            if (window.scrollY > 10) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
             }
-        });
-
-        // Mobile menu toggle
-        const menuToggle = document.querySelector('.menu-toggle');
-        const nav = document.querySelector('.nav');
-        const navLinks = document.querySelectorAll('.nav-link');
-
-        menuToggle.addEventListener('click', function() {
-            menuToggle.classList.toggle('active');
-            nav.classList.toggle('active');
-        });
-
-        // Close menu when clicking on a link
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                menuToggle.classList.remove('active');
-                nav.classList.remove('active');
-            });
-        });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const isClickInsideNav = nav.contains(event.target);
-            const isClickOnToggle = menuToggle.contains(event.target);
             
-            if (!isClickInsideNav && !isClickOnToggle && nav.classList.contains('active')) {
-                menuToggle.classList.remove('active');
-                nav.classList.remove('active');
-            }
-        });
-
-        // Experience header sticky behavior
-        const experienceHeader = document.querySelector('.experience-header');
-        const experienceList = document.querySelector('.experience-list');
-        const experienceItems = document.querySelectorAll('.experience-item');
-        
-        if (experienceHeader && experienceItems.length > 0) {
-            const lastItem = experienceItems[experienceItems.length - 1];
-            const header = document.querySelector('.header');
-            
-            function handleSticky() {
-                const headerRect = experienceHeader.getBoundingClientRect();
-                const lastItemRect = lastItem.getBoundingClientRect();
-                // Get current header height (changes when scrolled)
-                const headerHeight = header ? header.offsetHeight : 99;
-                
-                // Update CSS variable for sticky top position
-                experienceHeader.style.setProperty('--sticky-top', headerHeight + 'px');
-                
-                // Check if experience header has reached the sticky position
-                if (headerRect.top <= headerHeight) {
-                    // Check if the last item has completely scrolled past
-                    if (lastItemRect.bottom <= headerHeight) {
-                        // Last item has finished, remove sticky
-                        experienceHeader.classList.remove('sticky');
-                    } else {
-                        // Still scrolling through items, keep sticky
-                        experienceHeader.classList.add('sticky');
+            // Mobile: hide/show header based on scroll direction
+            if (isMobile) {
+                if (currentScrollY > lastScrollY && currentScrollY > 50) {
+                    // Scrolling down - hide header
+                    if (!isScrollingDown) {
+                        header.classList.add('hide');
+                        isScrollingDown = true;
                     }
-                } else {
-                    // Header hasn't reached sticky position yet, remove sticky
-                    experienceHeader.classList.remove('sticky');
+                } else if (currentScrollY < lastScrollY) {
+                    // Scrolling up - show header
+                    header.classList.remove('hide');
+                    isScrollingDown = false;
+                }
+                
+                // Show header at top of page
+                if (currentScrollY <= 10) {
+                    header.classList.remove('hide');
+                    isScrollingDown = false;
                 }
             }
             
-            window.addEventListener('scroll', handleSticky);
-            window.addEventListener('resize', handleSticky);
-            handleSticky(); // Initial check
+            lastScrollY = currentScrollY;
         }
+        window.addEventListener('scroll', handleScroll);
+        handleScroll();
     </script>
 </body>
 </html>

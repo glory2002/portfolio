@@ -9,199 +9,268 @@
     <link rel="apple-touch-icon" href="assets/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Roboto:wght@500&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;600;700&family=Roboto:wght@500&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="projects-page">
+<body>
     <div class="container">
         <!-- Header -->
         <header class="header">
-            <div class="logo-container">
-                <a href="index.html">
-                    <img src="assets/ga-logo-projects.svg" alt="Gloria Logo" class="logo">
-                </a>
+            <div class="header-content">
+                <div class="logo-container">
+                    <a href="index.html">
+                        <img src="assets/ga-logo.svg" alt="Gloria Logo" class="logo">
+                    </a>
+                </div>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="projects.html" class="nav-link active">Projects</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </nav>
             </div>
-            <button class="menu-toggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <nav class="nav">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="about.html" class="nav-link">About</a>
-                <a href="projects.html" class="nav-link active">Projects</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </nav>
         </header>
 
         <!-- Projects Section -->
         <section id="projects" class="projects-section">
             <div class="section-header">
                 <h2 class="section-title">Projects</h2>
-                <p class="section-subtitle">A selection of projects that reflect my growth and design approach.</p>
+                <p>A selection of projects that reflect my growth and design approach.</p>
             </div>
 
-            <!-- Project 1 -->
-            <div class="project-card project-card-gradient">
-                <div class="project-info-gradient">
-                    <div class="project-info-content">
-                        <div class="project-header-gradient">
-                            <h3 class="project-title-gradient">Project name</h3>
-                            <div class="project-tags-container">
-                                <span class="project-tag yellow">Task Flow Prototype</span>
-                                <span class="project-tag green">Task Flow Prototype</span>
+            <div class="projects-list">
+                <!-- Project 1 -->
+                <a href="#" class="project-card horizontal">
+                    <div class="project-info">
+                        <div class="project-info-content">
+                            <h3>Project name</h3>
+                            <div class="project-tags">
+                                <span class="tag">UI Design</span>
+                                <span class="tag">CSS/Less Implementation</span>
                             </div>
+                            <p class="project-description">I created this personal project in order to show how to create an interface in Figma using a portfolio as an example. I created this personal project in order to show how to create an interface in Figma using a portfolio as an example.</p>
                         </div>
-                        <div class="project-footer-gradient">
-                            <p>I created this personal project in order to show how to create an interface in Figma using a portfolio as an example.</p>
-                            <a href="#" class="secondary-button-l">View project</a>
+                        <div class="project-info-actions">
+                            <span class="btn btn-secondary-outline small">View Case Study</span>
                         </div>
                     </div>
-                </div>
-                <div class="project-image-gradient">
-                    <img src="assets/pexels-project-new.png" alt="Project name">
-                </div>
-            </div>
+                    <div class="project-image">
+                        <img src="assets/pexels-project-new.png" alt="Project Name">
+                    </div>
+                </a>
 
-            <!-- Project 2 -->
-            <div class="project-card project-card-gradient">
-                <div class="project-image-gradient">
-                    <img src="assets/pexels-project-new.png" alt="Project name">
-                </div>
-                <div class="project-info-gradient">
-                    <div class="project-info-content">
-                        <div class="project-header-gradient">
-                            <h3 class="project-title-gradient">Project name</h3>
-                            <div class="project-tags-container">
-                                <span class="project-tag green">UX Design</span>
+                <!-- Project 2 -->
+                <a href="#" class="project-card horizontal">
+                    <div class="project-info">
+                        <div class="project-info-content">
+                            <h3>Project name</h3>
+                            <div class="project-tags">
+                                <span class="tag">UI Design</span>
+                                <span class="tag">CSS/Less Implementation</span>
                             </div>
+                            <p class="project-description">I created this personal project in order to show how to create an interface in Figma using a portfolio as an example. I created this personal project in order to show how to create an interface in Figma using a portfolio as an example.</p>
                         </div>
-                        <div class="project-footer-gradient">
-                            <p>I created this personal project in order to show how to create an interface in Figma using a portfolio as an example.</p>
-                            <a href="#" class="secondary-button-l">View project</a>
+                        <div class="project-info-actions">
+                            <span class="btn btn-secondary-outline small">View Case Study</span>
                         </div>
                     </div>
-                </div>
-            </div>
+                    <div class="project-image">
+                        <img src="assets/pexels-project-new.png" alt="Project Name">
+                    </div>
+                </a>
 
-            <!-- Project 3 - PMU platform -->
-            <div class="project-card project-card-gradient">
-                <div class="project-info-gradient">
-                    <div class="project-info-content">
-                        <div class="project-header-gradient">
-                            <h3 class="project-title-gradient">PMU platform | Tanya Hristova PMU master</h3>
-                            <div class="project-tags-container">
-                                <span class="project-tag blue">UI/UX Design</span>
+                <!-- Project 3 -->
+                <a href="#" class="project-card horizontal">
+                    <div class="project-info">
+                        <div class="project-info-content">
+                            <h3>PMU Platform <span class="light-slash">/ Tanya Hrisova</span></h3>
+                            <div class="project-tags">
+                                <span class="tag">UI Design</span>
+                                <span class="tag">CSS/Less Implementation</span>
                             </div>
+                            <p class="project-description">I created this personal project in order to show how to create an interface in Figma using a portfolio as an example. I created this personal project in order to show how to create an interface in Figma using a portfolio as an example.</p>
                         </div>
-                        <div class="project-footer-gradient">
-                            <p>I created this personal project in order to show how to create an interface in Figma using a portfolio as an example.</p>
-                            <a href="#" class="secondary-button-l">View project</a>
+                        <div class="project-info-actions">
+                            <span class="btn btn-secondary-outline small">View Case Study</span>
                         </div>
                     </div>
-                </div>
-                <div class="project-image-gradient">
-                    <img src="assets/pexels-project-new.png" alt="PMU platform">
-                </div>
+                    <div class="project-image">
+                        <img src="assets/pexels-project-new.png" alt="PMU Platform">
+                    </div>
+                </a>
             </div>
         </section>
 
-        <!-- My Creative Voice Section -->
-        <section class="creative-voice-section">
-            <div class="section-header">
-                <h2 class="section-title">My creative voice — visual and written.</h2>
-                <p class="section-subtitle">Personal projects that reflect my vision and curiosity.</p>
-            </div>
-            <div class="creative-projects-grid">
-                <div class="project-card-vertical">
-                    <div class="project-image-vertical">
-                        <img src="assets/pexels-project-new.png" alt="My Folk Embroidery Book">
-                    </div>
-                    <div class="project-info-vertical">
-                        <span class="project-tag yellow">Graphic design</span>
-                        <h3>My Folk Embroidery Book</h3>
-                        <a href="#" class="secondary-button-l">View project</a>
-                    </div>
-                </div>
-                <div class="project-card-vertical">
-                    <div class="project-image-vertical">
-                        <img src="assets/pexels-project-new.png" alt="Personal Branding">
-                    </div>
-                    <div class="project-info-vertical">
-                        <span class="project-tag yellow">Graphic design</span>
-                        <h3>Personal Branding</h3>
-                        <a href="#" class="secondary-button-l">View project</a>
-                    </div>
-                </div>
-            </div>
-        </section>
     </div>
 
     <!-- Footer -->
     <footer id="contact" class="footer">
         <div class="footer-content">
-            <div class="footer-main">
-                <div class="footer-center">
-                    <div class="footer-header">
-                        <h2 class="footer-title">Feel free to reach out!</h2>
-                        <p class="footer-text">I'm always open to new opportunities and collaborations.</p>
-                    </div>
-                    <div class="footer-contact-links">
-                        <a href="mailto:glory.angelova@gmail.com">glory.angelova@gmail.com</a>
-                        <a href="tel:+31647355880">+31 6 47 355 880</a>
-                        <a href="https://www.linkedin.com/in/gloria-angelova-9172aa99/" target="_blank">LinkedIn</a>
-                        <a href="#">Resume</a>
-                    </div>
-                    <a href="mailto:glory.angelova@gmail.com" class="btn-primary">Get in touch with me</a>
+            <div class="connect-section">
+                <div class="connect-text">
+                    <h2>Let's connect!</h2>
+                    <p>I'm always open to new opportunities and collaborations.</p>
+                </div>
+                <a href="mailto:glory.angelova@gmail.com" class="btn btn-primary-solid" id="get-in-touch-btn">Get in touch with me</a>
+            </div>
+            
+            <div class="contact-info-section">
+                <div class="contact-column">
+                    <h3>Contact</h3>
+                    <p>Eindhoven / Netherlands</p>
+                    <p><a href="mailto:glory.angelova@gmail.com">glory.angelova@gmail.com</a></p>
+                    <p><a href="tel:+31647355880">+31 6 47 355 880</a></p>
+                </div>
+                <div class="contact-column">
+                    <h3>Social</h3>
+                    <p><a href="https://www.linkedin.com/in/gloria-angelova-9172aa99/" target="_blank">LinkedIn</a></p>
+                    <p><a href="#">Instagram</a></p>
+                    <p><a href="#">Facebook</a></p>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <div class="footer-copyright">
-                    <p>© Copyright Gloria Angelova 2025.</p>
-                </div>
-            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© Copyright Gloria Angelova / 2025</p>
         </div>
     </footer>
 
     <script>
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('.header');
-            if (window.scrollY > 50) {
+        // Mobile menu functionality
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('.nav');
+        
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            nav.classList.toggle('active');
+            document.body.classList.toggle('no-scroll');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                nav.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+            });
+        });
+
+        // Sticky header with shadow on scroll
+        const header = document.querySelector('.header');
+        let lastScrollY = window.scrollY;
+        let isScrollingDown = false;
+        
+        function handleScroll() {
+            const currentScrollY = window.scrollY;
+            const isMobile = window.innerWidth <= 768;
+            
+            // Desktop: shadow on scroll
+            if (window.scrollY > 10) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
             }
-        });
-
-        // Mobile menu toggle
-        const menuToggle = document.querySelector('.menu-toggle');
-        const nav = document.querySelector('.nav');
-        const navLinks = document.querySelectorAll('.nav-link');
-
-        menuToggle.addEventListener('click', function() {
-            menuToggle.classList.toggle('active');
-            nav.classList.toggle('active');
-        });
-
-        // Close menu when clicking on a link
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                menuToggle.classList.remove('active');
-                nav.classList.remove('active');
-            });
-        });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const isClickInsideNav = nav.contains(event.target);
-            const isClickOnToggle = menuToggle.contains(event.target);
             
-            if (!isClickInsideNav && !isClickOnToggle && nav.classList.contains('active')) {
-                menuToggle.classList.remove('active');
-                nav.classList.remove('active');
+            // Mobile: hide/show header based on scroll direction
+            if (isMobile) {
+                if (currentScrollY > lastScrollY && currentScrollY > 50) {
+                    // Scrolling down - hide header
+                    if (!isScrollingDown) {
+                        header.classList.add('hide');
+                        isScrollingDown = true;
+                    }
+                } else if (currentScrollY < lastScrollY) {
+                    // Scrolling up - show header
+                    header.classList.remove('hide');
+                    isScrollingDown = false;
+                }
+                
+                // Show header at top of page
+                if (currentScrollY <= 10) {
+                    header.classList.remove('hide');
+                    isScrollingDown = false;
+                }
+            }
+            
+            lastScrollY = currentScrollY;
+        }
+        window.addEventListener('scroll', handleScroll);
+        // Check on page load
+        handleScroll();
+
+        // Pulsing animation for Get in touch button when Contact is clicked
+        const contactLink = document.querySelector('a[href="#contact"]');
+        const getInTouchBtn = document.getElementById('get-in-touch-btn');
+        const footer = document.getElementById('contact');
+        let pulseTimeout = null;
+
+        function startPulsing() {
+            if (getInTouchBtn && !getInTouchBtn.classList.contains('pulsing')) {
+                getInTouchBtn.classList.add('pulsing');
+                
+                // Stop pulsing after 7 seconds
+                if (pulseTimeout) {
+                    clearTimeout(pulseTimeout);
+                }
+                pulseTimeout = setTimeout(() => {
+                    getInTouchBtn.classList.remove('pulsing');
+                }, 7000);
+            }
+        }
+
+        function checkIfFooterVisible() {
+            if (footer && getInTouchBtn) {
+                const footerRect = footer.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                
+                // Check if footer is visible in viewport
+                if (footerRect.top < windowHeight && footerRect.bottom > 0) {
+                    startPulsing();
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        // Listen for hash change (when Contact link is clicked)
+        window.addEventListener('hashchange', () => {
+            if (window.location.hash === '#contact') {
+                // Wait a bit for smooth scroll to complete, then check
+                setTimeout(() => {
+                    if (checkIfFooterVisible()) {
+                        // Already visible, start pulsing
+                    } else {
+                        // Wait for scroll to complete
+                        const scrollCheck = setInterval(() => {
+                            if (checkIfFooterVisible()) {
+                                clearInterval(scrollCheck);
+                            }
+                        }, 100);
+                    }
+                }, 500);
             }
         });
+
+        // Also check on Contact link click
+        if (contactLink) {
+            contactLink.addEventListener('click', () => {
+                // Wait for smooth scroll to complete
+                setTimeout(() => {
+                    checkIfFooterVisible();
+                }, 800);
+            });
+        }
+
+        // Check on page load if hash is #contact
+        if (window.location.hash === '#contact') {
+            setTimeout(() => {
+                checkIfFooterVisible();
+            }, 500);
+        }
     </script>
 </body>
 </html>
