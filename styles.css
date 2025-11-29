@@ -390,8 +390,6 @@ ul {
             width: 100%;
                 height: 100%;
             object-fit: cover;
-            object-position: center 20%;
-            transform: scale(1.1);
 }
 
 /* Projects Section */
@@ -733,7 +731,7 @@ ul {
 
 /* About Page */
 .about-hero {
-            padding: 50px 60px;
+            padding: 60px;
             display: flex;
             justify-content: center;
         }
@@ -844,13 +842,12 @@ ul {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center 20%;
-            transform: scale(1.1);
+            object-position: center;
         }
 
 /* Experience Section */
 .about-experience {
-    padding: 50px 60px;
+    padding: 60px;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -972,7 +969,7 @@ ul {
 
 /* Education & Trainings Section */
 .about-education-trainings {
-    padding: 50px 60px;
+    padding: 60px;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -1031,7 +1028,7 @@ ul {
 
 /* My Skills Section */
 .about-skills-section {
-    padding: 50px 60px 80px 60px;
+    padding: 60px 60px 80px 60px;
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
@@ -1314,6 +1311,16 @@ ul {
     .about-hero-image-container {
                 height: auto;
         min-height: 300px;
+    }
+
+    .hero-image-wrapper img {
+        object-position: center 20%;
+        transform: scale(1.1);
+    }
+
+    .about-hero-image-wrapper img {
+        object-position: center 20%;
+        transform: scale(1.1);
     }
 
     .about-trainings-skills {
