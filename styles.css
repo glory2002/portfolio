@@ -731,16 +731,15 @@ ul {
 
 /* About Page */
 .about-hero {
-            padding: 20px 0 60px 0;
+            padding: 60px;
             display: flex;
             justify-content: center;
         }
 
 .about-hero-wrapper {
             display: flex;
-            flex-direction: column;
             gap: 26px;
-            align-items: center;
+            align-items: flex-start;
             max-width: 1200px;
     width: 100%;
         }
@@ -830,8 +829,8 @@ ul {
 
 .about-hero-image-wrapper {
             position: relative;
-    width: 240px;
-    height: 240px;
+    width: 320px;
+    height: 320px;
     border-radius: 37px;
     overflow: hidden;
     z-index: 1;
@@ -1306,6 +1305,10 @@ ul {
 
     .about-hero-wrapper {
                 flex-direction: column;
+    }
+
+    .about-hero-image-container {
+        order: -1;
     }
 
     .about-hero-title-new {
