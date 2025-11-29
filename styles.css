@@ -1137,8 +1137,11 @@ ul {
                 flex-direction: column;
         justify-content: center;
         align-items: center;
-        transition: 0.3s;
+        transition: right 0.3s ease;
         z-index: 100;
+        touch-action: none;
+        overscroll-behavior: none;
+        -webkit-overflow-scrolling: touch;
             }
 
             .nav.active {

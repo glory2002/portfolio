@@ -172,8 +172,25 @@
         }
         
         if (menuToggle && nav) {
+            // Prevent touch events from opening menu
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            nav.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+            
+            nav.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                // Prevent swipe from opening menu if menu is closed
+                if (!nav.classList.contains('active') && touchEndX < touchStartX) {
+                    e.preventDefault();
+                }
+            }, { passive: false });
+            
             menuToggle.addEventListener('click', (e) => {
                 e.stopPropagation();
+                e.preventDefault();
                 menuToggle.classList.toggle('active');
                 nav.classList.toggle('active');
                 document.body.classList.toggle('no-scroll');
