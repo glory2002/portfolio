@@ -1309,6 +1309,11 @@ ul {
                 flex-direction: column;
     }
 
+    .about-hero-title-new {
+        font-size: 24px;
+        line-height: 1.2;
+    }
+
     .about-hero-image-container {
                 height: auto;
         min-height: 300px;
