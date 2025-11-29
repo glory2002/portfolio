@@ -1350,12 +1350,12 @@ ul {
 
     .about-hero {
         grid-column: 1 / -1;
-        padding: 20px 0 24px;
+        padding: 20px 0 0;
     }
 
     .about-experience {
         grid-column: 1 / -1;
-        padding: 24px 0 24px;
+        padding: 0;
     }
 
     .about-experience-header {
@@ -1400,7 +1400,7 @@ ul {
 
     .about-education-trainings {
         grid-column: 1 / -1;
-        padding: 24px 0 24px;
+        padding: 0;
     }
 
     .education-trainings-card {
@@ -1433,7 +1433,7 @@ ul {
 
     .about-skills-section {
         grid-column: 1 / -1;
-        padding: 24px 0 32px;
+        padding: 0 0 32px;
         gap: 20px;
     }
 
