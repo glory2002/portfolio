@@ -1218,12 +1218,20 @@ ul {
 
     .hero-text {
         grid-column: 1 / -1;
+        padding: 0 20px;
     }
 
     .hero-text h1 {
-        font-size: 32px;
-        white-space: nowrap;
+        font-size: 28px;
+        white-space: normal;
         width: 100%;
+        word-wrap: break-word;
+    }
+
+    @media (max-width: 375px) {
+        .hero-text h1 {
+            font-size: 24px;
+        }
     }
 
     .hero-text .tagline {
@@ -1235,6 +1243,7 @@ ul {
         display: grid;
         grid-template-columns: repeat(6, 1fr);
         gap: 12px;
+        padding: 0 20px;
     }
 
     .hero-actions .btn {
