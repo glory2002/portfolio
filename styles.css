@@ -1399,6 +1399,35 @@ ul {
 
     .about-education-trainings {
         grid-column: 1 / -1;
+        padding: 40px 0 60px;
+    }
+
+    .education-trainings-card {
+        padding: 20px 0;
+        gap: 20px;
+    }
+
+    .education-trainings-list {
+        gap: 20px;
+    }
+
+    .education-training-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 0;
+    }
+
+    .education-year {
+        width: 100%;
+    }
+
+    .education-year p {
+        font-size: 18px;
+    }
+
+    .education-name p {
+        font-size: 18px;
     }
 
     .about-skills-section {
