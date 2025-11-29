@@ -1354,7 +1354,47 @@ ul {
 
     .about-experience {
         grid-column: 1 / -1;
-        padding: 38px 0 60px;
+        padding: 40px 20px 60px;
+    }
+
+    .about-experience-header {
+        margin-bottom: 20px;
+    }
+
+    .about-experience-subtitle {
+        font-size: 16px;
+    }
+
+    .experience-list-new {
+        padding: 20px 0;
+        gap: 20px;
+    }
+
+    .experience-item-new {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 0 20px;
+    }
+
+    .experience-company-info {
+        width: 100%;
+    }
+
+    .experience-company {
+        font-size: 18px;
+    }
+
+    .experience-date {
+        font-size: 16px;
+    }
+
+    .experience-job-title-new {
+        font-size: 18px;
+    }
+
+    .experience-description {
+        font-size: 16px;
     }
 
     .about-education-trainings {
