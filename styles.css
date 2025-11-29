@@ -1318,6 +1318,17 @@ ul {
         line-height: 1.5;
     }
 
+    .about-hero-actions {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 12px;
+    }
+
+    .about-hero-actions .btn {
+        grid-column: span 3;
+    }
+
     .about-hero-image-container {
                 height: auto;
         min-height: 300px;
