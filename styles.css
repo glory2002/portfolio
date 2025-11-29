@@ -738,8 +738,9 @@ ul {
 
 .about-hero-wrapper {
             display: flex;
+            flex-direction: column;
             gap: 26px;
-            align-items: flex-start;
+            align-items: center;
             max-width: 1200px;
     width: 100%;
         }
@@ -830,8 +831,8 @@ ul {
 
 .about-hero-image-wrapper {
             position: relative;
-    width: 320px;
-    height: 320px;
+    width: 240px;
+    height: 240px;
     border-radius: 37px;
     overflow: hidden;
     z-index: 1;
