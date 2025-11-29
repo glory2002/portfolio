@@ -1432,6 +1432,17 @@ ul {
 
     .about-skills-section {
         grid-column: 1 / -1;
+        padding: 40px 0 60px;
+        gap: 20px;
+    }
+
+    .about-skills-tags {
+        gap: 10px;
+    }
+
+    .skill-tag {
+        font-size: 14px;
+        padding: 6px 10px;
     }
 
     .footer {
