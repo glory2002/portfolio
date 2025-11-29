@@ -816,7 +816,6 @@ ul {
 .about-hero-actions {
             display: flex;
             gap: 12px;
-    margin-top: 22px;
         }
 
 .about-hero-image-container {
