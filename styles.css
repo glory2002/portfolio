@@ -1243,7 +1243,6 @@ ul {
         display: grid;
         grid-template-columns: repeat(6, 1fr);
         gap: 12px;
-        padding: 0 20px;
     }
 
     .hero-actions .btn {
