@@ -265,16 +265,35 @@
             // Prevent touch events from opening menu
             let touchStartX = 0;
             let touchEndX = 0;
+            let touchStartTime = 0;
             
-            nav.addEventListener('touchstart', (e) => {
-                touchStartX = e.changedTouches[0].screenX;
+            // Prevent swipe gestures on the entire page
+            document.addEventListener('touchstart', (e) => {
+                touchStartX = e.touches[0].clientX;
+                touchStartTime = Date.now();
             }, { passive: true });
             
-            nav.addEventListener('touchend', (e) => {
-                touchEndX = e.changedTouches[0].screenX;
-                // Prevent swipe from opening menu if menu is closed
-                if (!nav.classList.contains('active') && touchEndX < touchStartX) {
+            document.addEventListener('touchmove', (e) => {
+                // Prevent swipe from left to right (opening menu) when menu is closed
+                if (!nav.classList.contains('active')) {
+                    const currentX = e.touches[0].clientX;
+                    const diffX = currentX - touchStartX;
+                    // If swiping from left edge to right (positive diffX), prevent it
+                    if (diffX > 0 && touchStartX < 50) {
+                        e.preventDefault();
+                    }
+                }
+            }, { passive: false });
+            
+            document.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].clientX;
+                const diffX = touchEndX - touchStartX;
+                const diffTime = Date.now() - touchStartTime;
+                
+                // Prevent swipe from left to right (opening menu) when menu is closed
+                if (!nav.classList.contains('active') && diffX > 50 && diffTime < 300 && touchStartX < 50) {
                     e.preventDefault();
+                    e.stopPropagation();
                 }
             }, { passive: false });
             
