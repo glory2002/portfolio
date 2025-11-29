@@ -1354,7 +1354,7 @@ ul {
 
     .about-experience {
         grid-column: 1 / -1;
-        padding: 40px 20px 60px;
+        padding: 40px 0 60px;
     }
 
     .about-experience-header {
