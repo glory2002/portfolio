@@ -731,7 +731,7 @@ ul {
 
 /* About Page */
 .about-hero {
-            padding: 60px;
+            padding: 60px 20px;
             display: flex;
             justify-content: center;
         }
