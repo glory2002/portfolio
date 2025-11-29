@@ -264,36 +264,57 @@
         if (menuToggle && nav) {
             // Prevent touch events from opening menu
             let touchStartX = 0;
-            let touchEndX = 0;
+            let touchStartY = 0;
             let touchStartTime = 0;
+            let isHorizontalSwipe = false;
             
             // Prevent swipe gestures on the entire page
             document.addEventListener('touchstart', (e) => {
                 touchStartX = e.touches[0].clientX;
+                touchStartY = e.touches[0].clientY;
                 touchStartTime = Date.now();
+                isHorizontalSwipe = false;
             }, { passive: true });
             
             document.addEventListener('touchmove', (e) => {
-                // Prevent swipe from left to right (opening menu) when menu is closed
+                // Only prevent if menu is closed
                 if (!nav.classList.contains('active')) {
                     const currentX = e.touches[0].clientX;
+                    const currentY = e.touches[0].clientY;
                     const diffX = currentX - touchStartX;
-                    // If swiping from left edge to right (positive diffX), prevent it
-                    if (diffX > 0 && touchStartX < 50) {
-                        e.preventDefault();
+                    const diffY = Math.abs(currentY - touchStartY);
+                    
+                    // Determine if this is a horizontal swipe
+                    if (Math.abs(diffX) > Math.abs(diffY)) {
+                        isHorizontalSwipe = true;
+                        // Prevent any horizontal swipe that could trigger menu
+                        // Block swipe from left edge (opening menu) or from right (closing menu when closed)
+                        if ((diffX > 0 && touchStartX < 50) || (diffX < 0 && touchStartX > window.innerWidth - 50)) {
+                            e.preventDefault();
+                        }
                     }
                 }
             }, { passive: false });
             
             document.addEventListener('touchend', (e) => {
-                touchEndX = e.changedTouches[0].clientX;
-                const diffX = touchEndX - touchStartX;
-                const diffTime = Date.now() - touchStartTime;
-                
-                // Prevent swipe from left to right (opening menu) when menu is closed
-                if (!nav.classList.contains('active') && diffX > 50 && diffTime < 300 && touchStartX < 50) {
-                    e.preventDefault();
-                    e.stopPropagation();
+                if (!nav.classList.contains('active') && isHorizontalSwipe) {
+                    const touchEndX = e.changedTouches[0].clientX;
+                    const diffX = touchEndX - touchStartX;
+                    const diffTime = Date.now() - touchStartTime;
+                    
+                    // Prevent any significant horizontal swipe
+                    if (Math.abs(diffX) > 30 && diffTime < 500) {
+                        // Block swipe from left edge (opening menu)
+                        if (diffX > 0 && touchStartX < 50) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                        }
+                        // Block swipe from right edge (closing menu when already closed)
+                        if (diffX < 0 && touchStartX > window.innerWidth - 50) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                        }
+                    }
                 }
             }, { passive: false });
             
