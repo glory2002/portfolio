@@ -403,6 +403,7 @@ ul {
             flex-direction: column;
     gap: 48px;
     max-width: 1200px;
+    scroll-margin-top: 100px;
     margin: 0 auto;
 }
 
