@@ -20,6 +20,10 @@
             box-sizing: border-box;
         }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: var(--font-body);
     color: var(--text-color);
@@ -131,8 +135,8 @@ ul {
     background: none;
     border: none;
     cursor: pointer;
-    position: relative;
-}
+            position: relative;
+        }
 
 .menu-toggle span {
     width: 30px;
@@ -170,11 +174,11 @@ ul {
         }
 
 
-.hero-wrapper {
-    display: flex;
+        .hero-wrapper {
+            display: flex;
     justify-content: space-between;
-    align-items: center;
-    width: 100%;
+            align-items: center;
+            width: 100%;
     max-width: 1012px;
     gap: 55px;
         }
@@ -808,7 +812,7 @@ ul {
     font-family: var(--font-body);
             font-size: 18px;
             font-weight: 400;
-    line-height: 1.29;
+            line-height: 1.29;
     color: var(--text-color);
             margin: 0;
         }
@@ -943,9 +947,9 @@ ul {
         }
 
 .experience-job-info {
-                flex: 1;
-                display: flex;
-                flex-direction: column;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
     gap: 8px;
 }
 
@@ -979,8 +983,8 @@ ul {
     border-radius: var(--border-radius-large);
             display: flex;
             flex-direction: column;
-    gap: 22px;
-}
+            gap: 22px;
+        }
 
 /* Removed - now using .section-title */
 
@@ -993,8 +997,8 @@ ul {
 .education-training-item {
             display: flex;
     gap: 98px;
-                align-items: center;
-}
+            align-items: center;
+        }
 
 .education-year {
     width: 174px;
@@ -1010,7 +1014,7 @@ ul {
             font-weight: 400;
     color: var(--text-color);
             margin: 0;
-                line-height: normal;
+            line-height: normal;
 }
 
 .education-name {
@@ -1118,11 +1122,11 @@ ul {
     .logo-container {
         order: 1;
         justify-content: flex-start;
-        margin: 0;
-    }
+            margin: 0;
+        }
 
-    .menu-toggle {
-        display: flex;
+        .menu-toggle {
+                display: flex;
         z-index: 101;
         order: 2;
         margin: 0;
@@ -1139,7 +1143,7 @@ ul {
                 flex-direction: column;
         justify-content: center;
         align-items: center;
-        transition: right 0.3s ease;
+                transition: right 0.3s ease;
         z-index: 100;
         touch-action: none;
         overscroll-behavior: none;
@@ -1167,19 +1171,19 @@ ul {
     .hero-text h1 {
         font-size: 28px;
         white-space: normal;
-        width: 100%;
+                width: 100%;
         word-wrap: break-word;
     }
 
     @media (max-width: 375px) {
         .hero-text h1 {
-            font-size: 24px;
-        }
+                font-size: 24px;
+            }
     }
 
     .hero-text .tagline {
-        font-size: 18px;
-    }
+            font-size: 18px;
+        }
 
     .hero-actions {
         grid-column: 1 / -1;
@@ -1195,25 +1199,25 @@ ul {
     .projects-section, .creative-voice-section {
         grid-column: 1 / -1;
         padding: 40px 0;
-    }
+        }
 
-    .section-header {
+        .section-header {
         grid-column: 1 / -1;
     }
 
     .projects-list {
         grid-column: 1 / -1;
-        gap: 20px;
-    }
+            gap: 20px;
+        }
 
     .section-title,
     .section-header h2,
     .section-header .section-title {
-        font-size: 28px;
+            font-size: 28px;
             }
 
     .project-card.horizontal {
-        flex-direction: column;
+            flex-direction: column;
         height: auto;
     }
     
@@ -1223,13 +1227,13 @@ ul {
         height: 450px !important;
         width: 100%;
         flex: none !important;
-        flex-shrink: 0;
+            flex-shrink: 0;
     }
 
     .project-card.horizontal .project-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         border-radius: var(--border-radius-large) var(--border-radius-large) 0 0;
     }
 
@@ -1258,13 +1262,13 @@ ul {
 
     .project-info-actions {
         margin-top: 0;
-        width: 100%;
+            width: 100%;
     }
 
     .project-info-actions .btn {
         width: 100%;
         padding: 12px 26px;
-        font-size: 16px;
+            font-size: 16px;
     }
 
     .connect-text h2 {
@@ -1273,13 +1277,13 @@ ul {
 
     .connect-text p {
                 font-size: 20px;
-            }
+        }
 
-    .footer-content {
+        .footer-content {
         padding: 0 30px;
-    }
+        }
 
-    .footer-bottom {
+        .footer-bottom {
         padding: 0 30px;
     }
 
@@ -1289,14 +1293,14 @@ ul {
     }
 
     .connect-section .btn {
-        width: 100%;
-    }
+            width: 100%;
+        }
 
     .contact-info-section {
         flex-direction: row;
         align-items: flex-start;
         gap: 30px;
-        width: 100%;
+            width: 100%;
         justify-content: space-between;
     }
 
@@ -1309,7 +1313,7 @@ ul {
     }
 
     .about-hero-wrapper {
-                flex-direction: column;
+            flex-direction: column;
     }
 
     .about-hero-image-container {
@@ -1317,7 +1321,7 @@ ul {
     }
 
     .about-hero-title-new {
-        font-size: 24px;
+                font-size: 24px;
         line-height: 1.2;
     }
 
@@ -1353,7 +1357,7 @@ ul {
     }
 
     .about-trainings-skills {
-        flex-direction: column;
+                flex-direction: column;
     }
 
     .about-hero {
@@ -1380,14 +1384,14 @@ ul {
     }
 
     .experience-item-new {
-        flex-direction: column;
+                flex-direction: column;
         align-items: flex-start;
         gap: 12px;
         padding: 0;
     }
 
     .experience-company-info {
-        width: 100%;
+                width: 100%;
     }
 
     .experience-company {
@@ -1421,14 +1425,14 @@ ul {
     }
 
     .education-training-item {
-        flex-direction: column;
-        align-items: flex-start;
+                flex-direction: column;
+                align-items: flex-start;
         gap: 12px;
         padding: 0;
     }
 
     .education-year {
-        width: 100%;
+                width: 100%;
     }
 
     .education-year p {
