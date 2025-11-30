@@ -525,6 +525,7 @@ ul {
             font-size: 12px;
     padding: 8px 10px;
             border-radius: 20px;
+    text-transform: uppercase;
         }
 
 .project-description {
@@ -1052,6 +1053,7 @@ ul {
     padding: 8px 10px;
     border-radius: 20px;
             line-height: 1;
+    text-transform: uppercase;
         }
 
 /* Responsive */
