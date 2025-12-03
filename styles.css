@@ -1325,10 +1325,19 @@ ul {
 
     .about-hero-wrapper {
             flex-direction: column;
+            gap: 0; /* Remove desktop gap: 4rem */
+            padding: 0 20px; /* Add mobile padding to wrapper */
     }
-
+    
+    .about-hero-content {
+        flex: 1; /* Remove desktop flex: 0 0 58% */
+        max-width: 100%; /* Remove desktop max-width: 58% */
+    }
+    
     .about-hero-image-container {
         order: -1;
+        flex: 1; /* Remove desktop flex: 0 0 42% */
+        max-width: 100%; /* Remove desktop max-width: 42% */
     }
 
     .about-hero-title-new {
