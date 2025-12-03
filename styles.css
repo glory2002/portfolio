@@ -751,7 +751,7 @@ ul {
             align-items: flex-start;
             max-width: 1200px;
             width: 100%;
-            padding: 0 60px;
+            padding: 0;
         }
 
 .about-hero-content {
