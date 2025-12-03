@@ -528,6 +528,7 @@ ul {
 .tag {
     background-color: var(--soft-lavender);
     color: var(--deep-lavender);
+    font-family: var(--font-body);
             font-size: 12px;
     padding: 8px 10px;
             border-radius: 20px;
@@ -1053,7 +1054,7 @@ ul {
 .skill-tag {
     background-color: var(--soft-lavender);
     color: var(--deep-lavender);
-    font-family: var(--font-heading);
+    font-family: var(--font-body);
             font-size: 16px;
             font-weight: 400;
     padding: 8px 10px;
