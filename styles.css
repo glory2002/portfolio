@@ -1170,6 +1170,10 @@ ul {
             .nav.active {
                 right: 0;
             }
+            
+            .nav-link {
+                font-size: 24px; /* Larger font for mobile menu */
+            }
 
     .header {
         grid-column: 1 / -1;
