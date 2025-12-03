@@ -922,7 +922,6 @@ ul {
 .experience-item-new {
             display: flex;
     gap: 98px;
-            align-items: center;
         }
 
 .experience-company-info {
