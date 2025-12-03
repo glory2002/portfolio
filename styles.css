@@ -1203,6 +1203,7 @@ ul {
         display: grid;
         grid-template-columns: repeat(6, 1fr);
         gap: 12px;
+        margin-top: 0; /* Remove desktop margin-top on mobile */
     }
 
         .hero-actions .btn {
