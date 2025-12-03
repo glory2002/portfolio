@@ -161,7 +161,7 @@ ul {
 
 .menu-toggle.active span:nth-child(2) {
     transform: rotate(-45deg) translateY(-4px);
-}
+        }
 
         /* Hero Section */
         .hero {
@@ -472,12 +472,13 @@ ul {
 }
 
 /* When hovering on project card, make the button look like primary button */
-.project-card:hover .btn-secondary-outline {
+.project-card:hover .btn-secondary-outline,
+.project-card:hover .btn-secondary-outline:hover {
     background: linear-gradient(to right, var(--deep-lavender), var(--crisp-lilac));
     color: var(--white);
     border: none;
     transform: translateY(-2px);
-    box-shadow: none; /* Remove shadow for button when card is hovered */
+    box-shadow: none !important; /* Remove shadow for button when card is hovered */
     transition: color 0.08s ease, background 0.08s ease, border 0.08s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -536,10 +537,10 @@ ul {
 .project-description {
     font-size: 16px;
     line-height: 1.5;
-    margin: 0;
+            margin: 0;
     max-width: none;
     font-weight: 300;
-}
+        }
 
 .project-image {
             flex: 1;
