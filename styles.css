@@ -1203,9 +1203,9 @@ ul {
         gap: 12px;
     }
 
-    .hero-actions .btn {
-        grid-column: span 3;
-    }
+        .hero-actions .btn {
+            grid-column: span 3;
+        }
 
     .projects-section, .creative-voice-section {
         grid-column: 1 / -1;
@@ -1348,9 +1348,16 @@ ul {
         gap: 12px;
     }
 
-    .about-hero-actions .btn {
-        grid-column: span 3;
-    }
+        .about-hero-actions .btn {
+            grid-column: span 3;
+        }
+
+        /* Restore more compact button padding on mobile */
+        .hero-actions .btn,
+        .about-hero-actions .btn,
+        .connect-section .btn {
+            padding: 12px 26px;
+        }
 
     .about-hero-image-container {
                 height: auto;
