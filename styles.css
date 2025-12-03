@@ -856,7 +856,7 @@ ul {
 
 /* Experience Section */
 .about-experience {
-        padding: 0 60px 60px;
+        padding: 0 2rem 60px;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -977,7 +977,7 @@ ul {
 
 /* Education & Trainings Section */
 .about-education-trainings {
-        padding: 0 60px 60px;
+        padding: 0 2rem 60px;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -995,13 +995,18 @@ ul {
 .education-trainings-list {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 0;
         }
 
 .education-training-item {
             display: flex;
     gap: 98px;
             align-items: center;
+            margin-bottom: 0.75rem;
+        }
+
+.education-training-item:last-child {
+            margin-bottom: 0;
         }
 
 .education-year {
@@ -1036,7 +1041,7 @@ ul {
 
 /* My Skills Section */
 .about-skills-section {
-        padding: 0 60px 80px 60px;
+        padding: 0 2rem 80px;
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
@@ -1049,7 +1054,8 @@ ul {
 .skills-tags {
             display: flex;
     flex-wrap: wrap;
-    gap: 14px;
+    gap: 1rem;
+    row-gap: 1rem;
 }
 
 .skill-tag {
