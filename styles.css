@@ -1326,7 +1326,6 @@ ul {
     .about-hero-wrapper {
             flex-direction: column;
             gap: 0; /* Remove desktop gap: 4rem */
-            padding: 0 20px; /* Add mobile padding to wrapper */
     }
     
     .about-hero-content {
