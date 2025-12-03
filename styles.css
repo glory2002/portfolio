@@ -1346,6 +1346,7 @@ ul {
         display: grid;
         grid-template-columns: repeat(6, 1fr);
         gap: 12px;
+        margin-top: 0; /* Remove desktop margin-top on mobile */
     }
 
         .about-hero-actions .btn {
@@ -1380,7 +1381,11 @@ ul {
 
     .about-hero {
         grid-column: 1 / -1;
-        padding: 20px 0 0;
+        padding: 20px 0 0; /* Override desktop padding: 60px 2rem 60px */
+    }
+    
+    .about-hero-wrapper {
+        padding: 0 20px; /* Add mobile padding to wrapper instead */
     }
 
     .about-experience {
@@ -1406,7 +1411,7 @@ ul {
         align-items: flex-start;
         gap: 12px;
         padding: 0;
-    }
+            }
 
     .experience-company-info {
                 width: 100%;
@@ -1447,6 +1452,7 @@ ul {
                 align-items: flex-start;
         gap: 12px;
         padding: 0;
+        margin-bottom: 0; /* Remove desktop margin-bottom on mobile */
     }
 
     .education-year {
