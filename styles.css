@@ -977,7 +977,7 @@ ul {
 
 /* Education & Trainings Section */
 .about-education-trainings {
-        padding: 0 2rem 60px;
+        padding: 0 60px 60px;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -1041,7 +1041,7 @@ ul {
 
 /* My Skills Section */
 .about-skills-section {
-        padding: 0 2rem 80px;
+        padding: 0 60px 80px;
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
