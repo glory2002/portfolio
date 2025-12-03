@@ -1392,10 +1392,6 @@ ul {
         grid-column: 1 / -1;
         padding: 20px 0 0; /* Override desktop padding: 60px 2rem 60px */
     }
-    
-    .about-hero-wrapper {
-        padding: 0 20px; /* Add mobile padding to wrapper instead */
-    }
 
     .about-experience {
         grid-column: 1 / -1;
