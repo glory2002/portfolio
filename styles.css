@@ -260,7 +260,7 @@ ul {
 }
 
 .btn {
-    padding: 16px 26px;
+    padding: 14px 32px;
     border-radius: 100px;
     font-family: var(--font-heading);
     font-weight: 600;
@@ -307,7 +307,7 @@ ul {
 }
 
 .btn-secondary-outline.small {
-    padding: 16px 26px;
+    padding: 14px 32px;
     font-size: 18px;
     border-radius: 100px;
 }
@@ -316,7 +316,7 @@ ul {
     background: linear-gradient(to right, var(--deep-lavender), var(--crisp-lilac));
     color: var(--white);
     border: none;
-    padding: 18px 28px;
+    padding: 14px 32px;
     font-size: 16px;
     transition: background 0.3s ease, transform 0.2s ease;
 }
