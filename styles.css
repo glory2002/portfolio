@@ -1019,7 +1019,7 @@ ul {
 
 .education-year p {
     font-family: var(--font-heading);
-                font-size: 20px;
+            font-size: 18px;
             font-weight: 400;
     color: var(--text-color);
             margin: 0;
