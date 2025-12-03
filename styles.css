@@ -299,9 +299,9 @@ ul {
 }
 
 .btn-secondary-outline:hover {
-    background: linear-gradient(to right, #6b4fff, #8d6fff);
-    color: var(--white);
-    border-color: transparent;
+    background: var(--soft-lavender); /* light purple like tag background */
+    color: var(--deep-lavender);
+    border-color: var(--deep-lavender);
     transform: translateY(-2px);
     box-shadow: 0 4px 16px rgba(0,0,0,0.25);
 }
@@ -1067,7 +1067,7 @@ ul {
         @media (max-width: 1024px) {
     .hero-wrapper {
         flex-direction: column-reverse;
-        text-align: center;
+            text-align: center;
     }
     
     .hero-content {
