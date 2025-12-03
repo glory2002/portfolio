@@ -257,6 +257,7 @@ ul {
 .hero-actions {
             display: flex;
     gap: 12px;
+    margin-top: 28px; /* Ideal spacing between paragraph and CTA buttons */
 }
 
 .btn {
