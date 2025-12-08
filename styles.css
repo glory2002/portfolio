@@ -755,8 +755,8 @@ ul {
         }
 
 .about-hero-content {
-            flex: 0 0 58%; /* text area ~60% width for better readability */
-    max-width: 58%;
+            flex: 0 0 61.8%; /* Golden ratio: text area */
+    max-width: 61.8%;
             display: flex;
             flex-direction: column;
             gap: 16px;
@@ -830,8 +830,8 @@ ul {
         }
 
 .about-hero-image-container {
-            flex: 0 0 42%; /* photo area ~40% width to balance layout */
-    max-width: 42%;
+            flex: 0 0 38.2%; /* Golden ratio: photo area */
+    max-width: 38.2%;
             position: relative;
     height: 424px;
             display: flex;
