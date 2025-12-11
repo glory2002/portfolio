@@ -934,8 +934,8 @@ ul {
             display: flex;
             flex-direction: column;
             gap: 8px;
-    flex: 0 0 38.2%; /* Golden ratio: smaller part */
-    max-width: 38.2%;
+    width: 174px;
+    flex-shrink: 0;
         }
 
 .experience-company {
@@ -957,8 +957,7 @@ ul {
         }
 
 .experience-job-info {
-            flex: 0 0 61.8%; /* Golden ratio: larger part */
-    max-width: 61.8%;
+            flex: 1;
             display: flex;
             flex-direction: column;
     gap: 8px;
@@ -1171,7 +1170,7 @@ ul {
             .nav.active {
                 right: 0;
             }
-            
+
             .nav-link {
                 font-size: 24px; /* Larger font for mobile menu */
             }
