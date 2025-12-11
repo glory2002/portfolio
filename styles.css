@@ -928,6 +928,12 @@ ul {
 .experience-item-new {
             display: flex;
     gap: 98px;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+
+.experience-item-new:last-child {
+            margin-bottom: 0;
         }
 
 .experience-company-info {
@@ -1001,18 +1007,13 @@ ul {
 .education-trainings-list {
             display: flex;
             flex-direction: column;
-            gap: 0;
+            gap: 27px;
         }
 
 .education-training-item {
             display: flex;
     gap: 98px;
             align-items: center;
-            margin-bottom: 0.75rem;
-        }
-
-.education-training-item:last-child {
-            margin-bottom: 0;
         }
 
 .education-year {
