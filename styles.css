@@ -1338,6 +1338,7 @@ ul {
     .about-hero-wrapper {
             flex-direction: column;
             gap: 0; /* Remove desktop gap: 4rem */
+            padding: 0; /* Remove padding on mobile */
     }
     
     .about-hero-content {
