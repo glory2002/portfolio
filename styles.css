@@ -740,11 +740,9 @@ ul {
 
 /* About Page */
 .about-hero {
-            padding: 60px 60px 60px;
+            padding: 60px 0;
             display: flex;
             justify-content: center;
-            max-width: 1200px;
-            margin: 0 auto;
         }
 
 .about-hero-wrapper {
@@ -753,7 +751,7 @@ ul {
             align-items: flex-start;
             max-width: 1200px;
             width: 100%;
-            padding: 0;
+            padding: 0 60px;
         }
 
 .about-hero-content {
