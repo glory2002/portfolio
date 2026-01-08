@@ -368,10 +368,25 @@ ul {
     width: 320px;
     height: 320px;
             border-radius: 24px;
-            overflow: hidden;
+            overflow: visible; /* Changed to visible to show background animation */
             position: relative;
             animation: fluid-shape 5s ease-in-out infinite;
         }
+
+.hero-image-wrapper::after {
+            content: '';
+            position: absolute;
+    top: -30px;
+    left: -30px;
+    right: -30px;
+    bottom: -30px;
+    background: linear-gradient(135deg, var(--deep-lavender), var(--crisp-lilac));
+    opacity: 0.4;
+            z-index: -1;
+    animation: fluid-shape-reverse 6s ease-in-out infinite;
+    border-radius: 37px;
+    pointer-events: none;
+}
 
 @keyframes fluid-shape {
     0% {
@@ -395,7 +410,12 @@ ul {
             width: 100%;
                 height: 100%;
             object-fit: cover;
-}
+            object-position: center 20%; /* Center face */
+            transform: scale(1.2); /* Zoom in to show face better */
+            border-radius: 24px;
+            position: relative;
+            z-index: 1;
+        }
 
 /* Projects Section */
 .projects-section {
@@ -421,8 +441,8 @@ ul {
     color: var(--text-color);
     margin: 0;
             padding: 0;
-    line-height: 1.0;
-}
+            line-height: 1.0;
+        }
 
 .section-header h2,
 .section-header .section-title {
@@ -846,18 +866,55 @@ ul {
     width: 320px;
     height: 320px;
     border-radius: 37px;
-    overflow: hidden;
+    overflow: visible; /* Changed to visible to show background animation */
     z-index: 1;
     animation: fluid-shape 5s ease-in-out infinite;
     margin: 0 auto;
+}
+
+.about-hero-image-wrapper::after {
+    content: '';
+            position: absolute;
+    top: -30px;
+    left: -30px;
+    right: -30px;
+    bottom: -30px;
+    background: linear-gradient(135deg, var(--deep-lavender), var(--crisp-lilac));
+    opacity: 0.4;
+    z-index: -1;
+    animation: fluid-shape-reverse 6s ease-in-out infinite;
+    border-radius: 37px;
+    pointer-events: none;
+}
+
+@keyframes fluid-shape-reverse {
+    0% {
+        border-radius: 40% 60% 30% 70% / 70% 30% 60% 40%;
+    }
+    25% {
+        border-radius: 70% 30% 60% 40% / 30% 70% 40% 60%;
+    }
+    50% {
+        border-radius: 50% 50% 40% 60% / 40% 60% 50% 50%;
+    }
+    75% {
+        border-radius: 60% 40% 50% 50% / 60% 50% 40% 50%;
+    }
+    100% {
+        border-radius: 40% 60% 30% 70% / 70% 30% 60% 40%;
+    }
 }
 
 .about-hero-image-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center center;
+            object-position: center 20%; /* Center face */
+            transform: scale(1.2); /* Zoom in to show face better */
             display: block;
+            border-radius: 37px;
+            position: relative;
+            z-index: 1;
         }
 
 /* Experience Section */
@@ -1387,13 +1444,13 @@ ul {
     }
 
     .hero-image-wrapper img {
-        object-position: center 20%;
-        transform: scale(1.1);
+        object-position: center 20%; /* Center face */
+        transform: scale(1.3); /* More zoom for mobile */
     }
 
     .about-hero-image-wrapper img {
-        object-position: center 20%;
-        transform: scale(1.1);
+        object-position: center 20%; /* Center face */
+        transform: scale(1.3); /* More zoom for mobile */
     }
 
     .about-trainings-skills {
