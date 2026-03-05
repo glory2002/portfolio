@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PMU Platform case study – UI/UX design for Tanya Hristova's permanent makeup academy. Discover the design process, challenges, and outcome.">
+    <meta name="keywords" content="UI/UX Designer, Case Study, PMU, Permanent Makeup, Tanya Hristova, Gloria Angelova">
+    <meta name="author" content="Gloria Angelova">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gloryangelova.com/project-pmu.html">
+    <meta property="og:title" content="PMU Platform – Case Study | Gloria Angelova">
+    <meta property="og:description" content="UI/UX design for Tanya Hristova's permanent makeup academy platform.">
+    <meta property="og:image" content="https://gloryangelova.com/assets/gloria-profile-about-new.png">
+
+    <title>PMU Platform – Case Study | Gloria Angelova</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="shortcut icon" href="assets/favicon.svg">
+    <link rel="apple-touch-icon" href="assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=4.0">
+
+    <style>
+        /* ── Case Study page-specific styles ── */
+
+        .cs-hero {
+            padding: 80px 60px 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .cs-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-body);
+            font-size: 16px;
+            color: var(--deep-lavender);
+            margin-bottom: 48px;
+            transition: gap 0.2s ease;
+        }
+
+        .cs-back:hover { gap: 14px; }
+
+        .cs-back svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+
+        .cs-eyebrow {
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--deep-lavender);
+            margin-bottom: 16px;
+        }
+
+        .cs-title {
+            font-family: var(--font-heading);
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 600;
+            line-height: 1.15;
+            color: var(--text-color);
+            margin-bottom: 24px;
+        }
+
+        .cs-title .light-slash {
+            font-weight: 300;
+        }
+
+        .cs-subtitle {
+            font-size: 20px;
+            font-weight: 300;
+            line-height: 1.65;
+            color: var(--text-color);
+            max-width: 720px;
+            margin-bottom: 40px;
+        }
+
+        .cs-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        /* ── Cover image ── */
+        .cs-cover {
+            width: calc(100% - 36px);
+            margin: 0 18px;
+            border-radius: 24px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #ede9ff 0%, #f5f5ff 60%, #e8e4ff 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 460px;
+        }
+
+        .cs-cover-inner {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px;
+            gap: 48px;
+        }
+
+        .cs-cover-text {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .cs-cover-label {
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--deep-lavender);
+        }
+
+        .cs-cover-heading {
+            font-family: var(--font-heading);
+            font-size: clamp(28px, 4vw, 44px);
+            font-weight: 600;
+            line-height: 1.2;
+            color: var(--text-color);
+        }
+
+        .cs-cover-desc {
+            font-size: 17px;
+            font-weight: 300;
+            line-height: 1.65;
+            color: #444;
+            max-width: 480px;
+        }
+
+        .cs-cover-mockup {
+            flex: 0 0 auto;
+            width: 380px;
+            height: 280px;
+            border-radius: 20px;
+            background: var(--white);
+            box-shadow: 0 24px 64px rgba(123, 97, 255, 0.18);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mockup-bar {
+            height: 36px;
+            background: #f0f0f6;
+            display: flex;
+            align-items: center;
+            padding: 0 14px;
+            gap: 7px;
+            flex-shrink: 0;
+        }
+
+        .mockup-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .mockup-dot:nth-child(1) { background: #ff6059; }
+        .mockup-dot:nth-child(2) { background: #febc2e; }
+        .mockup-dot:nth-child(3) { background: #29c840; }
+
+        .mockup-content {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .mockup-hero-block {
+            height: 80px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--deep-lavender), var(--crisp-lilac));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mockup-hero-block span {
+            color: rgba(255,255,255,0.85);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .mockup-cards {
+            display: flex;
+            gap: 8px;
+        }
+
+        .mockup-card {
+            flex: 1;
+            height: 56px;
+            border-radius: 8px;
+            background: var(--soft-lavender);
+        }
+
+        .mockup-line {
+            height: 8px;
+            border-radius: 4px;
+            background: #e8e4ff;
+        }
+
+        .mockup-line.short { width: 60%; }
+
+        /* ── Content sections ── */
+        .cs-body {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 60px;
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+        }
+
+        .cs-section {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .cs-section-label {
+            font-family: var(--font-body);
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--deep-lavender);
+        }
+
+        .cs-section-title {
+            font-family: var(--font-heading);
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--text-color);
+            margin: 0;
+        }
+
+        .cs-section-body {
+            font-size: 17px;
+            font-weight: 300;
+            line-height: 1.75;
+            color: var(--text-color);
+            max-width: 820px;
+        }
+
+        .cs-section-body p + p { margin-top: 16px; }
+
+        /* ── Meta grid ── */
+        .cs-meta-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .cs-meta-card {
+            background: var(--soft-lavender);
+            border-radius: 16px;
+            padding: 28px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .cs-meta-label {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--deep-lavender);
+        }
+
+        .cs-meta-value {
+            font-family: var(--font-heading);
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--text-color);
+            line-height: 1.4;
+        }
+
+        /* ── Divider ── */
+        .cs-divider {
+            width: 100%;
+            height: 1px;
+            background: #ececf5;
+        }
+
+        /* ── Two-column layout ── */
+        .cs-two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: start;
+        }
+
+        .cs-two-col.wide-left {
+            grid-template-columns: 3fr 2fr;
+        }
+
+        /* ── Insight cards ── */
+        .cs-insight-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .cs-insight-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 28px 24px;
+            border: 1px solid #ececf5;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            box-shadow: 0 2px 24px rgba(0,0,0,0.05);
+        }
+
+        .cs-insight-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: var(--soft-lavender);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cs-insight-icon svg {
+            width: 22px;
+            height: 22px;
+            color: var(--deep-lavender);
+        }
+
+        .cs-insight-title {
+            font-family: var(--font-heading);
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .cs-insight-body {
+            font-size: 15px;
+            font-weight: 300;
+            line-height: 1.65;
+            color: #555;
+        }
+
+        /* ── Process steps ── */
+        .cs-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .cs-step {
+            display: flex;
+            gap: 28px;
+            padding: 32px 0;
+            border-bottom: 1px solid #ececf5;
+        }
+
+        .cs-step:last-child { border-bottom: none; }
+
+        .cs-step-number {
+            flex: 0 0 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--soft-lavender);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-heading);
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--deep-lavender);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .cs-step-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .cs-step-title {
+            font-family: var(--font-heading);
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .cs-step-body {
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.65;
+            color: #555;
+        }
+
+        /* ── Result stats ── */
+        .cs-stat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .cs-stat-card {
+            background: var(--text-color);
+            border-radius: 20px;
+            padding: 36px 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .cs-stat-number {
+            font-family: var(--font-heading);
+            font-size: 44px;
+            font-weight: 600;
+            background: linear-gradient(to right, var(--deep-lavender), var(--crisp-lilac));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+        }
+
+        .cs-stat-label {
+            font-size: 16px;
+            font-weight: 300;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.5;
+        }
+
+        /* ── Wireframe placeholder tiles ── */
+        .cs-wireframe-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .cs-wireframe-tile {
+            aspect-ratio: 9 / 16;
+            border-radius: 16px;
+            background: var(--soft-lavender);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 18px;
+            overflow: hidden;
+        }
+
+        .cs-wireframe-tile .wf-bar {
+            height: 12px;
+            border-radius: 6px;
+            background: rgba(123, 97, 255, 0.2);
+        }
+
+        .cs-wireframe-tile .wf-block {
+            flex: 1;
+            border-radius: 10px;
+            background: rgba(123, 97, 255, 0.1);
+        }
+
+        .cs-wireframe-tile .wf-sm {
+            height: 8px;
+            border-radius: 4px;
+            background: rgba(123, 97, 255, 0.15);
+        }
+
+        .cs-wireframe-tile .wf-sm.half { width: 55%; }
+
+        .cs-wireframe-label {
+            text-align: center;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--deep-lavender);
+            margin-top: 8px;
+        }
+
+        /* ── Quote pull ── */
+        .cs-quote {
+            border-left: 3px solid var(--deep-lavender);
+            padding: 20px 32px;
+            background: var(--soft-lavender);
+            border-radius: 0 16px 16px 0;
+        }
+
+        .cs-quote p {
+            font-family: var(--font-heading);
+            font-size: 20px;
+            font-weight: 400;
+            font-style: italic;
+            line-height: 1.65;
+            color: var(--text-color);
+        }
+
+        .cs-quote cite {
+            display: block;
+            margin-top: 12px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--deep-lavender);
+            font-style: normal;
+        }
+
+        /* ── Next project banner ── */
+        .cs-next {
+            background: linear-gradient(135deg, var(--deep-lavender), var(--crisp-lilac));
+            border-radius: 24px;
+            padding: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 32px;
+            margin: 0 18px 18px;
+            width: calc(100% - 36px);
+            box-sizing: border-box;
+        }
+
+        .cs-next-text {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .cs-next-eyebrow {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: rgba(255,255,255,0.65);
+        }
+
+        .cs-next-title {
+            font-family: var(--font-heading);
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .btn-white-outline {
+            background: transparent;
+            color: var(--white);
+            border: 1.5px solid rgba(255,255,255,0.7);
+            border-radius: 100px;
+            padding: 14px 32px;
+            font-family: var(--font-heading);
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.25s ease, border-color 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+        .btn-white-outline:hover {
+            background: rgba(255,255,255,0.15);
+            border-color: var(--white);
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 900px) {
+            .cs-hero { padding: 60px 24px 40px; }
+            .cs-body { padding: 60px 24px; gap: 56px; }
+            .cs-meta-grid { grid-template-columns: repeat(2, 1fr); }
+            .cs-insight-grid { grid-template-columns: 1fr 1fr; }
+            .cs-two-col, .cs-two-col.wide-left { grid-template-columns: 1fr; }
+            .cs-stat-grid { grid-template-columns: 1fr; gap: 16px; }
+            .cs-wireframe-grid { grid-template-columns: 1fr 1fr; }
+            .cs-cover { margin: 0; border-radius: 0; }
+            .cs-cover-inner { flex-direction: column; padding: 36px 24px; }
+            .cs-cover-mockup { width: 100%; height: 200px; }
+            .cs-next { flex-direction: column; align-items: flex-start; padding: 40px 28px; margin: 0; border-radius: 0; width: 100%; }
+        }
+
+        @media (max-width: 600px) {
+            .cs-hero { padding: 40px 20px 32px; }
+            .cs-body { padding: 40px 20px; gap: 48px; }
+            .cs-meta-grid { grid-template-columns: 1fr 1fr; }
+            .cs-insight-grid { grid-template-columns: 1fr; }
+            .cs-wireframe-grid { grid-template-columns: 1fr; }
+            .cs-stat-number { font-size: 36px; }
+            .cs-title { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="assets/ga-logo.svg" alt="Gloria Logo" class="logo">
+                </a>
+            </div>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="index.html#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- Hero -->
+        <section class="cs-hero">
+            <a href="index.html#projects" class="cs-back">
+                <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 9H3M9 3L3 9l6 6"/>
+                </svg>
+                Back to Projects
+            </a>
+
+            <p class="cs-eyebrow">Case Study</p>
+            <h1 class="cs-title">PMU Platform <span class="light-slash">/ Tanya Hristova</span></h1>
+            <p class="cs-subtitle">Designing an end-to-end booking and academy platform for a permanent makeup artist — from first discovery call through launch.</p>
+
+            <div class="cs-tags">
+                <span class="tag">UI Design</span>
+                <span class="tag">UX Research</span>
+                <span class="tag">Figma</span>
+                <span class="tag">Branding</span>
+                <span class="tag">Web Design</span>
+            </div>
+        </section>
+
+        <!-- Cover -->
+        <div class="cs-cover">
+            <div class="cs-cover-inner">
+                <div class="cs-cover-text">
+                    <span class="cs-cover-label">PMU Academy · 2024</span>
+                    <h2 class="cs-cover-heading">Where artistry meets structure</h2>
+                    <p class="cs-cover-desc">A clean, premium digital home for Tanya Hristova's permanent makeup academy — built to attract serious students and showcase professional excellence.</p>
+                    <div style="display:flex;gap:12px;margin-top:8px;">
+                        <span class="tag">UI Design</span>
+                        <span class="tag">Branding</span>
+                    </div>
+                </div>
+                <div class="cs-cover-mockup">
+                    <div class="mockup-bar">
+                        <div class="mockup-dot"></div>
+                        <div class="mockup-dot"></div>
+                        <div class="mockup-dot"></div>
+                    </div>
+                    <div class="mockup-content">
+                        <div class="mockup-hero-block">
+                            <span>TH Academy</span>
+                        </div>
+                        <div class="mockup-cards">
+                            <div class="mockup-card"></div>
+                            <div class="mockup-card"></div>
+                        </div>
+                        <div class="mockup-line"></div>
+                        <div class="mockup-line short"></div>
+                        <div class="mockup-line"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Body -->
+        <div class="cs-body">
+
+            <!-- Project overview meta -->
+            <section class="cs-section">
+                <p class="cs-section-label">Overview</p>
+                <div class="cs-meta-grid">
+                    <div class="cs-meta-card">
+                        <span class="cs-meta-label">Client</span>
+                        <span class="cs-meta-value">Tanya Hristova</span>
+                    </div>
+                    <div class="cs-meta-card">
+                        <span class="cs-meta-label">My Role</span>
+                        <span class="cs-meta-value">UI/UX Designer</span>
+                    </div>
+                    <div class="cs-meta-card">
+                        <span class="cs-meta-label">Timeline</span>
+                        <span class="cs-meta-value">6 weeks · 2024</span>
+                    </div>
+                    <div class="cs-meta-card">
+                        <span class="cs-meta-label">Tools</span>
+                        <span class="cs-meta-value">Figma · FigJam</span>
+                    </div>
+                </div>
+            </section>
+
+            <div class="cs-divider"></div>
+
+            <!-- Context -->
+            <section class="cs-section">
+                <p class="cs-section-label">Context</p>
+                <h2 class="cs-section-title">About the client</h2>
+                <div class="cs-section-body">
+                    <p>Tanya Hristova is an established PMU (permanent makeup) artist based in Bulgaria. With years of hands-on practice and a growing reputation, she wanted to formalise her teaching work into a proper academy — offering structured courses for aspiring PMU professionals.</p>
+                    <p>At the start of this project, her online presence consisted of an Instagram account and a basic booking link. Students were reaching out through DMs, and there was no central place to learn about her courses, read testimonials, or complete a structured enrolment process.</p>
+                </div>
+            </section>
+
+            <div class="cs-divider"></div>
+
+            <!-- Problem -->
+            <section class="cs-section">
+                <p class="cs-section-label">Problem</p>
+                <h2 class="cs-section-title">The challenge</h2>
+                <div class="cs-two-col wide-left">
+                    <div class="cs-section-body">
+                        <p>Tanya needed a digital platform that matched the premium quality of her work — one that would communicate expertise, allow potential students to self-qualify and enrol, and reduce the administrative load of manually handling every enquiry.</p>
+                        <p>The key tension: PMU is a deeply personal craft. The site had to feel warm and human while still being structured enough for a professional course offering with real conversion goals.</p>
+                    </div>
+                    <div class="cs-quote">
+                        <p>"I want students to arrive already inspired — not just looking for a price list."</p>
+                        <cite>— Tanya Hristova, Client Brief</cite>
+                    </div>
+                </div>
+            </section>
+
+            <div class="cs-divider"></div>
+
+            <!-- Research -->
+            <section class="cs-section">
+                <p class="cs-section-label">Research</p>
+                <h2 class="cs-section-title">What I discovered</h2>
+                <p class="cs-section-body">I conducted a competitive analysis of PMU academies and beauty training platforms across Europe, and ran two interview sessions with Tanya to map her student persona, typical enquiry flow, and content goals. Three key insights shaped the direction:</p>
+
+                <div class="cs-insight-grid">
+                    <div class="cs-insight-card">
+                        <div class="cs-insight-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+                            </svg>
+                        </div>
+                        <p class="cs-insight-title">Trust is visual</p>
+                        <p class="cs-insight-body">Students decide in the first 8 seconds whether an artist is "at their level." Portfolio imagery and real testimonials are the primary trust signals — before any course detail.</p>
+                    </div>
+                    <div class="cs-insight-card">
+                        <div class="cs-insight-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 20V10M18 20V4M6 20v-6"/>
+                            </svg>
+                        </div>
+                        <p class="cs-insight-title">Course clarity converts</p>
+                        <p class="cs-insight-body">Platforms with clear course structure, duration, what-you-will-learn, and prerequisite info consistently outperformed those that buried details behind a contact form.</p>
+                    </div>
+                    <div class="cs-insight-card">
+                        <div class="cs-insight-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07A19.5 19.5 0 014.07 12 19.8 19.8 0 011 3.4 2 2 0 012.96 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                            </svg>
+                        </div>
+                        <p class="cs-insight-title">Mobile-first enquiries</p>
+                        <p class="cs-insight-body">Over 80 % of traffic to beauty-niche sites comes from mobile. Booking flows and forms must be frictionless on a small screen or students drop off immediately.</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="cs-divider"></div>
+
+            <!-- Process -->
+            <section class="cs-section">
+                <p class="cs-section-label">Process</p>
+                <h2 class="cs-section-title">How I designed it</h2>
+
+                <div class="cs-steps">
+                    <div class="cs-step">
+                        <div class="cs-step-number">01</div>
+                        <div class="cs-step-content">
+                            <p class="cs-step-title">Discovery & content mapping</p>
+                            <p class="cs-step-body">I worked with Tanya to define her site's information architecture — what content existed, what needed creating, and what the priority hierarchy was for a new visitor. We used FigJam to map out page structure and user journeys together.</p>
+                        </div>
+                    </div>
+                    <div class="cs-step">
+                        <div class="cs-step-number">02</div>
+                        <div class="cs-step-content">
+                            <p class="cs-step-title">Low-fidelity wireframes</p>
+                            <p class="cs-step-body">I produced a set of lo-fi wireframes for the five core pages: Home, About, Courses, Gallery, and Contact. These were reviewed and iterated on with the client before any visual design work began.</p>
+                        </div>
+                    </div>
+                    <div class="cs-step">
+                        <div class="cs-step-number">03</div>
+                        <div class="cs-step-content">
+                            <p class="cs-step-title">Visual identity & moodboarding</p>
+                            <p class="cs-step-body">Together we explored the visual direction through two moodboards — one leaning warm and tactile, the other cooler and editorial. The client gravitated toward a hybrid: refined neutrals, elegant typography, with warm gold accents.</p>
+                        </div>
+                    </div>
+                    <div class="cs-step">
+                        <div class="cs-step-number">04</div>
+                        <div class="cs-step-content">
+                            <p class="cs-step-title">High-fidelity UI design</p>
+                            <p class="cs-step-body">I built the full design in Figma — desktop and mobile variants for all pages, a component library, and an annotated handoff document for the developer. Accessibility and colour contrast were validated throughout.</p>
+                        </div>
+                    </div>
+                    <div class="cs-step">
+                        <div class="cs-step-number">05</div>
+                        <div class="cs-step-content">
+                            <p class="cs-step-title">Review, polish & handoff</p>
+                            <p class="cs-step-body">Two rounds of client feedback refined copy tone, image selection, and CTA hierarchy. Final assets, fonts, and spacing tokens were packaged for the developer along with interactive prototypes of the key booking flow.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="cs-divider"></div>
+
+            <!-- Wireframes -->
+            <section class="cs-section">
+                <p class="cs-section-label">Design</p>
+                <h2 class="cs-section-title">From wireframes to final screens</h2>
+                <p class="cs-section-body">The layout follows a clear content hierarchy — bold hero that communicates expertise, course cards with structured details, and a streamlined enquiry form that removes every unnecessary field.</p>
+
+                <div class="cs-wireframe-grid">
+                    <div>
+                        <div class="cs-wireframe-tile">
+                            <div class="wf-bar"></div>
+                            <div class="wf-block" style="flex:2;"></div>
+                            <div class="wf-sm"></div>
+                            <div class="wf-sm half"></div>
+                            <div class="wf-block" style="flex:1;"></div>
+                        </div>
+                        <p class="cs-wireframe-label">Home — Hero</p>
+                    </div>
+                    <div>
+                        <div class="cs-wireframe-tile" style="background:#ede9ff;">
+                            <div class="wf-bar" style="background:rgba(123,97,255,0.25);"></div>
+                            <div class="wf-sm" style="background:rgba(123,97,255,0.2);"></div>
+                            <div class="wf-block" style="flex:1;background:rgba(123,97,255,0.15);"></div>
+                            <div class="wf-block" style="flex:1;background:rgba(123,97,255,0.15);"></div>
+                            <div class="wf-sm half" style="background:rgba(123,97,255,0.2);"></div>
+                        </div>
+                        <p class="cs-wireframe-label">Courses Page</p>
+                    </div>
+                    <div>
+                        <div class="cs-wireframe-tile" style="background:#f0eeff;">
+                            <div class="wf-bar" style="background:rgba(123,97,255,0.2);"></div>
+                            <div class="wf-block" style="flex:3;background:rgba(123,97,255,0.12);"></div>
+                            <div class="wf-sm" style="background:rgba(123,97,255,0.18);"></div>
+                            <div class="wf-sm" style="background:rgba(123,97,255,0.18);"></div>
+                            <div class="wf-sm half" style="background:rgba(123,97,255,0.15);"></div>
+                            <div class="wf-block" style="flex:1;background:rgba(123,97,255,0.2);border-radius:8px;"></div>
+                        </div>
+                        <p class="cs-wireframe-label">Contact / Enrol</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="cs-divider"></div>
+
+            <!-- Outcomes -->
+            <section class="cs-section">
+                <p class="cs-section-label">Outcome</p>
+                <h2 class="cs-section-title">Results after launch</h2>
+                <p class="cs-section-body" style="margin-bottom:8px;">Three months post-launch, Tanya shared the following metrics from her analytics and enrolment records:</p>
+
+                <div class="cs-stat-grid">
+                    <div class="cs-stat-card">
+                        <span class="cs-stat-number">3×</span>
+                        <span class="cs-stat-label">increase in qualified course enquiries compared to the previous Instagram-DM method</span>
+                    </div>
+                    <div class="cs-stat-card">
+                        <span class="cs-stat-number">68%</span>
+                        <span class="cs-stat-label">of site sessions on mobile — validated the mobile-first approach taken in the design</span>
+                    </div>
+                    <div class="cs-stat-card">
+                        <span class="cs-stat-number">0 h</span>
+                        <span class="cs-stat-label">time spent on manual enrolment admin — students now self-qualify before reaching out</span>
+                    </div>
+                </div>
+            </section>
+
+            <div class="cs-divider"></div>
+
+            <!-- Reflection -->
+            <section class="cs-section">
+                <p class="cs-section-label">Reflection</p>
+                <h2 class="cs-section-title">What I learned</h2>
+                <div class="cs-two-col">
+                    <div class="cs-section-body">
+                        <p>This project reinforced for me how important content strategy is before any visual design begins. Without a clear map of what Tanya was trying to communicate — and to whom — I could have easily produced something visually polished but structurally weak.</p>
+                        <p>The biggest design challenge was the tension between "inspirational portfolio" and "professional academy." The solution was a clear page hierarchy: lead with credibility and artistry, then guide the visitor toward structured course information.</p>
+                    </div>
+                    <div class="cs-section-body">
+                        <p>If I were to extend this project, I would add a student portal — a logged-in space where enrolled students access materials, submit practice work, and communicate with their instructor. This would complete the platform's value loop and reduce even more admin overhead.</p>
+                        <p>Working closely with the client throughout each stage (rather than disappearing and returning with a finished design) made reviews faster and the final result much closer to what she had in mind.</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Next project banner -->
+        <div class="cs-next">
+            <div class="cs-next-text">
+                <span class="cs-next-eyebrow">Up next</span>
+                <span class="cs-next-title">Explore more projects</span>
+            </div>
+            <a href="index.html#projects" class="btn-white-outline">Back to all projects</a>
+        </div>
+
+        <!-- Footer -->
+        <footer id="contact" class="footer">
+            <div class="footer-content">
+                <div class="connect-section">
+                    <div class="connect-text">
+                        <h2>Let's connect!</h2>
+                        <p>I'm always open to new opportunities and collaborations.</p>
+                    </div>
+                    <a href="mailto:glory.angelova@gmail.com" class="btn btn-primary-solid" id="get-in-touch-btn">Get in touch with me</a>
+                </div>
+
+                <div class="contact-info-section">
+                    <div class="contact-column">
+                        <h3>Contact</h3>
+                        <p>Eindhoven / Netherlands</p>
+                        <p><a href="mailto:glory.angelova@gmail.com">glory.angelova@gmail.com</a></p>
+                        <p><a href="tel:+31647355880">+31 6 47 355 880</a></p>
+                    </div>
+                    <div class="contact-column">
+                        <h3>Social</h3>
+                        <p><a href="https://www.linkedin.com/in/gloria-angelova-9172aa99/" target="_blank">LinkedIn</a></p>
+                        <p><a href="#">Instagram</a></p>
+                        <p><a href="https://www.behance.net/gloryangelova" target="_blank">Behance</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© Copyright Gloria Angelova / 2025</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Mobile menu
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('.nav');
+
+        if (nav) nav.classList.remove('active');
+        if (menuToggle) menuToggle.classList.remove('active');
+
+        if (menuToggle && nav) {
+            menuToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                e.preventDefault();
+                menuToggle.classList.toggle('active');
+                nav.classList.toggle('active');
+                document.body.classList.toggle('no-scroll');
+            });
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    menuToggle.classList.remove('active');
+                    nav.classList.remove('active');
+                    document.body.classList.remove('no-scroll');
+                });
+            });
+
+            document.addEventListener('click', (e) => {
+                if (nav.classList.contains('active') &&
+                    !nav.contains(e.target) &&
+                    !menuToggle.contains(e.target)) {
+                    menuToggle.classList.remove('active');
+                    nav.classList.remove('active');
+                    document.body.classList.remove('no-scroll');
+                }
+            });
+        }
+
+        // Sticky header
+        const header = document.querySelector('.header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 10);
+        });
+
+        // Pulsing get-in-touch button when footer is visible
+        const getInTouchBtn = document.getElementById('get-in-touch-btn');
+        const footer = document.getElementById('contact');
+        let pulseTimeout = null;
+
+        function startPulsing() {
+            if (getInTouchBtn && !getInTouchBtn.classList.contains('pulsing')) {
+                getInTouchBtn.classList.add('pulsing');
+                if (pulseTimeout) clearTimeout(pulseTimeout);
+                pulseTimeout = setTimeout(() => getInTouchBtn.classList.remove('pulsing'), 7000);
+            }
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) startPulsing();
+        }, { threshold: 0.2 });
+
+        if (footer) observer.observe(footer);
+    </script>
+</body>
+</html>
