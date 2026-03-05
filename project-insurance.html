@@ -94,7 +94,7 @@
             margin: 0 18px;
             border-radius: 24px;
             overflow: hidden;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+            background: linear-gradient(135deg, #0d6e6e 0%, #0a9396 60%, #48cae4 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -124,7 +124,7 @@
             font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 0.12em;
-            color: rgba(123, 97, 255, 0.9);
+            color: rgba(255, 255, 255, 0.75);
         }
 
         .cs-cover-heading {
@@ -357,9 +357,9 @@
         /* ── Meta grid ── */
         .cs-meta-grid {
             display: flex;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
             gap: 0;
-            border-top: 1px solid #e8e8f0;
+            border-top: none;
         }
 
         .cs-meta-card {
@@ -369,7 +369,8 @@
             display: flex;
             flex-direction: column;
             gap: 5px;
-            min-width: 160px;
+            min-width: 0;
+            flex: 1;
         }
 
         .cs-meta-label {
@@ -390,9 +391,7 @@
 
         /* ── Divider ── */
         .cs-divider {
-            width: 100%;
-            height: 1px;
-            background: #ececf5;
+            display: none;
         }
 
         /* ── Two-column layout ── */
@@ -765,86 +764,25 @@
 
         <!-- Hero -->
         <section class="cs-hero">
-            <p class="cs-eyebrow">Case Study</p>
             <h1 class="cs-title">Modernizing a Legacy<br><span class="light-slash">Insurance Platform</span></h1>
             <p class="cs-subtitle">Redesigning a decade-old enterprise insurance system — improving visual hierarchy, usability, and consistency without touching the underlying architecture.</p>
 
-            <div class="cs-tags">
-                <span class="tag">UI Design</span>
-                <span class="tag">Legacy System</span>
-                <span class="tag">CSS Implementation</span>
-                <span class="tag">Enterprise UX</span>
-                <span class="tag">Design System</span>
-            </div>
         </section>
 
         <!-- Cover -->
         <div class="cs-cover">
             <div class="cs-cover-inner">
                 <div class="cs-cover-text">
-                    <span class="cs-cover-label">Enterprise Insurance · 2024</span>
                     <h2 class="cs-cover-heading">Modern interface.<br>Same trusted system.</h2>
-                    <p class="cs-cover-desc">A full visual overhaul of a 10-year-old insurance platform — bringing clarity, consistency, and modern UI patterns to agents who use it every single day.</p>
                     <div style="display:flex;gap:12px;margin-top:8px;flex-wrap:wrap;">
-                        <span class="tag" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.8);">UI Design</span>
-                        <span class="tag" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.8);">CSS Implementation</span>
+                        <span style="background:rgba(255,255,255,0.2);color:#fff;border:none;border-radius:100px;padding:6px 16px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;font-family:var(--font-body);">UI Design</span>
+                        <span style="background:rgba(255,255,255,0.2);color:#fff;border:none;border-radius:100px;padding:6px 16px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;font-family:var(--font-body);">CSS Implementation</span>
+                        <span style="background:rgba(255,255,255,0.2);color:#fff;border:none;border-radius:100px;padding:6px 16px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;font-family:var(--font-body);">Design System</span>
                     </div>
                 </div>
                 <!-- Dark-themed mockup of a dashboard -->
-                <div class="cs-cover-mockup">
-                    <div class="mockup-topbar">
-                        <div class="mockup-dot"></div>
-                        <div class="mockup-dot"></div>
-                        <div class="mockup-dot"></div>
-                        <div class="mockup-url"></div>
-                    </div>
-                    <div class="mockup-body">
-                        <div class="mockup-sidebar">
-                            <div class="sidebar-icon active"></div>
-                            <div class="sidebar-icon"></div>
-                            <div class="sidebar-icon"></div>
-                            <div class="sidebar-icon"></div>
-                            <div class="sidebar-icon"></div>
-                        </div>
-                        <div class="mockup-main">
-                            <div class="legacy-stat-row">
-                                <div class="legacy-stat">
-                                    <div class="legacy-stat-num"></div>
-                                    <div class="legacy-stat-lbl"></div>
-                                </div>
-                                <div class="legacy-stat">
-                                    <div class="legacy-stat-num"></div>
-                                    <div class="legacy-stat-lbl"></div>
-                                </div>
-                                <div class="legacy-stat">
-                                    <div class="legacy-stat-num"></div>
-                                    <div class="legacy-stat-lbl"></div>
-                                </div>
-                            </div>
-                            <div class="legacy-table">
-                                <div class="legacy-table-head">
-                                    <span style="width:60px;"></span>
-                                    <span style="width:40px;"></span>
-                                    <span style="width:50px;"></span>
-                                </div>
-                                <div class="legacy-row">
-                                    <div class="legacy-cell" style="width:55px;"></div>
-                                    <div class="legacy-cell" style="width:38px;"></div>
-                                    <div class="legacy-cell" style="width:48px;background:rgba(123,97,255,0.4);"></div>
-                                </div>
-                                <div class="legacy-row">
-                                    <div class="legacy-cell" style="width:48px;"></div>
-                                    <div class="legacy-cell" style="width:35px;"></div>
-                                    <div class="legacy-cell" style="width:42px;"></div>
-                                </div>
-                                <div class="legacy-row">
-                                    <div class="legacy-cell" style="width:60px;"></div>
-                                    <div class="legacy-cell" style="width:30px;"></div>
-                                    <div class="legacy-cell" style="width:50px;background:rgba(123,97,255,0.4);"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="cs-cover-mockup" style="border-radius:12px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.15);">
+                    <img src="assets/insurance-platform-ui.png" alt="Insurance platform UI" style="width:100%;display:block;">
                 </div>
             </div>
         </div>
@@ -854,45 +792,78 @@
 
             <!-- Project overview meta -->
             <section class="cs-section">
-                <p class="cs-section-label">Overview</p>
-                <div class="cs-meta-grid">
-                    <div class="cs-meta-card">
-                        <span class="cs-meta-label">My Role</span>
-                        <span class="cs-meta-value">UI / UX Designer</span>
+                <div style="display:flex;gap:48px;align-items:flex-start;">
+                    <div style="display:flex;flex-direction:column;gap:16px;flex:0 0 50%;">
+                        <div style="display:flex;gap:12px;align-items:baseline;">
+                            <span style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#0a9396;min-width:110px;">Role</span>
+                            <span style="font-size:15px;font-weight:500;color:#1a1a2e;">UI Design & CSS Implementation</span>
+                        </div>
+                        <div style="display:flex;gap:12px;align-items:baseline;">
+                            <span style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#0a9396;min-width:110px;">Company</span>
+                            <span style="font-size:15px;font-weight:500;color:#1a1a2e;">TINQIN</span>
+                        </div>
+                        <div style="display:flex;gap:12px;align-items:baseline;">
+                            <span style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#0a9396;min-width:110px;">Project Type</span>
+                            <span style="font-size:15px;font-weight:500;color:#1a1a2e;">Enterprise Web Platform</span>
+                        </div>
+                        <div style="display:flex;gap:12px;align-items:baseline;">
+                            <span style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#0a9396;min-width:110px;">Industry</span>
+                            <span style="font-size:15px;font-weight:500;color:#1a1a2e;">Insurance</span>
+                        </div>
+                        <div style="display:flex;gap:12px;align-items:baseline;">
+                            <span style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#0a9396;min-width:110px;">Focus</span>
+                            <span style="font-size:15px;font-weight:500;color:#1a1a2e;">UI Modernization of a Legacy System</span>
+                        </div>
                     </div>
-                    <div class="cs-meta-card">
-                        <span class="cs-meta-label">Company</span>
-                        <span class="cs-meta-value">TIINQIN (France)</span>
-                    </div>
-                    <div class="cs-meta-card">
-                        <span class="cs-meta-label">Project Type</span>
-                        <span class="cs-meta-value">Enterprise Web Platform</span>
-                    </div>
-                    <div class="cs-meta-card">
-                        <span class="cs-meta-label">Industry</span>
-                        <span class="cs-meta-value">Insurance</span>
-                    </div>
-                    <div class="cs-meta-card">
-                        <span class="cs-meta-label">Focus</span>
-                        <span class="cs-meta-value">UI Modernization of a Legacy System</span>
+                    <div style="text-align:left;flex:0 0 50%;">
+                        <span style="font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.13em;color:#b0b0b8;display:block;margin-bottom:10px;">Overview</span>
+                        <p style="font-size:15px;color:#555;line-height:1.7;margin:0;">A UI modernization project for a 10-year-old enterprise insurance platform used daily by insurance agents across France. The goal was to bring the interface up to modern standards by improving visual clarity, consistency, and usability — without restructuring the existing system or workflows.</p>
                     </div>
                 </div>
             </section>
 
             <div class="cs-divider"></div>
 
-            <!-- Context + Problem -->
+            <!-- Challenges & Constraints -->
             <section class="cs-section">
-                <p class="cs-section-label">The Challenge</p>
-                <h2 class="cs-section-title">A platform built to last — maybe too long</h2>
-                <div class="cs-two-col wide-left">
-                    <div class="cs-section-body">
-                        <p>The platform had been in production for over 10 years. It worked — but it looked like it was from another era. Small fonts, dense tables, inconsistent button styles, no visual hierarchy. The business couldn't afford a full rebuild, so the goal was clear: make the interface dramatically better without touching the backend.</p>
-                        <p>Every page was a slightly different interpretation of the same interface. Agents moving between modules had to re-learn the UI each time. Critical actions sat alongside low-priority links with identical styling.</p>
+                <h2 class="cs-section-title">Challenges & Constraints</h2>
+                <p class="cs-section-body">Improving the interface while working within strict technical constraints — no changes to the architecture, no modifications to existing workflows. All improvements had to be achieved purely through CSS and UI styling.</p>
+                <ul style="margin-top:10px;display:flex;flex-direction:column;gap:7px;padding:0;list-style:none;">
+                    <li style="display:flex;align-items:center;gap:8px;font-size:15px;color:#444;line-height:1.55;"><span style="width:6px;height:6px;border-radius:50%;background:#0a9396;flex-shrink:0;display:inline-block;"></span>No changes to the existing system architecture</li>
+                    <li style="display:flex;align-items:center;gap:8px;font-size:15px;color:#444;line-height:1.55;"><span style="width:6px;height:6px;border-radius:50%;background:#0a9396;flex-shrink:0;display:inline-block;"></span>Existing workflows had to remain intact</li>
+                    <li style="display:flex;align-items:center;gap:8px;font-size:15px;color:#444;line-height:1.55;"><span style="width:6px;height:6px;border-radius:50%;background:#0a9396;flex-shrink:0;display:inline-block;"></span>UI improvements through CSS only</li>
+                </ul>
+            </section>
+
+            <div class="cs-divider"></div>
+
+            <!-- Design Approach -->
+            <section style="background:#f0fafa;margin:0 -60px;padding:64px 60px;">
+                <div style="display:grid;grid-template-columns:1fr 2fr;gap:64px;align-items:start;">
+                    <div>
+                        <p style="font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.14em;color:#0a9396;margin:0 0 16px;">Design Approach</p>
+                        <h2 style="font-size:28px;font-weight:700;color:#1a1a2e;line-height:1.3;margin:0;">Modernize the surface. Keep the structure.</h2>
                     </div>
-                    <div class="cs-quote">
-                        <p>"It gets the job done, but I spend half my day looking for things that should be obvious."</p>
-                        <cite>— Insurance Agent, User Interview</cite>
+                    <div style="display:flex;flex-direction:column;gap:24px;">
+                        <p style="font-size:16px;color:#444;line-height:1.75;margin:0;">The redesign focused on modernizing the visual layer of the platform while preserving the existing interaction model. The goal was to introduce clearer visual hierarchy, improve consistency across UI elements, and align the interface with modern enterprise UI patterns.</p>
+                        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;padding-top:24px;">
+                            <div style="padding-right:20px;">
+                                <p style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#0a9396;margin:0 0 6px;">Visual</p>
+                                <p style="font-size:14px;color:#555;margin:0;line-height:1.5;">Improved hierarchy</p>
+                            </div>
+                            <div style="padding:0 20px;">
+                                <p style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#0a9396;margin:0 0 6px;">Color</p>
+                                <p style="font-size:14px;color:#555;margin:0;line-height:1.5;">Refined system</p>
+                            </div>
+                            <div style="padding:0 20px;">
+                                <p style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#0a9396;margin:0 0 6px;">Components</p>
+                                <p style="font-size:14px;color:#555;margin:0;line-height:1.5;">Consistent UI</p>
+                            </div>
+                            <div style="padding-left:20px;">
+                                <p style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#0a9396;margin:0 0 6px;">Spacing</p>
+                                <p style="font-size:14px;color:#555;margin:0;line-height:1.5;">Better readability</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -901,98 +872,42 @@
 
             <!-- Process -->
             <section class="cs-section">
-                <p class="cs-section-label">Design Process</p>
-                <h2 class="cs-section-title">How I approached the redesign</h2>
+                <h2 class="cs-section-title">Design Process</h2>
+                <p class="cs-section-body">The redesign process focused on aligning design decisions with the existing technical constraints while ensuring visual improvements could be implemented efficiently by the frontend team.</p>
 
-                <div class="cs-steps">
-                    <div class="cs-step">
-                        <div class="cs-step-number">01</div>
-                        <div class="cs-step-content">
-                            <p class="cs-step-title">CSS strategy with the front-end team</p>
-                            <p class="cs-step-body">The project kicked off with a working session with the front-end team. The stylesheets had become inconsistent and hard to maintain over the years — together we defined a clear strategy for restructuring the CSS before any visual work began.</p>
+                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px;">
+                    <div style="border:1px solid #e8e8f0;border-radius:14px;padding:28px;">
+                        <div style="width:36px;height:36px;border-radius:10px;background:#e6f7f7;display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0a9396" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                         </div>
+                        <p style="font-size:14px;font-weight:600;color:#1a1a2e;margin:0 0 10px;">Alignment with Frontend Team</p>
+                        <ul style="padding:0;margin:0;list-style:none;display:flex;flex-direction:column;gap:7px;">
+                            <li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;color:#666;line-height:1.55;"><span style="width:6px;height:6px;border-radius:50%;background:#0a9396;flex-shrink:0;display:inline-block;margin-top:7px;"></span>Technical alignment session with the frontend team</li>
+                            <li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;color:#666;line-height:1.55;"><span style="width:6px;height:6px;border-radius:50%;background:#0a9396;flex-shrink:0;display:inline-block;margin-top:7px;"></span>Defined a CSS strategy for the new visual layer</li>
+                            <li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;color:#666;line-height:1.55;"><span style="width:6px;height:6px;border-radius:50%;background:#0a9396;flex-shrink:0;display:inline-block;margin-top:7px;"></span>Visual improvements without changing component structure</li>
+                        </ul>
                     </div>
-                    <div class="cs-step">
-                        <div class="cs-step-number">02</div>
-                        <div class="cs-step-content">
-                            <p class="cs-step-title">Exploring directions in Figma</p>
-                            <p class="cs-step-body">I created 2–3 design concepts for the main screen and presented them to the product and engineering teams. We selected a direction that balanced modernization with the visual identity already familiar to users.</p>
+                    <div style="border:1px solid #e8e8f0;border-radius:14px;padding:28px;">
+                        <div style="width:36px;height:36px;border-radius:10px;background:#e6f7f7;display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0a9396" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
                         </div>
+                        <p style="font-size:14px;font-weight:600;color:#1a1a2e;margin:0 0 10px;">UI Exploration in Figma</p>
+                        <ul style="padding:0;margin:0;list-style:none;display:flex;flex-direction:column;gap:7px;">
+                            <li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;color:#666;line-height:1.55;"><span style="width:6px;height:6px;border-radius:50%;background:#0a9396;flex-shrink:0;display:inline-block;margin-top:7px;"></span>Explored several visual directions in Figma</li>
+                            <li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;color:#666;line-height:1.55;"><span style="width:6px;height:6px;border-radius:50%;background:#0a9396;flex-shrink:0;display:inline-block;margin-top:7px;"></span>Focused on hierarchy, clarity, and visual consistency</li>
+                            <li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;color:#666;line-height:1.55;"><span style="width:6px;height:6px;border-radius:50%;background:#0a9396;flex-shrink:0;display:inline-block;margin-top:7px;"></span>Refined into a single approved design direction</li>
+                        </ul>
                     </div>
-                    <div class="cs-step">
-                        <div class="cs-step-number">03</div>
-                        <div class="cs-step-content">
-                            <p class="cs-step-title">Visual identity & component system</p>
-                            <p class="cs-step-body">I preserved the platform's existing green but refreshed it to feel more modern and accessible. I introduced a product logo (the platform had none), redesigned the header layout, and defined a full token system — colour, typography, spacing — before touching any screens.</p>
+                    <div style="border:1px solid #e8e8f0;border-radius:14px;padding:28px;">
+                        <div style="width:36px;height:36px;border-radius:10px;background:#e6f7f7;display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0a9396" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
                         </div>
-                    </div>
-                    <div class="cs-step">
-                        <div class="cs-step-number">04</div>
-                        <div class="cs-step-content">
-                            <p class="cs-step-title">Login page & key screen redesign</p>
-                            <p class="cs-step-body">Starting with the login page and the highest-traffic modules, I redesigned each screen in Figma then implemented the changes through the CSS/Less layer — no backend changes, no HTML restructuring.</p>
-                        </div>
-                    </div>
-                    <div class="cs-step">
-                        <div class="cs-step-number">05</div>
-                        <div class="cs-step-content">
-                            <p class="cs-step-title">QA & cross-browser testing</p>
-                            <p class="cs-step-body">Tested across Chrome, Firefox, Edge, and IE11. Resolved 23 visual inconsistencies in edge-case states — empty tables, long text overflow, multi-line labels.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <div class="cs-divider"></div>
-
-            <!-- Early Concepts -->
-            <section class="cs-section">
-                <p class="cs-section-label">Early Concepts</p>
-                <h2 class="cs-section-title">Exploring the direction in Figma</h2>
-                <p class="cs-section-body">Before committing to a visual direction, I created 2–3 distinct concept screens for the platform's main dashboard. These were presented to the product and engineering teams to align on tone, density, and style before any system-wide work began.</p>
-
-                <div class="cs-wireframe-grid" style="grid-template-columns: repeat(3, 1fr);">
-                    <div>
-                        <div class="cs-wireframe-tile" style="aspect-ratio:16/10; background:#f0f0f6;">
-                            <div class="wf-bar" style="background:rgba(80,80,100,0.15);"></div>
-                            <div class="wf-block" style="flex:2; background:rgba(80,80,100,0.08);"></div>
-                            <div style="display:flex;gap:6px;">
-                                <div style="flex:1;height:32px;border-radius:6px;background:rgba(80,80,100,0.12);"></div>
-                                <div style="flex:1;height:32px;border-radius:6px;background:rgba(80,80,100,0.12);"></div>
-                                <div style="flex:1;height:32px;border-radius:6px;background:rgba(80,80,100,0.12);"></div>
-                            </div>
-                            <div class="wf-sm"></div>
-                            <div class="wf-sm half"></div>
-                        </div>
-                        <p class="cs-wireframe-label">Concept A — Conservative</p>
-                    </div>
-                    <div>
-                        <div class="cs-wireframe-tile" style="aspect-ratio:16/10; background:#eaf2ea;">
-                            <div class="wf-bar" style="background:rgba(40,120,60,0.2);"></div>
-                            <div class="wf-block" style="flex:2; background:rgba(40,120,60,0.1);"></div>
-                            <div style="display:flex;gap:6px;">
-                                <div style="flex:1;height:32px;border-radius:6px;background:rgba(40,120,60,0.15);"></div>
-                                <div style="flex:1;height:32px;border-radius:6px;background:rgba(40,120,60,0.08);"></div>
-                                <div style="flex:1;height:32px;border-radius:6px;background:rgba(40,120,60,0.08);"></div>
-                            </div>
-                            <div class="wf-sm" style="background:rgba(40,120,60,0.15);"></div>
-                            <div class="wf-sm half" style="background:rgba(40,120,60,0.12);"></div>
-                        </div>
-                        <p class="cs-wireframe-label" style="color:#3a8a50;">Concept B — Brand-led ✓ Selected</p>
-                    </div>
-                    <div>
-                        <div class="cs-wireframe-tile" style="aspect-ratio:16/10; background:#1a1a2e;">
-                            <div class="wf-bar" style="background:rgba(255,255,255,0.1);"></div>
-                            <div class="wf-block" style="flex:2; background:rgba(255,255,255,0.06);"></div>
-                            <div style="display:flex;gap:6px;">
-                                <div style="flex:1;height:32px;border-radius:6px;background:rgba(255,255,255,0.1);"></div>
-                                <div style="flex:1;height:32px;border-radius:6px;background:rgba(255,255,255,0.06);"></div>
-                                <div style="flex:1;height:32px;border-radius:6px;background:rgba(255,255,255,0.06);"></div>
-                            </div>
-                            <div class="wf-sm" style="background:rgba(255,255,255,0.12);"></div>
-                            <div class="wf-sm half" style="background:rgba(255,255,255,0.08);"></div>
-                        </div>
-                        <p class="cs-wireframe-label" style="color:#888;">Concept C — Dark / Modern</p>
+                        <p style="font-size:14px;font-weight:600;color:#1a1a2e;margin:0 0 10px;">CSS Implementation</p>
+                        <ul style="padding:0;margin:0;list-style:none;display:flex;flex-direction:column;gap:7px;">
+                            <li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;color:#666;line-height:1.55;"><span style="width:6px;height:6px;border-radius:50%;background:#0a9396;flex-shrink:0;display:inline-block;margin-top:7px;"></span>Visual design implemented directly through CSS</li>
+                            <li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;color:#666;line-height:1.55;"><span style="width:6px;height:6px;border-radius:50%;background:#0a9396;flex-shrink:0;display:inline-block;margin-top:7px;"></span>Existing HTML structure kept intact</li>
+                            <li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;color:#666;line-height:1.55;"><span style="width:6px;height:6px;border-radius:50%;background:#0a9396;flex-shrink:0;display:inline-block;margin-top:7px;"></span>No changes to workflows or backend</li>
+                        </ul>
                     </div>
                 </div>
             </section>
@@ -1035,30 +950,6 @@
                     </div>
                 </div>
 
-            </section>
-
-            <div class="cs-divider"></div>
-
-            <!-- Outcomes -->
-            <section class="cs-section">
-                <p class="cs-section-label">Outcome</p>
-                <h2 class="cs-section-title">Results</h2>
-                <p class="cs-section-body" style="margin-bottom:8px;">Following a phased rollout to the full agent team, the product owner shared feedback and early usage metrics:</p>
-
-                <div class="cs-stat-grid">
-                    <div class="cs-stat-card">
-                        <span class="cs-stat-number">40%</span>
-                        <span class="cs-stat-label">reduction in time-on-task for the claim approval flow — measured via session recordings before and after</span>
-                    </div>
-                    <div class="cs-stat-card">
-                        <span class="cs-stat-number">0</span>
-                        <span class="cs-stat-label">backend changes required — the entire transformation was delivered through the CSS/Less layer only</span>
-                    </div>
-                    <div class="cs-stat-card">
-                        <span class="cs-stat-number">9 / 10</span>
-                        <span class="cs-stat-label">average satisfaction score from agents in a post-launch survey — up from 4/10 before the redesign</span>
-                    </div>
-                </div>
             </section>
 
             <div class="cs-divider"></div>
