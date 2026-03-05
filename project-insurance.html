@@ -358,30 +358,31 @@
         .cs-meta-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
+            gap: 0;
         }
 
         .cs-meta-card {
-            background: var(--soft-lavender);
-            border-radius: 16px;
-            padding: 28px 24px;
+            background: transparent;
+            border-radius: 0;
+            padding: 20px 24px 20px 0;
+            border-top: 1px solid #e8e8f0;
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 6px;
         }
 
         .cs-meta-label {
             font-size: 11px;
-            font-weight: 600;
+            font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 0.12em;
-            color: var(--deep-lavender);
+            color: #aaa;
         }
 
         .cs-meta-value {
-            font-family: var(--font-heading);
-            font-size: 17px;
-            font-weight: 600;
+            font-family: var(--font-body);
+            font-size: 15px;
+            font-weight: 500;
             color: var(--text-color);
             line-height: 1.4;
         }
