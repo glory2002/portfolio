@@ -866,11 +866,10 @@ ul {
 .about-hero-image-wrapper {
             position: relative;
     width: 320px;
-    height: 320px;
-    border-radius: 37px;
-    overflow: visible; /* Changed to visible to show background animation */
+    height: 360px;
+    border-radius: 55% 45% 38% 62% / 52% 36% 64% 48%;
+    overflow: hidden;
     z-index: 1;
-    animation: fluid-shape 5s ease-in-out infinite;
     margin: 0 auto;
 }
 
@@ -914,7 +913,7 @@ ul {
             object-position: center 20%; /* Center face */
             transform: scale(1.2); /* Zoom in to show face better */
             display: block;
-            border-radius: 37px;
+            border-radius: 0;
             position: relative;
             z-index: 1;
         }

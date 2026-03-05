@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protected Project | Gloria Angelova</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="shortcut icon" href="assets/favicon.svg">
+    <link rel="apple-touch-icon" href="assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=4.0">
+
+    <style>
+        .lock-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .lock-main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 24px;
+            background-color: #f4f4f6;
+        }
+
+        .lock-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            max-width: 420px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .lock-icon {
+            width: 64px;
+            height: 64px;
+            color: #b0b0be;
+        }
+
+        .lock-title {
+            font-family: var(--font-heading);
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--text-color);
+            line-height: 1.2;
+        }
+
+        .lock-subtitle {
+            font-size: 15px;
+            font-weight: 400;
+            color: #888;
+            margin-top: -8px;
+        }
+
+        .lock-form {
+            width: 100%;
+            margin-top: 8px;
+            position: relative;
+        }
+
+        .lock-input {
+            width: 100%;
+            padding: 18px 56px 18px 22px;
+            border: 1.5px solid #ddd;
+            border-radius: 100px;
+            font-family: var(--font-body);
+            font-size: 16px;
+            color: var(--text-color);
+            background: var(--white);
+            outline: none;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            box-sizing: border-box;
+        }
+
+        .lock-input::placeholder {
+            color: #b0b0be;
+        }
+
+        .lock-input:focus {
+            border-color: var(--deep-lavender);
+            box-shadow: 0 0 0 4px rgba(123, 97, 255, 0.1);
+        }
+
+        .lock-input.error {
+            border-color: #ff4d4f;
+            box-shadow: 0 0 0 4px rgba(255, 77, 79, 0.1);
+        }
+
+        .lock-submit {
+            position: absolute;
+            right: 6px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: none;
+            background: var(--text-color);
+            color: var(--white);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s ease, transform 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .lock-submit:hover {
+            background: var(--deep-lavender);
+            transform: translateY(-50%) scale(1.05);
+        }
+
+        .lock-submit svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .lock-error {
+            font-size: 13px;
+            color: #ff4d4f;
+            display: none;
+            margin-top: -8px;
+        }
+
+        .lock-error.visible {
+            display: block;
+        }
+
+        .lock-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: #999;
+            margin-top: 8px;
+            transition: color 0.2s ease, gap 0.2s ease;
+        }
+
+        .lock-back:hover {
+            color: var(--deep-lavender);
+            gap: 10px;
+        }
+
+        .lock-back svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        /* shake animation on wrong password */
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20%       { transform: translateX(-8px); }
+            40%       { transform: translateX(8px); }
+            60%       { transform: translateX(-5px); }
+            80%       { transform: translateX(5px); }
+        }
+
+        .lock-form.shake {
+            animation: shake 0.4s ease;
+        }
+    </style>
+</head>
+<body class="lock-page">
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="assets/ga-logo.svg" alt="Gloria Logo" class="logo">
+                </a>
+            </div>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="index.html#projects" class="nav-link active">Projects</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="lock-main">
+        <div class="lock-card">
+
+            <!-- Lock icon -->
+            <svg class="lock-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="12" y="28" width="40" height="28" rx="6"/>
+                <path d="M20 28v-8a12 12 0 0 1 24 0v8"/>
+                <circle cx="32" cy="44" r="3" fill="currentColor" stroke="none"/>
+                <line x1="32" y1="47" x2="32" y2="52"/>
+            </svg>
+
+            <h1 class="lock-title">This content is protected.</h1>
+            <p class="lock-subtitle">To view, please enter the password.</p>
+
+            <form class="lock-form" id="lockForm" onsubmit="checkPassword(event)">
+                <input
+                    class="lock-input"
+                    id="passwordInput"
+                    type="password"
+                    placeholder="Enter password"
+                    autocomplete="current-password"
+                    autofocus
+                >
+                <button type="submit" class="lock-submit" aria-label="Submit">
+                    <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9h12M9 3l6 6-6 6"/>
+                    </svg>
+                </button>
+            </form>
+
+            <p class="lock-error" id="lockError">Incorrect password. Please try again.</p>
+
+            <a href="index.html#projects" class="lock-back">
+                <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M11 7H3M7 3L3 7l4 4"/>
+                </svg>
+                Back to projects
+            </a>
+
+        </div>
+    </main>
+
+    <script>
+        // Mobile menu
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('.nav');
+        if (menuToggle && nav) {
+            menuToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                e.preventDefault();
+                menuToggle.classList.toggle('active');
+                nav.classList.toggle('active');
+                document.body.classList.toggle('no-scroll');
+            });
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    menuToggle.classList.remove('active');
+                    nav.classList.remove('active');
+                    document.body.classList.remove('no-scroll');
+                });
+            });
+            document.addEventListener('click', (e) => {
+                if (nav.classList.contains('active') &&
+                    !nav.contains(e.target) &&
+                    !menuToggle.contains(e.target)) {
+                    menuToggle.classList.remove('active');
+                    nav.classList.remove('active');
+                    document.body.classList.remove('no-scroll');
+                }
+            });
+        }
+
+        // Sticky header
+        const header = document.querySelector('.header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 10);
+        });
+
+        // Password check
+        // Change the password below to whatever you'd like
+        const PASSWORD = 'gloria2024';
+
+        function checkPassword(e) {
+            e.preventDefault();
+            const input = document.getElementById('passwordInput');
+            const form  = document.getElementById('lockForm');
+            const error = document.getElementById('lockError');
+
+            if (input.value === PASSWORD) {
+                window.location.href = 'project-pmu.html';
+            } else {
+                // Wrong — shake + show error
+                input.classList.add('error');
+                error.classList.add('visible');
+                form.classList.remove('shake');
+                void form.offsetWidth; // reflow to restart animation
+                form.classList.add('shake');
+
+                input.value = '';
+                input.focus();
+
+                setTimeout(() => {
+                    input.classList.remove('error');
+                }, 2000);
+            }
+        }
+    </script>
+</body>
+</html>
