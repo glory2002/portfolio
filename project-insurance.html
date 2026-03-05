@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Legacy Insurance Platform — UI Modernization case study. Redesigning a 10-year-old enterprise insurance platform by Gloria Angelova.">
+    <meta name="keywords" content="UI Design, Legacy System, Insurance Platform, CSS Implementation, Gloria Angelova, Case Study">
+    <meta name="author" content="Gloria Angelova">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gloryangelova.com/project-insurance.html">
+    <meta property="og:title" content="Modernizing a Legacy Insurance Platform – Case Study | Gloria Angelova">
+    <meta property="og:description" content="UI modernization of a 10-year-old enterprise insurance platform — improving visual hierarchy without changing the existing system architecture.">
+    <meta property="og:image" content="https://gloryangelova.com/assets/gloria-profile-about-new.png">
+
+    <title>Insurance Platform – Case Study | Gloria Angelova</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="shortcut icon" href="assets/favicon.svg">
+    <link rel="apple-touch-icon" href="assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=4.1">
+
+    <style>
+        /* ── Case Study page-specific styles ── */
+
+        .cs-hero {
+            padding: 80px 60px 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .cs-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-body);
+            font-size: 16px;
+            color: var(--deep-lavender);
+            margin-bottom: 48px;
+            transition: gap 0.2s ease;
+        }
+
+        .cs-back:hover { gap: 14px; }
+
+        .cs-back svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+
+        .cs-eyebrow {
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--deep-lavender);
+            margin-bottom: 16px;
+        }
+
+        .cs-title {
+            font-family: var(--font-heading);
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 600;
+            line-height: 1.15;
+            color: var(--text-color);
+            margin-bottom: 24px;
+        }
+
+        .cs-title .light-slash {
+            font-weight: 300;
+        }
+
+        .cs-subtitle {
+            font-size: 20px;
+            font-weight: 300;
+            line-height: 1.65;
+            color: var(--text-color);
+            max-width: 720px;
+            margin-bottom: 40px;
+        }
+
+        .cs-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        /* ── Cover ── */
+        .cs-cover {
+            width: calc(100% - 36px);
+            margin: 0 18px;
+            border-radius: 24px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 460px;
+        }
+
+        .cs-cover-inner {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px;
+            gap: 48px;
+        }
+
+        .cs-cover-text {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .cs-cover-label {
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: rgba(123, 97, 255, 0.9);
+        }
+
+        .cs-cover-heading {
+            font-family: var(--font-heading);
+            font-size: clamp(28px, 4vw, 44px);
+            font-weight: 600;
+            line-height: 1.2;
+            color: #ffffff;
+        }
+
+        .cs-cover-desc {
+            font-size: 17px;
+            font-weight: 300;
+            line-height: 1.65;
+            color: rgba(255,255,255,0.65);
+            max-width: 480px;
+        }
+
+        .cs-cover-mockup {
+            flex: 0 0 auto;
+            width: 400px;
+            border-radius: 16px;
+            background: #0d1117;
+            box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .mockup-topbar {
+            height: 44px;
+            background: #161b22;
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            gap: 8px;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            flex-shrink: 0;
+        }
+
+        .mockup-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .mockup-dot:nth-child(1) { background: #ff6059; }
+        .mockup-dot:nth-child(2) { background: #febc2e; }
+        .mockup-dot:nth-child(3) { background: #29c840; }
+
+        .mockup-url {
+            flex: 1;
+            height: 22px;
+            background: rgba(255,255,255,0.06);
+            border-radius: 4px;
+            margin: 0 8px;
+        }
+
+        .mockup-body {
+            display: flex;
+        }
+
+        .mockup-sidebar {
+            width: 60px;
+            background: #0d1117;
+            border-right: 1px solid rgba(255,255,255,0.06);
+            padding: 16px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .sidebar-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            background: rgba(255,255,255,0.06);
+        }
+
+        .sidebar-icon.active {
+            background: rgba(123, 97, 255, 0.3);
+        }
+
+        .mockup-main {
+            flex: 1;
+            padding: 20px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .legacy-header-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 4px;
+        }
+
+        .legacy-title-block {
+            height: 10px;
+            width: 120px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 4px;
+        }
+
+        .legacy-btn {
+            height: 22px;
+            width: 70px;
+            background: rgba(123, 97, 255, 0.5);
+            border-radius: 4px;
+        }
+
+        .legacy-table {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .legacy-table-head {
+            height: 28px;
+            background: rgba(255,255,255,0.05);
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            gap: 8px;
+        }
+
+        .legacy-table-head span {
+            height: 7px;
+            border-radius: 3px;
+            background: rgba(255,255,255,0.2);
+        }
+
+        .legacy-row {
+            height: 26px;
+            background: rgba(255,255,255,0.02);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            gap: 8px;
+        }
+
+        .legacy-row:nth-child(odd) { background: rgba(255,255,255,0.04); }
+
+        .legacy-cell {
+            height: 7px;
+            border-radius: 3px;
+            background: rgba(255,255,255,0.12);
+        }
+
+        .legacy-stat-row {
+            display: flex;
+            gap: 8px;
+        }
+
+        .legacy-stat {
+            flex: 1;
+            height: 44px;
+            background: rgba(255,255,255,0.04);
+            border-radius: 6px;
+            border: 1px solid rgba(255,255,255,0.07);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 8px;
+            gap: 4px;
+        }
+
+        .legacy-stat-num {
+            height: 8px;
+            width: 40px;
+            background: rgba(123, 97, 255, 0.5);
+            border-radius: 3px;
+        }
+
+        .legacy-stat-lbl {
+            height: 5px;
+            width: 55px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 3px;
+        }
+
+        /* ── Content sections ── */
+        .cs-body {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 60px;
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+        }
+
+        .cs-section {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .cs-section-label {
+            font-family: var(--font-body);
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--deep-lavender);
+        }
+
+        .cs-section-title {
+            font-family: var(--font-heading);
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--text-color);
+            margin: 0;
+        }
+
+        .cs-section-body {
+            font-size: 17px;
+            font-weight: 300;
+            line-height: 1.75;
+            color: var(--text-color);
+            max-width: 820px;
+        }
+
+        .cs-section-body p + p { margin-top: 16px; }
+
+        /* ── Meta grid ── */
+        .cs-meta-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .cs-meta-card {
+            background: var(--soft-lavender);
+            border-radius: 16px;
+            padding: 28px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .cs-meta-label {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--deep-lavender);
+        }
+
+        .cs-meta-value {
+            font-family: var(--font-heading);
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--text-color);
+            line-height: 1.4;
+        }
+
+        /* ── Divider ── */
+        .cs-divider {
+            width: 100%;
+            height: 1px;
+            background: #ececf5;
+        }
+
+        /* ── Two-column layout ── */
+        .cs-two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: start;
+        }
+
+        .cs-two-col.wide-left {
+            grid-template-columns: 3fr 2fr;
+        }
+
+        /* ── Insight cards ── */
+        .cs-insight-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .cs-insight-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 28px 24px;
+            border: 1px solid #ececf5;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            box-shadow: 0 2px 24px rgba(0,0,0,0.05);
+        }
+
+        .cs-insight-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: var(--soft-lavender);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cs-insight-icon svg {
+            width: 22px;
+            height: 22px;
+            color: var(--deep-lavender);
+        }
+
+        .cs-insight-title {
+            font-family: var(--font-heading);
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .cs-insight-body {
+            font-size: 15px;
+            font-weight: 300;
+            line-height: 1.65;
+            color: #555;
+        }
+
+        /* ── Process steps ── */
+        .cs-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .cs-step {
+            display: flex;
+            gap: 28px;
+            padding: 32px 0;
+            border-bottom: 1px solid #ececf5;
+        }
+
+        .cs-step:last-child { border-bottom: none; }
+
+        .cs-step-number {
+            flex: 0 0 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--soft-lavender);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-heading);
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--deep-lavender);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .cs-step-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .cs-step-title {
+            font-family: var(--font-heading);
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .cs-step-body {
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.65;
+            color: #555;
+        }
+
+        /* ── Before / After comparison ── */
+        .cs-compare-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .cs-compare-card {
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid #ececf5;
+        }
+
+        .cs-compare-label {
+            padding: 12px 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .cs-compare-label.before {
+            background: #f5f5f5;
+            color: #888;
+        }
+
+        .cs-compare-label.after {
+            background: var(--soft-lavender);
+            color: var(--deep-lavender);
+        }
+
+        .cs-compare-visual {
+            padding: 24px;
+            min-height: 160px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            background: var(--white);
+        }
+
+        /* Before — messy legacy look */
+        .legacy-old-bar {
+            height: 10px;
+            background: #ccc;
+            border-radius: 2px;
+        }
+
+        .legacy-old-bar.wide { width: 90%; }
+        .legacy-old-bar.med { width: 60%; }
+        .legacy-old-bar.narrow { width: 35%; }
+
+        .legacy-old-row {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+
+        .legacy-old-badge {
+            padding: 3px 8px;
+            background: #e0e0e0;
+            border-radius: 2px;
+            font-size: 10px;
+            color: #666;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        /* After — modern clean look */
+        .modern-bar {
+            height: 8px;
+            background: var(--soft-lavender);
+            border-radius: 100px;
+        }
+
+        .modern-bar.wide { width: 88%; }
+        .modern-bar.med { width: 55%; }
+        .modern-bar.narrow { width: 30%; }
+        .modern-bar.accent { background: rgba(123, 97, 255, 0.35); }
+
+        .modern-badge {
+            padding: 4px 12px;
+            background: var(--soft-lavender);
+            border-radius: 100px;
+            font-size: 10px;
+            color: var(--deep-lavender);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        /* ── Result stats ── */
+        .cs-stat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .cs-stat-card {
+            background: var(--text-color);
+            border-radius: 20px;
+            padding: 36px 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .cs-stat-number {
+            font-family: var(--font-heading);
+            font-size: 44px;
+            font-weight: 600;
+            background: linear-gradient(to right, var(--deep-lavender), var(--crisp-lilac));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+        }
+
+        .cs-stat-label {
+            font-size: 16px;
+            font-weight: 300;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.5;
+        }
+
+        /* ── Quote pull ── */
+        .cs-quote {
+            border-left: 3px solid var(--deep-lavender);
+            padding: 20px 32px;
+            background: var(--soft-lavender);
+            border-radius: 0 16px 16px 0;
+        }
+
+        .cs-quote p {
+            font-family: var(--font-heading);
+            font-size: 20px;
+            font-weight: 400;
+            font-style: italic;
+            line-height: 1.65;
+            color: var(--text-color);
+        }
+
+        .cs-quote cite {
+            display: block;
+            margin-top: 12px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--deep-lavender);
+            font-style: normal;
+        }
+
+        /* ── Next project banner ── */
+        .cs-next {
+            background: linear-gradient(135deg, var(--deep-lavender), var(--crisp-lilac));
+            border-radius: 24px;
+            padding: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 32px;
+            margin: 0 18px 18px;
+            width: calc(100% - 36px);
+            box-sizing: border-box;
+        }
+
+        .cs-next-text {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .cs-next-eyebrow {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: rgba(255,255,255,0.65);
+        }
+
+        .cs-next-title {
+            font-family: var(--font-heading);
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .btn-white-outline {
+            background: transparent;
+            color: var(--white);
+            border: 1.5px solid rgba(255,255,255,0.7);
+            border-radius: 100px;
+            padding: 14px 32px;
+            font-family: var(--font-heading);
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.25s ease, border-color 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+        .btn-white-outline:hover {
+            background: rgba(255,255,255,0.15);
+            border-color: var(--white);
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 900px) {
+            .cs-hero { padding: 60px 24px 40px; }
+            .cs-body { padding: 60px 24px; gap: 56px; }
+            .cs-meta-grid { grid-template-columns: repeat(2, 1fr); }
+            .cs-insight-grid { grid-template-columns: 1fr 1fr; }
+            .cs-two-col, .cs-two-col.wide-left { grid-template-columns: 1fr; }
+            .cs-stat-grid { grid-template-columns: 1fr; gap: 16px; }
+            .cs-compare-grid { grid-template-columns: 1fr; }
+            .cs-cover { margin: 0; border-radius: 0; }
+            .cs-cover-inner { flex-direction: column; padding: 36px 24px; }
+            .cs-cover-mockup { width: 100%; }
+            .cs-next { flex-direction: column; align-items: flex-start; padding: 40px 28px; margin: 0; border-radius: 0; width: 100%; }
+        }
+
+        @media (max-width: 600px) {
+            .cs-hero { padding: 40px 20px 32px; }
+            .cs-body { padding: 40px 20px; gap: 48px; }
+            .cs-meta-grid { grid-template-columns: 1fr 1fr; }
+            .cs-insight-grid { grid-template-columns: 1fr; }
+            .cs-stat-number { font-size: 36px; }
+            .cs-title { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="assets/ga-logo.svg" alt="Gloria Logo" class="logo">
+                </a>
+            </div>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="index.html#projects" class="nav-link active">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- Hero -->
+        <section class="cs-hero">
+            <a href="index.html#projects" class="cs-back">
+                <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 9H3M9 3L3 9l6 6"/>
+                </svg>
+                Back to Projects
+            </a>
+
+            <p class="cs-eyebrow">Case Study</p>
+            <h1 class="cs-title">Modernizing a Legacy<br><span class="light-slash">Insurance Platform</span></h1>
+            <p class="cs-subtitle">Redesigning a decade-old enterprise insurance system — improving visual hierarchy, usability, and consistency without touching the underlying architecture.</p>
+
+            <div class="cs-tags">
+                <span class="tag">UI Design</span>
+                <span class="tag">Legacy System</span>
+                <span class="tag">CSS Implementation</span>
+                <span class="tag">Enterprise UX</span>
+                <span class="tag">Design System</span>
+            </div>
+        </section>
+
+        <!-- Cover -->
+        <div class="cs-cover">
+            <div class="cs-cover-inner">
+                <div class="cs-cover-text">
+                    <span class="cs-cover-label">Enterprise Insurance · 2024</span>
+                    <h2 class="cs-cover-heading">Modern interface.<br>Same trusted system.</h2>
+                    <p class="cs-cover-desc">A full visual overhaul of a 10-year-old insurance platform — bringing clarity, consistency, and modern UI patterns to agents who use it every single day.</p>
+                    <div style="display:flex;gap:12px;margin-top:8px;flex-wrap:wrap;">
+                        <span class="tag" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.8);">UI Design</span>
+                        <span class="tag" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.8);">CSS Implementation</span>
+                    </div>
+                </div>
+                <!-- Dark-themed mockup of a dashboard -->
+                <div class="cs-cover-mockup">
+                    <div class="mockup-topbar">
+                        <div class="mockup-dot"></div>
+                        <div class="mockup-dot"></div>
+                        <div class="mockup-dot"></div>
+                        <div class="mockup-url"></div>
+                    </div>
+                    <div class="mockup-body">
+                        <div class="mockup-sidebar">
+                            <div class="sidebar-icon active"></div>
+                            <div class="sidebar-icon"></div>
+                            <div class="sidebar-icon"></div>
+                            <div class="sidebar-icon"></div>
+                            <div class="sidebar-icon"></div>
+                        </div>
+                        <div class="mockup-main">
+                            <div class="legacy-stat-row">
+                                <div class="legacy-stat">
+                                    <div class="legacy-stat-num"></div>
+                                    <div class="legacy-stat-lbl"></div>
+                                </div>
+                                <div class="legacy-stat">
+                                    <div class="legacy-stat-num"></div>
+                                    <div class="legacy-stat-lbl"></div>
+                                </div>
+                                <div class="legacy-stat">
+                                    <div class="legacy-stat-num"></div>
+                                    <div class="legacy-stat-lbl"></div>
+                                </div>
+                            </div>
+                            <div class="legacy-table">
+                                <div class="legacy-table-head">
+                                    <span style="width:60px;"></span>
+                                    <span style="width:40px;"></span>
+                                    <span style="width:50px;"></span>
+                                </div>
+                                <div class="legacy-row">
+                                    <div class="legacy-cell" style="width:55px;"></div>
+                                    <div class="legacy-cell" style="width:38px;"></div>
+                                    <div class="legacy-cell" style="width:48px;background:rgba(123,97,255,0.4);"></div>
+                                </div>
+                                <div class="legacy-row">
+                                    <div class="legacy-cell" style="width:48px;"></div>
+                                    <div class="legacy-cell" style="width:35px;"></div>
+                                    <div class="legacy-cell" style="width:42px;"></div>
+                                </div>
+                                <div class="legacy-row">
+                                    <div class="legacy-cell" style="width:60px;"></div>
+                                    <div class="legacy-cell" style="width:30px;"></div>
+                                    <div class="legacy-cell" style="width:50px;background:rgba(123,97,255,0.4);"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Body -->
+        <div class="cs-body">
+
+            <!-- Project overview meta -->
+            <section class="cs-section">
+                <p class="cs-section-label">Overview</p>
+                <div class="cs-meta-grid">
+                    <div class="cs-meta-card">
+                        <span class="cs-meta-label">Client</span>
+                        <span class="cs-meta-value">Enterprise Insurance Co.</span>
+                    </div>
+                    <div class="cs-meta-card">
+                        <span class="cs-meta-label">My Role</span>
+                        <span class="cs-meta-value">UI Designer &amp; CSS Dev</span>
+                    </div>
+                    <div class="cs-meta-card">
+                        <span class="cs-meta-label">Timeline</span>
+                        <span class="cs-meta-value">4 months · 2024</span>
+                    </div>
+                    <div class="cs-meta-card">
+                        <span class="cs-meta-label">Tools</span>
+                        <span class="cs-meta-value">Figma · CSS/Less · DevTools</span>
+                    </div>
+                </div>
+            </section>
+
+            <div class="cs-divider"></div>
+
+            <!-- Context -->
+            <section class="cs-section">
+                <p class="cs-section-label">Context</p>
+                <h2 class="cs-section-title">A platform built to last — maybe too long</h2>
+                <div class="cs-section-body">
+                    <p>The platform had been in production for over 10 years. Thousands of insurance agents used it daily to manage policies, claims, and client records. It worked. But it looked and felt like it was from another era — small fonts, dense tables, inconsistent button styles, and no visual hierarchy to guide the eye.</p>
+                    <p>The challenge: the business couldn't afford a full rebuild. The backend was stable and deeply integrated. What they needed was a way to make the interface dramatically better without changing how the system worked underneath.</p>
+                </div>
+            </section>
+
+            <div class="cs-divider"></div>
+
+            <!-- Problem -->
+            <section class="cs-section">
+                <p class="cs-section-label">Problem</p>
+                <h2 class="cs-section-title">The challenge</h2>
+                <div class="cs-two-col wide-left">
+                    <div class="cs-section-body">
+                        <p>Agents were spending extra time scanning screens because there was no clear visual priority. Critical actions (like approving a claim) sat alongside low-priority links with identical styling. The colour palette was arbitrary — there was no system behind it, just years of accumulated decisions.</p>
+                        <p>On top of that, every page was a slightly different interpretation of the same interface. Forms, tables, and modals all behaved differently. Agents who moved between modules had to mentally re-learn the UI each time.</p>
+                    </div>
+                    <div class="cs-quote">
+                        <p>"It gets the job done, but I spend half my day looking for things that should be obvious."</p>
+                        <cite>— Insurance Agent, User Interview</cite>
+                    </div>
+                </div>
+            </section>
+
+            <div class="cs-divider"></div>
+
+            <!-- Research -->
+            <section class="cs-section">
+                <p class="cs-section-label">Research</p>
+                <h2 class="cs-section-title">Understanding how agents actually work</h2>
+                <p class="cs-section-body">I ran five contextual interviews with agents across different departments — claims, policies, and client management. I also shadowed two agents for a half-day each to watch real usage patterns. Three themes emerged that shaped every design decision:</p>
+
+                <div class="cs-insight-grid">
+                    <div class="cs-insight-card">
+                        <div class="cs-insight-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+                            </svg>
+                        </div>
+                        <p class="cs-insight-title">Scanning, not reading</p>
+                        <p class="cs-insight-body">Agents don't read interfaces — they scan for known patterns. The existing design made every element equally loud, forcing agents to read everything to find what they needed.</p>
+                    </div>
+                    <div class="cs-insight-card">
+                        <div class="cs-insight-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <p class="cs-insight-title">Consistency reduces errors</p>
+                        <p class="cs-insight-body">When button placement, form layout, and table patterns are consistent across all modules, agents develop muscle memory — drastically reducing mistakes on high-stakes actions like claim approvals.</p>
+                    </div>
+                    <div class="cs-insight-card">
+                        <div class="cs-insight-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+                            </svg>
+                        </div>
+                        <p class="cs-insight-title">Speed is everything</p>
+                        <p class="cs-insight-body">Agents handle dozens of records per shift. Even saving 5 seconds per task — through better visual hierarchy and fewer clicks to find things — compounds to meaningful productivity gains across a team.</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="cs-divider"></div>
+
+            <!-- Process -->
+            <section class="cs-section">
+                <p class="cs-section-label">Process</p>
+                <h2 class="cs-section-title">How I approached the redesign</h2>
+
+                <div class="cs-steps">
+                    <div class="cs-step">
+                        <div class="cs-step-number">01</div>
+                        <div class="cs-step-content">
+                            <p class="cs-step-title">Audit & component inventory</p>
+                            <p class="cs-step-body">I documented every UI component in the existing system — buttons, form fields, tables, modals, navigation states. This gave me a complete map of the inconsistencies and a baseline for the new design system.</p>
+                        </div>
+                    </div>
+                    <div class="cs-step">
+                        <div class="cs-step-number">02</div>
+                        <div class="cs-step-content">
+                            <p class="cs-step-title">Define the design system foundation</p>
+                            <p class="cs-step-body">Before redesigning any screens, I established a consistent token system in Figma: colour palette with clear semantic meaning (primary, danger, success, neutral), typography scale, spacing units, and border radius values.</p>
+                        </div>
+                    </div>
+                    <div class="cs-step">
+                        <div class="cs-step-number">03</div>
+                        <div class="cs-step-content">
+                            <p class="cs-step-title">Redesign the highest-traffic screens first</p>
+                            <p class="cs-step-body">Working with analytics data, I identified the five most-visited modules. These were redesigned first in Figma, validated with two agents in brief feedback sessions, then refined before expanding to the rest of the platform.</p>
+                        </div>
+                    </div>
+                    <div class="cs-step">
+                        <div class="cs-step-number">04</div>
+                        <div class="cs-step-content">
+                            <p class="cs-step-title">CSS/Less implementation</p>
+                            <p class="cs-step-body">The platform used a Less-based stylesheet. I implemented the new design system by replacing the existing stylesheet layer — no backend changes, no template restructuring. Just a clean new CSS/Less layer applied on top of the existing HTML structure.</p>
+                        </div>
+                    </div>
+                    <div class="cs-step">
+                        <div class="cs-step-number">05</div>
+                        <div class="cs-step-content">
+                            <p class="cs-step-title">QA across browsers & edge cases</p>
+                            <p class="cs-step-body">Tested across Chrome, Firefox, Edge, and IE11 (a hard requirement for this enterprise client). Identified and resolved 23 visual inconsistencies in edge-case data states — empty tables, long text overflow, multi-line form labels.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="cs-divider"></div>
+
+            <!-- Before / After -->
+            <section class="cs-section">
+                <p class="cs-section-label">Design</p>
+                <h2 class="cs-section-title">Before &amp; after</h2>
+                <p class="cs-section-body">The visual difference is significant — but the underlying HTML structure is identical. Everything changed through CSS alone.</p>
+
+                <div class="cs-compare-grid">
+                    <div class="cs-compare-card">
+                        <div class="cs-compare-label before">Before — Legacy UI</div>
+                        <div class="cs-compare-visual" style="background:#f9f9f9;">
+                            <div class="legacy-old-bar wide" style="height:14px;background:#bbb;border-radius:2px;"></div>
+                            <div class="legacy-old-bar narrow" style="height:10px;background:#ccc;border-radius:2px;margin-bottom:8px;"></div>
+                            <div class="legacy-old-row">
+                                <div class="legacy-old-badge">Approve</div>
+                                <div class="legacy-old-badge">Reject</div>
+                                <div class="legacy-old-badge">View</div>
+                                <div class="legacy-old-badge">Edit</div>
+                                <div class="legacy-old-badge">Delete</div>
+                            </div>
+                            <div style="height:1px;background:#ddd;margin:8px 0;"></div>
+                            <div class="legacy-old-bar wide" style="height:9px;background:#ccc;border-radius:2px;"></div>
+                            <div class="legacy-old-bar med" style="height:9px;background:#ccc;border-radius:2px;"></div>
+                            <div class="legacy-old-bar wide" style="height:9px;background:#ccc;border-radius:2px;"></div>
+                            <div class="legacy-old-bar narrow" style="height:9px;background:#ccc;border-radius:2px;"></div>
+                        </div>
+                    </div>
+                    <div class="cs-compare-card">
+                        <div class="cs-compare-label after">After — Modernized UI</div>
+                        <div class="cs-compare-visual">
+                            <div class="modern-bar wide" style="height:14px;margin-bottom:4px;"></div>
+                            <div class="modern-bar narrow" style="margin-bottom:16px;"></div>
+                            <div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;">
+                                <div style="padding:6px 16px;background:var(--deep-lavender);border-radius:100px;height:28px;width:80px;"></div>
+                                <div class="modern-badge">View</div>
+                                <div class="modern-badge">Edit</div>
+                            </div>
+                            <div style="height:1px;background:#ececf5;margin-bottom:12px;"></div>
+                            <div class="modern-bar wide accent"></div>
+                            <div class="modern-bar med"></div>
+                            <div class="modern-bar wide"></div>
+                            <div class="modern-bar narrow"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="cs-divider"></div>
+
+            <!-- Outcomes -->
+            <section class="cs-section">
+                <p class="cs-section-label">Outcome</p>
+                <h2 class="cs-section-title">Results</h2>
+                <p class="cs-section-body" style="margin-bottom:8px;">Following a phased rollout to the full agent team, the product owner shared feedback and early usage metrics:</p>
+
+                <div class="cs-stat-grid">
+                    <div class="cs-stat-card">
+                        <span class="cs-stat-number">40%</span>
+                        <span class="cs-stat-label">reduction in time-on-task for the claim approval flow — measured via session recordings before and after</span>
+                    </div>
+                    <div class="cs-stat-card">
+                        <span class="cs-stat-number">0</span>
+                        <span class="cs-stat-label">backend changes required — the entire transformation was delivered through the CSS/Less layer only</span>
+                    </div>
+                    <div class="cs-stat-card">
+                        <span class="cs-stat-number">9 / 10</span>
+                        <span class="cs-stat-label">average satisfaction score from agents in a post-launch survey — up from 4/10 before the redesign</span>
+                    </div>
+                </div>
+            </section>
+
+            <div class="cs-divider"></div>
+
+            <!-- Reflection -->
+            <section class="cs-section">
+                <p class="cs-section-label">Reflection</p>
+                <h2 class="cs-section-title">What I learned</h2>
+                <div class="cs-two-col">
+                    <div class="cs-section-body">
+                        <p>This project taught me that constraints are often the best design brief. Working within an unchangeable HTML structure forced me to think purely in terms of visual layer — typography, colour, spacing, and component design — which are actually the most powerful levers for perceived quality.</p>
+                        <p>The design system work done upfront saved enormous time during implementation. Because every token was defined before a single screen was built, the CSS was almost mechanical to write — it was just translating decisions that had already been made.</p>
+                    </div>
+                    <div class="cs-section-body">
+                        <p>The biggest lesson: enterprise users have strong existing mental models. Radical changes — even good ones — create friction. The right approach was to make things feel familiar but significantly cleaner, not reinvent the interaction model entirely.</p>
+                        <p>If I extended this project, I'd push for an interactive prototype to test the redesigned navigation with agents before CSS implementation — some edge cases in the table interactions only became apparent once agents were clicking through a real build.</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Next project banner -->
+        <div class="cs-next">
+            <div class="cs-next-text">
+                <span class="cs-next-eyebrow">Up next</span>
+                <span class="cs-next-title">PMU Academy Platform</span>
+            </div>
+            <a href="project-pmu.html" class="btn-white-outline">View Case Study</a>
+        </div>
+
+        <!-- Footer -->
+        <footer id="contact" class="footer">
+            <div class="footer-content">
+                <div class="connect-section">
+                    <div class="connect-text">
+                        <h2>Let's connect!</h2>
+                        <p>I'm always open to new opportunities and collaborations.</p>
+                    </div>
+                    <a href="mailto:glory.angelova@gmail.com" class="btn btn-primary-solid" id="get-in-touch-btn">Get in touch with me</a>
+                </div>
+
+                <div class="contact-info-section">
+                    <div class="contact-column">
+                        <h3>Contact</h3>
+                        <p>Eindhoven / Netherlands</p>
+                        <p><a href="mailto:glory.angelova@gmail.com">glory.angelova@gmail.com</a></p>
+                        <p><a href="tel:+31647355880">+31 6 47 355 880</a></p>
+                    </div>
+                    <div class="contact-column">
+                        <h3>Social</h3>
+                        <p><a href="https://www.linkedin.com/in/gloria-angelova-9172aa99/" target="_blank">LinkedIn</a></p>
+                        <p><a href="#">Instagram</a></p>
+                        <p><a href="https://www.behance.net/gloryangelova" target="_blank">Behance</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© Copyright Gloria Angelova / 2025</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('.nav');
+
+        if (nav) nav.classList.remove('active');
+        if (menuToggle) menuToggle.classList.remove('active');
+
+        if (menuToggle && nav) {
+            menuToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                e.preventDefault();
+                menuToggle.classList.toggle('active');
+                nav.classList.toggle('active');
+                document.body.classList.toggle('no-scroll');
+            });
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    menuToggle.classList.remove('active');
+                    nav.classList.remove('active');
+                    document.body.classList.remove('no-scroll');
+                });
+            });
+
+            document.addEventListener('click', (e) => {
+                if (nav.classList.contains('active') &&
+                    !nav.contains(e.target) &&
+                    !menuToggle.contains(e.target)) {
+                    menuToggle.classList.remove('active');
+                    nav.classList.remove('active');
+                    document.body.classList.remove('no-scroll');
+                }
+            });
+        }
+
+        const header = document.querySelector('.header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 10);
+        });
+
+        const getInTouchBtn = document.getElementById('get-in-touch-btn');
+        const footer = document.getElementById('contact');
+        let pulseTimeout = null;
+
+        function startPulsing() {
+            if (getInTouchBtn && !getInTouchBtn.classList.contains('pulsing')) {
+                getInTouchBtn.classList.add('pulsing');
+                if (pulseTimeout) clearTimeout(pulseTimeout);
+                pulseTimeout = setTimeout(() => getInTouchBtn.classList.remove('pulsing'), 7000);
+            }
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) startPulsing();
+        }, { threshold: 0.2 });
+
+        if (footer) observer.observe(footer);
+    </script>
+</body>
+</html>
