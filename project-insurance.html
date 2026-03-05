@@ -356,27 +356,28 @@
 
         /* ── Meta grid ── */
         .cs-meta-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            display: flex;
+            flex-wrap: wrap;
             gap: 0;
+            border-top: 1px solid #e8e8f0;
         }
 
         .cs-meta-card {
             background: transparent;
             border-radius: 0;
-            padding: 20px 24px 20px 0;
-            border-top: 1px solid #e8e8f0;
+            padding: 24px 48px 24px 0;
             display: flex;
             flex-direction: column;
-            gap: 6px;
+            gap: 5px;
+            min-width: 160px;
         }
 
         .cs-meta-label {
             font-size: 11px;
-            font-weight: 500;
+            font-weight: 400;
             text-transform: uppercase;
-            letter-spacing: 0.12em;
-            color: #aaa;
+            letter-spacing: 0.13em;
+            color: #b0b0b8;
         }
 
         .cs-meta-value {
@@ -764,13 +765,6 @@
 
         <!-- Hero -->
         <section class="cs-hero">
-            <a href="index.html#projects" class="cs-back">
-                <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M15 9H3M9 3L3 9l6 6"/>
-                </svg>
-                Back to Projects
-            </a>
-
             <p class="cs-eyebrow">Case Study</p>
             <h1 class="cs-title">Modernizing a Legacy<br><span class="light-slash">Insurance Platform</span></h1>
             <p class="cs-subtitle">Redesigning a decade-old enterprise insurance system — improving visual hierarchy, usability, and consistency without touching the underlying architecture.</p>
@@ -861,14 +855,14 @@
             <!-- Project overview meta -->
             <section class="cs-section">
                 <p class="cs-section-label">Overview</p>
-                <div class="cs-meta-grid" style="grid-template-columns: repeat(3, 1fr);">
+                <div class="cs-meta-grid">
                     <div class="cs-meta-card">
                         <span class="cs-meta-label">My Role</span>
                         <span class="cs-meta-value">UI / UX Designer</span>
                     </div>
                     <div class="cs-meta-card">
                         <span class="cs-meta-label">Company</span>
-                        <span class="cs-meta-value">Thinkin (France)</span>
+                        <span class="cs-meta-value">TIINQIN (France)</span>
                     </div>
                     <div class="cs-meta-card">
                         <span class="cs-meta-label">Project Type</span>
@@ -878,7 +872,7 @@
                         <span class="cs-meta-label">Industry</span>
                         <span class="cs-meta-value">Insurance</span>
                     </div>
-                    <div class="cs-meta-card" style="grid-column: span 2;">
+                    <div class="cs-meta-card">
                         <span class="cs-meta-label">Focus</span>
                         <span class="cs-meta-value">UI Modernization of a Legacy System</span>
                     </div>
@@ -887,26 +881,14 @@
 
             <div class="cs-divider"></div>
 
-            <!-- Context -->
+            <!-- Context + Problem -->
             <section class="cs-section">
-                <p class="cs-section-label">Context</p>
+                <p class="cs-section-label">The Challenge</p>
                 <h2 class="cs-section-title">A platform built to last — maybe too long</h2>
-                <div class="cs-section-body">
-                    <p>The platform had been in production for over 10 years. Thousands of insurance agents used it daily to manage policies, claims, and client records. It worked. But it looked and felt like it was from another era — small fonts, dense tables, inconsistent button styles, and no visual hierarchy to guide the eye.</p>
-                    <p>The challenge: the business couldn't afford a full rebuild. The backend was stable and deeply integrated. What they needed was a way to make the interface dramatically better without changing how the system worked underneath.</p>
-                </div>
-            </section>
-
-            <div class="cs-divider"></div>
-
-            <!-- Problem -->
-            <section class="cs-section">
-                <p class="cs-section-label">Problem</p>
-                <h2 class="cs-section-title">The challenge</h2>
                 <div class="cs-two-col wide-left">
                     <div class="cs-section-body">
-                        <p>Agents were spending extra time scanning screens because there was no clear visual priority. Critical actions (like approving a claim) sat alongside low-priority links with identical styling. The colour palette was arbitrary — there was no system behind it, just years of accumulated decisions.</p>
-                        <p>On top of that, every page was a slightly different interpretation of the same interface. Forms, tables, and modals all behaved differently. Agents who moved between modules had to mentally re-learn the UI each time.</p>
+                        <p>The platform had been in production for over 10 years. It worked — but it looked like it was from another era. Small fonts, dense tables, inconsistent button styles, no visual hierarchy. The business couldn't afford a full rebuild, so the goal was clear: make the interface dramatically better without touching the backend.</p>
+                        <p>Every page was a slightly different interpretation of the same interface. Agents moving between modules had to re-learn the UI each time. Critical actions sat alongside low-priority links with identical styling.</p>
                     </div>
                     <div class="cs-quote">
                         <p>"It gets the job done, but I spend half my day looking for things that should be obvious."</p>
@@ -917,86 +899,114 @@
 
             <div class="cs-divider"></div>
 
-            <!-- Research -->
-            <section class="cs-section">
-                <p class="cs-section-label">Research</p>
-                <h2 class="cs-section-title">Understanding how agents actually work</h2>
-                <p class="cs-section-body">I ran five contextual interviews with agents across different departments — claims, policies, and client management. I also shadowed two agents for a half-day each to watch real usage patterns. Three themes emerged that shaped every design decision:</p>
-
-                <div class="cs-insight-grid">
-                    <div class="cs-insight-card">
-                        <div class="cs-insight-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
-                            </svg>
-                        </div>
-                        <p class="cs-insight-title">Scanning, not reading</p>
-                        <p class="cs-insight-body">Agents don't read interfaces — they scan for known patterns. The existing design made every element equally loud, forcing agents to read everything to find what they needed.</p>
-                    </div>
-                    <div class="cs-insight-card">
-                        <div class="cs-insight-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                            </svg>
-                        </div>
-                        <p class="cs-insight-title">Consistency reduces errors</p>
-                        <p class="cs-insight-body">When button placement, form layout, and table patterns are consistent across all modules, agents develop muscle memory — drastically reducing mistakes on high-stakes actions like claim approvals.</p>
-                    </div>
-                    <div class="cs-insight-card">
-                        <div class="cs-insight-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
-                            </svg>
-                        </div>
-                        <p class="cs-insight-title">Speed is everything</p>
-                        <p class="cs-insight-body">Agents handle dozens of records per shift. Even saving 5 seconds per task — through better visual hierarchy and fewer clicks to find things — compounds to meaningful productivity gains across a team.</p>
-                    </div>
-                </div>
-            </section>
-
-            <div class="cs-divider"></div>
-
             <!-- Process -->
             <section class="cs-section">
-                <p class="cs-section-label">Process</p>
+                <p class="cs-section-label">Design Process</p>
                 <h2 class="cs-section-title">How I approached the redesign</h2>
 
                 <div class="cs-steps">
                     <div class="cs-step">
                         <div class="cs-step-number">01</div>
                         <div class="cs-step-content">
-                            <p class="cs-step-title">Audit & component inventory</p>
-                            <p class="cs-step-body">I documented every UI component in the existing system — buttons, form fields, tables, modals, navigation states. This gave me a complete map of the inconsistencies and a baseline for the new design system.</p>
+                            <p class="cs-step-title">CSS strategy with the front-end team</p>
+                            <p class="cs-step-body">The project kicked off with a working session with the front-end team. The stylesheets had become inconsistent and hard to maintain over the years — together we defined a clear strategy for restructuring the CSS before any visual work began.</p>
                         </div>
                     </div>
                     <div class="cs-step">
                         <div class="cs-step-number">02</div>
                         <div class="cs-step-content">
-                            <p class="cs-step-title">Define the design system foundation</p>
-                            <p class="cs-step-body">Before redesigning any screens, I established a consistent token system in Figma: colour palette with clear semantic meaning (primary, danger, success, neutral), typography scale, spacing units, and border radius values.</p>
+                            <p class="cs-step-title">Exploring directions in Figma</p>
+                            <p class="cs-step-body">I created 2–3 design concepts for the main screen and presented them to the product and engineering teams. We selected a direction that balanced modernization with the visual identity already familiar to users.</p>
                         </div>
                     </div>
                     <div class="cs-step">
                         <div class="cs-step-number">03</div>
                         <div class="cs-step-content">
-                            <p class="cs-step-title">Redesign the highest-traffic screens first</p>
-                            <p class="cs-step-body">Working with analytics data, I identified the five most-visited modules. These were redesigned first in Figma, validated with two agents in brief feedback sessions, then refined before expanding to the rest of the platform.</p>
+                            <p class="cs-step-title">Visual identity & component system</p>
+                            <p class="cs-step-body">I preserved the platform's existing green but refreshed it to feel more modern and accessible. I introduced a product logo (the platform had none), redesigned the header layout, and defined a full token system — colour, typography, spacing — before touching any screens.</p>
                         </div>
                     </div>
                     <div class="cs-step">
                         <div class="cs-step-number">04</div>
                         <div class="cs-step-content">
-                            <p class="cs-step-title">CSS/Less implementation</p>
-                            <p class="cs-step-body">The platform used a Less-based stylesheet. I implemented the new design system by replacing the existing stylesheet layer — no backend changes, no template restructuring. Just a clean new CSS/Less layer applied on top of the existing HTML structure.</p>
+                            <p class="cs-step-title">Login page & key screen redesign</p>
+                            <p class="cs-step-body">Starting with the login page and the highest-traffic modules, I redesigned each screen in Figma then implemented the changes through the CSS/Less layer — no backend changes, no HTML restructuring.</p>
                         </div>
                     </div>
                     <div class="cs-step">
                         <div class="cs-step-number">05</div>
                         <div class="cs-step-content">
-                            <p class="cs-step-title">QA across browsers & edge cases</p>
-                            <p class="cs-step-body">Tested across Chrome, Firefox, Edge, and IE11 (a hard requirement for this enterprise client). Identified and resolved 23 visual inconsistencies in edge-case data states — empty tables, long text overflow, multi-line form labels.</p>
+                            <p class="cs-step-title">QA & cross-browser testing</p>
+                            <p class="cs-step-body">Tested across Chrome, Firefox, Edge, and IE11. Resolved 23 visual inconsistencies in edge-case states — empty tables, long text overflow, multi-line labels.</p>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <div class="cs-divider"></div>
+
+            <!-- Early Concepts -->
+            <section class="cs-section">
+                <p class="cs-section-label">Early Concepts</p>
+                <h2 class="cs-section-title">Exploring the direction in Figma</h2>
+                <p class="cs-section-body">Before committing to a visual direction, I created 2–3 distinct concept screens for the platform's main dashboard. These were presented to the product and engineering teams to align on tone, density, and style before any system-wide work began.</p>
+
+                <div class="cs-wireframe-grid" style="grid-template-columns: repeat(3, 1fr);">
+                    <div>
+                        <div class="cs-wireframe-tile" style="aspect-ratio:16/10; background:#f0f0f6;">
+                            <div class="wf-bar" style="background:rgba(80,80,100,0.15);"></div>
+                            <div class="wf-block" style="flex:2; background:rgba(80,80,100,0.08);"></div>
+                            <div style="display:flex;gap:6px;">
+                                <div style="flex:1;height:32px;border-radius:6px;background:rgba(80,80,100,0.12);"></div>
+                                <div style="flex:1;height:32px;border-radius:6px;background:rgba(80,80,100,0.12);"></div>
+                                <div style="flex:1;height:32px;border-radius:6px;background:rgba(80,80,100,0.12);"></div>
+                            </div>
+                            <div class="wf-sm"></div>
+                            <div class="wf-sm half"></div>
+                        </div>
+                        <p class="cs-wireframe-label">Concept A — Conservative</p>
+                    </div>
+                    <div>
+                        <div class="cs-wireframe-tile" style="aspect-ratio:16/10; background:#eaf2ea;">
+                            <div class="wf-bar" style="background:rgba(40,120,60,0.2);"></div>
+                            <div class="wf-block" style="flex:2; background:rgba(40,120,60,0.1);"></div>
+                            <div style="display:flex;gap:6px;">
+                                <div style="flex:1;height:32px;border-radius:6px;background:rgba(40,120,60,0.15);"></div>
+                                <div style="flex:1;height:32px;border-radius:6px;background:rgba(40,120,60,0.08);"></div>
+                                <div style="flex:1;height:32px;border-radius:6px;background:rgba(40,120,60,0.08);"></div>
+                            </div>
+                            <div class="wf-sm" style="background:rgba(40,120,60,0.15);"></div>
+                            <div class="wf-sm half" style="background:rgba(40,120,60,0.12);"></div>
+                        </div>
+                        <p class="cs-wireframe-label" style="color:#3a8a50;">Concept B — Brand-led ✓ Selected</p>
+                    </div>
+                    <div>
+                        <div class="cs-wireframe-tile" style="aspect-ratio:16/10; background:#1a1a2e;">
+                            <div class="wf-bar" style="background:rgba(255,255,255,0.1);"></div>
+                            <div class="wf-block" style="flex:2; background:rgba(255,255,255,0.06);"></div>
+                            <div style="display:flex;gap:6px;">
+                                <div style="flex:1;height:32px;border-radius:6px;background:rgba(255,255,255,0.1);"></div>
+                                <div style="flex:1;height:32px;border-radius:6px;background:rgba(255,255,255,0.06);"></div>
+                                <div style="flex:1;height:32px;border-radius:6px;background:rgba(255,255,255,0.06);"></div>
+                            </div>
+                            <div class="wf-sm" style="background:rgba(255,255,255,0.12);"></div>
+                            <div class="wf-sm half" style="background:rgba(255,255,255,0.08);"></div>
+                        </div>
+                        <p class="cs-wireframe-label" style="color:#888;">Concept C — Dark / Modern</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="cs-divider"></div>
+
+            <!-- Design System -->
+            <section class="cs-section">
+                <p class="cs-section-label">Design System</p>
+                <h2 class="cs-section-title">Building the component library in Figma</h2>
+                <p class="cs-section-body">Alongside the visual redesign, I built a structured component library in Figma covering all the building blocks of the platform — typography, color tokens, form elements, accordions, cards, tables, and tree components. This ensured consistency across screens and gave the front-end team a clear reference for implementation.</p>
+
+                <div style="border-radius:16px;overflow:hidden;border:1px solid #ececf5;box-shadow:0 4px 24px rgba(0,0,0,0.06);">
+                    <img src="assets/design-system-figma.png" alt="Design system in Figma" style="width:100%;display:block;">
                 </div>
             </section>
 
@@ -1011,41 +1021,20 @@
                 <div class="cs-compare-grid">
                     <div class="cs-compare-card">
                         <div class="cs-compare-label before">Before — Legacy UI</div>
-                        <div class="cs-compare-visual" style="background:#f9f9f9;">
-                            <div class="legacy-old-bar wide" style="height:14px;background:#bbb;border-radius:2px;"></div>
-                            <div class="legacy-old-bar narrow" style="height:10px;background:#ccc;border-radius:2px;margin-bottom:8px;"></div>
-                            <div class="legacy-old-row">
-                                <div class="legacy-old-badge">Approve</div>
-                                <div class="legacy-old-badge">Reject</div>
-                                <div class="legacy-old-badge">View</div>
-                                <div class="legacy-old-badge">Edit</div>
-                                <div class="legacy-old-badge">Delete</div>
-                            </div>
-                            <div style="height:1px;background:#ddd;margin:8px 0;"></div>
-                            <div class="legacy-old-bar wide" style="height:9px;background:#ccc;border-radius:2px;"></div>
-                            <div class="legacy-old-bar med" style="height:9px;background:#ccc;border-radius:2px;"></div>
-                            <div class="legacy-old-bar wide" style="height:9px;background:#ccc;border-radius:2px;"></div>
-                            <div class="legacy-old-bar narrow" style="height:9px;background:#ccc;border-radius:2px;"></div>
+                        <div style="overflow:hidden;">
+                            <img src="assets/dashboard-before.png" alt="Dashboard before redesign" style="width:100%;display:block;">
                         </div>
+                        <p style="font-size:14px;color:#888;padding:16px 20px;line-height:1.6;">The original platform interface was visually outdated and inconsistent, having evolved over more than a decade.</p>
                     </div>
                     <div class="cs-compare-card">
                         <div class="cs-compare-label after">After — Modernized UI</div>
-                        <div class="cs-compare-visual">
-                            <div class="modern-bar wide" style="height:14px;margin-bottom:4px;"></div>
-                            <div class="modern-bar narrow" style="margin-bottom:16px;"></div>
-                            <div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;">
-                                <div style="padding:6px 16px;background:var(--deep-lavender);border-radius:100px;height:28px;width:80px;"></div>
-                                <div class="modern-badge">View</div>
-                                <div class="modern-badge">Edit</div>
-                            </div>
-                            <div style="height:1px;background:#ececf5;margin-bottom:12px;"></div>
-                            <div class="modern-bar wide accent"></div>
-                            <div class="modern-bar med"></div>
-                            <div class="modern-bar wide"></div>
-                            <div class="modern-bar narrow"></div>
+                        <div style="overflow:hidden;">
+                            <img src="assets/dashboard-after.png" alt="Dashboard after redesign" style="width:100%;display:block;">
                         </div>
+                        <p style="font-size:14px;color:#888;padding:16px 20px;line-height:1.6;">The redesign focused on modernizing the visual layer of the interface while keeping the existing structure and workflows intact.</p>
                     </div>
                 </div>
+
             </section>
 
             <div class="cs-divider"></div>
@@ -1076,18 +1065,9 @@
 
             <!-- Reflection -->
             <section class="cs-section">
-                <p class="cs-section-label">Reflection</p>
-                <h2 class="cs-section-title">What I learned</h2>
-                <div class="cs-two-col">
-                    <div class="cs-section-body">
-                        <p>This project taught me that constraints are often the best design brief. Working within an unchangeable HTML structure forced me to think purely in terms of visual layer — typography, colour, spacing, and component design — which are actually the most powerful levers for perceived quality.</p>
-                        <p>The design system work done upfront saved enormous time during implementation. Because every token was defined before a single screen was built, the CSS was almost mechanical to write — it was just translating decisions that had already been made.</p>
-                    </div>
-                    <div class="cs-section-body">
-                        <p>The biggest lesson: enterprise users have strong existing mental models. Radical changes — even good ones — create friction. The right approach was to make things feel familiar but significantly cleaner, not reinvent the interaction model entirely.</p>
-                        <p>If I extended this project, I'd push for an interactive prototype to test the redesigned navigation with agents before CSS implementation — some edge cases in the table interactions only became apparent once agents were clicking through a real build.</p>
-                    </div>
-                </div>
+                <p class="cs-section-label">Takeaway</p>
+                <h2 class="cs-section-title">Constraints as a design brief</h2>
+                <p class="cs-section-body" style="max-width:680px;">Working within an unchangeable HTML structure forced me to focus entirely on the visual layer — typography, colour, spacing. Defining the design system upfront made implementation fast and consistent. The biggest lesson: enterprise users have strong mental models, so the goal was to make things feel familiar but dramatically cleaner — not reinvent the interaction model entirely.</p>
             </section>
 
         </div>
