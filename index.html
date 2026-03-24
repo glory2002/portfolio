@@ -52,7 +52,6 @@
                 <span></span>
             </button>
             <nav class="nav">
-                <a href="index.html" class="nav-link active">Home</a>
                 <a href="about.html" class="nav-link">About</a>
                 <a href="#projects" class="nav-link">Projects</a>
                 <a href="#contact" class="nav-link">Contact</a>
@@ -68,10 +67,7 @@
                     <div class="hero-text">
                         <h1>Hello! I'm Gloria Angelova.<br><span class="tagline-highlight">UX/UI Designer</span> who enjoys turning complex challenges into simple solutions.</h1>
                     </div>
-                    <div class="hero-actions">
-                        <a href="#projects" class="btn btn-primary-gradient">View My Work</a>
-                        <a href="about.html" class="btn btn-secondary-outline">About Me</a>
-                    </div>
+
                 </div>
                 <div class="hero-image-container">
                     <div class="hero-image-wrapper">
@@ -85,7 +81,6 @@
         <section id="projects" class="projects-section">
             <div class="section-header">
                 <h2 class="section-title">Projects</h2>
-                <p>A selection of projects that reflect my growth and design approach.</p>
             </div>
 
             <div class="projects-list">
@@ -120,10 +115,9 @@
                 <a href="project-locked-pmu.html" class="project-card horizontal">
                     <div class="project-info">
                         <div class="project-info-content">
-                            <h3>PMU Platform <span class="light-slash">/ Tanya Hrisova</span></h3>
+                            <h3>PMU Learning Platform</h3>
                             <div class="project-tags">
                                 <span class="tag">UI/UX Design</span>
-                                <span class="tag">Product Design</span>
                             </div>
                             <p class="project-description">Product design of a SaaS platform for professional microblading training — covering UX strategy, information architecture, and full UI design. Built to support course management, student progress tracking, and the overall learning experience for PMU artists.</p>
                         </div>
@@ -148,30 +142,25 @@
         <footer id="contact" class="footer">
             <div class="footer-content">
                 <div class="connect-section">
-                    <div class="connect-text">
-                        <h2>Let's connect!</h2>
-                        <p>I'm always open to new opportunities and collaborations.</p>
-                    </div>
-                    <a href="mailto:glory.angelova@gmail.com" class="btn btn-primary-solid" id="get-in-touch-btn">Get in touch with me</a>
+
+                    <a href="mailto:glory.angelova@gmail.com" class="footer-logo-link" id="get-in-touch-btn">
+                        <svg width="48" height="52" viewBox="0 0 42 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M41.5574 30.7311L30.327 11.2799C29.9972 10.7109 29.4901 10.2451 28.8676 10.0348C27.6349 9.62665 26.3609 10.1544 25.7549 11.2057L17.3156 25.825C16.9858 26.3939 16.8374 27.0659 16.9693 27.7091C17.2331 28.9789 18.3257 29.8199 19.5378 29.8199H30.2034L27.1814 24.5882H24.0646L28.0142 17.7444L36.371 32.2235C32.9697 37.1007 27.3174 39.8712 21.2982 39.5332C9.8534 38.3705 4.98442 29.8158 5.23591 21.8383C5.4874 13.869 10.8882 5.64406 22.3866 5.22766H26.8351L23.7718 0H22.2011C7.4086 0.535959 0.329821 11.6097 0.0123683 21.6734C-0.305084 31.7576 6.07695 43.2808 20.8406 44.7443C20.8735 44.7443 20.9107 44.7526 20.9436 44.7526C21.3971 44.7814 21.8506 44.7938 22.3 44.7938C30.2034 44.7938 37.4594 40.6999 41.5368 33.8726C42.114 32.9079 42.1223 31.704 41.5574 30.7311Z" fill="#7b61ff"/>
+                        </svg>
+                    </a>
+                    <p class="footer-tagline">Open to new opportunities and collaborations.<br>Browse my work and feel free to reach out.</p>
                 </div>
                 
                 <div class="contact-info-section">
+
                     <div class="contact-column">
-                        <h3>Contact</h3>
-                        <p>Eindhoven / Netherlands</p>
-                        <p><a href="mailto:glory.angelova@gmail.com">glory.angelova@gmail.com</a></p>
-                        <p><a href="tel:+31647355880">+31 6 47 355 880</a></p>
-                    </div>
-                    <div class="contact-column">
-                        <h3>Social</h3>
+
                         <p><a href="https://www.linkedin.com/in/gloria-angelova-9172aa99/" target="_blank">LinkedIn</a></p>
                         <p><a href="#">Instagram</a></p>
                         <p><a href="https://www.behance.net/gloryangelova" target="_blank">Behance</a></p>
+                        <p><a href="mailto:glory.angelova@gmail.com">Mail Me</a></p>
                     </div>
                 </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© Copyright Gloria Angelova / 2025</p>
             </div>
         </footer>
     </div>
@@ -277,135 +266,63 @@
 
         // Sticky header with shadow on scroll and logo change
         const header = document.querySelector('.header');
-        const logo = document.querySelector('.logo');
-        const projectsSection = document.querySelector('#projects');
         let lastScrollY = window.scrollY;
         let isScrollingDown = false;
         
         function handleScroll() {
             const currentScrollY = window.scrollY;
-            const isMobile = window.innerWidth <= 768;
-            
-            // Desktop: shadow on scroll
+
             if (window.scrollY > 10) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
             }
-            
-            // Mobile: hide/show header based on scroll direction
-            if (isMobile) {
-                if (currentScrollY > lastScrollY && currentScrollY > 50) {
-                    // Scrolling down - hide header
-                    if (!isScrollingDown) {
-                        header.classList.add('hide');
-                        isScrollingDown = true;
-                    }
-                } else if (currentScrollY < lastScrollY) {
-                    // Scrolling up - show header
-                    header.classList.remove('hide');
-                    isScrollingDown = false;
-                }
-                
-                // Show header at top of page
-                if (currentScrollY <= 10) {
-                    header.classList.remove('hide');
-                    isScrollingDown = false;
-                }
+
+            if (currentScrollY > lastScrollY && currentScrollY > 50) {
+                header.classList.add('hide');
+                isScrollingDown = true;
+            } else if (currentScrollY < lastScrollY) {
+                header.classList.remove('hide');
+                isScrollingDown = false;
             }
-            
+
+            if (currentScrollY <= 10) {
+                header.classList.remove('hide');
+                isScrollingDown = false;
+            }
+
             lastScrollY = currentScrollY;
-            
-            // Change logo when reaching projects section
-            if (projectsSection) {
-                const projectsTop = projectsSection.getBoundingClientRect().top;
-                const headerHeight = header.offsetHeight;
-                
-                if (projectsTop <= headerHeight + 50) {
-                    // User has scrolled to projects section - use colored logo
-                    if (logo.src && !logo.src.includes('ga-logo-projects.svg')) {
-                        logo.src = 'assets/ga-logo-projects.svg';
-                    }
-                } else {
-                    // User is above projects section - use black logo
-                    if (logo.src && !logo.src.includes('ga-logo.svg')) {
-                        logo.src = 'assets/ga-logo.svg';
-                    }
-                }
-            }
         }
         window.addEventListener('scroll', handleScroll);
         // Check on page load
         handleScroll();
 
-        // Pulsing animation for Get in touch button when Contact is clicked
-        const contactLink = document.querySelector('a[href="#contact"]');
-        const getInTouchBtn = document.getElementById('get-in-touch-btn');
+
+        // Footer expand on scroll or Contact click
         const footer = document.getElementById('contact');
-        let pulseTimeout = null;
-
-        function startPulsing() {
-            if (getInTouchBtn && !getInTouchBtn.classList.contains('pulsing')) {
-                getInTouchBtn.classList.add('pulsing');
-                
-                // Stop pulsing after 7 seconds
-                if (pulseTimeout) {
-                    clearTimeout(pulseTimeout);
-                }
-                pulseTimeout = setTimeout(() => {
-                    getInTouchBtn.classList.remove('pulsing');
-                }, 7000);
-            }
-        }
-
-        function checkIfFooterVisible() {
-            if (footer && getInTouchBtn) {
-                const footerRect = footer.getBoundingClientRect();
-                const windowHeight = window.innerHeight;
-                
-                // Check if footer is visible in viewport
-                if (footerRect.top < windowHeight && footerRect.bottom > 0) {
-                    startPulsing();
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        // Listen for hash change (when Contact link is clicked)
-        window.addEventListener('hashchange', () => {
-            if (window.location.hash === '#contact') {
-                // Wait a bit for smooth scroll to complete, then check
-                setTimeout(() => {
-                    if (checkIfFooterVisible()) {
-                        // Already visible, start pulsing
+        if (footer) {
+            const footerObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        footer.classList.add('footer--expanded');
                     } else {
-                        // Wait for scroll to complete
-                        const scrollCheck = setInterval(() => {
-                            if (checkIfFooterVisible()) {
-                                clearInterval(scrollCheck);
-                            }
-                        }, 100);
+                        footer.classList.remove('footer--expanded');
                     }
-                }, 500);
+                });
+            }, { threshold: 0.05 });
+            footerObserver.observe(footer);
+
+            const contactNavLink = document.querySelector('a[href="#contact"]');
+            if (contactNavLink) {
+                contactNavLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    footer.classList.add('footer--no-transition', 'footer--expanded');
+                    requestAnimationFrame(() => {
+                        footer.classList.remove('footer--no-transition');
+                        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+                    });
+                });
             }
-        });
-
-        // Also check on Contact link click
-        if (contactLink) {
-            contactLink.addEventListener('click', () => {
-                // Wait for smooth scroll to complete
-                setTimeout(() => {
-                    checkIfFooterVisible();
-                }, 800);
-            });
-        }
-
-        // Check on page load if hash is #contact
-        if (window.location.hash === '#contact') {
-            setTimeout(() => {
-                checkIfFooterVisible();
-            }, 500);
         }
 
         // Hide preloader on page load
