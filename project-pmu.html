@@ -306,116 +306,55 @@
 
         /* ── Divider ── */
 
-        /* ── Discover: Split layout ── */
-        .cs-split {
-            display: grid;
-            grid-template-columns: 1fr 1.4fr;
-            gap: 0;
-            border: 1px dashed rgba(0,0,0,0.15);
-            border-radius: 4px;
-            overflow: hidden;
+        /* ── Discover: Findings ── */
+        .cs-findings {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
             margin-top: 8px;
         }
 
-        .cs-split-nav {
-            display: flex;
-            flex-direction: column;
-            border-right: 1px dashed rgba(0,0,0,0.15);
-        }
-
-        .cs-split-item {
+        .cs-finding {
             display: flex;
             align-items: flex-start;
-            gap: 14px;
-            padding: 20px 24px;
-            background: none;
-            border: none;
-            border-bottom: 1px dashed rgba(0,0,0,0.1);
-            cursor: pointer;
-            text-align: left;
-            transition: background 0.2s;
+            gap: 20px;
         }
 
-        .cs-split-item:last-child { border-bottom: none; }
-
-        .cs-split-item:hover {
-            background: rgba(123,97,255,0.03);
-        }
-
-        .cs-split-item.active {
-            background: rgba(123,97,255,0.05);
-            border-left: 2px solid var(--deep-lavender);
-            padding-left: 22px;
-        }
-
-        .cs-split-num {
+        .cs-finding-badge {
             font-family: var(--font-body);
             font-size: 11px;
             font-weight: 500;
-            color: rgba(0,0,0,0.25);
-            letter-spacing: 0.05em;
-            padding-top: 2px;
-            min-width: 20px;
-            transition: color 0.2s;
-        }
-
-        .cs-split-item.active .cs-split-num {
             color: var(--deep-lavender);
+            background: var(--white);
+            border: 1px dashed rgba(123, 97, 255, 0.5);
+            border-radius: 4px;
+            padding: 4px 10px;
+            letter-spacing: 0.05em;
+            white-space: nowrap;
+            flex-shrink: 0;
+            margin-top: 2px;
         }
 
-        .cs-split-label {
-            font-family: var(--font-body);
-            font-size: 13px;
-            font-weight: 500;
-            color: rgba(0,0,0,0.5);
-            line-height: 1.5;
-            transition: color 0.2s;
-        }
-
-        .cs-split-item.active .cs-split-label,
-        .cs-split-item:hover .cs-split-label {
-            color: var(--text-color);
-        }
-
-        .cs-split-panel {
-            position: relative;
-            padding: 32px 28px;
-            min-height: 180px;
-        }
-
-        .cs-split-content {
-            display: none;
-            flex-direction: column;
-            gap: 20px;
-            animation: fadeIn 0.2s ease;
-        }
-
-        .cs-split-content.active {
+        .cs-finding-content {
             display: flex;
+            flex-direction: column;
+            gap: 6px;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(6px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-
-        .cs-split-body {
+        .cs-finding-title {
             font-family: var(--font-body);
             font-size: 14px;
-            line-height: 1.75;
-            color: rgba(0,0,0,0.6);
+            font-weight: 500;
+            color: var(--text-color);
             margin: 0;
         }
 
-        .cs-split-tags {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
-        @media (max-width: 768px) {
-            .cs-split { grid-template-columns: 1fr; }
-            .cs-split-nav { border-right: none; border-bottom: 1px dashed rgba(0,0,0,0.15); }
+        .cs-finding-body {
+            font-family: var(--font-body);
+            font-size: 13px;
+            line-height: 1.7;
+            color: rgba(0,0,0,0.5);
+            margin: 0;
         }
 
         /* ── Define: IA grid ── */
@@ -1028,45 +967,26 @@
                 <p class="cs-section-label">Discover</p>
                 <h2 class="cs-section-title">Understanding what was needed</h2>
 
-                <div class="cs-split">
-                    <div class="cs-split-nav">
-                        <button class="cs-split-item active" data-target="d1" onclick="switchDiscover(this)">
-                            <span class="cs-split-num">01</span>
-                            <span class="cs-split-label">Two very different users</span>
-                        </button>
-                        <button class="cs-split-item" data-target="d2" onclick="switchDiscover(this)">
-                            <span class="cs-split-num">02</span>
-                            <span class="cs-split-label">Feedback is the core loop</span>
-                        </button>
-                        <button class="cs-split-item" data-target="d3" onclick="switchDiscover(this)">
-                            <span class="cs-split-num">03</span>
-                            <span class="cs-split-label">Mobile is not optional</span>
-                        </button>
+                <div class="cs-findings">
+                    <div class="cs-finding">
+                        <span class="cs-finding-badge">01</span>
+                        <div class="cs-finding-content">
+                            <p class="cs-finding-title">Two very different users</p>
+                            <p class="cs-finding-body">Students need clarity, progress visibility, and a guided path. Admin needs control, oversight, and efficiency. The same platform had to serve both — with a clean separation of concerns.</p>
+                        </div>
                     </div>
-                    <div class="cs-split-panel">
-                        <div class="cs-split-content active" id="d1">
-                            <p class="cs-split-body">Students need clarity, progress visibility, and a guided path. Admin needs control, oversight, and efficiency. The same platform had to serve both — with a clean separation of concerns in routing, data access, and UI logic.</p>
-                            <div class="cs-split-tags">
-                                <span class="tag">Student view</span>
-                                <span class="tag">Admin view</span>
-                                <span class="tag">Role separation</span>
-                            </div>
+                    <div class="cs-finding">
+                        <span class="cs-finding-badge">02</span>
+                        <div class="cs-finding-content">
+                            <p class="cs-finding-title">Feedback is the core loop</p>
+                            <p class="cs-finding-body">The most critical flow wasn't enrolment — it was the correction cycle: student submits work → instructor reviews → approves or returns for revision. This loop had to be fast, clear, and realtime.</p>
                         </div>
-                        <div class="cs-split-content" id="d2">
-                            <p class="cs-split-body">The most critical flow wasn't enrolment — it was the correction cycle: student submits work → instructor reviews → approves or returns for revision. This loop had to be fast, clear, and realtime. Everything else was secondary.</p>
-                            <div class="cs-split-tags">
-                                <span class="tag">Realtime updates</span>
-                                <span class="tag">Status model</span>
-                                <span class="tag">Chat</span>
-                            </div>
-                        </div>
-                        <div class="cs-split-content" id="d3">
-                            <p class="cs-split-body">Students access the platform between practice sessions, often on a phone. Bottom nav, sticky headers, and full-screen overlays were required from day one — not afterthoughts retrofitted later.</p>
-                            <div class="cs-split-tags">
-                                <span class="tag">Mobile-first</span>
-                                <span class="tag">Bottom nav</span>
-                                <span class="tag">Responsive</span>
-                            </div>
+                    </div>
+                    <div class="cs-finding">
+                        <span class="cs-finding-badge">03</span>
+                        <div class="cs-finding-content">
+                            <p class="cs-finding-title">Mobile is not optional</p>
+                            <p class="cs-finding-body">Students access the platform between practice sessions, often on a phone. Bottom nav, sticky headers, and full-screen overlays were required from day one — not afterthoughts.</p>
                         </div>
                     </div>
                 </div>
@@ -1337,13 +1257,6 @@
             }
         });
 
-        function switchDiscover(btn) {
-            const target = btn.getAttribute('data-target');
-            btn.closest('.cs-split').querySelectorAll('.cs-split-item').forEach(b => b.classList.remove('active'));
-            btn.closest('.cs-split').querySelectorAll('.cs-split-content').forEach(c => c.classList.remove('active'));
-            btn.classList.add('active');
-            document.getElementById(target).classList.add('active');
-        }
     </script>
 </body>
 </html>
