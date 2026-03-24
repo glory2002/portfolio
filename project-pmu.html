@@ -312,6 +312,179 @@
             border-top: 1px dashed rgba(0, 0, 0, 0.2);
         }
 
+        /* ── Define: IA grid ── */
+        .cs-ia-grid {
+            display: grid;
+            grid-template-columns: 1fr 1px 1fr;
+            gap: 0 40px;
+            margin-top: 8px;
+        }
+
+        .cs-ia-col {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .cs-ia-role {
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--deep-lavender);
+            margin: 0 0 16px 0;
+        }
+
+        .cs-ia-flow {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cs-ia-node {
+            font-family: var(--font-body);
+            font-size: 13px;
+            color: var(--text-color);
+            padding: 10px 14px;
+            border-left: 1px dashed rgba(0,0,0,0.2);
+            margin-left: 8px;
+            position: relative;
+            transition: color 0.2s, border-color 0.2s;
+            cursor: default;
+        }
+
+        .cs-ia-node::before {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(0,0,0,0.15);
+            transition: background 0.2s;
+        }
+
+        .cs-ia-node:hover {
+            color: var(--deep-lavender);
+            border-color: rgba(123,97,255,0.4);
+        }
+
+        .cs-ia-node:hover::before {
+            background: var(--deep-lavender);
+        }
+
+        .cs-ia-node--highlight {
+            color: var(--deep-lavender);
+            border-color: rgba(123,97,255,0.5);
+            font-weight: 500;
+        }
+
+        .cs-ia-node--highlight::before {
+            background: var(--deep-lavender);
+        }
+
+        .cs-ia-node--end {
+            font-weight: 500;
+        }
+
+        .cs-ia-divider {
+            background: rgba(0,0,0,0.1);
+            border-left: 1px dashed rgba(0,0,0,0.15);
+            width: 1px;
+        }
+
+        /* ── Define: Status model ── */
+        .cs-status-section {
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px dashed rgba(0,0,0,0.1);
+        }
+
+        .cs-status-label {
+            font-family: var(--font-body);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: rgba(0,0,0,0.35);
+            margin: 0 0 16px 0;
+        }
+
+        .cs-status-flow {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .cs-status-arrow {
+            color: rgba(0,0,0,0.2);
+            font-size: 14px;
+        }
+
+        .cs-status-badge {
+            font-family: var(--font-body);
+            font-size: 12px;
+            font-weight: 500;
+            padding: 6px 12px;
+            border-radius: 4px;
+            border: 1px dashed rgba(0,0,0,0.2);
+            color: rgba(0,0,0,0.45);
+            background: var(--white);
+            cursor: default;
+            position: relative;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .cs-status-badge::after {
+            content: attr(data-note);
+            position: absolute;
+            bottom: calc(100% + 8px);
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            background: var(--text-color);
+            color: var(--white);
+            font-size: 11px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.15s;
+        }
+
+        .cs-status-badge:hover::after {
+            opacity: 1;
+        }
+
+        .cs-status-badge:hover {
+            border-color: rgba(0,0,0,0.4);
+            color: var(--text-color);
+        }
+
+        .cs-status-badge--active {
+            border-color: rgba(123,97,255,0.5);
+            color: var(--deep-lavender);
+        }
+
+        .cs-status-badge--warn {
+            border-color: rgba(200,100,0,0.3);
+            color: rgba(160,80,0,0.8);
+        }
+
+        .cs-status-badge--done {
+            border-color: rgba(0,140,80,0.3);
+            color: rgba(0,120,60,0.85);
+        }
+
+        @media (max-width: 768px) {
+            .cs-ia-grid { grid-template-columns: 1fr; gap: 32px; }
+            .cs-ia-divider { display: none; }
+            .cs-status-flow { gap: 6px; }
+            .cs-status-arrow { display: none; }
+        }
+
         .cs-screenshot-full {
             width: 100%;
             margin: 0;
@@ -801,65 +974,48 @@
                 <p class="cs-section-label">Define</p>
                 <h2 class="cs-section-title">Structure before screens</h2>
 
-                <div class="cs-steps">
-                    <div class="cs-step">
-                        <div class="cs-step-number">01</div>
-                        <div class="cs-step-content">
-                            <p class="cs-step-title">Two-sided IA</p>
-                            <p class="cs-step-body">Designed separate but connected information architectures for the student-facing academy (<code>/academy</code>) and the admin workspace (<code>/academy/admin</code>). Used FigJam to map the full flow: invitation → activation → learning → submission → feedback → certificate.</p>
+                <!-- Two-sided IA -->
+                <div class="cs-ia-grid">
+                    <div class="cs-ia-col">
+                        <p class="cs-ia-role">Student</p>
+                        <div class="cs-ia-flow">
+                            <div class="cs-ia-node">Email invitation</div>
+                            <div class="cs-ia-node">Account activation</div>
+                            <div class="cs-ia-node">Course dashboard</div>
+                            <div class="cs-ia-node">Theory &amp; levels</div>
+                            <div class="cs-ia-node cs-ia-node--highlight">Submit work</div>
+                            <div class="cs-ia-node">Await feedback</div>
+                            <div class="cs-ia-node cs-ia-node--end">Certificate</div>
                         </div>
                     </div>
-                    <div class="cs-step">
-                        <div class="cs-step-number">02</div>
-                        <div class="cs-step-content">
-                            <p class="cs-step-title">Defining the status model</p>
-                            <p class="cs-step-body">The feedback loop required a clear status system for each course level: pending, in progress, submitted for review, needs correction, approved. Each state had a distinct visual treatment and drove the admin's task list. Getting this right in the define phase prevented a lot of ambiguity later.</p>
-                        </div>
-                    </div>
-                    <div class="cs-step">
-                        <div class="cs-step-number">03</div>
-                        <div class="cs-step-content">
-                            <p class="cs-step-title">Lo-fi wireframes</p>
-                            <p class="cs-step-body">Wireframes focused on the two most complex screens: the student's course workspace (theory + levels + chat in one view) and the admin's student profile (same course structure, but with edit controls and status overrides).</p>
+                    <div class="cs-ia-divider"></div>
+                    <div class="cs-ia-col">
+                        <p class="cs-ia-role">Admin</p>
+                        <div class="cs-ia-flow">
+                            <div class="cs-ia-node">Create student</div>
+                            <div class="cs-ia-node">Send invitation</div>
+                            <div class="cs-ia-node">Student overview</div>
+                            <div class="cs-ia-node">Course authoring</div>
+                            <div class="cs-ia-node cs-ia-node--highlight">Review submission</div>
+                            <div class="cs-ia-node">Approve / return</div>
+                            <div class="cs-ia-node cs-ia-node--end">Issue certificate</div>
                         </div>
                     </div>
                 </div>
 
-                <div class="cs-wireframe-grid" style="margin-top:40px;">
-                    <div>
-                        <div class="cs-wireframe-tile">
-                            <div class="wf-bar"></div>
-                            <div style="display:flex;gap:8px;flex:1;">
-                                <div class="wf-block" style="flex:0 0 30%;"></div>
-                                <div style="display:flex;flex-direction:column;gap:6px;flex:1;">
-                                    <div class="wf-sm"></div>
-                                    <div class="wf-block" style="flex:1;"></div>
-                                    <div class="wf-sm half"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="cs-wireframe-label">Student — Course Workspace</p>
-                    </div>
-                    <div>
-                        <div class="cs-wireframe-tile" style="background:#ede9ff;">
-                            <div class="wf-bar" style="background:rgba(123,97,255,0.25);"></div>
-                            <div class="wf-sm" style="background:rgba(123,97,255,0.2);"></div>
-                            <div class="wf-block" style="flex:1;background:rgba(123,97,255,0.15);"></div>
-                            <div class="wf-block" style="flex:1;background:rgba(123,97,255,0.15);"></div>
-                            <div class="wf-sm half" style="background:rgba(123,97,255,0.2);"></div>
-                        </div>
-                        <p class="cs-wireframe-label">Admin — Student Profile</p>
-                    </div>
-                    <div>
-                        <div class="cs-wireframe-tile" style="background:#f0eeff;">
-                            <div class="wf-bar" style="background:rgba(123,97,255,0.2);"></div>
-                            <div class="wf-block" style="flex:3;background:rgba(123,97,255,0.12);"></div>
-                            <div class="wf-sm" style="background:rgba(123,97,255,0.18);"></div>
-                            <div class="wf-sm" style="background:rgba(123,97,255,0.18);"></div>
-                            <div class="wf-sm half" style="background:rgba(123,97,255,0.15);"></div>
-                            <div class="wf-block" style="flex:1;background:rgba(123,97,255,0.2);border-radius:4px;"></div>
-                        </div>
-                        <p class="cs-wireframe-label">Admin — Course Authoring</p>
+                <!-- Status model -->
+                <div class="cs-status-section">
+                    <p class="cs-status-label">Level status model — 5 states</p>
+                    <div class="cs-status-flow">
+                        <div class="cs-status-badge" data-note="Not yet started">Pending</div>
+                        <div class="cs-status-arrow">→</div>
+                        <div class="cs-status-badge" data-note="Student is working">In progress</div>
+                        <div class="cs-status-arrow">→</div>
+                        <div class="cs-status-badge cs-status-badge--active" data-note="Sent to instructor">For review</div>
+                        <div class="cs-status-arrow">→</div>
+                        <div class="cs-status-badge cs-status-badge--warn" data-note="Instructor returned it">Needs correction</div>
+                        <div class="cs-status-arrow">→</div>
+                        <div class="cs-status-badge cs-status-badge--done" data-note="Level complete">Approved</div>
                     </div>
                 </div>
             </section>
