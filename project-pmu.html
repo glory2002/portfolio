@@ -372,6 +372,175 @@
             .cs-finding:last-child { border-bottom: none; }
         }
 
+        /* ── Concept: Solution ── */
+        .cs-solution-intro {
+            max-width: 680px;
+            margin-bottom: 40px;
+        }
+
+        .cs-solution-intro p {
+            font-family: var(--font-body);
+            font-size: 15px;
+            line-height: 1.75;
+            color: rgba(0,0,0,0.6);
+            margin: 0;
+        }
+
+        .cs-roles {
+            display: grid;
+            grid-template-columns: 1fr 1px 1fr;
+            gap: 0;
+            border: 1px dashed rgba(0,0,0,0.15);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 32px;
+        }
+
+        .cs-role {
+            padding: 32px 36px;
+        }
+
+        .cs-role-divider {
+            background: rgba(0,0,0,0.1);
+            width: 1px;
+            margin: 24px 0;
+            border-left: 1px dashed rgba(0,0,0,0.15);
+            background: transparent;
+        }
+
+        .cs-role-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .cs-role-tag {
+            font-family: var(--font-body);
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 3px 8px;
+            border-radius: 2px;
+        }
+
+        .cs-role-tag--instructor {
+            background: rgba(123,97,255,0.1);
+            color: var(--deep-lavender);
+            border: 1px dashed rgba(123,97,255,0.3);
+        }
+
+        .cs-role-tag--student {
+            background: rgba(0,0,0,0.04);
+            color: rgba(0,0,0,0.45);
+            border: 1px dashed rgba(0,0,0,0.15);
+        }
+
+        .cs-role-name {
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 500;
+            color: rgba(0,0,0,0.5);
+            margin: 0;
+        }
+
+        .cs-role-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .cs-role-list li {
+            font-family: var(--font-body);
+            font-size: 13.5px;
+            line-height: 1.55;
+            color: rgba(0,0,0,0.65);
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .cs-role-list li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: rgba(0,0,0,0.2);
+            font-size: 11px;
+        }
+
+        /* Pillars diagram */
+        .cs-pillars {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr auto 1fr;
+            align-items: stretch;
+            gap: 0;
+            border: 1px dashed rgba(0,0,0,0.15);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .cs-pillar {
+            padding: 28px 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .cs-pillar-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 4px;
+            font-size: 18px;
+            color: rgba(0,0,0,0.15);
+            border-left: 1px dashed rgba(0,0,0,0.1);
+            border-right: 1px dashed rgba(0,0,0,0.1);
+        }
+
+        .cs-pillar-num {
+            font-family: var(--font-heading);
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--deep-lavender);
+            letter-spacing: 0.05em;
+            opacity: 0.6;
+        }
+
+        .cs-pillar-body {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .cs-pillar-title {
+            font-family: var(--font-heading);
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-color);
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .cs-pillar-desc {
+            font-family: var(--font-body);
+            font-size: 13px;
+            line-height: 1.65;
+            color: rgba(0,0,0,0.5);
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .cs-roles { grid-template-columns: 1fr; }
+            .cs-role-divider { height: 1px; width: auto; margin: 0; border-left: none; border-top: 1px dashed rgba(0,0,0,0.15); }
+            .cs-pillars { grid-template-columns: 1fr; }
+            .cs-pillar-arrow { display: none; }
+            .cs-pillar { border-bottom: 1px dashed rgba(0,0,0,0.1); }
+            .cs-pillar:last-child { border-bottom: none; }
+        }
+
         /* ── Research: Benchmark ── */
         .cs-benchmark {
             display: flex;
@@ -1207,6 +1376,74 @@
                         <div class="cs-takeaway cs-takeaway--highlight">
                             <span class="cs-takeaway-dot"></span>
                             <p><strong>Opportunity:</strong> build the platform that does all three — and make it feel like Tanya's.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Concept / Solution -->
+            <section class="cs-section">
+                <p class="cs-section-label">Concept</p>
+                <h2 class="cs-section-title">The solution</h2>
+
+                <div class="cs-solution-intro">
+                    <p>TH Academy is a private, invite-only learning platform built around Tanya's teaching method. Two distinct roles — instructor and student — share the same system but experience it differently. The platform moves each student through structured levels, with direct feedback at every stage and a certificate waiting at the end.</p>
+                </div>
+
+                <!-- Roles -->
+                <div class="cs-roles">
+                    <div class="cs-role">
+                        <div class="cs-role-header">
+                            <span class="cs-role-tag cs-role-tag--instructor">Instructor</span>
+                            <p class="cs-role-name">Tanya Hristova</p>
+                        </div>
+                        <ul class="cs-role-list">
+                            <li>Creates and structures courses by level</li>
+                            <li>Invites students individually</li>
+                            <li>Reviews submitted work and leaves feedback via chat</li>
+                            <li>Tracks student progress across all courses</li>
+                            <li>Issues certificates upon completion</li>
+                        </ul>
+                    </div>
+                    <div class="cs-role-divider"></div>
+                    <div class="cs-role">
+                        <div class="cs-role-header">
+                            <span class="cs-role-tag cs-role-tag--student">Student</span>
+                            <p class="cs-role-name">Enrolled learner</p>
+                        </div>
+                        <ul class="cs-role-list">
+                            <li>Accesses courses through a personal invite</li>
+                            <li>Progresses level by level at their own pace</li>
+                            <li>Submits practical work for review</li>
+                            <li>Receives real-time corrections in chat</li>
+                            <li>Downloads a certificate on course completion</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- System pillars diagram -->
+                <div class="cs-pillars">
+                    <div class="cs-pillar">
+                        <span class="cs-pillar-num">01</span>
+                        <div class="cs-pillar-body">
+                            <p class="cs-pillar-title">Level system</p>
+                            <p class="cs-pillar-desc">Courses are divided into sequential levels. Students unlock the next only after the instructor approves their work.</p>
+                        </div>
+                    </div>
+                    <div class="cs-pillar-arrow">→</div>
+                    <div class="cs-pillar">
+                        <span class="cs-pillar-num">02</span>
+                        <div class="cs-pillar-body">
+                            <p class="cs-pillar-title">Chat feedback</p>
+                            <p class="cs-pillar-desc">Each level has a private chat thread. The instructor leaves corrections directly on submitted work — no email, no manual tracking.</p>
+                        </div>
+                    </div>
+                    <div class="cs-pillar-arrow">→</div>
+                    <div class="cs-pillar">
+                        <span class="cs-pillar-num">03</span>
+                        <div class="cs-pillar-body">
+                            <p class="cs-pillar-title">Certification</p>
+                            <p class="cs-pillar-desc">On completing all levels, the platform auto-generates a branded certificate — tied to the student's profile and course record.</p>
                         </div>
                     </div>
                 </div>
