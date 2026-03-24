@@ -587,6 +587,35 @@
 
         .cs-benchmark-cell p { margin: 0; }
 
+        .cs-benchmark-bullets {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .cs-benchmark-bullets li {
+            font-family: var(--font-body);
+            font-size: 13px;
+            line-height: 1.5;
+            color: inherit;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .cs-benchmark-bullets li::before {
+            content: '–';
+            position: absolute;
+            left: 0;
+            color: rgba(0,0,0,0.25);
+        }
+
+        .cs-benchmark-weak .cs-benchmark-bullets li::before {
+            color: rgba(0,0,0,0.18);
+        }
+
         .cs-benchmark-platform {
             display: flex;
             flex-direction: column;
@@ -1326,10 +1355,19 @@
                             <span class="cs-benchmark-type">PHI Academy tool</span>
                         </div>
                         <div class="cs-benchmark-cell">
-                            <p>Structured course format. Level-based progression. Already familiar to PMU instructors.</p>
+                            <ul class="cs-benchmark-bullets">
+                                <li>Structured course format</li>
+                                <li>Level-based progression</li>
+                                <li>Familiar to PMU instructors</li>
+                            </ul>
                         </div>
                         <div class="cs-benchmark-cell cs-benchmark-weak">
-                            <p>No branding control. Tied to PHI ecosystem. Feedback is manual. No independent certification.</p>
+                            <ul class="cs-benchmark-bullets">
+                                <li>No branding control</li>
+                                <li>Tied to PHI ecosystem</li>
+                                <li>Feedback is manual</li>
+                                <li>No independent certification</li>
+                            </ul>
                         </div>
                     </div>
                     <div class="cs-benchmark-row">
@@ -1338,10 +1376,19 @@
                             <span class="cs-benchmark-type">Creative education</span>
                         </div>
                         <div class="cs-benchmark-cell">
-                            <p>Strong community feel. Personal mentor access. Clean, modern UI. Mobile-friendly.</p>
+                            <ul class="cs-benchmark-bullets">
+                                <li>Strong community feel</li>
+                                <li>Personal mentor access</li>
+                                <li>Clean, modern UI</li>
+                                <li>Mobile-friendly</li>
+                            </ul>
                         </div>
                         <div class="cs-benchmark-cell cs-benchmark-weak">
-                            <p>No level-based progression. No formal certification. Not adaptable for hands-on skill training.</p>
+                            <ul class="cs-benchmark-bullets">
+                                <li>No level-based progression</li>
+                                <li>No formal certification</li>
+                                <li>Not suited for hands-on skill training</li>
+                            </ul>
                         </div>
                     </div>
                     <div class="cs-benchmark-row">
@@ -1350,10 +1397,18 @@
                             <span class="cs-benchmark-type">Mass-market learning</span>
                         </div>
                         <div class="cs-benchmark-cell">
-                            <p>Highly structured courses. Certificates of completion. Large catalogue, trusted brand.</p>
+                            <ul class="cs-benchmark-bullets">
+                                <li>Highly structured courses</li>
+                                <li>Certificates of completion</li>
+                                <li>Large catalogue, trusted brand</li>
+                            </ul>
                         </div>
                         <div class="cs-benchmark-cell cs-benchmark-weak">
-                            <p>Zero instructor-student feedback. No correction loop. Generic experience — not built for skill mastery.</p>
+                            <ul class="cs-benchmark-bullets">
+                                <li>Zero instructor-student feedback</li>
+                                <li>No correction loop</li>
+                                <li>Generic — not built for skill mastery</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
