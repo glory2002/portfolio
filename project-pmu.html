@@ -1096,6 +1096,23 @@
             .cs-ds-callout-quote { font-size: 17px; }
         }
 
+        .cs-final-ui-group {
+            margin-top: 36px;
+        }
+
+        .cs-final-ui-group:first-of-type {
+            margin-top: 16px;
+        }
+
+        .cs-final-ui-group .cs-status-label {
+            margin-bottom: 14px;
+        }
+
+        .cs-final-ui-group + .cs-final-ui-group {
+            padding-top: 36px;
+            border-top: 1px dashed rgba(0,0,0,0.1);
+        }
+
         /* ── Define: IA grid ── */
         .cs-ia-grid {
             display: grid;
@@ -2168,18 +2185,40 @@
                 </div>
             </section>
 
-            <!-- Admin dashboard screenshot -->
-            <div class="cs-screenshot-grid">
-                <div class="cs-screenshot-item">
-                    <img src="assets/th-admin-dashboard.png" alt="Admin dashboard" loading="lazy">
-                    <p class="cs-screenshot-caption">Admin dashboard — overview of all students, status counts, and quick filters</p>
-                </div>
-                <div class="cs-screenshot-item">
-                    <img src="assets/th-admin-course-create.png" alt="Course creation interface" loading="lazy">
-                    <p class="cs-screenshot-caption">Course authoring — structured creation of theory sections and practice levels</p>
-                </div>
-            </div>
+            <!-- Final UI -->
+            <section class="cs-section">
+                <p class="cs-section-label">Final UI</p>
+                <h2 class="cs-section-title">High-fidelity screens</h2>
+                <p class="cs-section-lead">Production-ready layouts from the shipped app — calm hierarchy, dense but readable data, and the same component language across student and admin.</p>
 
+                <div class="cs-final-ui-group">
+                    <p class="cs-status-label">Student view</p>
+                    <div class="cs-screenshot-grid">
+                        <div class="cs-screenshot-item">
+                            <img src="assets/th-academy-course.png" alt="Student course workspace — theory, levels, and chat" loading="lazy">
+                            <p class="cs-screenshot-caption">Course workspace — outline, theory content, and per-level instructor chat in one view</p>
+                        </div>
+                        <div class="cs-screenshot-item">
+                            <img src="assets/th-academy-student.png" alt="Student dashboard or course overview" loading="lazy">
+                            <p class="cs-screenshot-caption">Student-facing surface — progress, levels, and clear next actions</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cs-final-ui-group">
+                    <p class="cs-status-label">Admin view</p>
+                    <div class="cs-screenshot-grid">
+                        <div class="cs-screenshot-item">
+                            <img src="assets/th-academy-admin.png" alt="Admin dashboard" loading="lazy">
+                            <p class="cs-screenshot-caption">Admin dashboard — students, status counts, and filters at a glance</p>
+                        </div>
+                        <div class="cs-screenshot-item">
+                            <img src="assets/th-admin-course-create.png" alt="Admin course authoring" loading="lazy">
+                            <p class="cs-screenshot-caption">Course authoring — theory blocks and practice levels structured for Tanya's curriculum</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <!-- Develop -->
             <section class="cs-section">
