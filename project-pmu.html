@@ -19,7 +19,7 @@
     <link rel="apple-touch-icon" href="assets/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css?v=4.0">
 
     <style>
@@ -868,6 +868,232 @@
 
         @media (max-width: 900px) {
             .cs-system-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ── Design system ── */
+        .cs-ds-callout {
+            margin: 20px 0 36px;
+            padding: 28px 32px;
+            border-radius: 4px;
+            border: 1px dashed rgba(123, 97, 255, 0.45);
+            background: linear-gradient(135deg, rgba(123, 97, 255, 0.07) 0%, rgba(160, 140, 255, 0.05) 100%);
+        }
+
+        .cs-ds-callout-kicker {
+            font-family: var(--font-body);
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--deep-lavender);
+            margin: 0 0 12px;
+        }
+
+        .cs-ds-callout-quote {
+            font-family: var(--font-body);
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 1.55;
+            color: var(--text-color);
+            margin: 0 0 14px;
+        }
+
+        .cs-ds-callout-detail {
+            font-family: var(--font-body);
+            font-size: 15px;
+            font-weight: 300;
+            line-height: 1.7;
+            color: rgba(0,0,0,0.52);
+            margin: 0;
+        }
+
+        .cs-ds-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px 32px;
+            align-items: start;
+        }
+
+        .cs-ds-panel-note {
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 300;
+            line-height: 1.65;
+            color: rgba(0,0,0,0.45);
+            margin: 14px 0 0;
+        }
+
+        .cs-ds-preview {
+            border: 1px dashed rgba(0,0,0,0.12);
+            border-radius: 4px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            background: rgba(0,0,0,0.02);
+        }
+
+        .cs-ds-preview-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .cs-ds-chip {
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            padding: 4px 10px;
+            border-radius: 4px;
+            background: var(--deep-lavender);
+            color: var(--white);
+        }
+
+        .cs-ds-chip--ghost {
+            background: transparent;
+            color: var(--text-color);
+            border: 1px dashed rgba(0,0,0,0.2);
+        }
+
+        .cs-ds-btn {
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 500;
+            padding: 10px 18px;
+            border-radius: 4px;
+            border: none;
+            background: var(--deep-lavender);
+            color: var(--white);
+            cursor: default;
+            align-self: flex-start;
+            opacity: 0.95;
+        }
+
+        .cs-ds-field-label {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: rgba(0,0,0,0.35);
+        }
+
+        .cs-ds-field {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .cs-ds-field-box {
+            font-family: var(--font-body);
+            font-size: 13px;
+            padding: 10px 12px;
+            border-radius: 4px;
+            border: 1px dashed rgba(0,0,0,0.15);
+            color: rgba(0,0,0,0.45);
+            background: var(--white);
+        }
+
+        .cs-ds-badge {
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            padding: 4px 8px;
+            border-radius: 4px;
+            border: 1px dashed rgba(123, 97, 255, 0.35);
+            color: var(--deep-lavender);
+        }
+
+        .cs-ds-badge--muted {
+            border-color: rgba(0,0,0,0.12);
+            color: rgba(0,0,0,0.45);
+        }
+
+        .cs-ds-figma-cap {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin-top: 14px;
+            border-radius: 4px;
+            border: 1px dashed rgba(0,0,0,0.1);
+        }
+
+        .cs-ds-swatches {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .cs-ds-swatch-wrap {
+            display: grid;
+            grid-template-columns: 40px 1fr;
+            grid-template-rows: auto auto;
+            column-gap: 14px;
+            row-gap: 2px;
+            align-items: center;
+        }
+
+        .cs-ds-swatch {
+            grid-row: span 2;
+            width: 40px;
+            height: 40px;
+            border-radius: 4px;
+            display: block;
+        }
+
+        .cs-ds-swatch-name {
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+
+        .cs-ds-swatch-hex {
+            font-family: var(--font-body);
+            font-size: 11px;
+            color: rgba(0,0,0,0.35);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .cs-ds-type-sample {
+            border: 1px dashed rgba(0,0,0,0.12);
+            border-radius: 4px;
+            padding: 20px 22px;
+            background: rgba(0,0,0,0.02);
+        }
+
+        .cs-ds-type-display {
+            font-family: var(--font-heading);
+            font-size: 42px;
+            font-weight: 700;
+            line-height: 1;
+            margin: 0 0 8px;
+            color: var(--text-color);
+        }
+
+        .cs-ds-type-label {
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--deep-lavender);
+            margin: 0 0 14px;
+        }
+
+        .cs-ds-type-body-sample {
+            font-family: var(--font-body);
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 1.6;
+            color: rgba(0,0,0,0.5);
+            margin: 0;
+        }
+
+        @media (max-width: 900px) {
+            .cs-ds-grid { grid-template-columns: 1fr; }
+            .cs-ds-callout { padding: 22px 20px; }
+            .cs-ds-callout-quote { font-size: 17px; }
         }
 
         /* ── Define: IA grid ── */
@@ -1817,6 +2043,77 @@
                         <li>Feedback loop via chat</li>
                         <li>Certificate generation</li>
                     </ul>
+                </div>
+            </section>
+
+            <!-- Design system -->
+            <section class="cs-section">
+                <p class="cs-section-label">Design system</p>
+                <h2 class="cs-section-title">Modular foundation</h2>
+                <p class="cs-section-lead">A disciplined system keeps student and admin experiences visually aligned while the codebase stays maintainable as features grow.</p>
+
+                <div class="cs-ds-callout">
+                    <p class="cs-ds-callout-kicker">Design-to-code continuity</p>
+                    <p class="cs-ds-callout-quote">I created a modular design system and connected it directly to the application, allowing real-time updates across the product.</p>
+                    <p class="cs-ds-callout-detail">That is not a handoff PDF that drifts from production — it is <strong>shared tokens and components</strong> (colours, type scale, spacing, UI primitives) reflected in both Figma and React. When a token changes, the shift propagates everywhere the system is applied.</p>
+                </div>
+
+                <div class="cs-ds-grid">
+                    <div class="cs-ds-panel">
+                        <p class="cs-status-label">Components</p>
+                        <div class="cs-ds-preview">
+                            <div class="cs-ds-preview-row">
+                                <span class="cs-ds-chip">Primary</span>
+                                <span class="cs-ds-chip cs-ds-chip--ghost">Secondary</span>
+                            </div>
+                            <button type="button" class="cs-ds-btn">Continue</button>
+                            <div class="cs-ds-field">
+                                <span class="cs-ds-field-label">Email</span>
+                                <div class="cs-ds-field-box">student@example.com</div>
+                            </div>
+                            <div class="cs-ds-preview-row">
+                                <span class="cs-ds-badge">Level 3</span>
+                                <span class="cs-ds-badge cs-ds-badge--muted">Pending review</span>
+                            </div>
+                        </div>
+                        <img class="cs-ds-figma-cap" src="assets/design-system-figma.png" alt="Component library overview in Figma" loading="lazy">
+                        <p class="cs-ds-panel-note">Reusable patterns for navigation, course shells, forms, and status — specified in Figma, implemented as shared React building blocks.</p>
+                    </div>
+                    <div class="cs-ds-panel">
+                        <p class="cs-status-label">Colours</p>
+                        <div class="cs-ds-swatches">
+                            <div class="cs-ds-swatch-wrap">
+                                <span class="cs-ds-swatch" style="background: var(--deep-lavender);"></span>
+                                <span class="cs-ds-swatch-name">Primary</span>
+                                <span class="cs-ds-swatch-hex">#7B61FF</span>
+                            </div>
+                            <div class="cs-ds-swatch-wrap">
+                                <span class="cs-ds-swatch" style="background: var(--crisp-lilac);"></span>
+                                <span class="cs-ds-swatch-name">Accent</span>
+                                <span class="cs-ds-swatch-hex">#A08CFF</span>
+                            </div>
+                            <div class="cs-ds-swatch-wrap">
+                                <span class="cs-ds-swatch" style="background: var(--text-color);"></span>
+                                <span class="cs-ds-swatch-name">Ink</span>
+                                <span class="cs-ds-swatch-hex">#0A0A0C</span>
+                            </div>
+                            <div class="cs-ds-swatch-wrap">
+                                <span class="cs-ds-swatch" style="background: var(--bg-gray); border: 1px solid rgba(0,0,0,0.08);"></span>
+                                <span class="cs-ds-swatch-name">Surface</span>
+                                <span class="cs-ds-swatch-hex">#F8F9FA</span>
+                            </div>
+                        </div>
+                        <p class="cs-ds-panel-note">Restrained neutrals with a single purple family for actions, focus, and brand moments — applied consistently across marketing and app surfaces.</p>
+                    </div>
+                    <div class="cs-ds-panel">
+                        <p class="cs-status-label">Typography</p>
+                        <div class="cs-ds-type-sample">
+                            <p class="cs-ds-type-display">Aa</p>
+                            <p class="cs-ds-type-label">Syne — headings</p>
+                            <p class="cs-ds-type-body-sample">Inter — body copy at 17px / 300 for long-form case study text; 500 for navigation and labels.</p>
+                        </div>
+                        <p class="cs-ds-panel-note">Clear hierarchy: geometric display for titles, humanist sans for reading density. Sizes and weights map to a small scale reused in CSS.</p>
+                    </div>
                 </div>
             </section>
 
