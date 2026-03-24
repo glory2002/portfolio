@@ -840,6 +840,14 @@
             .cs-wireframes { grid-template-columns: 1fr; }
         }
 
+        .cs-prototype-slot {
+            margin-top: 32px;
+        }
+
+        .cs-prototype-slot .cs-wf-placeholder {
+            aspect-ratio: 16 / 9;
+        }
+
         /* ── Define: IA grid ── */
         .cs-ia-grid {
             display: grid;
@@ -1724,6 +1732,37 @@
                         </div>
                         <p class="cs-wf-caption">Certificate generation on course completion</p>
                     </div>
+                </div>
+            </section>
+
+            <!-- Low-fidelity prototype -->
+            <section class="cs-section">
+                <p class="cs-section-label">Prototype</p>
+                <h2 class="cs-section-title">Low-fidelity prototype</h2>
+                <p class="cs-section-lead">A low-fidelity prototype was created to validate functionality and user flow with the client before moving to development.</p>
+
+                <div class="cs-two-col">
+                    <div class="cs-section-body">
+                        <p class="cs-status-label">Figma Make</p>
+                        <p>I built an interactive prototype in <strong>Figma Make</strong> so we could click through real flows — not just static frames. That made iteration fast while behaviour and transitions were still easy to adjust.</p>
+                    </div>
+                    <div class="cs-section-body">
+                        <p class="cs-status-label">Client validation</p>
+                        <p>I walked <strong>Tanya</strong> through the prototype in a focused session: invite, onboarding, level progression, chat-based feedback, and certificate handoff. She confirmed the mental model matched how she teaches, we tightened copy and ordering where it mattered, and we locked scope before moving into development.</p>
+                    </div>
+                </div>
+
+                <div class="cs-prototype-slot">
+                    <div class="cs-wf-placeholder">
+                        <svg class="cs-wf-placeholder-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <rect x="1" y="1" width="30" height="30" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                            <rect x="1" y="1" width="30" height="6" fill="currentColor" opacity="0.4"/>
+                            <path d="M8 14h16M8 18h12M8 22h14" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                            <circle cx="22" cy="21" r="2.5" stroke="currentColor" stroke-width="1"/>
+                        </svg>
+                        <span>Figma Make — interactive prototype</span>
+                    </div>
+                    <p class="cs-wf-caption">Swap for embed, prototype link, or a short screen recording of the walkthrough.</p>
                 </div>
             </section>
 
