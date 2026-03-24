@@ -303,44 +303,52 @@
 
         /* ── Discover: Findings ── */
         .cs-findings {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
             margin-top: 8px;
+            border: 1px dashed rgba(0,0,0,0.15);
+            border-radius: 4px;
+            overflow: hidden;
         }
 
         .cs-finding {
             display: flex;
-            align-items: flex-start;
-            gap: 20px;
+            flex-direction: column;
+            gap: 16px;
+            padding: 36px 32px;
+            border-right: 1px dashed rgba(0,0,0,0.15);
+            position: relative;
         }
 
-        .cs-finding-badge {
-            font-family: var(--font-body);
-            font-size: 11px;
-            font-weight: 500;
-            color: var(--deep-lavender);
-            background: var(--white);
-            border: 1px dashed rgba(123, 97, 255, 0.5);
-            border-radius: 4px;
-            padding: 4px 10px;
-            letter-spacing: 0.05em;
-            white-space: nowrap;
-            flex-shrink: 0;
-            margin-top: 2px;
+        .cs-finding:last-child { border-right: none; }
+
+        .cs-finding-num {
+            font-family: var(--font-heading);
+            font-size: 64px;
+            font-weight: 800;
+            color: rgba(123,97,255,0.08);
+            line-height: 1;
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            pointer-events: none;
+            user-select: none;
         }
 
         .cs-finding-content {
             display: flex;
             flex-direction: column;
-            gap: 6px;
+            gap: 12px;
+            position: relative;
         }
 
         .cs-finding-title {
-            font-family: var(--font-body);
-            font-size: 14px;
-            font-weight: 500;
+            font-family: var(--font-heading);
+            font-size: 22px;
+            font-weight: 700;
             color: var(--text-color);
+            line-height: 1.2;
             margin: 0;
         }
 
@@ -350,6 +358,12 @@
             line-height: 1.7;
             color: rgba(0,0,0,0.5);
             margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .cs-findings { grid-template-columns: 1fr; }
+            .cs-finding { border-right: none; border-bottom: 1px dashed rgba(0,0,0,0.15); }
+            .cs-finding:last-child { border-bottom: none; }
         }
 
         /* ── Define: IA grid ── */
@@ -964,24 +978,24 @@
 
                 <div class="cs-findings">
                     <div class="cs-finding">
-                        <span class="cs-finding-badge">01</span>
+                        <span class="cs-finding-num">01</span>
                         <div class="cs-finding-content">
-                            <p class="cs-finding-title">Two very different users</p>
-                            <p class="cs-finding-body">Students need clarity, progress visibility, and a guided path. Admin needs control, oversight, and efficiency. The same platform had to serve both — with a clean separation of concerns.</p>
+                            <p class="cs-finding-title">Two very<br>different users</p>
+                            <p class="cs-finding-body">Students need clarity and a guided path. Admin needs control and oversight. The same platform — a clean separation of concerns.</p>
                         </div>
                     </div>
                     <div class="cs-finding">
-                        <span class="cs-finding-badge">02</span>
+                        <span class="cs-finding-num">02</span>
                         <div class="cs-finding-content">
-                            <p class="cs-finding-title">Feedback is the core loop</p>
-                            <p class="cs-finding-body">The most critical flow wasn't enrolment — it was the correction cycle: student submits work → instructor reviews → approves or returns for revision. This loop had to be fast, clear, and realtime.</p>
+                            <p class="cs-finding-title">Feedback is<br>the core loop</p>
+                            <p class="cs-finding-body">Submit work → instructor reviews → approve or return. This cycle had to be fast, clear, and realtime. Everything else was secondary.</p>
                         </div>
                     </div>
                     <div class="cs-finding">
-                        <span class="cs-finding-badge">03</span>
+                        <span class="cs-finding-num">03</span>
                         <div class="cs-finding-content">
-                            <p class="cs-finding-title">Mobile is not optional</p>
-                            <p class="cs-finding-body">Students access the platform between practice sessions, often on a phone. Bottom nav, sticky headers, and full-screen overlays were required from day one — not afterthoughts.</p>
+                            <p class="cs-finding-title">Mobile is<br>not optional</p>
+                            <p class="cs-finding-body">Students access the platform between practice sessions — on a phone. Bottom nav, sticky headers, full-screen overlays. Required, not nice-to-have.</p>
                         </div>
                     </div>
                 </div>
