@@ -92,7 +92,7 @@
         .cs-cover {
             width: calc(100% - 36px);
             margin: 0 18px;
-            border-radius: 24px;
+            border-radius: 4px;
             overflow: hidden;
             background: linear-gradient(135deg, #ede9ff 0%, #f5f5ff 60%, #e8e4ff 100%);
             display: flex;
@@ -147,7 +147,7 @@
             flex: 0 0 auto;
             width: 380px;
             height: 280px;
-            border-radius: 20px;
+            border-radius: 4px;
             background: var(--white);
             box-shadow: 0 24px 64px rgba(123, 97, 255, 0.18);
             overflow: hidden;
@@ -185,7 +185,7 @@
 
         .mockup-hero-block {
             height: 80px;
-            border-radius: 10px;
+            border-radius: 4px;
             background: linear-gradient(135deg, var(--deep-lavender), var(--crisp-lilac));
             display: flex;
             align-items: center;
@@ -208,7 +208,7 @@
         .mockup-card {
             flex: 1;
             height: 56px;
-            border-radius: 8px;
+            border-radius: 4px;
             background: var(--soft-lavender);
         }
 
@@ -238,11 +238,18 @@
 
         .cs-section-label {
             font-family: var(--font-body);
-            font-size: 12px;
-            font-weight: 600;
+            font-size: 11px;
+            font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 0.14em;
+            letter-spacing: 0.08em;
             color: var(--deep-lavender);
+            background: var(--white);
+            border: 1px dashed rgba(123, 97, 255, 0.5);
+            border-radius: 4px;
+            padding: 4px 10px;
+            display: inline-block;
+            width: fit-content;
+            margin-bottom: 16px;
         }
 
         .cs-section-title {
@@ -272,7 +279,7 @@
 
         .cs-meta-card {
             background: var(--soft-lavender);
-            border-radius: 16px;
+            border-radius: 4px;
             padding: 28px 24px;
             display: flex;
             flex-direction: column;
@@ -323,7 +330,7 @@
 
         .cs-insight-card {
             background: var(--white);
-            border-radius: 16px;
+            border-radius: 4px;
             padding: 28px 24px;
             border: 1px solid #ececf5;
             display: flex;
@@ -335,7 +342,7 @@
         .cs-insight-icon {
             width: 44px;
             height: 44px;
-            border-radius: 12px;
+            border-radius: 4px;
             background: var(--soft-lavender);
             display: flex;
             align-items: center;
@@ -424,7 +431,7 @@
 
         .cs-stat-card {
             background: var(--text-color);
-            border-radius: 20px;
+            border-radius: 4px;
             padding: 36px 28px;
             display: flex;
             flex-direction: column;
@@ -458,7 +465,7 @@
 
         .cs-wireframe-tile {
             aspect-ratio: 9 / 16;
-            border-radius: 16px;
+            border-radius: 4px;
             background: var(--soft-lavender);
             display: flex;
             flex-direction: column;
@@ -469,13 +476,13 @@
 
         .cs-wireframe-tile .wf-bar {
             height: 12px;
-            border-radius: 6px;
+            border-radius: 4px;
             background: rgba(123, 97, 255, 0.2);
         }
 
         .cs-wireframe-tile .wf-block {
             flex: 1;
-            border-radius: 10px;
+            border-radius: 4px;
             background: rgba(123, 97, 255, 0.1);
         }
 
@@ -500,7 +507,7 @@
             border-left: 3px solid var(--deep-lavender);
             padding: 20px 32px;
             background: var(--soft-lavender);
-            border-radius: 0 16px 16px 0;
+            border-radius: 0;
         }
 
         .cs-quote p {
@@ -524,7 +531,7 @@
         /* ── Next project banner ── */
         .cs-next {
             background: linear-gradient(135deg, var(--deep-lavender), var(--crisp-lilac));
-            border-radius: 24px;
+            border-radius: 4px;
             padding: 60px;
             display: flex;
             justify-content: space-between;
@@ -560,7 +567,7 @@
             background: transparent;
             color: var(--white);
             border: 1.5px solid rgba(255,255,255,0.7);
-            border-radius: 100px;
+            border-radius: 4px;
             padding: 14px 32px;
             font-family: var(--font-heading);
             font-size: 16px;
@@ -637,36 +644,21 @@
 
         <!-- Hero -->
         <section class="cs-hero">
-            <a href="index.html#projects" class="cs-back">
-                <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M15 9H3M9 3L3 9l6 6"/>
-                </svg>
-                Back to Projects
-            </a>
-
-            <p class="cs-eyebrow">Case Study</p>
-            <h1 class="cs-title">PMU Platform <span class="light-slash">/ Tanya Hristova</span></h1>
-            <p class="cs-subtitle">Designing an end-to-end booking and academy platform for a permanent makeup artist — from first discovery call through launch.</p>
-
-            <div class="cs-tags">
-                <span class="tag">UI Design</span>
-                <span class="tag">UX Research</span>
-                <span class="tag">Figma</span>
-                <span class="tag">Branding</span>
-                <span class="tag">Web Design</span>
-            </div>
+            <h1 class="cs-title">TH Academy</h1>
+            <p class="cs-subtitle">A full end-to-end learning platform for a professional microblading academy — from course authoring and student onboarding to realtime feedback loops and certificate generation.</p>
         </section>
 
         <!-- Cover -->
         <div class="cs-cover">
             <div class="cs-cover-inner">
                 <div class="cs-cover-text">
-                    <span class="cs-cover-label">PMU Academy · 2024</span>
-                    <h2 class="cs-cover-heading">Where artistry meets structure</h2>
-                    <p class="cs-cover-desc">A clean, premium digital home for Tanya Hristova's permanent makeup academy — built to attract serious students and showcase professional excellence.</p>
-                    <div style="display:flex;gap:12px;margin-top:8px;">
-                        <span class="tag">UI Design</span>
-                        <span class="tag">Branding</span>
+                    <span class="cs-cover-label">TH Academy · 2026</span>
+                    <h2 class="cs-cover-heading">Learning, structured from first invite to certificate</h2>
+                    <p class="cs-cover-desc">A full-stack learning platform for a professional microblading academy — student onboarding, realtime feedback loops, course authoring, and automated certificate generation.</p>
+                    <div style="display:flex;gap:12px;margin-top:8px;flex-wrap:wrap;">
+                        <span class="tag">UX/UI Design</span>
+                        <span class="tag">Product Design</span>
+                        <span class="tag">LMS</span>
                     </div>
                 </div>
                 <div class="cs-cover-mockup">
@@ -694,21 +686,21 @@
         <!-- Body -->
         <div class="cs-body">
 
-            <!-- Project overview meta -->
+            <!-- Overview -->
             <section class="cs-section">
                 <p class="cs-section-label">Overview</p>
                 <div class="cs-meta-grid">
                     <div class="cs-meta-card">
                         <span class="cs-meta-label">Client</span>
-                        <span class="cs-meta-value">Tanya Hristova</span>
+                        <span class="cs-meta-value">Tanya Hristova — PMU Expert</span>
                     </div>
                     <div class="cs-meta-card">
                         <span class="cs-meta-label">My Role</span>
-                        <span class="cs-meta-value">UI/UX Designer</span>
+                        <span class="cs-meta-value">UX/UI Design</span>
                     </div>
                     <div class="cs-meta-card">
-                        <span class="cs-meta-label">Timeline</span>
-                        <span class="cs-meta-value">6 weeks · 2024</span>
+                        <span class="cs-meta-label">Year</span>
+                        <span class="cs-meta-value">2026</span>
                     </div>
                     <div class="cs-meta-card">
                         <span class="cs-meta-label">Tools</span>
@@ -719,41 +711,31 @@
 
             <div class="cs-divider"></div>
 
-            <!-- Context -->
+            <!-- Challenge -->
             <section class="cs-section">
-                <p class="cs-section-label">Context</p>
-                <h2 class="cs-section-title">About the client</h2>
-                <div class="cs-section-body">
-                    <p>Tanya Hristova is an established PMU (permanent makeup) artist based in Bulgaria. With years of hands-on practice and a growing reputation, she wanted to formalise her teaching work into a proper academy — offering structured courses for aspiring PMU professionals.</p>
-                    <p>At the start of this project, her online presence consisted of an Instagram account and a basic booking link. Students were reaching out through DMs, and there was no central place to learn about her courses, read testimonials, or complete a structured enrolment process.</p>
-                </div>
-            </section>
-
-            <div class="cs-divider"></div>
-
-            <!-- Problem -->
-            <section class="cs-section">
-                <p class="cs-section-label">Problem</p>
-                <h2 class="cs-section-title">The challenge</h2>
+                <p class="cs-section-label">Challenge</p>
+                <h2 class="cs-section-title">Where it started</h2>
                 <div class="cs-two-col wide-left">
                     <div class="cs-section-body">
-                        <p>Tanya needed a digital platform that matched the premium quality of her work — one that would communicate expertise, allow potential students to self-qualify and enrol, and reduce the administrative load of manually handling every enquiry.</p>
-                        <p>The key tension: PMU is a deeply personal craft. The site had to feel warm and human while still being structured enough for a professional course offering with real conversion goals.</p>
+                        <p>Tanya Hristova is an established PMU artist and educator in Bulgaria. She'd been running microblading courses for years — but entirely through Instagram DMs, WhatsApp messages, and manual spreadsheets. As demand grew, so did the chaos. She needed a real platform: one that could handle students end-to-end, reflect her professional standard, and give her time back.</p>
+                        <p>This wasn't just a website project. The brief was for a <strong>full-stack learning management system</strong> — course authoring, student onboarding, a structured feedback loop, and certificate generation.</p>
                     </div>
-                    <div class="cs-quote">
-                        <p>"I want students to arrive already inspired — not just looking for a price list."</p>
-                        <cite>— Tanya Hristova, Client Brief</cite>
+                    <div class="cs-section-body" style="display:flex;flex-direction:column;gap:10px;">
+                        <div style="display:flex;gap:12px;align-items:baseline;"><span style="color:var(--deep-lavender);font-size:18px;">—</span><p style="margin:0;">No enrolment system — everything handled via Instagram DMs and WhatsApp.</p></div>
+                        <div style="display:flex;gap:12px;align-items:baseline;"><span style="color:var(--deep-lavender);font-size:18px;">—</span><p style="margin:0;">No way to track student progress or document completed work.</p></div>
+                        <div style="display:flex;gap:12px;align-items:baseline;"><span style="color:var(--deep-lavender);font-size:18px;">—</span><p style="margin:0;">No certificate system — credentials issued informally.</p></div>
+                        <div style="display:flex;gap:12px;align-items:baseline;"><span style="color:var(--deep-lavender);font-size:18px;">—</span><p style="margin:0;">High admin overhead — every student interaction required manual attention.</p></div>
                     </div>
                 </div>
             </section>
 
             <div class="cs-divider"></div>
 
-            <!-- Research -->
+            <!-- Discover -->
             <section class="cs-section">
-                <p class="cs-section-label">Research</p>
-                <h2 class="cs-section-title">What I discovered</h2>
-                <p class="cs-section-body">I conducted a competitive analysis of PMU academies and beauty training platforms across Europe, and ran two interview sessions with Tanya to map her student persona, typical enquiry flow, and content goals. Three key insights shaped the direction:</p>
+                <p class="cs-section-label">Discover</p>
+                <h2 class="cs-section-title">Understanding what was needed</h2>
+                <p class="cs-section-body">Discovery involved mapping two distinct user types — students and admin — and understanding how they'd interact with the same system from completely different angles. Sessions with Tanya surfaced the actual workflows she was running manually, which shaped the platform architecture.</p>
 
                 <div class="cs-insight-grid">
                     <div class="cs-insight-card">
@@ -762,94 +744,75 @@
                                 <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
                             </svg>
                         </div>
-                        <p class="cs-insight-title">Trust is visual</p>
-                        <p class="cs-insight-body">Students decide in the first 8 seconds whether an artist is "at their level." Portfolio imagery and real testimonials are the primary trust signals — before any course detail.</p>
+                        <p class="cs-insight-title">Two very different users</p>
+                        <p class="cs-insight-body">Students need clarity, progress visibility, and a guided path. Admin needs control, oversight, and efficiency. The same platform had to serve both — with a clean separation of concerns.</p>
                     </div>
                     <div class="cs-insight-card">
                         <div class="cs-insight-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M12 20V10M18 20V4M6 20v-6"/>
+                                <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
                             </svg>
                         </div>
-                        <p class="cs-insight-title">Course clarity converts</p>
-                        <p class="cs-insight-body">Platforms with clear course structure, duration, what-you-will-learn, and prerequisite info consistently outperformed those that buried details behind a contact form.</p>
+                        <p class="cs-insight-title">Feedback is the core loop</p>
+                        <p class="cs-insight-body">The most critical flow wasn't enrolment — it was the correction cycle: student submits work → instructor reviews → approves or returns for revision. This loop needed to be fast, clear, and realtime.</p>
                     </div>
                     <div class="cs-insight-card">
                         <div class="cs-insight-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07A19.5 19.5 0 014.07 12 19.8 19.8 0 011 3.4 2 2 0 012.96 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                                <rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/>
                             </svg>
                         </div>
-                        <p class="cs-insight-title">Mobile-first enquiries</p>
-                        <p class="cs-insight-body">Over 80 % of traffic to beauty-niche sites comes from mobile. Booking flows and forms must be frictionless on a small screen or students drop off immediately.</p>
+                        <p class="cs-insight-title">Mobile is not optional</p>
+                        <p class="cs-insight-body">Students access the platform between practice sessions, often on a phone. Bottom nav, sticky headers, and full-screen overlays were required — not nice-to-haves.</p>
                     </div>
                 </div>
             </section>
 
             <div class="cs-divider"></div>
 
-            <!-- Process -->
+            <!-- Define -->
             <section class="cs-section">
-                <p class="cs-section-label">Process</p>
-                <h2 class="cs-section-title">How I designed it</h2>
+                <p class="cs-section-label">Define</p>
+                <h2 class="cs-section-title">Structure before screens</h2>
 
                 <div class="cs-steps">
                     <div class="cs-step">
                         <div class="cs-step-number">01</div>
                         <div class="cs-step-content">
-                            <p class="cs-step-title">Discovery & content mapping</p>
-                            <p class="cs-step-body">I worked with Tanya to define her site's information architecture — what content existed, what needed creating, and what the priority hierarchy was for a new visitor. We used FigJam to map out page structure and user journeys together.</p>
+                            <p class="cs-step-title">Two-sided IA</p>
+                            <p class="cs-step-body">Designed separate but connected information architectures for the student-facing academy (<code>/academy</code>) and the admin workspace (<code>/academy/admin</code>). Used FigJam to map the full flow: invitation → activation → learning → submission → feedback → certificate.</p>
                         </div>
                     </div>
                     <div class="cs-step">
                         <div class="cs-step-number">02</div>
                         <div class="cs-step-content">
-                            <p class="cs-step-title">Low-fidelity wireframes</p>
-                            <p class="cs-step-body">I produced a set of lo-fi wireframes for the five core pages: Home, About, Courses, Gallery, and Contact. These were reviewed and iterated on with the client before any visual design work began.</p>
+                            <p class="cs-step-title">Defining the status model</p>
+                            <p class="cs-step-body">The feedback loop required a clear status system for each course level: pending, in progress, submitted for review, needs correction, approved. Each state had a distinct visual treatment and drove the admin's task list. Getting this right in the define phase prevented a lot of ambiguity later.</p>
                         </div>
                     </div>
                     <div class="cs-step">
                         <div class="cs-step-number">03</div>
                         <div class="cs-step-content">
-                            <p class="cs-step-title">Visual identity & moodboarding</p>
-                            <p class="cs-step-body">Together we explored the visual direction through two moodboards — one leaning warm and tactile, the other cooler and editorial. The client gravitated toward a hybrid: refined neutrals, elegant typography, with warm gold accents.</p>
-                        </div>
-                    </div>
-                    <div class="cs-step">
-                        <div class="cs-step-number">04</div>
-                        <div class="cs-step-content">
-                            <p class="cs-step-title">High-fidelity UI design</p>
-                            <p class="cs-step-body">I built the full design in Figma — desktop and mobile variants for all pages, a component library, and an annotated handoff document for the developer. Accessibility and colour contrast were validated throughout.</p>
-                        </div>
-                    </div>
-                    <div class="cs-step">
-                        <div class="cs-step-number">05</div>
-                        <div class="cs-step-content">
-                            <p class="cs-step-title">Review, polish & handoff</p>
-                            <p class="cs-step-body">Two rounds of client feedback refined copy tone, image selection, and CTA hierarchy. Final assets, fonts, and spacing tokens were packaged for the developer along with interactive prototypes of the key booking flow.</p>
+                            <p class="cs-step-title">Lo-fi wireframes</p>
+                            <p class="cs-step-body">Wireframes focused on the two most complex screens: the student's course workspace (theory + levels + chat in one view) and the admin's student profile (same course structure, but with edit controls and status overrides).</p>
                         </div>
                     </div>
                 </div>
-            </section>
 
-            <div class="cs-divider"></div>
-
-            <!-- Wireframes -->
-            <section class="cs-section">
-                <p class="cs-section-label">Design</p>
-                <h2 class="cs-section-title">From wireframes to final screens</h2>
-                <p class="cs-section-body">The layout follows a clear content hierarchy — bold hero that communicates expertise, course cards with structured details, and a streamlined enquiry form that removes every unnecessary field.</p>
-
-                <div class="cs-wireframe-grid">
+                <div class="cs-wireframe-grid" style="margin-top:40px;">
                     <div>
                         <div class="cs-wireframe-tile">
                             <div class="wf-bar"></div>
-                            <div class="wf-block" style="flex:2;"></div>
-                            <div class="wf-sm"></div>
-                            <div class="wf-sm half"></div>
-                            <div class="wf-block" style="flex:1;"></div>
+                            <div style="display:flex;gap:8px;flex:1;">
+                                <div class="wf-block" style="flex:0 0 30%;"></div>
+                                <div style="display:flex;flex-direction:column;gap:6px;flex:1;">
+                                    <div class="wf-sm"></div>
+                                    <div class="wf-block" style="flex:1;"></div>
+                                    <div class="wf-sm half"></div>
+                                </div>
+                            </div>
                         </div>
-                        <p class="cs-wireframe-label">Home — Hero</p>
+                        <p class="cs-wireframe-label">Student — Course Workspace</p>
                     </div>
                     <div>
                         <div class="cs-wireframe-tile" style="background:#ede9ff;">
@@ -859,7 +822,7 @@
                             <div class="wf-block" style="flex:1;background:rgba(123,97,255,0.15);"></div>
                             <div class="wf-sm half" style="background:rgba(123,97,255,0.2);"></div>
                         </div>
-                        <p class="cs-wireframe-label">Courses Page</p>
+                        <p class="cs-wireframe-label">Admin — Student Profile</p>
                     </div>
                     <div>
                         <div class="cs-wireframe-tile" style="background:#f0eeff;">
@@ -868,33 +831,88 @@
                             <div class="wf-sm" style="background:rgba(123,97,255,0.18);"></div>
                             <div class="wf-sm" style="background:rgba(123,97,255,0.18);"></div>
                             <div class="wf-sm half" style="background:rgba(123,97,255,0.15);"></div>
-                            <div class="wf-block" style="flex:1;background:rgba(123,97,255,0.2);border-radius:8px;"></div>
+                            <div class="wf-block" style="flex:1;background:rgba(123,97,255,0.2);border-radius:4px;"></div>
                         </div>
-                        <p class="cs-wireframe-label">Contact / Enrol</p>
+                        <p class="cs-wireframe-label">Admin — Course Authoring</p>
                     </div>
                 </div>
             </section>
 
             <div class="cs-divider"></div>
 
-            <!-- Outcomes -->
+            <!-- Develop -->
             <section class="cs-section">
-                <p class="cs-section-label">Outcome</p>
-                <h2 class="cs-section-title">Results after launch</h2>
-                <p class="cs-section-body" style="margin-bottom:8px;">Three months post-launch, Tanya shared the following metrics from her analytics and enrolment records:</p>
+                <p class="cs-section-label">Develop</p>
+                <h2 class="cs-section-title">Designing the system</h2>
+
+                <div class="cs-steps">
+                    <div class="cs-step">
+                        <div class="cs-step-number">04</div>
+                        <div class="cs-step-content">
+                            <p class="cs-step-title">Visual direction</p>
+                            <p class="cs-step-body">Neutral gray and black palette — professional and calm, appropriate for a learning environment. Warm gold accents reserved for progress indicators and certificates. Typography kept clean and legible at all sizes, given the content-heavy nature of the platform.</p>
+                        </div>
+                    </div>
+                    <div class="cs-step">
+                        <div class="cs-step-number">05</div>
+                        <div class="cs-step-content">
+                            <p class="cs-step-title">Course workspace layout</p>
+                            <p class="cs-step-body">The most critical design decision: a three-panel workspace with a fixed left sidebar (course outline + level statuses), a scrollable center panel (theory content), and a fixed right panel (chat with instructor). All three needed to be visible simultaneously on desktop, while collapsing gracefully on mobile.</p>
+                        </div>
+                    </div>
+                    <div class="cs-step">
+                        <div class="cs-step-number">06</div>
+                        <div class="cs-step-content">
+                            <p class="cs-step-title">Component system</p>
+                            <p class="cs-step-body">Built a full Figma component library: status badges with 5 states, course level cards, chat message types (student/instructor, text/image, correction request), certificate templates (Basic vs Masterclass), admin data tables, and mobile navigation patterns.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="cs-divider"></div>
+
+            <!-- Deliver -->
+            <section class="cs-section">
+                <p class="cs-section-label">Deliver</p>
+                <h2 class="cs-section-title">What shipped</h2>
+
+                <div class="cs-steps" style="margin-bottom:48px;">
+                    <div class="cs-step">
+                        <div class="cs-step-number">07</div>
+                        <div class="cs-step-content">
+                            <p class="cs-step-title">Automated onboarding flow</p>
+                            <p class="cs-step-body">Admin creates student → automated email invitation sent → student sets password and activates account. Zero manual steps for the instructor after the initial setup.</p>
+                        </div>
+                    </div>
+                    <div class="cs-step">
+                        <div class="cs-step-number">08</div>
+                        <div class="cs-step-content">
+                            <p class="cs-step-title">Realtime feedback loop</p>
+                            <p class="cs-step-body">Student submits work via chat → status moves to "For Review" → instructor approves or returns for correction with structured feedback → student sees update in realtime. Each level tracks its own correction history.</p>
+                        </div>
+                    </div>
+                    <div class="cs-step">
+                        <div class="cs-step-number">09</div>
+                        <div class="cs-step-content">
+                            <p class="cs-step-title">Certificate generation</p>
+                            <p class="cs-step-body">On course completion, a branded certificate is generated automatically — with different templates for Basic and Masterclass tracks. Print-ready and shareable.</p>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="cs-stat-grid">
                     <div class="cs-stat-card">
-                        <span class="cs-stat-number">3×</span>
-                        <span class="cs-stat-label">increase in qualified course enquiries compared to the previous Instagram-DM method</span>
-                    </div>
-                    <div class="cs-stat-card">
-                        <span class="cs-stat-number">68%</span>
-                        <span class="cs-stat-label">of site sessions on mobile — validated the mobile-first approach taken in the design</span>
+                        <span class="cs-stat-number">2</span>
+                        <span class="cs-stat-label">distinct user roles designed — student and admin — with separate but connected experiences</span>
                     </div>
                     <div class="cs-stat-card">
                         <span class="cs-stat-number">0 h</span>
-                        <span class="cs-stat-label">time spent on manual enrolment admin — students now self-qualify before reaching out</span>
+                        <span class="cs-stat-label">manual onboarding admin — invitation, activation and access are fully automated</span>
+                    </div>
+                    <div class="cs-stat-card">
+                        <span class="cs-stat-number">5</span>
+                        <span class="cs-stat-label">level status states designed and implemented — driving the entire feedback and progress model</span>
                     </div>
                 </div>
             </section>
@@ -907,12 +925,12 @@
                 <h2 class="cs-section-title">What I learned</h2>
                 <div class="cs-two-col">
                     <div class="cs-section-body">
-                        <p>This project reinforced for me how important content strategy is before any visual design begins. Without a clear map of what Tanya was trying to communicate — and to whom — I could have easily produced something visually polished but structurally weak.</p>
-                        <p>The biggest design challenge was the tension between "inspirational portfolio" and "professional academy." The solution was a clear page hierarchy: lead with credibility and artistry, then guide the visitor toward structured course information.</p>
+                        <p>This was the most systems-level UX challenge I'd worked on — not designing pages, but designing a machine with interlocking states. The status model for course levels turned out to be the single most important design decision: get it wrong, and the entire feedback loop breaks down for both users.</p>
+                        <p>The three-panel workspace required constant trade-offs between information density and cognitive load. Several iterations went too far in each direction before landing on a layout that felt genuinely usable under real learning conditions.</p>
                     </div>
                     <div class="cs-section-body">
-                        <p>If I were to extend this project, I would add a student portal — a logged-in space where enrolled students access materials, submit practice work, and communicate with their instructor. This would complete the platform's value loop and reduce even more admin overhead.</p>
-                        <p>Working closely with the client throughout each stage (rather than disappearing and returning with a finished design) made reviews faster and the final result much closer to what she had in mind.</p>
+                        <p>Having a technical background helped enormously — understanding how realtime subscriptions work, how Supabase RLS affects what each user can see, and how the database schema shapes the UI made me a much more effective design partner.</p>
+                        <p>If I extended this project further, I'd focus on the student dashboard — a clear overview of where they are across all levels, what needs their attention, and how close they are to their certificate. Progress visibility is the feature most likely to improve completion rates.</p>
                     </div>
                 </div>
             </section>
