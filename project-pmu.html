@@ -870,6 +870,49 @@
             .cs-system-grid { grid-template-columns: 1fr; }
         }
 
+        /* ── Outcome / impact ── */
+        .cs-outcome-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px 32px;
+            margin-top: 16px;
+            align-items: start;
+        }
+
+        .cs-outcome-item {
+            border-left: 1px solid rgba(0,0,0,0.08);
+            padding-left: 20px;
+        }
+
+        .cs-outcome-item:first-child {
+            border-left: none;
+            padding-left: 0;
+        }
+
+        .cs-outcome-title {
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-color);
+            margin: 0 0 8px;
+            line-height: 1.3;
+        }
+
+        .cs-outcome-body {
+            font-family: var(--font-body);
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 1.65;
+            color: rgba(0,0,0,0.48);
+            margin: 0;
+        }
+
+        @media (max-width: 900px) {
+            .cs-outcome-grid { grid-template-columns: 1fr; }
+            .cs-outcome-item { border-left: none; padding-left: 0; border-top: 1px solid rgba(0,0,0,0.08); padding-top: 20px; }
+            .cs-outcome-item:first-child { border-top: none; padding-top: 0; }
+        }
+
         /* ── Design system ── */
         .cs-ds-callout {
             margin: 20px 0 36px;
@@ -2296,6 +2339,27 @@
                 </div>
             </section>
 
+            <!-- Outcome / impact -->
+            <section class="cs-section">
+                <p class="cs-section-label">Outcome</p>
+                <h2 class="cs-section-title">Impact</h2>
+                <p class="cs-section-lead">Formal usage metrics were not in scope for this project — the value shows up in what shipped and how it serves Tanya's teaching model.</p>
+
+                <div class="cs-outcome-grid">
+                    <div class="cs-outcome-item">
+                        <h3 class="cs-outcome-title">Fully functional platform</h3>
+                        <p class="cs-outcome-body">A working product, not a mockup: invitations, level progression, realtime feedback, and certificate generation all run in the live app.</p>
+                    </div>
+                    <div class="cs-outcome-item">
+                        <h3 class="cs-outcome-title">Custom learning experience</h3>
+                        <p class="cs-outcome-body">Built around Tanya's method — approval-gated levels, per-level chat, and branding she owns — instead of forcing her process into a generic LMS.</p>
+                    </div>
+                    <div class="cs-outcome-item">
+                        <h3 class="cs-outcome-title">Scalable system</h3>
+                        <p class="cs-outcome-body">Modular UI, shared tokens, and a clear data model mean new courses, cohorts, and refinements can be added without rebuilding from scratch.</p>
+                    </div>
+                </div>
+            </section>
 
             <!-- Reflection -->
             <section class="cs-section">
