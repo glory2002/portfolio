@@ -304,7 +304,7 @@
         /* ── Discover: Findings ── */
         .cs-findings {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 0;
             margin-top: 8px;
             border: 1px dashed rgba(0,0,0,0.15);
@@ -360,7 +360,13 @@
             margin: 0;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
+            .cs-findings { grid-template-columns: repeat(2, 1fr); }
+            .cs-finding:nth-child(2) { border-right: none; }
+            .cs-finding:nth-child(1), .cs-finding:nth-child(2) { border-bottom: 1px dashed rgba(0,0,0,0.15); }
+        }
+
+        @media (max-width: 540px) {
             .cs-findings { grid-template-columns: 1fr; }
             .cs-finding { border-right: none; border-bottom: 1px dashed rgba(0,0,0,0.15); }
             .cs-finding:last-child { border-bottom: none; }
@@ -971,31 +977,38 @@
             </section>
 
 
-            <!-- Discover -->
+            <!-- Goals -->
             <section class="cs-section">
-                <p class="cs-section-label">Discover</p>
-                <h2 class="cs-section-title">Understanding what was needed</h2>
+                <p class="cs-section-label">Goals</p>
+                <h2 class="cs-section-title">What needed to be built</h2>
 
                 <div class="cs-findings">
                     <div class="cs-finding">
                         <span class="cs-finding-num">01</span>
                         <div class="cs-finding-content">
-                            <p class="cs-finding-title">Two very<br>different users</p>
-                            <p class="cs-finding-body">Students need clarity and a guided path. Admin needs control and oversight. The same platform — a clean separation of concerns.</p>
+                            <p class="cs-finding-title">Independent<br>platform</p>
+                            <p class="cs-finding-body">Own branding, own domain, full control over content and student experience — no dependency on third-party tools.</p>
                         </div>
                     </div>
                     <div class="cs-finding">
                         <span class="cs-finding-num">02</span>
                         <div class="cs-finding-content">
-                            <p class="cs-finding-title">Feedback is<br>the core loop</p>
-                            <p class="cs-finding-body">Submit work → instructor reviews → approve or return. This cycle had to be fast, clear, and realtime. Everything else was secondary.</p>
+                            <p class="cs-finding-title">Structured<br>progression</p>
+                            <p class="cs-finding-body">Course levels with clear status tracking — students know exactly where they are and what comes next.</p>
                         </div>
                     </div>
                     <div class="cs-finding">
                         <span class="cs-finding-num">03</span>
                         <div class="cs-finding-content">
-                            <p class="cs-finding-title">Mobile is<br>not optional</p>
-                            <p class="cs-finding-body">Students access the platform between practice sessions — on a phone. Bottom nav, sticky headers, full-screen overlays. Required, not nice-to-have.</p>
+                            <p class="cs-finding-title">Direct<br>feedback</p>
+                            <p class="cs-finding-body">Built-in chat per level — student submits work, instructor reviews, approves or returns with corrections. Realtime.</p>
+                        </div>
+                    </div>
+                    <div class="cs-finding">
+                        <span class="cs-finding-num">04</span>
+                        <div class="cs-finding-content">
+                            <p class="cs-finding-title">Automated<br>certification</p>
+                            <p class="cs-finding-body">On course completion, a branded certificate is generated automatically — no manual steps for the instructor.</p>
                         </div>
                     </div>
                 </div>
