@@ -229,13 +229,13 @@
             padding: 80px 80px;
             display: flex;
             flex-direction: column;
-            gap: 80px;
+            gap: 56px;
         }
 
         .cs-section {
             display: flex;
             flex-direction: column;
-            gap: 32px;
+            gap: 20px;
         }
 
         .cs-section-label {
@@ -251,7 +251,7 @@
             padding: 4px 10px;
             display: inline-block;
             width: fit-content;
-            margin-bottom: 16px;
+            margin-bottom: 8px;
         }
 
         .cs-section-title {
@@ -269,7 +269,22 @@
             color: var(--text-color);
         }
 
-        .cs-section-body p + p { margin-top: 16px; }
+        .cs-section-body p + p { margin-top: 12px; }
+
+        .cs-reflection-tight {
+            max-width: 40em;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .cs-reflection-tight p {
+            font-size: 15px;
+            font-weight: 300;
+            line-height: 1.55;
+            color: rgba(0,0,0,0.52);
+            margin: 0;
+        }
 
         /* ── Meta grid ── */
         .cs-meta-grid {
@@ -377,12 +392,12 @@
         /* ── Concept: Solution ── */
         .cs-section-lead {
             font-family: var(--font-body);
-            font-size: 17px;
+            font-size: 15px;
             font-weight: 300;
-            line-height: 1.75;
-            color: rgba(0,0,0,0.55);
-            margin: 8px 0 28px;
-            max-width: 680px;
+            line-height: 1.55;
+            color: rgba(0,0,0,0.48);
+            margin: 2px 0 14px;
+            max-width: 34em;
         }
 
         .cs-problem-bullets {
@@ -407,15 +422,15 @@
         }
 
         .cs-solution-intro {
-            max-width: 680px;
-            margin-bottom: 40px;
+            max-width: 36em;
+            margin-bottom: 24px;
         }
 
         .cs-solution-intro p {
             font-family: var(--font-body);
             font-size: 15px;
-            line-height: 1.75;
-            color: rgba(0,0,0,0.6);
+            line-height: 1.5;
+            color: rgba(0,0,0,0.55);
             margin: 0;
         }
 
@@ -516,10 +531,10 @@
         }
 
         .cs-pillar {
-            padding: 28px 28px 32px;
+            padding: 20px 22px 24px;
             display: flex;
             flex-direction: column;
-            gap: 14px;
+            gap: 10px;
         }
 
         .cs-pillar-arrow {
@@ -608,12 +623,12 @@
         .cs-benchmark-row:last-child { border-bottom: none; }
 
         .cs-benchmark-cell {
-            padding: 20px 24px;
+            padding: 16px 20px;
             border-right: 1px dashed rgba(0,0,0,0.1);
             font-family: var(--font-body);
-            font-size: 17px;
+            font-size: 15px;
             font-weight: 300;
-            line-height: 1.75;
+            line-height: 1.55;
             color: var(--text-color);
         }
 
@@ -632,11 +647,11 @@
 
         .cs-benchmark-bullets li {
             font-family: var(--font-body);
-            font-size: 17px;
+            font-size: 15px;
             font-weight: 300;
-            line-height: 1.75;
+            line-height: 1.55;
             color: inherit;
-            padding-left: 18px;
+            padding-left: 16px;
             position: relative;
         }
 
@@ -711,10 +726,10 @@
 
         .cs-takeaway p {
             font-family: var(--font-body);
-            font-size: 17px;
+            font-size: 15px;
             font-weight: 300;
-            line-height: 1.75;
-            color: rgba(0,0,0,0.55);
+            line-height: 1.5;
+            color: rgba(0,0,0,0.5);
             margin: 0;
         }
 
@@ -856,18 +871,12 @@
             align-items: start;
         }
 
-        .cs-system-rules {
-            margin-top: 36px;
-            padding-top: 28px;
-            border-top: 1px dashed rgba(0,0,0,0.1);
-        }
-
-        .cs-system-rules .cs-status-label {
-            margin-bottom: 12px;
-        }
-
         @media (max-width: 900px) {
             .cs-system-grid { grid-template-columns: 1fr; }
+        }
+
+        .cs-system-summary {
+            margin-top: 12px;
         }
 
         /* ── Outcome / impact ── */
@@ -1478,10 +1487,18 @@
         }
 
         .cs-step-body {
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 300;
-            line-height: 1.65;
-            color: #555;
+            line-height: 1.5;
+            color: rgba(0,0,0,0.5);
+        }
+
+        .cs-steps--tight {
+            margin-bottom: 32px;
+        }
+
+        .cs-steps--tight .cs-step {
+            padding: 20px 0;
         }
 
         /* ── Result stats ── */
@@ -1512,10 +1529,10 @@
         }
 
         .cs-stat-label {
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 300;
             color: rgba(255,255,255,0.75);
-            line-height: 1.5;
+            line-height: 1.45;
         }
 
         /* ── Wireframe placeholder tiles ── */
@@ -1649,7 +1666,7 @@
         /* ── Responsive ── */
         @media (max-width: 900px) {
             .cs-hero { padding: 60px 32px 40px; }
-            .cs-body { padding: 60px 32px; gap: 56px; }
+            .cs-body { padding: 60px 32px; gap: 44px; }
             .cs-meta-grid { grid-template-columns: repeat(2, 1fr); }
             .cs-insight-grid { grid-template-columns: 1fr 1fr; }
             .cs-two-col, .cs-two-col.wide-left { grid-template-columns: 1fr; }
@@ -1663,7 +1680,7 @@
 
         @media (max-width: 600px) {
             .cs-hero { padding: 40px 20px 32px; }
-            .cs-body { padding: 40px 20px; gap: 40px; }
+            .cs-body { padding: 40px 20px; gap: 36px; }
             .cs-meta-grid { grid-template-columns: 1fr 1fr; }
             .cs-insight-grid { grid-template-columns: 1fr; }
             .cs-wireframe-grid { grid-template-columns: 1fr; }
@@ -1707,7 +1724,7 @@
         <!-- Hero -->
         <section class="cs-hero">
             <h1 class="cs-title">TH Academy</h1>
-            <p class="cs-subtitle">I designed and developed a custom learning platform for a leading PMU expert in Bulgaria, enabling structured skill progression, feedback, and certification.</p>
+            <p class="cs-subtitle">Custom LMS for a PMU academy. UX/UI + front-end build. Levels, chat feedback, certificates.</p>
         </section>
 
         <!-- Cover: replace .cs-wf-placeholder--cover block with <img src="..." alt="..." loading="eager"> when you have the final shot -->
@@ -1746,7 +1763,7 @@
                     </div>
                     <div class="cs-meta-card">
                         <span class="cs-meta-label">Tools</span>
-                        <span class="cs-meta-value">Figma · FigJam</span>
+                        <span class="cs-meta-value">Figma · Cursor</span>
                     </div>
                 </div>
             </section>
@@ -1759,14 +1776,14 @@
                 <h2 class="cs-section-title">The problem</h2>
                 <div class="cs-two-col wide-left">
                     <div class="cs-section-body">
-                        <p>Tanya was teaching through <strong>PHI Academy</strong> and using their <strong>Craft Master</strong> platform. It worked — but it wasn't hers. She had no control over branding, content structure, or the student experience. As she grew her own name, she needed a platform that reflected her standards.</p>
+                        <p><strong>PHI Academy</strong> + <strong>Craft Master</strong> worked. Not her brand. Not her rules. She needed her own platform.</p>
                     </div>
                     <div class="cs-section-body">
                         <ul class="cs-problem-bullets">
-                            <li>Limited control over content and student experience.</li>
-                            <li>No personalised feedback system — corrections were manual and untracked.</li>
-                            <li>No branded learning environment — everything lived under another brand.</li>
-                            <li>No way to issue certificates, track progress, or manage enrolment independently.</li>
+                            <li>No real control over content or UX.</li>
+                            <li>Feedback manual, untracked.</li>
+                            <li>Everything under someone else's brand.</li>
+                            <li>No own certs, progress, or enrolment.</li>
                         </ul>
                     </div>
                 </div>
@@ -1816,7 +1833,7 @@
             <section class="cs-section">
                 <p class="cs-section-label">Research</p>
                 <h2 class="cs-section-title">Competitive analysis</h2>
-                <p class="cs-section-lead">To identify gaps and opportunities, I analyzed existing learning platforms used in the PMU industry and adjacent education spaces.</p>
+                <p class="cs-section-lead">Benchmark: Craft Master, Bring My Laptop, Udemy.</p>
 
                 <div class="cs-benchmark">
                     <div class="cs-benchmark-header">
@@ -1893,19 +1910,19 @@
                     <div class="cs-takeaway-list">
                         <div class="cs-takeaway">
                             <span class="cs-takeaway-dot"></span>
-                            <p>Structured, level-based courses work — but they need a real feedback loop to validate skill progression.</p>
+                            <p>Levels work. They need a real feedback loop for skills.</p>
                         </div>
                         <div class="cs-takeaway">
                             <span class="cs-takeaway-dot"></span>
-                            <p>Community and mentorship are missing from most platforms — direct instructor access is a differentiator.</p>
+                            <p>Most tools skip mentorship. Direct instructor access wins.</p>
                         </div>
                         <div class="cs-takeaway">
                             <span class="cs-takeaway-dot"></span>
-                            <p>No existing tool combines learning + direct feedback + branded certification in one place.</p>
+                            <p>Rare combo: learning + feedback + branded certs.</p>
                         </div>
                         <div class="cs-takeaway cs-takeaway--highlight">
                             <span class="cs-takeaway-dot"></span>
-                            <p><strong>Opportunity:</strong> Create a platform that combines structured learning, real-time feedback, and branded certification — tailored to Tanya's teaching methodology.</p>
+                            <p><strong>Opportunity:</strong> All three — built for Tanya's method.</p>
                         </div>
                     </div>
                 </div>
@@ -1917,7 +1934,7 @@
                 <h2 class="cs-section-title">The solution</h2>
 
                 <div class="cs-solution-intro">
-                    <p>TH Academy is a private, invite-only learning platform built around Tanya's teaching method. Two distinct roles — instructor and student — share the same system but experience it differently. The platform moves each student through structured levels, with direct feedback at every stage and a certificate waiting at the end.</p>
+                    <p>Invite-only LMS. Instructor + student. Levels, chat feedback, cert at the end.</p>
                 </div>
 
                 <!-- Roles -->
@@ -1928,11 +1945,10 @@
                             <p class="cs-role-name">Tanya Hristova</p>
                         </div>
                         <ul class="cs-role-list">
-                            <li>Creates and structures courses by level</li>
-                            <li>Invites students individually</li>
-                            <li>Reviews submitted work and leaves feedback via chat</li>
-                            <li>Tracks student progress across all courses</li>
-                            <li>Issues certificates upon completion</li>
+                            <li>Author courses & levels</li>
+                            <li>Invite students</li>
+                            <li>Review work in chat</li>
+                            <li>Issue certificates</li>
                         </ul>
                     </div>
                     <div class="cs-role-divider"></div>
@@ -1942,11 +1958,10 @@
                             <p class="cs-role-name">Enrolled learner</p>
                         </div>
                         <ul class="cs-role-list">
-                            <li>Accesses courses through a personal invite</li>
-                            <li>Progresses level by level at their own pace</li>
-                            <li>Submits practical work for review</li>
-                            <li>Receives real-time corrections in chat</li>
-                            <li>Downloads a certificate on course completion</li>
+                            <li>Join via invite</li>
+                            <li>Progress level by level</li>
+                            <li>Submit work, get chat feedback</li>
+                            <li>Download certificate</li>
                         </ul>
                     </div>
                 </div>
@@ -1957,7 +1972,7 @@
                         <span class="cs-pillar-num">01</span>
                         <div class="cs-pillar-body">
                             <p class="cs-pillar-title">Level system</p>
-                            <p class="cs-pillar-desc">Courses are divided into sequential levels. Students unlock the next only after the instructor approves their work.</p>
+                            <p class="cs-pillar-desc">Next level opens after approval.</p>
                         </div>
                     </div>
                     <div class="cs-pillar-arrow">→</div>
@@ -1965,7 +1980,7 @@
                         <span class="cs-pillar-num">02</span>
                         <div class="cs-pillar-body">
                             <p class="cs-pillar-title">Chat feedback</p>
-                            <p class="cs-pillar-desc">Each level has a private chat thread. The instructor leaves corrections directly on submitted work — no email, no manual tracking.</p>
+                            <p class="cs-pillar-desc">Per-level chat. Corrections on submissions.</p>
                         </div>
                     </div>
                     <div class="cs-pillar-arrow">→</div>
@@ -1973,7 +1988,7 @@
                         <span class="cs-pillar-num">03</span>
                         <div class="cs-pillar-body">
                             <p class="cs-pillar-title">Certification</p>
-                            <p class="cs-pillar-desc">On completing all levels, the platform auto-generates a branded certificate — tied to the student's profile and course record.</p>
+                            <p class="cs-pillar-desc">Branded cert auto-generated when done.</p>
                         </div>
                     </div>
                 </div>
@@ -1983,7 +1998,7 @@
             <section class="cs-section">
                 <p class="cs-section-label">Wireframes</p>
                 <h2 class="cs-section-title">First visual pass</h2>
-                <p class="cs-section-lead">Initial wireframes focused on structuring the learning flow and defining interactions between instructor and student.</p>
+                <p class="cs-section-lead">First pass: flows + instructor/student touchpoints.</p>
 
                 <div class="cs-wireframes">
                     <div class="cs-wireframe-item cs-wireframe-item--wide">
@@ -2047,16 +2062,16 @@
             <section class="cs-section">
                 <p class="cs-section-label">Prototype</p>
                 <h2 class="cs-section-title">Low-fidelity prototype</h2>
-                <p class="cs-section-lead">A low-fidelity prototype was created to validate functionality and user flow with the client before moving to development.</p>
+                <p class="cs-section-lead">Validate flows with the client before dev.</p>
 
                 <div class="cs-two-col">
                     <div class="cs-section-body">
                         <p class="cs-status-label">Figma Make</p>
-                        <p>I built an interactive prototype in <strong>Figma Make</strong> so we could click through real flows — not just static frames. That made iteration fast while behaviour and transitions were still easy to adjust.</p>
+                        <p>Clickable prototype. Fast iteration.</p>
                     </div>
                     <div class="cs-section-body">
                         <p class="cs-status-label">Client validation</p>
-                        <p>I walked <strong>Tanya</strong> through the prototype in a focused session: invite, onboarding, level progression, chat-based feedback, and certificate handoff. She confirmed the mental model matched how she teaches, we tightened copy and ordering where it mattered, and we locked scope before moving into development.</p>
+                        <p>Walkthrough with <strong>Tanya</strong>. Model confirmed. Scope locked.</p>
                     </div>
                 </div>
 
@@ -2070,7 +2085,7 @@
                         </svg>
                         <span>Figma Make — interactive prototype</span>
                     </div>
-                    <p class="cs-wf-caption">Swap for embed, prototype link, or a short screen recording of the walkthrough.</p>
+                    <p class="cs-wf-caption">Embed, link, or Loom.</p>
                 </div>
             </section>
 
@@ -2078,44 +2093,41 @@
             <section class="cs-section">
                 <p class="cs-section-label">Development</p>
                 <h2 class="cs-section-title">System logic & development</h2>
-                <p class="cs-section-lead">The product is not only screens — it is rules: who can do what, when a level unlocks, and how instructor and student stay aligned. I defined that logic with the client, then implemented it in code (React, Vite, Supabase) with <strong>Cursor</strong> as my primary dev environment, so design decisions stayed traceable all the way to behaviour in production.</p>
+                <p class="cs-section-lead">Rules in code: roles, level states, unlocks. Built with <strong>React</strong>, <strong>Vite</strong>, <strong>Supabase</strong>, <strong>Cursor</strong>.</p>
 
                 <div class="cs-system-grid">
                     <div class="cs-section-body">
                         <p class="cs-status-label">Cursor</p>
-                        <p>Cursor let me move quickly from structure in Figma to real components, state, and API calls. I could iterate on flows, tighten copy, and adjust edge cases in the same session — without losing the thread between UX intent and implementation detail.</p>
+                        <p>Figma structure to components and APIs in one loop.</p>
                     </div>
                     <div class="cs-section-body">
                         <p class="cs-status-label">Level logic</p>
-                        <p>Each course is a sequence of levels with explicit status (e.g. locked, in progress, submitted, approved). A student only unlocks the next level after the instructor approves the current one — mirroring how Tanya actually teaches, not a generic “complete video → next” pattern.</p>
+                        <p>Explicit statuses. Next level only after approval — not "watch video → next".</p>
                     </div>
                     <div class="cs-section-body">
-                        <p class="cs-status-label">Cross-role communication</p>
-                        <p>Instructor and student never share the same UI, but they share the same data model: enrolment, level state, messages, and certificates. Realtime chat per level is the feedback channel — submissions, corrections, and approval all leave a trail both sides can trust.</p>
+                        <p class="cs-status-label">Roles</p>
+                        <p>Separate UIs. Shared data: enrolment, levels, chat, certs.</p>
                     </div>
                 </div>
 
-                <div class="cs-system-rules">
-                    <p class="cs-status-label">At a glance</p>
-                    <ul class="cs-problem-bullets">
-                        <li>Role-based system (Instructor / Student)</li>
-                        <li>Level unlocking based on approval</li>
-                        <li>Feedback loop via chat</li>
-                        <li>Certificate generation</li>
-                    </ul>
-                </div>
+                <ul class="cs-problem-bullets cs-system-summary">
+                    <li>Role-based (Instructor / Student)</li>
+                    <li>Unlock on approval</li>
+                    <li>Chat feedback loop</li>
+                    <li>Certificate generation</li>
+                </ul>
             </section>
 
             <!-- Design system -->
             <section class="cs-section">
                 <p class="cs-section-label">Design system</p>
                 <h2 class="cs-section-title">Modular foundation</h2>
-                <p class="cs-section-lead">A disciplined system keeps student and admin experiences visually aligned while the codebase stays maintainable as features grow.</p>
+                <p class="cs-section-lead">One system: marketing + app. Tokens and components in Figma and code.</p>
 
                 <div class="cs-ds-callout">
-                    <p class="cs-ds-callout-kicker">Design-to-code continuity</p>
-                    <p class="cs-ds-callout-quote">I created a modular design system and connected it directly to the application, allowing real-time updates across the product.</p>
-                    <p class="cs-ds-callout-detail">That is not a handoff PDF that drifts from production — it is <strong>shared tokens and components</strong> (colours, type scale, spacing, UI primitives) reflected in both Figma and React. When a token changes, the shift propagates everywhere the system is applied.</p>
+                    <p class="cs-ds-callout-kicker">Design-to-code</p>
+                    <p class="cs-ds-callout-quote">Modular system wired into the app — updates propagate across the product.</p>
+                    <p class="cs-ds-callout-detail">Not a static handoff. <strong>Shared tokens + components</strong> in Figma and React. Change a token → UI moves together.</p>
                 </div>
 
                 <div class="cs-ds-grid">
@@ -2137,7 +2149,7 @@
                             </div>
                         </div>
                         <img class="cs-ds-figma-cap" src="assets/design-system-figma.png" alt="Component library overview in Figma" loading="lazy">
-                        <p class="cs-ds-panel-note">Reusable patterns for navigation, course shells, forms, and status — specified in Figma, implemented as shared React building blocks.</p>
+                        <p class="cs-ds-panel-note">Figma specs → shared React blocks.</p>
                     </div>
                     <div class="cs-ds-panel">
                         <p class="cs-status-label">Colours</p>
@@ -2163,16 +2175,16 @@
                                 <span class="cs-ds-swatch-hex">#F8F9FA</span>
                             </div>
                         </div>
-                        <p class="cs-ds-panel-note">Restrained neutrals with a single purple family for actions, focus, and brand moments — applied consistently across marketing and app surfaces.</p>
+                        <p class="cs-ds-panel-note">Neutrals + one purple family. Actions & brand.</p>
                     </div>
                     <div class="cs-ds-panel">
                         <p class="cs-status-label">Typography</p>
                         <div class="cs-ds-type-sample">
                             <p class="cs-ds-type-display">Aa</p>
                             <p class="cs-ds-type-label">Syne — headings</p>
-                            <p class="cs-ds-type-body-sample">Inter — body copy at 17px / 300 for long-form case study text; 500 for navigation and labels.</p>
+                            <p class="cs-ds-type-body-sample">Inter — body 17/300, UI 500.</p>
                         </div>
-                        <p class="cs-ds-panel-note">Clear hierarchy: geometric display for titles, humanist sans for reading density. Sizes and weights map to a small scale reused in CSS.</p>
+                        <p class="cs-ds-panel-note">Display for titles. Sans for density. Small type scale in CSS.</p>
                     </div>
                 </div>
             </section>
@@ -2232,18 +2244,18 @@
             <section class="cs-section">
                 <p class="cs-section-label">Final UI</p>
                 <h2 class="cs-section-title">High-fidelity screens</h2>
-                <p class="cs-section-lead">Production-ready layouts from the shipped app — calm hierarchy, dense but readable data, and the same component language across student and admin.</p>
+                <p class="cs-section-lead">Shipped UI. Same components, two roles.</p>
 
                 <div class="cs-final-ui-group">
                     <p class="cs-status-label">Student view</p>
                     <div class="cs-screenshot-grid">
                         <div class="cs-screenshot-item">
                             <img src="assets/th-academy-course.png" alt="Student course workspace — theory, levels, and chat" loading="lazy">
-                            <p class="cs-screenshot-caption">Course workspace — outline, theory content, and per-level instructor chat in one view</p>
+                            <p class="cs-screenshot-caption">Course workspace — outline, theory, chat</p>
                         </div>
                         <div class="cs-screenshot-item">
                             <img src="assets/th-academy-student.png" alt="Student dashboard or course overview" loading="lazy">
-                            <p class="cs-screenshot-caption">Student-facing surface — progress, levels, and clear next actions</p>
+                            <p class="cs-screenshot-caption">Student — progress & next steps</p>
                         </div>
                     </div>
                 </div>
@@ -2253,11 +2265,11 @@
                     <div class="cs-screenshot-grid">
                         <div class="cs-screenshot-item">
                             <img src="assets/th-academy-admin.png" alt="Admin dashboard" loading="lazy">
-                            <p class="cs-screenshot-caption">Admin dashboard — students, status counts, and filters at a glance</p>
+                            <p class="cs-screenshot-caption">Admin — roster & status</p>
                         </div>
                         <div class="cs-screenshot-item">
                             <img src="assets/th-admin-course-create.png" alt="Admin course authoring" loading="lazy">
-                            <p class="cs-screenshot-caption">Course authoring — theory blocks and practice levels structured for Tanya's curriculum</p>
+                            <p class="cs-screenshot-caption">Authoring — theory + practice levels</p>
                         </div>
                     </div>
                 </div>
@@ -2273,21 +2285,21 @@
                         <div class="cs-step-number">04</div>
                         <div class="cs-step-content">
                             <p class="cs-step-title">Visual direction</p>
-                            <p class="cs-step-body">Neutral gray and black palette — professional and calm, appropriate for a learning environment. Warm gold accents reserved for progress indicators and certificates. Typography kept clean and legible at all sizes, given the content-heavy nature of the platform.</p>
+                            <p class="cs-step-body">Calm neutrals. Gold for progress + certs. Type stays readable when content stacks.</p>
                         </div>
                     </div>
                     <div class="cs-step">
                         <div class="cs-step-number">05</div>
                         <div class="cs-step-content">
                             <p class="cs-step-title">Course workspace layout</p>
-                            <p class="cs-step-body">The most critical design decision: a three-panel workspace with a fixed left sidebar (course outline + level statuses), a scrollable center panel (theory content), and a fixed right panel (chat with instructor). All three needed to be visible simultaneously on desktop, while collapsing gracefully on mobile.</p>
+                            <p class="cs-step-body">Three panels: outline + statuses | theory | chat. Desktop: all visible. Mobile: stacks.</p>
                         </div>
                     </div>
                     <div class="cs-step">
                         <div class="cs-step-number">06</div>
                         <div class="cs-step-content">
                             <p class="cs-step-title">Component system</p>
-                            <p class="cs-step-body">Built a full Figma component library: status badges with 5 states, course level cards, chat message types (student/instructor, text/image, correction request), certificate templates (Basic vs Masterclass), admin data tables, and mobile navigation patterns.</p>
+                            <p class="cs-step-body">Figma library: 5 state badges, level cards, chat variants, cert templates, admin tables, mobile nav.</p>
                         </div>
                     </div>
                 </div>
@@ -2299,26 +2311,26 @@
                 <p class="cs-section-label">Deliver</p>
                 <h2 class="cs-section-title">What shipped</h2>
 
-                <div class="cs-steps" style="margin-bottom:48px;">
+                <div class="cs-steps cs-steps--tight">
                     <div class="cs-step">
                         <div class="cs-step-number">07</div>
                         <div class="cs-step-content">
                             <p class="cs-step-title">Automated onboarding flow</p>
-                            <p class="cs-step-body">Admin creates student → automated email invitation sent → student sets password and activates account. Zero manual steps for the instructor after the initial setup.</p>
+                            <p class="cs-step-body">Create student → email invite → student activates. No manual admin after setup.</p>
                         </div>
                     </div>
                     <div class="cs-step">
                         <div class="cs-step-number">08</div>
                         <div class="cs-step-content">
                             <p class="cs-step-title">Realtime feedback loop</p>
-                            <p class="cs-step-body">Student submits work via chat → status moves to "For Review" → instructor approves or returns for correction with structured feedback → student sees update in realtime. Each level tracks its own correction history.</p>
+                            <p class="cs-step-body">Submit in chat → For review → approve or return. Student sees updates live. History per level.</p>
                         </div>
                     </div>
                     <div class="cs-step">
                         <div class="cs-step-number">09</div>
                         <div class="cs-step-content">
                             <p class="cs-step-title">Certificate generation</p>
-                            <p class="cs-step-body">On course completion, a branded certificate is generated automatically — with different templates for Basic and Masterclass tracks. Print-ready and shareable.</p>
+                            <p class="cs-step-body">Auto branded certs at completion. Basic / Masterclass templates.</p>
                         </div>
                     </div>
                 </div>
@@ -2326,15 +2338,15 @@
                 <div class="cs-stat-grid">
                     <div class="cs-stat-card">
                         <span class="cs-stat-number">2</span>
-                        <span class="cs-stat-label">distinct user roles designed — student and admin — with separate but connected experiences</span>
+                        <span class="cs-stat-label">roles — student & admin, separate UIs, shared data</span>
                     </div>
                     <div class="cs-stat-card">
                         <span class="cs-stat-number">0 h</span>
-                        <span class="cs-stat-label">manual onboarding admin — invitation, activation and access are fully automated</span>
+                        <span class="cs-stat-label">manual onboarding after invite automation</span>
                     </div>
                     <div class="cs-stat-card">
                         <span class="cs-stat-number">5</span>
-                        <span class="cs-stat-label">level status states designed and implemented — driving the entire feedback and progress model</span>
+                        <span class="cs-stat-label">level states — core of progress + feedback</span>
                     </div>
                 </div>
             </section>
@@ -2343,20 +2355,20 @@
             <section class="cs-section">
                 <p class="cs-section-label">Outcome</p>
                 <h2 class="cs-section-title">Impact</h2>
-                <p class="cs-section-lead">Formal usage metrics were not in scope for this project — the value shows up in what shipped and how it serves Tanya's teaching model.</p>
+                <p class="cs-section-lead">No formal metrics in scope. Value = what shipped.</p>
 
                 <div class="cs-outcome-grid">
                     <div class="cs-outcome-item">
                         <h3 class="cs-outcome-title">Fully functional platform</h3>
-                        <p class="cs-outcome-body">A working product, not a mockup: invitations, level progression, realtime feedback, and certificate generation all run in the live app.</p>
+                        <p class="cs-outcome-body">Live app: invites, levels, realtime feedback, certs.</p>
                     </div>
                     <div class="cs-outcome-item">
                         <h3 class="cs-outcome-title">Custom learning experience</h3>
-                        <p class="cs-outcome-body">Built around Tanya's method — approval-gated levels, per-level chat, and branding she owns — instead of forcing her process into a generic LMS.</p>
+                        <p class="cs-outcome-body">Her method: approval gates, chat, her brand — not generic LMS.</p>
                     </div>
                     <div class="cs-outcome-item">
                         <h3 class="cs-outcome-title">Scalable system</h3>
-                        <p class="cs-outcome-body">Modular UI, shared tokens, and a clear data model mean new courses, cohorts, and refinements can be added without rebuilding from scratch.</p>
+                        <p class="cs-outcome-body">Tokens + modules + clear model → add courses without rebuild.</p>
                     </div>
                 </div>
             </section>
@@ -2365,15 +2377,11 @@
             <section class="cs-section">
                 <p class="cs-section-label">Reflection</p>
                 <h2 class="cs-section-title">What I learned</h2>
-                <div class="cs-two-col">
-                    <div class="cs-section-body">
-                        <p>This was the most systems-level UX challenge I'd worked on — not designing pages, but designing a machine with interlocking states. The status model for course levels turned out to be the single most important design decision: get it wrong, and the entire feedback loop breaks down for both users.</p>
-                        <p>The three-panel workspace required constant trade-offs between information density and cognitive load. Several iterations went too far in each direction before landing on a layout that felt genuinely usable under real learning conditions.</p>
-                    </div>
-                    <div class="cs-section-body">
-                        <p>Having a technical background helped enormously — understanding how realtime subscriptions work, how Supabase RLS affects what each user can see, and how the database schema shapes the UI made me a much more effective design partner.</p>
-                        <p>If I extended this project further, I'd focus on the student dashboard — a clear overview of where they are across all levels, what needs their attention, and how close they are to their certificate. Progress visibility is the feature most likely to improve completion rates.</p>
-                    </div>
+                <div class="cs-reflection-tight">
+                        <p>Systems UX: interlocking states, not pages. Level status model = linchpin.</p>
+                        <p>Three-panel layout = density vs. calm. Many passes to feel right in real study sessions.</p>
+                        <p>Tech literacy helped: realtime, RLS, schema ↔ UI.</p>
+                        <p>Next: richer student dashboard — at-a-glance progress to completion.</p>
                 </div>
             </section>
 
