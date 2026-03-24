@@ -306,6 +306,97 @@
 
         /* ── Divider ── */
 
+        /* ── Discover: Accordion ── */
+        .cs-accordion {
+            display: flex;
+            flex-direction: column;
+            margin-top: 8px;
+        }
+
+        .cs-accordion-item {
+            border-top: 1px dashed rgba(0,0,0,0.15);
+        }
+
+        .cs-accordion-item:last-child {
+            border-bottom: 1px dashed rgba(0,0,0,0.15);
+        }
+
+        .cs-accordion-trigger {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 18px 0;
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+            transition: color 0.2s;
+        }
+
+        .cs-accordion-trigger:hover .cs-accordion-title {
+            color: var(--deep-lavender);
+        }
+
+        .cs-accordion-num {
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            color: rgba(0,0,0,0.3);
+            letter-spacing: 0.05em;
+            min-width: 24px;
+        }
+
+        .cs-accordion-title {
+            font-family: var(--font-body);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-color);
+            flex: 1;
+            transition: color 0.2s;
+        }
+
+        .cs-accordion-icon {
+            font-size: 18px;
+            font-weight: 300;
+            color: rgba(0,0,0,0.3);
+            line-height: 1;
+            transition: transform 0.25s, color 0.2s;
+        }
+
+        .cs-accordion-item[data-open="true"] .cs-accordion-icon {
+            transform: rotate(45deg);
+            color: var(--deep-lavender);
+        }
+
+        .cs-accordion-item[data-open="true"] .cs-accordion-title {
+            color: var(--deep-lavender);
+        }
+
+        .cs-accordion-item[data-open="true"] .cs-accordion-num {
+            color: var(--deep-lavender);
+        }
+
+        .cs-accordion-body {
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.35s ease, padding 0.25s ease;
+            padding: 0 0 0 44px;
+        }
+
+        .cs-accordion-item[data-open="true"] .cs-accordion-body {
+            max-height: 200px;
+            padding: 0 0 20px 44px;
+        }
+
+        .cs-accordion-body p {
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.7;
+            color: rgba(0,0,0,0.55);
+            margin: 0;
+        }
+
         /* ── Define: IA grid ── */
         .cs-ia-grid {
             display: grid;
@@ -915,35 +1006,37 @@
             <section class="cs-section">
                 <p class="cs-section-label">Discover</p>
                 <h2 class="cs-section-title">Understanding what was needed</h2>
-                <p class="cs-section-body">Discovery involved mapping two distinct user types — students and admin — and understanding how they'd interact with the same system from completely different angles. Sessions with Tanya surfaced the actual workflows she was running manually, which shaped the platform architecture.</p>
 
-                <div class="cs-insight-grid">
-                    <div class="cs-insight-card">
-                        <div class="cs-insight-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-                            </svg>
+                <div class="cs-accordion">
+                    <div class="cs-accordion-item" data-open="true">
+                        <button class="cs-accordion-trigger" onclick="toggleAccordion(this)">
+                            <span class="cs-accordion-num">01</span>
+                            <span class="cs-accordion-title">Two very different users</span>
+                            <span class="cs-accordion-icon">+</span>
+                        </button>
+                        <div class="cs-accordion-body">
+                            <p>Students need clarity, progress visibility, and a guided path. Admin needs control, oversight, and efficiency. The same platform had to serve both — with a clean separation of concerns in the routing, data access, and UI logic.</p>
                         </div>
-                        <p class="cs-insight-title">Two very different users</p>
-                        <p class="cs-insight-body">Students need clarity, progress visibility, and a guided path. Admin needs control, oversight, and efficiency. The same platform had to serve both — with a clean separation of concerns.</p>
                     </div>
-                    <div class="cs-insight-card">
-                        <div class="cs-insight-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
-                            </svg>
+                    <div class="cs-accordion-item">
+                        <button class="cs-accordion-trigger" onclick="toggleAccordion(this)">
+                            <span class="cs-accordion-num">02</span>
+                            <span class="cs-accordion-title">Feedback is the core loop</span>
+                            <span class="cs-accordion-icon">+</span>
+                        </button>
+                        <div class="cs-accordion-body">
+                            <p>The most critical flow wasn't enrolment — it was the correction cycle: student submits work → instructor reviews → approves or returns for revision. This loop had to be fast, clear, and realtime. Everything else was secondary.</p>
                         </div>
-                        <p class="cs-insight-title">Feedback is the core loop</p>
-                        <p class="cs-insight-body">The most critical flow wasn't enrolment — it was the correction cycle: student submits work → instructor reviews → approves or returns for revision. This loop needed to be fast, clear, and realtime.</p>
                     </div>
-                    <div class="cs-insight-card">
-                        <div class="cs-insight-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/>
-                            </svg>
+                    <div class="cs-accordion-item">
+                        <button class="cs-accordion-trigger" onclick="toggleAccordion(this)">
+                            <span class="cs-accordion-num">03</span>
+                            <span class="cs-accordion-title">Mobile is not optional</span>
+                            <span class="cs-accordion-icon">+</span>
+                        </button>
+                        <div class="cs-accordion-body">
+                            <p>Students access the platform between practice sessions, often on a phone. Bottom nav, sticky headers, and full-screen overlays for course detail were required from day one — not afterthoughts.</p>
                         </div>
-                        <p class="cs-insight-title">Mobile is not optional</p>
-                        <p class="cs-insight-body">Students access the platform between practice sessions, often on a phone. Bottom nav, sticky headers, and full-screen overlays were required — not nice-to-haves.</p>
                     </div>
                 </div>
             </section>
@@ -1212,6 +1305,15 @@
                 setTimeout(function() { preloader.remove(); }, 600);
             }
         });
+
+        function toggleAccordion(btn) {
+            const item = btn.closest('.cs-accordion-item');
+            const isOpen = item.getAttribute('data-open') === 'true';
+            // Close all
+            document.querySelectorAll('.cs-accordion-item').forEach(i => i.removeAttribute('data-open'));
+            // Open clicked if it was closed
+            if (!isOpen) item.setAttribute('data-open', 'true');
+        }
     </script>
 </body>
 </html>
