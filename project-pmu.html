@@ -372,6 +372,130 @@
             .cs-finding:last-child { border-bottom: none; }
         }
 
+        /* ── Research: Benchmark ── */
+        .cs-benchmark {
+            display: flex;
+            flex-direction: column;
+            border: 1px dashed rgba(0,0,0,0.15);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .cs-benchmark-header {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr 1.5fr;
+            background: rgba(0,0,0,0.02);
+            border-bottom: 1px dashed rgba(0,0,0,0.15);
+        }
+
+        .cs-benchmark-header .cs-benchmark-cell {
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: rgba(0,0,0,0.35);
+        }
+
+        .cs-benchmark-row {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr 1.5fr;
+            border-bottom: 1px dashed rgba(0,0,0,0.1);
+        }
+
+        .cs-benchmark-row:last-child { border-bottom: none; }
+
+        .cs-benchmark-cell {
+            padding: 20px 24px;
+            border-right: 1px dashed rgba(0,0,0,0.1);
+            font-family: var(--font-body);
+            font-size: 13px;
+            line-height: 1.65;
+            color: rgba(0,0,0,0.6);
+        }
+
+        .cs-benchmark-cell:last-child { border-right: none; }
+
+        .cs-benchmark-cell p { margin: 0; }
+
+        .cs-benchmark-platform {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            justify-content: center;
+        }
+
+        .cs-benchmark-name {
+            font-family: var(--font-body);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .cs-benchmark-type {
+            font-size: 11px;
+            color: rgba(0,0,0,0.35);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .cs-benchmark-weak p {
+            color: rgba(0,0,0,0.4);
+        }
+
+        /* ── Research: Takeaways ── */
+        .cs-takeaways {
+            margin-top: 32px;
+            padding-top: 28px;
+            border-top: 1px dashed rgba(0,0,0,0.1);
+        }
+
+        .cs-takeaway-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .cs-takeaway {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+        }
+
+        .cs-takeaway-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: rgba(0,0,0,0.2);
+            flex-shrink: 0;
+            margin-top: 6px;
+        }
+
+        .cs-takeaway--highlight .cs-takeaway-dot {
+            background: var(--deep-lavender);
+        }
+
+        .cs-takeaway p {
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.65;
+            color: rgba(0,0,0,0.55);
+            margin: 0;
+        }
+
+        .cs-takeaway--highlight p {
+            color: var(--text-color);
+        }
+
+        @media (max-width: 768px) {
+            .cs-benchmark-header,
+            .cs-benchmark-row { grid-template-columns: 1fr; }
+            .cs-benchmark-header .cs-benchmark-cell:not(:first-child),
+            .cs-benchmark-cell:not(:first-child) { border-top: 1px dashed rgba(0,0,0,0.1); border-right: none; }
+            .cs-benchmark-header { display: none; }
+        }
+
         /* ── Define: IA grid ── */
         .cs-ia-grid {
             display: grid;
@@ -1015,6 +1139,78 @@
             </section>
 
 
+
+            <!-- Research & Benchmark -->
+            <section class="cs-section">
+                <p class="cs-section-label">Research</p>
+                <h2 class="cs-section-title">Competitive benchmark</h2>
+
+                <div class="cs-benchmark">
+                    <div class="cs-benchmark-header">
+                        <div class="cs-benchmark-cell cs-benchmark-platform">Platform</div>
+                        <div class="cs-benchmark-cell">Strengths</div>
+                        <div class="cs-benchmark-cell">Weaknesses</div>
+                    </div>
+                    <div class="cs-benchmark-row">
+                        <div class="cs-benchmark-cell cs-benchmark-platform">
+                            <span class="cs-benchmark-name">Craft Master</span>
+                            <span class="cs-benchmark-type">PHI Academy tool</span>
+                        </div>
+                        <div class="cs-benchmark-cell">
+                            <p>Structured course format. Level-based progression. Already familiar to PMU instructors.</p>
+                        </div>
+                        <div class="cs-benchmark-cell cs-benchmark-weak">
+                            <p>No branding control. Tied to PHI ecosystem. Feedback is manual. No independent certification.</p>
+                        </div>
+                    </div>
+                    <div class="cs-benchmark-row">
+                        <div class="cs-benchmark-cell cs-benchmark-platform">
+                            <span class="cs-benchmark-name">Bring My Laptop</span>
+                            <span class="cs-benchmark-type">Creative education</span>
+                        </div>
+                        <div class="cs-benchmark-cell">
+                            <p>Strong community feel. Personal mentor access. Clean, modern UI. Mobile-friendly.</p>
+                        </div>
+                        <div class="cs-benchmark-cell cs-benchmark-weak">
+                            <p>No level-based progression. No formal certification. Not adaptable for hands-on skill training.</p>
+                        </div>
+                    </div>
+                    <div class="cs-benchmark-row">
+                        <div class="cs-benchmark-cell cs-benchmark-platform">
+                            <span class="cs-benchmark-name">Udemy</span>
+                            <span class="cs-benchmark-type">Mass-market learning</span>
+                        </div>
+                        <div class="cs-benchmark-cell">
+                            <p>Highly structured courses. Certificates of completion. Large catalogue, trusted brand.</p>
+                        </div>
+                        <div class="cs-benchmark-cell cs-benchmark-weak">
+                            <p>Zero instructor-student feedback. No correction loop. Generic experience — not built for skill mastery.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cs-takeaways">
+                    <p class="cs-status-label">Key takeaways</p>
+                    <div class="cs-takeaway-list">
+                        <div class="cs-takeaway">
+                            <span class="cs-takeaway-dot"></span>
+                            <p>Structured, level-based courses work — but they need a real feedback loop to validate skill progression.</p>
+                        </div>
+                        <div class="cs-takeaway">
+                            <span class="cs-takeaway-dot"></span>
+                            <p>Community and mentorship are missing from most platforms — direct instructor access is a differentiator.</p>
+                        </div>
+                        <div class="cs-takeaway">
+                            <span class="cs-takeaway-dot"></span>
+                            <p>No existing tool combines learning + direct feedback + branded certification in one place.</p>
+                        </div>
+                        <div class="cs-takeaway cs-takeaway--highlight">
+                            <span class="cs-takeaway-dot"></span>
+                            <p><strong>Opportunity:</strong> build the platform that does all three — and make it feel like Tanya's.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <!-- Define -->
             <section class="cs-section">
