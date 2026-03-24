@@ -10,7 +10,7 @@
     --bg-gray: #f8f9fa;
     --border-radius-large: 4px;
     --border-radius-medium: 4px;
-    --font-heading: 'Montserrat', 'Inter', sans-serif; /* Fallback for AOK Buenos Aires */
+    --font-heading: 'Syne', 'Inter', sans-serif;
     --font-body: 'Inter', sans-serif;
 }
 
@@ -145,20 +145,12 @@ ul {
     text-decoration: none;
         }
 
-        .nav-link::after {
-            content: '';
-            position: absolute;
-    bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-    background-color: var(--deep-lavender);
-            transition: width 0.3s ease;
-        }
-
-        .nav-link.active::after {
-            width: 100%;
-        }
+        .nav-link.active {
+    border: 1px dashed rgba(123, 97, 255, 0.5);
+    border-radius: 4px;
+    padding: 2px 8px;
+    color: var(--deep-lavender);
+}
 
         .nav-link:hover {
     color: var(--deep-lavender);
@@ -271,7 +263,7 @@ ul {
 }
 
 .hero-text h1 {
-    font-family: 'Buenos Aires', 'Montserrat', 'Inter', sans-serif;
+    font-family: 'Syne', 'Inter', sans-serif;
     font-size: 48px;
     font-weight: 500;
     line-height: 1.2;
@@ -442,32 +434,32 @@ ul {
 }
 
 .section-title {
-    font-family: var(--font-body);
-    font-size: 20px;
+    font-family: var(--font-heading);
+    font-size: 22px;
     font-weight: 500;
     color: var(--text-color);
     margin: 0;
-    padding-bottom: 16px;
+    padding-top: 16px;
+    padding-bottom: 0;
     line-height: 1.4;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    border-bottom: none;
-    box-shadow: 0 1.5px 0 var(--text-color);
+    letter-spacing: 0.08em;
+    border-top: 1px dashed rgba(0, 0, 0, 0.3);
     display: block;
 }
 
 .section-header h2,
 .section-header .section-title {
-    font-family: var(--font-body);
-    font-size: 20px;
+    font-family: var(--font-heading);
+    font-size: 22px;
     font-weight: 500;
     color: var(--text-color);
     line-height: 1.4;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    padding-bottom: 16px;
-    border-bottom: none;
-    box-shadow: 0 1.5px 0 var(--text-color);
+    letter-spacing: 0.08em;
+    padding-top: 16px;
+    padding-bottom: 0;
+    border-top: 1px dashed rgba(0, 0, 0, 0.3);
     margin: 0;
 }
 
@@ -495,8 +487,9 @@ ul {
     background: var(--white);
     border-radius: var(--border-radius-large);
             overflow: hidden;
-    box-shadow: 2px 2px 42px 0px rgba(0,0,0,0.07);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: none;
+    border: 1px dashed rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, border-color 0.3s ease;
             display: block;
             text-decoration: none;
     color: inherit;
@@ -505,7 +498,7 @@ ul {
 
 .project-card:hover {
     transform: none;
-    box-shadow: 2px 2px 42px 0px rgba(0,0,0,0.07);
+    border-color: rgba(0, 0, 0, 0.6);
 }
 
 /* When hovering on project card, make the button look like primary button */
@@ -522,8 +515,20 @@ ul {
 
 .project-card.horizontal {
             display: flex;
-            height: 524px;
+            height: auto;
         }
+
+.project-card.horizontal .project-image {
+    flex: 0 0 60%;
+    aspect-ratio: 1.618 / 1;
+    overflow: hidden;
+    padding: 0;
+    border-radius: 4px 0 0 4px;
+}
+
+.project-card.horizontal .project-info {
+    flex: 0 0 40%;
+}
 
         .project-info {
                 flex: 1;
@@ -564,14 +569,15 @@ ul {
         }
 
 .tag {
-    background-color: var(--soft-lavender);
+    background-color: var(--white);
     color: var(--deep-lavender);
     font-family: var(--font-body);
-            font-size: 12px;
-    padding: 8px 10px;
-            border-radius: 20px;
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: 1px dashed rgba(123, 97, 255, 0.5);
     text-transform: uppercase;
-        }
+}
 
 .project-description {
     font-size: 20px;
@@ -594,12 +600,22 @@ ul {
     object-fit: cover;
     object-position: center;
     border-radius: var(--border-radius-medium);
+    transition: transform 0.4s ease;
     transition: transform 0.5s ease;
     transform-origin: center;
 }
 
 .project-card:hover .project-image img {
     transform: scale(1.05);
+}
+
+.project-card.horizontal .project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0;
+    transition: transform 0.4s ease;
 }
 
 /* Creative Voice Section */
@@ -780,6 +796,14 @@ ul {
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
+.contact-column a[href^="mailto"] {
+    color: var(--deep-lavender);
+}
+
+.contact-column a[href^="mailto"]::after {
+    color: var(--deep-lavender);
+}
+
 .contact-column a:hover {
     color: var(--white);
 }
@@ -817,13 +841,11 @@ ul {
 }
 
 .about-hero-content {
-            flex: 0 0 61.8%; /* Golden ratio: text area */
-    max-width: 61.8%;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            padding: 26px 0;
-        }
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 26px 0;
+}
 
 .about-hero-title {
     font-family: var(--font-heading);
@@ -998,20 +1020,37 @@ ul {
 }
 
 .experience-list-new {
-            display: flex;
-            flex-direction: column;
+    display: flex;
+    flex-direction: column;
     gap: 27px;
     background: var(--white);
     border-radius: var(--border-radius-large);
     padding: 10px 0;
-        }
+    position: relative;
+}
+
+.experience-list-new::before,
+.experience-list-new::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    pointer-events: none;
+    display: none;
+}
 
 .experience-item-new {
     display: grid;
     grid-template-columns: 1fr 1fr 200px;
-    gap: 0 40px;
+    gap: 0;
     align-items: baseline;
     margin-bottom: 0;
+}
+
+.experience-job-title-new,
+.experience-date {
+    padding-left: 24px;
 }
 
 .experience-item-new:last-child {
@@ -1163,6 +1202,14 @@ ul {
 .skill-card-icon {
     color: var(--text-color);
     line-height: 0;
+    opacity: 0;
+    transform: translateY(12px) scale(0.85);
+    transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.skill-card-icon.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
 }
 
 .skill-card-title {
@@ -1561,6 +1608,20 @@ ul {
     .experience-date,
     .experience-job-title-new {
         font-size: 16px;
+    }
+
+    .experience-job-title-new,
+    .experience-date {
+        padding-left: 0;
+    }
+
+    .experience-list-new {
+        border-left: none;
+    }
+
+    .experience-list-new::before,
+    .experience-list-new::after {
+        display: none;
     }
 
     .experience-description {
