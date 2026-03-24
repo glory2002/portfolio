@@ -848,6 +848,28 @@
             aspect-ratio: 16 / 9;
         }
 
+        .cs-system-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px 36px;
+            margin-top: 12px;
+            align-items: start;
+        }
+
+        .cs-system-rules {
+            margin-top: 36px;
+            padding-top: 28px;
+            border-top: 1px dashed rgba(0,0,0,0.1);
+        }
+
+        .cs-system-rules .cs-status-label {
+            margin-bottom: 12px;
+        }
+
+        @media (max-width: 900px) {
+            .cs-system-grid { grid-template-columns: 1fr; }
+        }
+
         /* ── Define: IA grid ── */
         .cs-ia-grid {
             display: grid;
@@ -1763,6 +1785,38 @@
                         <span>Figma Make — interactive prototype</span>
                     </div>
                     <p class="cs-wf-caption">Swap for embed, prototype link, or a short screen recording of the walkthrough.</p>
+                </div>
+            </section>
+
+            <!-- System logic & development -->
+            <section class="cs-section">
+                <p class="cs-section-label">Development</p>
+                <h2 class="cs-section-title">System logic & development</h2>
+                <p class="cs-section-lead">The product is not only screens — it is rules: who can do what, when a level unlocks, and how instructor and student stay aligned. I defined that logic with the client, then implemented it in code (React, Vite, Supabase) with <strong>Cursor</strong> as my primary dev environment, so design decisions stayed traceable all the way to behaviour in production.</p>
+
+                <div class="cs-system-grid">
+                    <div class="cs-section-body">
+                        <p class="cs-status-label">Cursor</p>
+                        <p>Cursor let me move quickly from structure in Figma to real components, state, and API calls. I could iterate on flows, tighten copy, and adjust edge cases in the same session — without losing the thread between UX intent and implementation detail.</p>
+                    </div>
+                    <div class="cs-section-body">
+                        <p class="cs-status-label">Level logic</p>
+                        <p>Each course is a sequence of levels with explicit status (e.g. locked, in progress, submitted, approved). A student only unlocks the next level after the instructor approves the current one — mirroring how Tanya actually teaches, not a generic “complete video → next” pattern.</p>
+                    </div>
+                    <div class="cs-section-body">
+                        <p class="cs-status-label">Cross-role communication</p>
+                        <p>Instructor and student never share the same UI, but they share the same data model: enrolment, level state, messages, and certificates. Realtime chat per level is the feedback channel — submissions, corrections, and approval all leave a trail both sides can trust.</p>
+                    </div>
+                </div>
+
+                <div class="cs-system-rules">
+                    <p class="cs-status-label">At a glance</p>
+                    <ul class="cs-problem-bullets">
+                        <li>Role-based system (Instructor / Student)</li>
+                        <li>Level unlocking based on approval</li>
+                        <li>Feedback loop via chat</li>
+                        <li>Certificate generation</li>
+                    </ul>
                 </div>
             </section>
 
