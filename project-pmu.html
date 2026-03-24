@@ -305,37 +305,35 @@
 
         /* ── Divider ── */
 
-        /* ── Discover: Findings ── */
+        /* ── Goals: minimal cards ── */
         .cs-findings {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 0;
-            margin-top: 8px;
-            border: 1px dashed rgba(0,0,0,0.15);
-            border-radius: 4px;
-            overflow: hidden;
+            gap: 28px 36px;
+            margin-top: 12px;
         }
 
         .cs-finding {
             display: flex;
             flex-direction: column;
-            gap: 16px;
-            padding: 36px 32px;
-            border-right: 1px dashed rgba(0,0,0,0.15);
+            gap: 6px;
+            padding: 0;
             position: relative;
+            border-left: 1px solid rgba(0,0,0,0.08);
+            padding-left: 20px;
         }
 
-        .cs-finding:last-child { border-right: none; }
+        .cs-finding:first-child { border-left: none; padding-left: 0; }
 
         .cs-finding-num {
-            font-family: var(--font-heading);
-            font-size: 64px;
-            font-weight: 800;
-            color: rgba(123,97,255,0.08);
+            font-family: var(--font-body);
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: rgba(123,97,255,0.45);
             line-height: 1;
-            position: absolute;
-            top: 24px;
-            right: 24px;
+            margin: 0 0 4px;
             pointer-events: none;
             user-select: none;
         }
@@ -343,37 +341,37 @@
         .cs-finding-content {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 6px;
             position: relative;
         }
 
         .cs-finding-title {
-            font-family: var(--font-heading);
-            font-size: 22px;
-            font-weight: 700;
+            font-family: var(--font-body);
+            font-size: 15px;
+            font-weight: 500;
             color: var(--text-color);
-            line-height: 1.2;
+            line-height: 1.35;
             margin: 0;
         }
 
         .cs-finding-body {
             font-family: var(--font-body);
-            font-size: 13px;
-            line-height: 1.7;
-            color: rgba(0,0,0,0.5);
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 1.6;
+            color: rgba(0,0,0,0.42);
             margin: 0;
         }
 
         @media (max-width: 900px) {
-            .cs-findings { grid-template-columns: repeat(2, 1fr); }
-            .cs-finding:nth-child(2) { border-right: none; }
-            .cs-finding:nth-child(1), .cs-finding:nth-child(2) { border-bottom: 1px dashed rgba(0,0,0,0.15); }
+            .cs-findings { grid-template-columns: repeat(2, 1fr); gap: 24px 28px; }
+            .cs-finding:nth-child(odd) { border-left: none; padding-left: 0; }
+            .cs-finding:nth-child(even) { border-left: 1px solid rgba(0,0,0,0.08); padding-left: 20px; }
         }
 
         @media (max-width: 540px) {
-            .cs-findings { grid-template-columns: 1fr; }
-            .cs-finding { border-right: none; border-bottom: 1px dashed rgba(0,0,0,0.15); }
-            .cs-finding:last-child { border-bottom: none; }
+            .cs-findings { grid-template-columns: 1fr; gap: 20px; }
+            .cs-finding { border-left: none; padding-left: 0; }
         }
 
         /* ── Concept: Solution ── */
@@ -1466,31 +1464,31 @@
 
                 <div class="cs-findings">
                     <div class="cs-finding">
-                        <span class="cs-finding-num">01</span>
                         <div class="cs-finding-content">
-                            <p class="cs-finding-title">Independent<br>platform</p>
-                            <p class="cs-finding-body">Own branding, own domain, full control over content and student experience — no dependency on third-party tools.</p>
+                            <span class="cs-finding-num">01</span>
+                            <p class="cs-finding-title">Independent platform</p>
+                            <p class="cs-finding-body">Own branding, domain, and content — no third-party lock-in.</p>
                         </div>
                     </div>
                     <div class="cs-finding">
-                        <span class="cs-finding-num">02</span>
                         <div class="cs-finding-content">
-                            <p class="cs-finding-title">Structured<br>progression</p>
-                            <p class="cs-finding-body">Course levels with clear status tracking — students know exactly where they are and what comes next.</p>
+                            <span class="cs-finding-num">02</span>
+                            <p class="cs-finding-title">Structured progression</p>
+                            <p class="cs-finding-body">Levels with clear status so students always know what's next.</p>
                         </div>
                     </div>
                     <div class="cs-finding">
-                        <span class="cs-finding-num">03</span>
                         <div class="cs-finding-content">
-                            <p class="cs-finding-title">Direct<br>feedback</p>
-                            <p class="cs-finding-body">Built-in chat per level — student submits work, instructor reviews, approves or returns with corrections. Realtime.</p>
+                            <span class="cs-finding-num">03</span>
+                            <p class="cs-finding-title">Direct feedback</p>
+                            <p class="cs-finding-body">Per-level chat: submit work, get corrections in real time.</p>
                         </div>
                     </div>
                     <div class="cs-finding">
-                        <span class="cs-finding-num">04</span>
                         <div class="cs-finding-content">
-                            <p class="cs-finding-title">Automated<br>certification</p>
-                            <p class="cs-finding-body">On course completion, a branded certificate is generated automatically — no manual steps for the instructor.</p>
+                            <span class="cs-finding-num">04</span>
+                            <p class="cs-finding-title">Automated certification</p>
+                            <p class="cs-finding-body">Branded certificates generated when a course is completed.</p>
                         </div>
                     </div>
                 </div>
