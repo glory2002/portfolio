@@ -728,6 +728,55 @@
             .cs-benchmark-header { display: none; }
         }
 
+        /* ── Wireframes ── */
+        .cs-wireframes {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .cs-wireframe-item--wide {
+            grid-column: span 1;
+        }
+
+        .cs-wf-placeholder {
+            background: rgba(0,0,0,0.03);
+            border: 1px dashed rgba(0,0,0,0.15);
+            border-radius: 4px;
+            aspect-ratio: 16 / 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cs-wf-placeholder span {
+            font-family: var(--font-body);
+            font-size: 12px;
+            color: rgba(0,0,0,0.25);
+            letter-spacing: 0.03em;
+        }
+
+        /* When images are added, replace the placeholder div with an <img> */
+        .cs-wireframe-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 4px;
+            border: 1px dashed rgba(0,0,0,0.1);
+        }
+
+        .cs-wf-caption {
+            font-family: var(--font-body);
+            font-size: 12px;
+            color: rgba(0,0,0,0.35);
+            margin: 8px 0 0;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .cs-wireframes { grid-template-columns: 1fr; }
+        }
+
         /* ── Define: IA grid ── */
         .cs-ia-grid {
             display: grid;
@@ -1537,6 +1586,41 @@
                             <p class="cs-pillar-title">Certification</p>
                             <p class="cs-pillar-desc">On completing all levels, the platform auto-generates a branded certificate — tied to the student's profile and course record.</p>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Wireframes -->
+            <section class="cs-section">
+                <p class="cs-section-label">Wireframes</p>
+                <h2 class="cs-section-title">First visual pass</h2>
+                <p class="cs-section-lead">Initial wireframes focused on structuring the learning flow and defining interactions between instructor and student.</p>
+
+                <div class="cs-wireframes">
+                    <div class="cs-wireframe-item cs-wireframe-item--wide">
+                        <!-- Replace src with your Figma wireframe screenshot -->
+                        <div class="cs-wf-placeholder">
+                            <span>Student — Course overview</span>
+                        </div>
+                        <p class="cs-wf-caption">Student view — course overview & level progression</p>
+                    </div>
+                    <div class="cs-wireframe-item cs-wireframe-item--wide">
+                        <div class="cs-wf-placeholder">
+                            <span>Instructor — Feedback panel</span>
+                        </div>
+                        <p class="cs-wf-caption">Instructor view — feedback panel per student submission</p>
+                    </div>
+                    <div class="cs-wireframe-item">
+                        <div class="cs-wf-placeholder">
+                            <span>Level unlock flow</span>
+                        </div>
+                        <p class="cs-wf-caption">Level unlock after instructor approval</p>
+                    </div>
+                    <div class="cs-wireframe-item">
+                        <div class="cs-wf-placeholder">
+                            <span>Certificate generation</span>
+                        </div>
+                        <p class="cs-wf-caption">Certificate generation on course completion</p>
                     </div>
                 </div>
             </section>
