@@ -478,10 +478,172 @@ ul {
 }
 
 .projects-list {
-            display: flex;
-            flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 48px;
-            }
+    align-items: stretch;
+}
+
+/* Always dashed so hover only changes color — solid→dashed caused subpixel shift */
+.projects-list > .project-card {
+    border: 1px dashed transparent;
+    box-shadow: none;
+    transition: border-color 0.25s ease;
+}
+
+.projects-list > .project-card:hover {
+    border-color: rgba(0, 0, 0, 0.55);
+    box-shadow: none;
+}
+
+.projects-list > .project-card.horizontal {
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: minmax(0, 44%) minmax(0, 56%);
+    align-items: stretch;
+    column-gap: 0;
+}
+
+/* Equal-height columns; image fills right side without awkward crop from aspect-ratio */
+.projects-list .project-card.horizontal .project-info {
+    flex: unset;
+    min-width: 0;
+    padding: 32px 32px 32px 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 0;
+    align-self: stretch;
+}
+
+.projects-list .project-info-content {
+    gap: 14px;
+}
+
+/* Align card tops: reserve space for title + tag row so columns feel even */
+.projects-list .project-info-content h3 {
+    font-size: 24px;
+    line-height: 1.28;
+    font-weight: 600;
+    min-height: 4.85em;
+}
+
+.projects-list .project-tags {
+    flex-wrap: wrap;
+    gap: 8px 10px;
+    align-content: flex-start;
+    min-height: 2.75rem;
+}
+
+.projects-list .project-card--live .project-tags {
+    display: none;
+}
+
+.projects-list .tag {
+    font-size: 11px;
+    padding: 6px 11px;
+    letter-spacing: 0.06em;
+}
+
+.projects-list .project-description {
+    font-size: 17px;
+    line-height: 1.55;
+    max-width: 42ch;
+}
+
+.projects-list .project-card.horizontal .project-image {
+    flex: unset;
+    aspect-ratio: unset;
+    height: auto;
+    min-height: 0;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #ececef;
+}
+
+.projects-list .project-card.horizontal .project-image img {
+    flex: 1 1 auto;
+    min-height: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    transition: none;
+    backface-visibility: hidden;
+}
+
+/* Portrait cover: shift focal point — reduces stray edge text from source asset */
+.projects-list .project-image--pmu img {
+    object-position: 78% 35%;
+}
+
+/* Gray placeholder + wireframe icon (no photo) */
+.projects-list .project-image--wireframe {
+    background: linear-gradient(165deg, #e8e9ed 0%, #d5d6de 100%);
+    justify-content: center;
+    align-items: center;
+}
+
+.projects-list .project-image-wireframe-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex: 1 1 auto;
+    min-height: 0;
+    color: var(--deep-lavender);
+    opacity: 0.9;
+}
+
+.projects-list .project-image-wireframe-icon {
+    width: clamp(56px, 26%, 96px);
+    height: auto;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .projects-list .project-card.horizontal .project-image--wireframe {
+        border-radius: var(--border-radius-large) var(--border-radius-large) 0 0;
+    }
+}
+
+.projects-list .project-card:hover .project-image img {
+    transform: none;
+}
+
+/* No nudge on button hover */
+.projects-list .project-card .btn-secondary-outline:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* Card hover → gradient: keep same border box as outline state (border: none was shifting layout) */
+.projects-list .project-card:hover .btn-secondary-outline,
+.projects-list .project-card:hover .btn-secondary-outline:hover {
+    transform: none;
+    box-shadow: none !important;
+    border: 1.5px solid transparent;
+}
+
+.projects-list .project-info-actions {
+    margin-top: auto;
+    padding-top: 20px;
+    flex-shrink: 0;
+}
+
+.projects-list .project-info-actions .btn-lock {
+    white-space: nowrap;
+    font-size: 15px;
+    padding: 11px 18px;
+    width: fit-content;
+    max-width: 100%;
+    box-sizing: border-box;
+}
 
             .project-card {
     background: var(--white);
@@ -1385,13 +1547,67 @@ ul {
 
     .projects-list {
         grid-column: 1 / -1;
-            gap: 20px;
-        }
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
 
     .section-title,
     .section-header h2,
     .section-header .section-title {
         font-size: 16px;
+    }
+
+    .projects-list > .project-card.horizontal {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .projects-list .project-card.horizontal .project-image {
+        display: block;
+        flex-direction: unset;
+    }
+
+    .projects-list .project-card.horizontal .project-image img {
+        flex: none;
+        height: 100%;
+    }
+
+    .projects-list .project-card.horizontal .project-info {
+        padding: 24px 20px;
+        justify-content: flex-start;
+        gap: 16px;
+    }
+
+    .projects-list .project-info-content h3 {
+        min-height: 0;
+        font-size: 20px;
+    }
+
+    .projects-list .project-tags {
+        min-height: 0;
+    }
+
+    .projects-list .project-description {
+        max-width: none;
+    }
+
+    .projects-list .project-image--pmu img {
+        object-position: center center;
+    }
+
+    .projects-list .project-info-actions {
+        padding-top: 0;
+        margin-top: 0;
+        width: 100%;
+    }
+
+    .projects-list .project-info-actions .btn-lock {
+        white-space: normal;
+        width: 100%;
+        max-width: none;
+        justify-content: center;
+        font-size: 16px;
+        padding: 12px 26px;
     }
 
     .project-card.horizontal {
