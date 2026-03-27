@@ -1,3 +1,4 @@
 # VS Code / Cursor workspace files
 *.code-workspace
+!portfolio.code-workspace
 
