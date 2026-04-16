@@ -25,8 +25,8 @@
     <link rel="apple-touch-icon" href="assets/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=6.5">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=Manrope:wght@400;500;600&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=6.6">
 
     <style>
         /* ── Case Study page-specific styles ── */
@@ -66,25 +66,26 @@
         }
 
         .cs-title {
-            font-family: var(--font-heading);
-            font-size: clamp(40px, 5vw, 48px);
-            font-weight: 500;
-            line-height: 1.2;
+            font-family: var(--font-body);
+            font-size: clamp(44px, 5.2vw, 58px);
+            font-weight: 700;
+            line-height: 1.08;
+            letter-spacing: normal;
             color: var(--text-color);
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .cs-title .light-slash {
-            font-weight: 300;
+            font-weight: 500;
         }
 
         .cs-subtitle {
             font-family: var(--font-body);
-            font-size: 20px;
-            font-weight: 300;
-            line-height: 1.5;
+            font-size: clamp(17px, 1.2vw, 19px);
+            font-weight: 400;
+            line-height: 1.55;
             color: var(--text-color);
-            max-width: 720px;
+            max-width: 40em;
             margin-bottom: 40px;
         }
 
@@ -234,7 +235,8 @@
 
         /* ── Content sections ── */
         .cs-body {
-            padding: 80px 80px;
+            --cs-body-pad-x: 80px;
+            padding: 80px var(--cs-body-pad-x);
             display: flex;
             flex-direction: column;
             gap: 56px;
@@ -246,35 +248,21 @@
             gap: 20px;
         }
 
-        .cs-section-label {
-            font-family: var(--font-body);
-            font-size: 11px;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: rgba(0, 0, 0, 0.35);
-            margin: 0 0 10px 0;
-            padding-top: 16px;
-            border-top: 1px dashed rgba(0, 0, 0, 0.3);
-            display: block;
-            width: 100%;
-            max-width: 100%;
-        }
-
         .cs-section-title {
-            font-family: var(--font-heading);
-            font-size: 25px;
-            font-weight: 400;
-            line-height: normal;
+            font-family: var(--font-body);
+            font-size: clamp(32px, 3.8vw, 48px);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: normal;
             color: var(--text-color);
             margin: 0;
         }
 
         .cs-section-body {
             font-family: var(--font-body);
-            font-size: 18px;
-            font-weight: 300;
-            line-height: 1.5;
+            font-size: 17px;
+            font-weight: 400;
+            line-height: 1.55;
             color: var(--text-color);
         }
 
@@ -288,10 +276,10 @@
         }
 
         .cs-reflection-tight p {
-            font-size: 15px;
-            font-weight: 300;
+            font-size: 17px;
+            font-weight: 400;
             line-height: 1.55;
-            color: rgba(0,0,0,0.52);
+            color: rgba(0, 0, 0, 0.55);
             margin: 0;
         }
 
@@ -325,12 +313,12 @@
             font-weight: 600;
             letter-spacing: 0.12em;
             text-transform: uppercase;
-            color: var(--deep-lavender);
+            color: rgba(0, 0, 0, 0.35);
         }
 
         .cs-meta-rows-v {
             min-width: 0;
-            font-family: var(--font-heading);
+            font-family: 'Manrope', var(--font-heading), sans-serif;
             font-weight: 500;
             font-size: 16px;
             line-height: 1.45;
@@ -339,9 +327,9 @@
 
         .cs-overview-about {
             font-family: var(--font-body);
-            font-size: 18px;
-            font-weight: 300;
-            line-height: 1.5;
+            font-size: clamp(17px, 1.1vw, 18px);
+            font-weight: 400;
+            line-height: 1.55;
             color: var(--text-color);
         }
 
@@ -358,12 +346,16 @@
         /* ── Concept: Solution ── */
         .cs-section-lead {
             font-family: var(--font-body);
-            font-size: 18px;
-            font-weight: 300;
-            line-height: 1.5;
+            font-size: clamp(17px, 1.1vw, 18px);
+            font-weight: 400;
+            line-height: 1.55;
             color: var(--text-color);
-            margin: 2px 0 14px;
-            max-width: 40em;
+            margin: 6px 0 16px;
+            max-width: 42em;
+        }
+
+        .cs-section-title + .cs-section-lead {
+            margin-top: 4px;
         }
 
         .cs-problem-bullets {
@@ -384,135 +376,121 @@
             content: '•';
             position: absolute;
             left: 0;
-            color: var(--deep-lavender);
+            color: rgba(0, 0, 0, 0.4);
         }
 
         .cs-ia {
             margin: 24px 0 24px;
-            padding: 14px 16px 16px;
-            border: 1px dashed rgba(0,0,0,0.12);
-            border-radius: 4px;
-            background: rgba(255,255,255,0.65);
+            padding: 0;
+            border: none;
+            background: transparent;
         }
 
         .cs-ia-title {
-            font-family: var(--font-heading);
-            font-size: 25px;
-            font-weight: 400;
-            line-height: normal;
-            color: var(--text-color);
-            margin: 0 0 14px;
-        }
-
-        .cs-ia-map {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .cs-ia-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px 14px;
-            align-items: stretch;
-        }
-
-        .cs-ia-lane-hd {
             font-family: var(--font-body);
-            font-size: 10px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            padding: 5px 8px;
-            border-radius: 3px;
+            font-size: clamp(26px, 3vw, 36px);
+            font-weight: 700;
+            line-height: 1.12;
+            letter-spacing: normal;
+            color: var(--text-color);
+            margin: 0 0 18px;
+        }
+
+        .cs-ia-figure {
             margin: 0;
         }
 
-        .cs-ia-lane-hd--admin {
-            background: rgba(234, 88, 12, 0.14);
-            color: rgba(154, 52, 18, 0.95);
+        .cs-ia-figure img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: none;
+            border-radius: 0;
         }
 
-        .cs-ia-lane-hd--student {
-            background: rgba(13, 148, 136, 0.14);
-            color: rgba(15, 100, 95, 0.95);
+        .cs-flows {
+            margin-top: 48px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
         }
 
-        .cs-ia-card {
-            border: 1px dashed rgba(0,0,0,0.11);
-            border-radius: 3px;
-            padding: 8px 10px 9px;
+        .cs-flows .cs-section-lead {
+            margin-bottom: 22px;
+        }
+
+        .cs-flows-role {
             font-family: var(--font-body);
             font-size: 11px;
-            line-height: 1.38;
-            color: rgba(0,0,0,0.58);
-            background: var(--white);
-        }
-
-        .cs-ia-card--admin {
-            border-top: 2px solid rgba(234, 88, 12, 0.5);
-        }
-
-        .cs-ia-card--student {
-            border-top: 2px solid rgba(13, 148, 136, 0.5);
-        }
-
-        .cs-ia-card-h {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: baseline;
-            justify-content: space-between;
-            gap: 4px 10px;
-            margin-bottom: 6px;
-            padding-bottom: 5px;
-            border-bottom: 1px dashed rgba(0,0,0,0.08);
-        }
-
-        .cs-ia-screen {
             font-weight: 600;
-            font-size: 11px;
-            color: var(--text-color);
-        }
-
-        .cs-ia-route {
-            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-            font-size: 10px;
-            font-weight: 500;
-            color: rgba(0,0,0,0.4);
-            white-space: nowrap;
-        }
-
-        .cs-ia-bits {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-
-        .cs-ia-bits > div {
-            display: block;
-        }
-
-        .cs-ia-k {
-            display: inline;
-            font-size: 9px;
-            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.06em;
-            color: rgba(0,0,0,0.35);
-            margin-right: 4px;
+            letter-spacing: 0.1em;
+            color: rgba(0, 0, 0, 0.35);
+            margin: 0 0 10px;
         }
 
-        @media (max-width: 720px) {
-            .cs-ia-row {
-                grid-template-columns: 1fr;
-            }
+        .cs-flow-block {
+            margin-bottom: 40px;
+        }
+
+        .cs-user-story {
+            margin: 0;
+            padding: 0 0 0 1.1em;
+            border-left: 2px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .cs-user-story-text {
+            font-family: var(--font-body);
+            font-size: 17px;
+            font-weight: 400;
+            line-height: 1.55;
+            color: var(--text-color);
+            margin: 0;
+        }
+
+        .cs-user-story-text strong {
+            font-weight: 600;
+        }
+
+        .cs-flow-diagram-slot {
+            margin-top: 24px;
+            width: 100%;
+            min-height: min(40vh, 420px);
+            border-radius: 4px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            background: rgba(0, 0, 0, 0.02);
+            box-sizing: border-box;
+        }
+
+        .cs-flow-diagram-slot:has(img) {
+            min-height: 0;
+            border: none;
+            background: transparent;
+        }
+
+        .cs-flow-diagram-slot img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 4px;
+        }
+
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
         }
 
         /* ── Research: Benchmark ── */
         .cs-benchmark {
             display: flex;
             flex-direction: column;
-            border: 1px dashed rgba(0,0,0,0.15);
+            border: 1px solid rgba(0,0,0,0.15);
             border-radius: 4px;
             overflow: hidden;
         }
@@ -520,8 +498,8 @@
         .cs-benchmark-header {
             display: grid;
             grid-template-columns: 1fr 1.5fr 1.5fr;
-            background: rgba(0,0,0,0.02);
-            border-bottom: 1px dashed rgba(0,0,0,0.15);
+            background: #f4ece4;
+            border-bottom: 1px solid rgba(0,0,0,0.15);
         }
 
         .cs-benchmark-header .cs-benchmark-cell {
@@ -530,20 +508,20 @@
             font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 0.08em;
-            color: rgba(0,0,0,0.35);
+            color: rgba(0, 0, 0, 0.58);
         }
 
         .cs-benchmark-row {
             display: grid;
             grid-template-columns: 1fr 1.5fr 1.5fr;
-            border-bottom: 1px dashed rgba(0,0,0,0.1);
+            border-bottom: 1px solid rgba(0,0,0,0.1);
         }
 
         .cs-benchmark-row:last-child { border-bottom: none; }
 
         .cs-benchmark-cell {
             padding: 16px 20px;
-            border-right: 1px dashed rgba(0,0,0,0.1);
+            border-right: 1px solid rgba(0,0,0,0.1);
             font-family: var(--font-body);
             font-size: 15px;
             font-weight: 300;
@@ -614,8 +592,40 @@
             .cs-benchmark-header,
             .cs-benchmark-row { grid-template-columns: 1fr; }
             .cs-benchmark-header .cs-benchmark-cell:not(:first-child),
-            .cs-benchmark-cell:not(:first-child) { border-top: 1px dashed rgba(0,0,0,0.1); border-right: none; }
+            .cs-benchmark-cell:not(:first-child) { border-top: 1px solid rgba(0,0,0,0.1); border-right: none; }
             .cs-benchmark-header { display: none; }
+        }
+
+        /* ── Wireframes band (full-bleed block; white canvas) ── */
+        .cs-section--wireframes {
+            --wf-band-pad-x: 80px;
+            margin-left: calc(-1 * var(--wf-band-pad-x));
+            margin-right: calc(-1 * var(--wf-band-pad-x));
+            padding: 48px var(--wf-band-pad-x) 56px;
+            background: var(--white);
+            border-radius: 2px;
+            box-sizing: border-box;
+        }
+
+        @media (max-width: 640px) {
+            .cs-section--wireframes {
+                margin-left: calc(50% - 50vw);
+                margin-right: calc(50% - 50vw);
+                width: 100vw;
+                max-width: 100vw;
+                padding-left: max(var(--wf-band-pad-x), env(safe-area-inset-left, 0px));
+                padding-right: max(var(--wf-band-pad-x), env(safe-area-inset-right, 0px));
+                border-radius: 0;
+            }
+
+            .cs-wireframes.cs-wireframes--hero-mockup {
+                margin-left: calc(-1 * max(var(--wf-band-pad-x), env(safe-area-inset-left, 0px)));
+                margin-right: calc(-1 * max(var(--wf-band-pad-x), env(safe-area-inset-right, 0px)));
+                width: calc(
+                    100% + max(var(--wf-band-pad-x), env(safe-area-inset-left, 0px)) +
+                    max(var(--wf-band-pad-x), env(safe-area-inset-right, 0px))
+                );
+            }
         }
 
         /* ── Wireframes ── */
@@ -625,29 +635,124 @@
             gap: 16px;
         }
 
+        /* Wireframe gallery (legacy multi-tile rules; hero mockup uses .cs-wireframes--hero-mockup) */
         .cs-wireframes--gallery {
-            grid-template-columns: repeat(4, 1fr);
-            gap: 44px 36px;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 24px 20px;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .cs-wireframes--gallery.cs-wireframes--tilted {
+            padding: 0;
+            align-items: start;
         }
 
         .cs-wireframes--gallery .cs-wireframe-item {
             display: flex;
             justify-content: center;
             align-items: flex-start;
-            padding: 10px 8px;
+            padding: 0;
+            min-width: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Inner wrapper: display:contents on desktop/tablet so the gallery grid is unchanged */
+        .cs-wireframe-pin {
+            display: contents;
         }
 
         .cs-wireframes--gallery .cs-wireframe-item img {
-            width: auto;
-            max-width: min(312px, 97%);
+            width: 100%;
+            max-width: 100%;
             height: auto;
             margin: 0 auto;
+            display: block;
             border: none;
-            border-radius: 8px;
+            border-radius: 12px;
+            background: var(--white);
+            /* Soft lift: bias down-right like physical cards on a gray desk */
             box-shadow:
-                0 1px 2px rgba(0, 0, 0, 0.04),
-                0 6px 16px rgba(0, 0, 0, 0.07),
-                0 16px 36px rgba(0, 0, 0, 0.09);
+                1px 2px 2px rgba(15, 23, 42, 0.04),
+                4px 8px 16px rgba(15, 23, 42, 0.08),
+                10px 18px 40px rgba(15, 23, 42, 0.12);
+            transition: box-shadow 0.3s ease;
+        }
+
+        /* Single hero mockup — full width of wireframes band (bleed past section padding) */
+        .cs-wireframes.cs-wireframes--hero-mockup {
+            display: block;
+            margin-top: 20px;
+            margin-left: calc(-1 * var(--wf-band-pad-x));
+            margin-right: calc(-1 * var(--wf-band-pad-x));
+            width: calc(100% + 2 * var(--wf-band-pad-x));
+            max-width: none;
+            box-sizing: border-box;
+        }
+
+        .cs-wireframes--hero-mockup img {
+            width: 100%;
+            max-width: none;
+            height: auto;
+            display: block;
+            border: none;
+            border-radius: 0;
+            background: var(--white);
+            box-shadow: none;
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+            .cs-wireframes--gallery.cs-wireframes--tilted .cs-wireframe-item:hover img {
+                box-shadow:
+                    2px 4px 4px rgba(15, 23, 42, 0.05),
+                    6px 12px 22px rgba(15, 23, 42, 0.1),
+                    14px 24px 48px rgba(15, 23, 42, 0.14);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .cs-wireframes--gallery .cs-wireframe-item img {
+                transition: none;
+            }
+
+            .cs-wireframes--gallery.cs-wireframes--tilted .cs-wireframe-item:hover img {
+                box-shadow:
+                    1px 2px 2px rgba(15, 23, 42, 0.04),
+                    4px 8px 16px rgba(15, 23, 42, 0.08),
+                    10px 18px 40px rgba(15, 23, 42, 0.12);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) and (max-width: 640px) {
+            .cs-wireframes.cs-wireframes--gallery.cs-wireframes--tilted {
+                display: grid !important;
+                grid-template-columns: 1fr !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                padding: 12px max(12px, env(safe-area-inset-left, 0px)) 32px max(12px, env(safe-area-inset-right, 0px)) !important;
+            }
+
+            .cs-wireframes.cs-wireframes--gallery.cs-wireframes--tilted .cs-wireframe-item {
+                position: relative !important;
+                top: auto !important;
+                min-height: 0 !important;
+                margin-bottom: 28px !important;
+                z-index: auto !important;
+            }
+
+            .cs-wireframes.cs-wireframes--gallery.cs-wireframes--tilted .cs-wireframe-item:last-child {
+                margin-bottom: 0 !important;
+            }
+
+            .cs-wireframes.cs-wireframes--gallery.cs-wireframes--tilted .cs-wireframe-pin {
+                position: relative !important;
+                top: auto !important;
+                display: flex !important;
+                justify-content: center !important;
+            }
         }
 
         .cs-wireframe-item--wide {
@@ -656,7 +761,7 @@
 
         .cs-wf-placeholder {
             background: rgba(0,0,0,0.02);
-            border: 1px dashed rgba(0,0,0,0.15);
+            border: 1px solid rgba(0,0,0,0.15);
             border-radius: 4px;
             aspect-ratio: 16 / 10;
             display: flex;
@@ -688,7 +793,7 @@
             right: 0;
             height: 28px;
             background: rgba(0,0,0,0.05);
-            border-bottom: 1px dashed rgba(0,0,0,0.1);
+            border-bottom: 1px solid rgba(0,0,0,0.1);
         }
 
         .cs-wf-placeholder-icon {
@@ -738,7 +843,7 @@
             height: auto;
             display: block;
             border-radius: 4px;
-            border: 1px dashed rgba(0,0,0,0.1);
+            border: 1px solid rgba(0,0,0,0.1);
         }
 
         .cs-wf-caption {
@@ -750,16 +855,105 @@
         }
 
         @media (max-width: 1100px) {
-            .cs-wireframes--gallery { grid-template-columns: repeat(3, 1fr); gap: 40px 32px; }
+            .cs-wireframes--gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); }
         }
 
         @media (max-width: 768px) {
             .cs-wireframes { grid-template-columns: 1fr; }
-            .cs-wireframes--gallery { grid-template-columns: repeat(2, 1fr); gap: 36px 24px; }
+            .cs-wireframes--gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 14px; }
         }
 
         @media (max-width: 480px) {
-            .cs-wireframes--gallery { grid-template-columns: 1fr; gap: 32px 20px; }
+            .cs-wireframes--gallery { grid-template-columns: 1fr; }
+        }
+
+        /*
+         * Mobile wireframe gallery:
+         * – Cards sit in normal flow with visible gaps (--wf-stack-gap-between, --wf-stack-doc-stride).
+         * – Each row has a tall min-height so you scroll through the full mockup, then negative margin
+         *   pulls the next row up so frames stack (deck) while keeping --wf-stack-peek rim visible.
+         * – doc-stride > peek → more vertical separation “between” cards before they fully overlap.
+         */
+        @media (max-width: 640px) {
+            .cs-wireframes.cs-wireframes--gallery.cs-wireframes--tilted {
+                display: block;
+                perspective: none;
+                row-gap: unset;
+                column-gap: unset;
+                align-items: stretch;
+                /* Full-bleed: use viewport width so mockups aren’t squeezed by .cs-body padding */
+                width: 100vw;
+                max-width: 100vw;
+                margin-left: calc(50% - 50vw);
+                margin-right: calc(50% - 50vw);
+                box-sizing: border-box;
+                padding: 24px max(12px, env(safe-area-inset-left, 0px)) calc(24vh + 80px) max(12px, env(safe-area-inset-right, 0px));
+                --wf-sticky-top: max(80px, calc(env(safe-area-inset-top, 0px) + 60px));
+                /* Breathing room above / below each mockup */
+                --wf-stack-pad-y: 40px;
+                /* Extra space below the card (under mockup) before the next one */
+                --wf-stack-gap-between: 80px;
+                /* How far apart cards are anchored in the document; larger = clearer column before fold */
+                --wf-stack-doc-stride: min(380px, 46vh);
+                /* Visible rim of the pile once stacked */
+                --wf-stack-peek: min(100px, 22vw);
+                /* One viewport slice of scroll per card (dynamic viewport = mobile chrome OK) */
+                --wf-viewport-slide: calc(100vh - var(--wf-sticky-top) - 20px);
+                --wf-slide-total: calc(var(--wf-viewport-slide) + 2 * var(--wf-stack-pad-y) + var(--wf-stack-gap-between));
+                --wf-img-cap: min(480px, calc(100vh - var(--wf-sticky-top) - 20px - 2 * var(--wf-stack-pad-y)));
+            }
+
+            @supports (height: 100dvh) {
+                .cs-wireframes.cs-wireframes--gallery.cs-wireframes--tilted {
+                    --wf-viewport-slide: calc(100dvh - var(--wf-sticky-top) - 20px);
+                    --wf-img-cap: min(480px, calc(100dvh - var(--wf-sticky-top) - 20px - 2 * var(--wf-stack-pad-y)));
+                }
+            }
+
+            .cs-wireframes.cs-wireframes--gallery.cs-wireframes--tilted .cs-wireframe-item {
+                position: relative;
+                transform: none !important;
+                transform-style: flat;
+                min-height: var(--wf-slide-total);
+                /* Pull next card up by (slide total − doc stride) so stride sets list spacing, peek sets deck rim */
+                margin-bottom: calc(-1 * (var(--wf-slide-total) - var(--wf-stack-doc-stride)));
+                padding: var(--wf-stack-pad-y) 0;
+                display: block;
+                box-sizing: border-box;
+            }
+
+            .cs-wireframes.cs-wireframes--gallery.cs-wireframes--tilted .cs-wireframe-item:last-child {
+                margin-bottom: 0;
+            }
+
+            .cs-wireframes.cs-wireframes--gallery.cs-wireframes--tilted .cs-wireframe-pin {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                position: sticky;
+                top: var(--wf-sticky-top);
+                z-index: var(--wf-z, 1);
+            }
+
+            .cs-wireframes.cs-wireframes--gallery.cs-wireframes--tilted .cs-wireframe-item:not(:last-child) .cs-wireframe-pin {
+                margin-bottom: var(--wf-stack-gap-between);
+            }
+
+            .cs-wireframes.cs-wireframes--gallery.cs-wireframes--tilted .cs-wireframe-item img {
+                max-height: var(--wf-img-cap);
+                max-width: 100%;
+                width: auto;
+                height: auto;
+                margin: 0 auto;
+                display: block;
+                border: none;
+                border-radius: 12px;
+                background: var(--white);
+                box-shadow:
+                    1px 2px 2px rgba(15, 23, 42, 0.04),
+                    4px 8px 16px rgba(15, 23, 42, 0.08),
+                    10px 18px 40px rgba(15, 23, 42, 0.12);
+            }
         }
 
         /* ── Design system: video slot ── */
@@ -769,9 +963,32 @@
             width: 100%;
             aspect-ratio: 16 / 9;
             min-height: min(52vh, 560px);
-            border-radius: 4px;
-            border: 1px dashed rgba(0, 0, 0, 0.12);
-            background: rgba(0, 0, 0, 0.02);
+            border: none;
+            border-radius: 0;
+            background: transparent;
+            box-sizing: border-box;
+        }
+
+        .cs-video-slot:has(> img) {
+            aspect-ratio: auto;
+            min-height: 0;
+        }
+
+        .cs-video-slot img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: none;
+            border-radius: 0;
+            background: transparent;
+        }
+
+        /* Full width within case-study column (bleed past .cs-body horizontal padding) */
+        .cs-video-slot--full-bleed:has(> img) {
+            margin-left: calc(-1 * var(--cs-body-pad-x));
+            margin-right: calc(-1 * var(--cs-body-pad-x));
+            width: calc(100% + 2 * var(--cs-body-pad-x));
+            max-width: none;
             box-sizing: border-box;
         }
 
@@ -783,7 +1000,7 @@
             height: 100%;
             display: block;
             border: none;
-            border-radius: 3px;
+            border-radius: 0;
             object-fit: cover;
             background: transparent;
         }
@@ -817,7 +1034,7 @@
             background: var(--white);
             border-radius: 4px;
             padding: 28px 24px;
-            border: 1px dashed rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(0, 0, 0, 0.2);
             display: flex;
             flex-direction: column;
             gap: 12px;
@@ -927,7 +1144,7 @@
 
         /* ── Next project banner ── */
         .cs-next {
-            background: linear-gradient(135deg, var(--deep-lavender), var(--crisp-lilac));
+            background: #dfc7af;
             border-radius: 4px;
             padding: 60px;
             display: flex;
@@ -950,41 +1167,77 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.12em;
-            color: rgba(255,255,255,0.65);
+            color: rgba(10, 10, 12, 0.5);
         }
 
         .cs-next-title {
-            font-family: var(--font-heading);
-            font-size: 28px;
-            font-weight: 600;
-            color: var(--white);
+            font-family: var(--font-body);
+            font-size: clamp(28px, 3.2vw, 36px);
+            font-weight: 700;
+            line-height: 1.12;
+            letter-spacing: normal;
+            color: var(--text-color);
         }
 
         .btn-white-outline {
             background: transparent;
-            color: var(--white);
-            border: 1.5px solid rgba(255,255,255,0.7);
+            color: var(--text-color);
+            border: 1.5px solid rgba(10, 10, 12, 0.35);
             border-radius: 4px;
             padding: 14px 32px;
             font-family: var(--font-heading);
             font-size: 16px;
             font-weight: 600;
             cursor: pointer;
-            transition: background 0.25s ease, border-color 0.25s ease;
+            transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
             display: inline-flex;
             align-items: center;
             white-space: nowrap;
         }
 
         .btn-white-outline:hover {
-            background: rgba(255,255,255,0.15);
-            border-color: var(--white);
+            background: rgba(10, 10, 12, 0.06);
+            border-color: var(--text-color);
+            color: var(--text-color);
         }
 
         /* ── Responsive ── */
+        @media (max-width: 768px) {
+            .cs-hero,
+            .cs-body {
+                max-width: 100%;
+                min-width: 0;
+            }
+
+            .cs-cover {
+                width: 100%;
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            .cs-video-slot {
+                min-height: 0;
+                aspect-ratio: 16 / 9;
+            }
+
+            .cs-video-slot:has(> img) {
+                aspect-ratio: auto;
+            }
+
+            .cs-benchmark-cell {
+                padding: 14px 16px;
+            }
+
+            .cs-wireframes--gallery.cs-wireframes--tilted {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+
         @media (max-width: 900px) {
+            .cs-section--wireframes { --wf-band-pad-x: 32px; }
             .cs-hero { padding: 60px 32px 40px; }
-            .cs-body { padding: 60px 32px; gap: 44px; }
+            .cs-body { --cs-body-pad-x: 32px; padding: 60px var(--cs-body-pad-x); gap: 44px; }
             .cs-overview-split { grid-template-columns: 1fr; gap: 28px; }
             .cs-insight-grid { grid-template-columns: 1fr 1fr; }
             .cs-two-col, .cs-two-col.wide-left { grid-template-columns: 1fr; }
@@ -996,11 +1249,59 @@
         }
 
         @media (max-width: 600px) {
+            .cs-section--wireframes { --wf-band-pad-x: 20px; }
             .cs-hero { padding: 40px 20px 32px; }
-            .cs-body { padding: 40px 20px; gap: 36px; }
+            .cs-body { --cs-body-pad-x: 20px; padding: 40px var(--cs-body-pad-x); gap: 36px; }
             .cs-insight-grid { grid-template-columns: 1fr; }
             .cs-wireframe-grid { grid-template-columns: 1fr; }
-            .cs-title { font-size: 28px; }
+            .cs-title { font-size: clamp(30px, 8vw, 40px); }
+            .cs-subtitle {
+                font-size: 17px;
+                margin-bottom: 28px;
+            }
+            .cs-section-body {
+                font-size: 17px;
+            }
+            .cs-section-title {
+                font-size: clamp(26px, 6.5vw, 32px);
+            }
+            .cs-ia-title {
+                font-size: clamp(22px, 5.5vw, 28px);
+            }
+            .cs-next {
+                align-items: stretch;
+                gap: 20px;
+                padding: 32px 20px;
+            }
+            .cs-next-title {
+                font-size: clamp(24px, 6vw, 30px);
+            }
+            .cs-next .btn-white-outline {
+                width: 100%;
+                justify-content: center;
+                box-sizing: border-box;
+                text-align: center;
+            }
+            .cs-meta-rows li {
+                grid-template-columns: 1fr;
+                row-gap: 4px;
+            }
+            .cs-user-story {
+                padding-left: 0.85em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cs-section--wireframes { --wf-band-pad-x: 16px; }
+            .cs-hero { padding: 32px 16px 28px; }
+            .cs-body { --cs-body-pad-x: 16px; padding: 32px var(--cs-body-pad-x); gap: 32px; }
+            .cs-user-story-text {
+                font-size: 16px;
+                line-height: 1.55;
+            }
+            .cs-insight-card {
+                padding: 22px 18px;
+            }
         }
     </style>
 </head>
@@ -1034,27 +1335,16 @@
         </div>
     </header>
 
-    <div class="container">
+    <div class="container cs-page">
 
         <!-- Hero -->
         <section class="cs-hero">
             <h1 class="cs-title">TH Academy</h1>
-            <p class="cs-subtitle">I designed a custom LMS that enables structured learning, real-time feedback, and certification — tailored to the instructor's teaching methodology.</p>
+            <p class="cs-subtitle">Designed a mobile-first LMS used by beauty educators to manage students, track progress, and deliver certifications — replacing fragmented tools and manual workflows.</p>
         </section>
 
-        <!-- Cover: replace .cs-wf-placeholder--cover block with <img src="..." alt="..." loading="eager"> when you have the final shot -->
         <div class="cs-cover">
-            <div class="cs-wf-placeholder cs-wf-placeholder--cover">
-                <svg class="cs-wf-placeholder-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <rect x="1" y="1" width="30" height="30" rx="2" stroke="currentColor" stroke-width="1.5"/>
-                    <rect x="1" y="1" width="30" height="6" fill="currentColor" opacity="0.4"/>
-                    <rect x="5" y="11" width="14" height="2" rx="1" fill="currentColor"/>
-                    <rect x="5" y="15" width="22" height="1.5" rx="0.75" fill="currentColor"/>
-                    <rect x="5" y="19" width="18" height="1.5" rx="0.75" fill="currentColor"/>
-                    <rect x="5" y="23" width="20" height="1.5" rx="0.75" fill="currentColor"/>
-                </svg>
-                <span>Cover — hero / platform screenshot</span>
-            </div>
+            <img src="assets/mockup-phone-02.jpg" alt="TH Academy — mobile platform mockup in the hero cover area" loading="eager" decoding="async" width="5024" height="5292">
         </div>
 
         <!-- Body -->
@@ -1062,12 +1352,9 @@
 
             <!-- Overview -->
             <section class="cs-section">
-                <p class="cs-section-label">Overview</p>
                 <div class="cs-overview-split">
                     <div class="cs-overview-about">
-                        <p><strong>TH Academy</strong> is a custom learning platform for permanent makeup training: structured levels, per-assignment feedback, and branded certification — aligned with how the instructor actually teaches.</p>
-                        <p>The work spanned research and UX flows through UI, a shared design system, and build support in code so the experience stays consistent from marketing site to student dashboard.</p>
-                        <p>The product is delivered as a <strong>Progressive Web App (PWA)</strong> — a website that can be installed and used in an app-like way (e.g. from the home screen) while remaining a responsive web experience. Roughly <strong>95% of students</strong> use it on their phones; the instructor’s admin and review flows are also phone-first day to day, alongside a <strong>full desktop</strong> layout for longer course authoring and administration.</p>
+                        <p><strong>TH Academy</strong> is a mobile-first learning platform for PMU training, designed to scale a hands-on teaching model into a structured digital experience. I led UX/UI and product definition, focusing on learning progression, feedback loops, and instructor efficiency across a PWA ecosystem.</p>
                     </div>
                     <ul class="cs-meta-rows" aria-label="Project details">
                         <li>
@@ -1080,7 +1367,7 @@
                         </li>
                         <li>
                             <span class="cs-meta-rows-k">My role</span>
-                            <span class="cs-meta-rows-v">UX/UI Design</span>
+                            <span class="cs-meta-rows-v">UX/UI design + build</span>
                         </li>
                         <li>
                             <span class="cs-meta-rows-k">Year</span>
@@ -1094,32 +1381,9 @@
                 </div>
             </section>
 
-
-
-            <!-- Challenge -->
-            <section class="cs-section">
-                <p class="cs-section-label">Challenge</p>
-                <h2 class="cs-section-title">The problem</h2>
-                <div class="cs-two-col wide-left">
-                    <div class="cs-section-body">
-                        <p><strong>PHI Academy</strong> + <strong>Craft Master</strong> worked. Not her brand. Not her rules. She needed her own platform.</p>
-                    </div>
-                    <div class="cs-section-body">
-                        <ul class="cs-problem-bullets">
-                            <li>No real control over content or UX.</li>
-                            <li>Feedback manual, untracked.</li>
-                            <li>Everything under someone else's brand.</li>
-                            <li>No own certs, progress, or enrolment.</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
             <!-- Research & Benchmark -->
             <section class="cs-section">
-                <p class="cs-section-label">Research</p>
                 <h2 class="cs-section-title">Competitive analysis</h2>
-                <p class="cs-section-lead">Benchmark: Craft Master, Bring My Laptop, Udemy.</p>
 
                 <div class="cs-benchmark">
                     <div class="cs-benchmark-header">
@@ -1194,142 +1458,64 @@
 
             <!-- Concept / Solution -->
             <section class="cs-section">
-                <p class="cs-section-label">Concept</p>
-                <h2 class="cs-section-title">The solution</h2>
-
-                <p class="cs-section-lead">I designed a custom LMS that enables structured progression, real-time feedback, and certification through a dual role system.</p>
 
                 <div class="cs-ia">
                     <h3 class="cs-ia-title">Information architecture</h3>
 
-                    <div class="cs-ia-map">
-                        <div class="cs-ia-row">
-                            <p class="cs-ia-lane-hd cs-ia-lane-hd--admin">Instructor · admin</p>
-                            <p class="cs-ia-lane-hd cs-ia-lane-hd--student">Student · academy</p>
-                        </div>
+                    <figure class="cs-ia-figure">
+                        <img src="assets/ia.png" alt="Information architecture diagram — instructor admin and student academy areas, key screens and routes" loading="lazy" decoding="async">
+                    </figure>
+                </div>
 
-                        <div class="cs-ia-row">
-                            <article class="cs-ia-card cs-ia-card--admin" aria-label="Admin course list">
-                                <div class="cs-ia-card-h">
-                                    <span class="cs-ia-screen">Courses · card grid</span>
-                                    <code class="cs-ia-route">#/a/courses</code>
-                                </div>
-                                <div class="cs-ia-bits">
-                                    <div><span class="cs-ia-k">Shows</span>Title, cover, status (draft / published / archived), dates, enrollment count.</div>
-                                    <div><span class="cs-ia-k">Actions</span>Edit · duplicate · archive · publish · delete · new course.</div>
-                                </div>
-                            </article>
-                            <article class="cs-ia-card cs-ia-card--student" aria-label="Student my courses">
-                                <div class="cs-ia-card-h">
-                                    <span class="cs-ia-screen">My courses</span>
-                                    <code class="cs-ia-route">#/s/courses</code>
-                                </div>
-                                <div class="cs-ia-bits">
-                                    <div><span class="cs-ia-k">Shows</span>Title (mirrors admin), progress / level, access state, continue vs locked, pending-review banner.</div>
-                                    <div><span class="cs-ia-k">Actions</span>Open · continue · profile.</div>
-                                </div>
-                            </article>
-                        </div>
+                <div class="cs-flows">
+                    <h3 class="cs-ia-title">Flows and user stories</h3>
+                    <p class="cs-section-lead">The product is built around four interconnected UX flows. Below are two key flows that demonstrate how the system works end-to-end.</p>
 
-                        <div class="cs-ia-row">
-                            <article class="cs-ia-card cs-ia-card--admin" aria-label="Admin course structure">
-                                <div class="cs-ia-card-h">
-                                    <span class="cs-ia-screen">Course · structure &amp; content</span>
-                                    <code class="cs-ia-route">#/a/course/:id</code>
-                                </div>
-                                <div class="cs-ia-bits">
-                                    <div><span class="cs-ia-k">Shows</span>Levels (order, title, lock), theory blocks, sections (text / media), course metadata.</div>
-                                    <div><span class="cs-ia-k">Actions</span>Level edit · section edit · preview (modal) · save · back.</div>
-                                </div>
-                            </article>
-                            <article class="cs-ia-card cs-ia-card--student" aria-label="Student course workspace">
-                                <div class="cs-ia-card-h">
-                                    <span class="cs-ia-screen">Course · workspace</span>
-                                    <code class="cs-ia-route">#/s/course/:id</code>
-                                </div>
-                                <div class="cs-ia-bits">
-                                    <div><span class="cs-ia-k">Shows</span>Level outline, theory for active level, tasks &amp; uploads, instructor chat thread, level status.</div>
-                                    <div><span class="cs-ia-k">Actions</span>Submit for review · chat · next level · back to courses.</div>
-                                </div>
-                            </article>
-                        </div>
+                    <div class="cs-flow-block">
+                        <p class="cs-flows-role">Flow 1 · Invite &amp; enroll student</p>
+                        <blockquote class="cs-user-story">
+                            <p class="cs-user-story-text">“As an <strong>administrator and instructor</strong>, I want to <strong>add a new student and enroll them in one or more courses</strong> by entering <strong>their details and which courses they should take</strong>, so that the system can <strong>create the student profile, enroll them in the selected courses</strong>, and <strong>send an email invitation</strong> without requiring any actions outside the platform.”</p>
+                        </blockquote>
+                        <figure class="cs-flow-diagram-slot">
+                            <figcaption class="visually-hidden">Флоу: покана към нов курсист — от сайта до профила на курсиста</figcaption>
+                            <img src="assets/flow.png" alt="Диаграма на флоу: отваряне на сайта, логин на администратор, таб Курсисти, бутон Добави нов курсист, форма с имена имейл и курс, Изпрати покана, съобщение за успех с избор още един или профил, отваряне на профила на курсиста" loading="lazy" decoding="async" width="3110" height="677">
+                        </figure>
+                    </div>
 
-                        <div class="cs-ia-row">
-                            <article class="cs-ia-card cs-ia-card--admin" aria-label="Admin students table">
-                                <div class="cs-ia-card-h">
-                                    <span class="cs-ia-screen">Students · table</span>
-                                    <code class="cs-ia-route">#/a/students</code>
-                                </div>
-                                <div class="cs-ia-bits">
-                                    <div><span class="cs-ia-k">Shows</span>Name / avatar, email, course IDs, added date, account status, training &amp; feedback status.</div>
-                                    <div><span class="cs-ia-k">Actions</span>Invite · row actions (aligned with roster workflows).</div>
-                                </div>
-                            </article>
-                            <article class="cs-ia-card cs-ia-card--student" aria-label="Student profile and dashboard">
-                                <div class="cs-ia-card-h">
-                                    <span class="cs-ia-screen">Profile · dashboard</span>
-                                    <code class="cs-ia-route">#/s/profile · #/s/dashboard</code>
-                                </div>
-                                <div class="cs-ia-bits">
-                                    <div><span class="cs-ia-k">Shows</span>Contact, enrollments, per-course progress, certificate when complete — statuses match admin table.</div>
-                                    <div><span class="cs-ia-k">Actions</span>Dashboard · profile · certificate · logout.</div>
-                                </div>
-                            </article>
-                        </div>
+                    <div class="cs-flow-block">
+                        <p class="cs-flows-role">Flow 2 · Course creation</p>
+                        <blockquote class="cs-user-story">
+                            <p class="cs-user-story-text">“As an <strong>instructor</strong>, I want to <strong>create and structure a course</strong> by <strong>defining its content, levels, and assignments</strong>, so that I can <strong>deliver a clear learning experience</strong> and <strong>provide meaningful feedback to students</strong>.”</p>
+                        </blockquote>
+                        <figure class="cs-flow-diagram-slot">
+                            <figcaption class="visually-hidden">Flow 2: course creation</figcaption>
+                            <img src="assets/Frame%208.png" alt="Flow diagram — course creation" loading="lazy" decoding="async">
+                        </figure>
                     </div>
                 </div>
             </section>
 
             <!-- Wireframes -->
-            <section class="cs-section">
+            <section class="cs-section cs-section--wireframes">
                 <h2 class="cs-section-title">Wireframes</h2>
-                <p class="cs-section-lead">Low-fidelity wireframes mapped the main admin and student screens from user needs—layout and navigation were checked early so the structure could settle before high-fidelity UI.</p>
 
-                <div class="cs-wireframes cs-wireframes--gallery">
-                    <div class="cs-wireframe-item"><img src="assets/iPhone%2014%20%26%2015%20Pro%20Max%20-%209.png" alt="Wireframe 1 of 14 — TH Academy mobile flow" loading="lazy" decoding="async"></div>
-                    <div class="cs-wireframe-item"><img src="assets/iPhone%2014%20%26%2015%20Pro%20Max%20-%2010.png" alt="Wireframe 2 of 14 — TH Academy mobile flow" loading="lazy" decoding="async"></div>
-                    <div class="cs-wireframe-item"><img src="assets/iPhone%2014%20%26%2015%20Pro%20Max%20-%2011.png" alt="Wireframe 3 of 14 — TH Academy mobile flow" loading="lazy" decoding="async"></div>
-                    <div class="cs-wireframe-item"><img src="assets/iPhone%2014%20%26%2015%20Pro%20Max%20-%2012.png" alt="Wireframe 4 of 14 — TH Academy mobile flow" loading="lazy" decoding="async"></div>
-                    <div class="cs-wireframe-item"><img src="assets/iPhone%2014%20%26%2015%20Pro%20Max%20-%2013.png" alt="Wireframe 5 of 14 — TH Academy mobile flow" loading="lazy" decoding="async"></div>
-                    <div class="cs-wireframe-item"><img src="assets/iPhone%2014%20%26%2015%20Pro%20Max%20-%2014.png" alt="Wireframe 6 of 14 — TH Academy mobile flow" loading="lazy" decoding="async"></div>
-                    <div class="cs-wireframe-item"><img src="assets/iPhone%2014%20%26%2015%20Pro%20Max%20-%2015.png" alt="Wireframe 7 of 14 — TH Academy mobile flow" loading="lazy" decoding="async"></div>
-                    <div class="cs-wireframe-item"><img src="assets/iPhone%2014%20%26%2015%20Pro%20Max%20-%2016.png" alt="Wireframe 8 of 14 — TH Academy mobile flow" loading="lazy" decoding="async"></div>
-                    <div class="cs-wireframe-item"><img src="assets/iPhone%2014%20%26%2015%20Pro%20Max%20-%2017.png" alt="Wireframe 9 of 14 — TH Academy mobile flow" loading="lazy" decoding="async"></div>
-                    <div class="cs-wireframe-item"><img src="assets/iPhone%2014%20%26%2015%20Pro%20Max%20-%2018.png" alt="Wireframe 10 of 14 — TH Academy mobile flow" loading="lazy" decoding="async"></div>
-                    <div class="cs-wireframe-item"><img src="assets/iPhone%2014%20%26%2015%20Pro%20Max%20-%2019.png" alt="Wireframe 11 of 14 — TH Academy mobile flow" loading="lazy" decoding="async"></div>
-                    <div class="cs-wireframe-item"><img src="assets/iPhone%2014%20%26%2015%20Pro%20Max%20-%2020.png" alt="Wireframe 12 of 14 — TH Academy mobile flow" loading="lazy" decoding="async"></div>
-                    <div class="cs-wireframe-item"><img src="assets/iPhone%2014%20%26%2015%20Pro%20Max%20-%2021.png" alt="Wireframe 13 of 14 — TH Academy mobile flow" loading="lazy" decoding="async"></div>
-                    <div class="cs-wireframe-item"><img src="assets/iPhone%2014%20%26%2015%20Pro%20Max%20-%2022.png" alt="Wireframe 14 of 14 — TH Academy mobile flow" loading="lazy" decoding="async"></div>
+                <div class="cs-wireframes cs-wireframes--hero-mockup">
+                    <img src="assets/Free-iPhone-Pro-14-Mockups.png" alt="TH Academy — iPhone 14 Pro wireframe mockups" loading="lazy" decoding="async">
                 </div>
             </section>
 
             <!-- Design system -->
             <section class="cs-section">
-                <p class="cs-section-label">Design system</p>
                 <h2 class="cs-section-title">Modular foundation</h2>
-                <p class="cs-section-lead">I used <strong>Cursor</strong> to extract components, color tokens, spacing, and typography from the designs and organize them into shared <strong>HTML and CSS</strong>. The same structured foundation supports marketing and the app.</p>
+                <p class="cs-section-lead">I organized components into a design system with shared styles, color tokens, spacing, and typography — kept consistent across marketing and the app.</p>
 
-                <div class="cs-video-slot" aria-label="Design system video">
-                    <video autoplay muted loop playsinline preload="auto" aria-label="Design system — video walkthrough">
-                        <source src="assets/DS-video.mp4" type="video/mp4">
-                        <p>Your browser does not support embedded video. <a href="assets/DS-video.mp4">Download the MP4</a>.</p>
-                    </video>
-                </div>
-            </section>
-
-            <!-- Final design: video walkthrough -->
-            <section class="cs-section">
-                <p class="cs-section-label">Final design</p>
-                <h2 class="cs-section-title">UI walkthrough</h2>
-
-                <div class="cs-video-slot" aria-label="Final design walkthrough video">
-                    <!-- Drop in <video> or embedded player (e.g. iframe) when ready -->
+                <div class="cs-video-slot cs-video-slot--full-bleed" aria-label="Design system — components">
+                    <img src="assets/components.png" alt="TH Academy design system — UI components overview" loading="lazy" decoding="async">
                 </div>
             </section>
 
             <!-- Reflection -->
             <section class="cs-section">
-                <p class="cs-section-label">Reflection</p>
                 <h2 class="cs-section-title">What I learned</h2>
                 <div class="cs-reflection-tight">
                         <p>Systems UX: interlocking states, not pages. Level status model = linchpin.</p>

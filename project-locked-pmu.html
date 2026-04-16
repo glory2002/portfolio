@@ -9,8 +9,8 @@
     <link rel="apple-touch-icon" href="assets/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=4.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=6.5">
 
     <style>
         .lock-page {
@@ -24,52 +24,97 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 40px 24px;
-            background-color: #f4f4f6;
+            padding: 56px 80px 80px;
+            background: linear-gradient(165deg, var(--soft-lavender) 0%, var(--white) 42%, var(--bg-gray) 100%);
+        }
+
+        .lock-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 480px;
         }
 
         .lock-card {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 20px;
-            max-width: 420px;
+            gap: 16px;
             width: 100%;
             text-align: center;
+            padding: 48px 40px 44px;
+            background: var(--white);
+            border: 1px dashed rgba(0, 0, 0, 0.12);
+            border-radius: var(--border-radius-large);
+            box-shadow: 0 24px 60px rgba(10, 10, 12, 0.06);
+        }
+
+        .lock-icon-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 72px;
+            height: 72px;
+            border-radius: var(--border-radius-large);
+            background: var(--soft-lavender);
+            border: 1px dashed rgba(123, 97, 255, 0.25);
+            margin-bottom: 4px;
         }
 
         .lock-icon {
-            width: 64px;
-            height: 64px;
-            color: #b0b0be;
+            width: 36px;
+            height: 36px;
+            color: var(--deep-lavender);
+        }
+
+        .lock-eyebrow {
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--deep-lavender);
+            margin: 0;
         }
 
         .lock-title {
             font-family: var(--font-heading);
-            font-size: 28px;
-            font-weight: 600;
+            font-size: clamp(28px, 4vw, 36px);
+            font-weight: 500;
             color: var(--text-color);
             line-height: 1.2;
+            margin: 0;
+            max-width: 22ch;
         }
 
         .lock-subtitle {
-            font-size: 15px;
-            font-weight: 400;
-            color: #888;
-            margin-top: -8px;
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: 300;
+            color: rgba(10, 10, 12, 0.55);
+            line-height: 1.5;
+            margin: 0;
+            max-width: 32ch;
         }
 
         .lock-form {
             width: 100%;
-            margin-top: 8px;
-            position: relative;
+            margin-top: 12px;
+        }
+
+        .lock-fields {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            width: 100%;
         }
 
         .lock-input {
             width: 100%;
-            padding: 18px 56px 18px 22px;
-            border: 1.5px solid #ddd;
-            border-radius: 100px;
+            padding: 16px 18px;
+            border: 1.5px solid rgba(10, 10, 12, 0.12);
+            border-radius: var(--border-radius-medium);
             font-family: var(--font-body);
             font-size: 16px;
             color: var(--text-color);
@@ -80,53 +125,33 @@
         }
 
         .lock-input::placeholder {
-            color: #b0b0be;
+            color: rgba(10, 10, 12, 0.35);
         }
 
         .lock-input:focus {
             border-color: var(--deep-lavender);
-            box-shadow: 0 0 0 4px rgba(123, 97, 255, 0.1);
+            box-shadow: 0 0 0 3px rgba(123, 97, 255, 0.12);
         }
 
         .lock-input.error {
-            border-color: #ff4d4f;
-            box-shadow: 0 0 0 4px rgba(255, 77, 79, 0.1);
+            border-color: #e11d48;
+            box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.1);
         }
 
-        .lock-submit {
-            position: absolute;
-            right: 6px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            border: none;
-            background: var(--text-color);
-            color: var(--white);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.2s ease, transform 0.2s ease;
-            flex-shrink: 0;
-        }
-
-        .lock-submit:hover {
-            background: var(--deep-lavender);
-            transform: translateY(-50%) scale(1.05);
-        }
-
-        .lock-submit svg {
-            width: 18px;
-            height: 18px;
+        .lock-submit-btn {
+            width: 100%;
+            margin-top: 2px;
         }
 
         .lock-error {
-            font-size: 13px;
-            color: #ff4d4f;
+            font-family: var(--font-body);
+            font-size: 14px;
+            font-weight: 500;
+            color: #e11d48;
             display: none;
-            margin-top: -8px;
+            margin: 4px 0 0;
+            width: 100%;
+            text-align: center;
         }
 
         .lock-error.visible {
@@ -136,24 +161,25 @@
         .lock-back {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            font-size: 14px;
-            color: #999;
-            margin-top: 8px;
-            transition: color 0.2s ease, gap 0.2s ease;
+            gap: 8px;
+            font-family: var(--font-body);
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--deep-lavender);
+            margin-top: 28px;
+            transition: gap 0.2s ease;
         }
 
         .lock-back:hover {
-            color: var(--deep-lavender);
-            gap: 10px;
+            gap: 14px;
         }
 
         .lock-back svg {
-            width: 14px;
-            height: 14px;
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
         }
 
-        /* shake animation on wrong password */
         @keyframes shake {
             0%, 100% { transform: translateX(0); }
             20%       { transform: translateX(-8px); }
@@ -164,6 +190,16 @@
 
         .lock-form.shake {
             animation: shake 0.4s ease;
+        }
+
+        @media (max-width: 768px) {
+            .lock-main {
+                padding: 40px 24px 56px;
+            }
+
+            .lock-card {
+                padding: 36px 24px 32px;
+            }
         }
     </style>
 </head>
@@ -198,44 +234,46 @@
     </header>
 
     <main class="lock-main">
-        <div class="lock-card">
-
-            <!-- Lock icon -->
-            <svg class="lock-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="12" y="28" width="40" height="28" rx="6"/>
-                <path d="M20 28v-8a12 12 0 0 1 24 0v8"/>
-                <circle cx="32" cy="44" r="3" fill="currentColor" stroke="none"/>
-                <line x1="32" y1="47" x2="32" y2="52"/>
-            </svg>
-
-            <h1 class="lock-title">This content is protected.</h1>
-            <p class="lock-subtitle">To view, please enter the password.</p>
-
-            <form class="lock-form" id="lockForm" onsubmit="checkPassword(event)">
-                <input
-                    class="lock-input"
-                    id="passwordInput"
-                    type="password"
-                    placeholder="Enter password"
-                    autocomplete="current-password"
-                    autofocus
-                >
-                <button type="submit" class="lock-submit" aria-label="Submit">
-                    <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M3 9h12M9 3l6 6-6 6"/>
+        <div class="lock-wrap">
+            <div class="lock-card">
+                <div class="lock-icon-wrap" aria-hidden="true">
+                    <svg class="lock-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="12" y="28" width="40" height="28" rx="6"/>
+                        <path d="M20 28v-8a12 12 0 0 1 24 0v8"/>
+                        <circle cx="32" cy="44" r="3" fill="currentColor" stroke="none"/>
+                        <line x1="32" y1="47" x2="32" y2="52"/>
                     </svg>
-                </button>
-            </form>
+                </div>
 
-            <p class="lock-error" id="lockError">Incorrect password. Please try again.</p>
+                <p class="lock-eyebrow">Protected case study</p>
+                <h1 class="lock-title">This content is protected.</h1>
+                <p class="lock-subtitle">Enter the password you were given to open this project.</p>
+
+                <form class="lock-form" id="lockForm" onsubmit="checkPassword(event)">
+                    <div class="lock-fields">
+                        <input
+                            class="lock-input"
+                            id="passwordInput"
+                            type="password"
+                            placeholder="Password"
+                            autocomplete="current-password"
+                            autofocus
+                            aria-invalid="false"
+                            aria-describedby="lockError"
+                        >
+                        <button type="submit" class="btn btn-primary-gradient lock-submit-btn">Continue</button>
+                    </div>
+                </form>
+
+                <p class="lock-error" id="lockError" role="alert">Incorrect password. Please try again.</p>
+            </div>
 
             <a href="index.html#projects" class="lock-back">
-                <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M11 7H3M7 3L3 7l4 4"/>
+                <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 9H4M9 4L4 9l5 5"/>
                 </svg>
                 Back to projects
             </a>
-
         </div>
     </main>
 
@@ -286,13 +324,15 @@
             const error = document.getElementById('lockError');
 
             if (input.value === PASSWORD) {
+                input.setAttribute('aria-invalid', 'false');
+                error.classList.remove('visible');
                 window.location.href = 'project-pmu.html';
             } else {
-                // Wrong — shake + show error
                 input.classList.add('error');
+                input.setAttribute('aria-invalid', 'true');
                 error.classList.add('visible');
                 form.classList.remove('shake');
-                void form.offsetWidth; // reflow to restart animation
+                void form.offsetWidth;
                 form.classList.add('shake');
 
                 input.value = '';
@@ -303,6 +343,11 @@
                 }, 2000);
             }
         }
+
+        document.getElementById('passwordInput').addEventListener('input', function () {
+            this.setAttribute('aria-invalid', 'false');
+            document.getElementById('lockError').classList.remove('visible');
+        });
 
         // Hide preloader on page load
         document.addEventListener('DOMContentLoaded', function() {

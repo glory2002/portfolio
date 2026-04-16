@@ -20,7 +20,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=4.1">
+    <link rel="stylesheet" href="styles.css?v=6.6">
 
     <style>
         /* ── Case Study page-specific styles ── */
@@ -507,93 +507,40 @@
             color: #555;
         }
 
-        /* ── Before / After comparison ── */
+        /* ── Before / After comparison (minimal) ── */
         .cs-compare-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 24px;
+            gap: 32px 48px;
+            margin-top: 8px;
         }
 
-        .cs-compare-card {
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid #ececf5;
+        .cs-compare-cell {
+            margin: 0;
+            min-width: 0;
         }
 
-        .cs-compare-label {
-            padding: 12px 20px;
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-
-        .cs-compare-label.before {
-            background: #f5f5f5;
-            color: #888;
-        }
-
-        .cs-compare-label.after {
-            background: var(--soft-lavender);
-            color: var(--deep-lavender);
-        }
-
-        .cs-compare-visual {
-            padding: 24px;
-            min-height: 160px;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            background: var(--white);
-        }
-
-        /* Before — messy legacy look */
-        .legacy-old-bar {
-            height: 10px;
-            background: #ccc;
-            border-radius: 2px;
-        }
-
-        .legacy-old-bar.wide { width: 90%; }
-        .legacy-old-bar.med { width: 60%; }
-        .legacy-old-bar.narrow { width: 35%; }
-
-        .legacy-old-row {
-            display: flex;
-            gap: 6px;
-            align-items: center;
-        }
-
-        .legacy-old-badge {
-            padding: 3px 8px;
-            background: #e0e0e0;
-            border-radius: 2px;
-            font-size: 10px;
-            color: #666;
+        .cs-compare-eyebrow {
+            font-family: var(--font-body);
+            font-size: 11px;
             font-weight: 500;
-            white-space: nowrap;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: rgba(0, 0, 0, 0.38);
+            margin: 0 0 12px;
         }
 
-        /* After — modern clean look */
-        .modern-bar {
-            height: 8px;
-            background: var(--soft-lavender);
-            border-radius: 100px;
+        .cs-compare-shot {
+            margin: 0;
+            border-radius: 2px;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.03);
         }
 
-        .modern-bar.wide { width: 88%; }
-        .modern-bar.med { width: 55%; }
-        .modern-bar.narrow { width: 30%; }
-        .modern-bar.accent { background: rgba(123, 97, 255, 0.35); }
-
-        .modern-badge {
-            padding: 4px 12px;
-            background: var(--soft-lavender);
-            border-radius: 100px;
-            font-size: 10px;
-            color: var(--deep-lavender);
-            font-weight: 600;
-            white-space: nowrap;
+        .cs-compare-shot img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         /* ── Result stats ── */
@@ -656,9 +603,9 @@
             font-style: normal;
         }
 
-        /* ── Next project banner ── */
+        /* ── Next project banner (same gradient as .cs-cover) ── */
         .cs-next {
-            background: linear-gradient(135deg, var(--deep-lavender), var(--crisp-lilac));
+            background: linear-gradient(135deg, #0d6e6e 0%, #0a9396 60%, #48cae4 100%);
             border-radius: 24px;
             padding: 60px;
             display: flex;
@@ -681,7 +628,7 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.12em;
-            color: rgba(255,255,255,0.65);
+            color: rgba(255, 255, 255, 0.75);
         }
 
         .cs-next-title {
@@ -720,7 +667,7 @@
             .cs-insight-grid { grid-template-columns: 1fr 1fr; }
             .cs-two-col, .cs-two-col.wide-left { grid-template-columns: 1fr; }
             .cs-stat-grid { grid-template-columns: 1fr; gap: 16px; }
-            .cs-compare-grid { grid-template-columns: 1fr; }
+            .cs-compare-grid { grid-template-columns: 1fr; gap: 40px; }
             .cs-cover { margin: 0; border-radius: 0; }
             .cs-cover-inner { flex-direction: column; padding: 36px 24px; }
             .cs-cover-mockup { width: 100%; }
@@ -767,7 +714,7 @@
         </div>
     </header>
 
-    <div class="container">
+    <div class="container cs-page">
 
         <!-- Hero -->
         <section class="cs-hero">
@@ -834,7 +781,6 @@
             <!-- Challenges & Constraints -->
             <section class="cs-section">
                 <h2 class="cs-section-title">Challenges & Constraints</h2>
-                <p class="cs-section-body">Improving the interface while working within strict technical constraints — no changes to the architecture, no modifications to existing workflows. All improvements had to be achieved purely through CSS and UI styling.</p>
                 <ul style="margin-top:10px;display:flex;flex-direction:column;gap:7px;padding:0;list-style:none;">
                     <li style="display:flex;align-items:center;gap:8px;font-size:15px;color:#444;line-height:1.55;"><span style="width:6px;height:6px;border-radius:50%;background:#0a9396;flex-shrink:0;display:inline-block;"></span>No changes to the existing system architecture</li>
                     <li style="display:flex;align-items:center;gap:8px;font-size:15px;color:#444;line-height:1.55;"><span style="width:6px;height:6px;border-radius:50%;background:#0a9396;flex-shrink:0;display:inline-block;"></span>Existing workflows had to remain intact</li>
@@ -873,41 +819,25 @@
             <!-- Process -->
             <section class="cs-section">
                 <h2 class="cs-section-title">Design Process</h2>
-                <p class="cs-section-body">The redesign process focused on aligning design decisions with the existing technical constraints while ensuring visual improvements could be implemented efficiently by the frontend team.</p>
 
                 <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px;">
                     <div style="border:1px solid #e8e8f0;border-radius:14px;padding:28px;">
                         <div style="width:36px;height:36px;border-radius:10px;background:#e6f7f7;display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0a9396" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                         </div>
-                        <p style="font-size:14px;font-weight:600;color:#1a1a2e;margin:0 0 10px;">Alignment with Frontend Team</p>
-                        <ul style="padding:0;margin:0;list-style:none;display:flex;flex-direction:column;gap:7px;">
-                            <li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;color:#666;line-height:1.55;"><span style="width:6px;height:6px;border-radius:50%;background:#0a9396;flex-shrink:0;display:inline-block;margin-top:7px;"></span>Technical alignment session with the frontend team</li>
-                            <li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;color:#666;line-height:1.55;"><span style="width:6px;height:6px;border-radius:50%;background:#0a9396;flex-shrink:0;display:inline-block;margin-top:7px;"></span>Defined a CSS strategy for the new visual layer</li>
-                            <li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;color:#666;line-height:1.55;"><span style="width:6px;height:6px;border-radius:50%;background:#0a9396;flex-shrink:0;display:inline-block;margin-top:7px;"></span>Visual improvements without changing component structure</li>
-                        </ul>
+                        <p style="font-size:14px;font-weight:600;color:#1a1a2e;margin:0;line-height:1.4;">Alignment with Frontend Team</p>
                     </div>
                     <div style="border:1px solid #e8e8f0;border-radius:14px;padding:28px;">
                         <div style="width:36px;height:36px;border-radius:10px;background:#e6f7f7;display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0a9396" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
                         </div>
-                        <p style="font-size:14px;font-weight:600;color:#1a1a2e;margin:0 0 10px;">UI Exploration in Figma</p>
-                        <ul style="padding:0;margin:0;list-style:none;display:flex;flex-direction:column;gap:7px;">
-                            <li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;color:#666;line-height:1.55;"><span style="width:6px;height:6px;border-radius:50%;background:#0a9396;flex-shrink:0;display:inline-block;margin-top:7px;"></span>Explored several visual directions in Figma</li>
-                            <li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;color:#666;line-height:1.55;"><span style="width:6px;height:6px;border-radius:50%;background:#0a9396;flex-shrink:0;display:inline-block;margin-top:7px;"></span>Focused on hierarchy, clarity, and visual consistency</li>
-                            <li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;color:#666;line-height:1.55;"><span style="width:6px;height:6px;border-radius:50%;background:#0a9396;flex-shrink:0;display:inline-block;margin-top:7px;"></span>Refined into a single approved design direction</li>
-                        </ul>
+                        <p style="font-size:14px;font-weight:600;color:#1a1a2e;margin:0;line-height:1.4;">UI Exploration in Figma</p>
                     </div>
                     <div style="border:1px solid #e8e8f0;border-radius:14px;padding:28px;">
                         <div style="width:36px;height:36px;border-radius:10px;background:#e6f7f7;display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0a9396" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
                         </div>
-                        <p style="font-size:14px;font-weight:600;color:#1a1a2e;margin:0 0 10px;">CSS Implementation</p>
-                        <ul style="padding:0;margin:0;list-style:none;display:flex;flex-direction:column;gap:7px;">
-                            <li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;color:#666;line-height:1.55;"><span style="width:6px;height:6px;border-radius:50%;background:#0a9396;flex-shrink:0;display:inline-block;margin-top:7px;"></span>Visual design implemented directly through CSS</li>
-                            <li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;color:#666;line-height:1.55;"><span style="width:6px;height:6px;border-radius:50%;background:#0a9396;flex-shrink:0;display:inline-block;margin-top:7px;"></span>Existing HTML structure kept intact</li>
-                            <li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;color:#666;line-height:1.55;"><span style="width:6px;height:6px;border-radius:50%;background:#0a9396;flex-shrink:0;display:inline-block;margin-top:7px;"></span>No changes to workflows or backend</li>
-                        </ul>
+                        <p style="font-size:14px;font-weight:600;color:#1a1a2e;margin:0;line-height:1.4;">CSS Implementation</p>
                     </div>
                 </div>
             </section>
@@ -930,23 +860,20 @@
             <section class="cs-section">
                 <p class="cs-section-label">Design</p>
                 <h2 class="cs-section-title">Before &amp; after</h2>
-                <p class="cs-section-body">The visual difference is significant — but the underlying HTML structure is identical. Everything changed through CSS alone.</p>
 
                 <div class="cs-compare-grid">
-                    <div class="cs-compare-card">
-                        <div class="cs-compare-label before">Before — Legacy UI</div>
-                        <div style="overflow:hidden;">
-                            <img src="assets/dashboard-before.png" alt="Dashboard before redesign" style="width:100%;display:block;">
+                    <figure class="cs-compare-cell">
+                        <figcaption class="cs-compare-eyebrow">Before</figcaption>
+                        <div class="cs-compare-shot">
+                            <img src="assets/dashboard-before.png" alt="Dashboard before redesign" loading="lazy" decoding="async">
                         </div>
-                        <p style="font-size:14px;color:#888;padding:16px 20px;line-height:1.6;">The original platform interface was visually outdated and inconsistent, having evolved over more than a decade.</p>
-                    </div>
-                    <div class="cs-compare-card">
-                        <div class="cs-compare-label after">After — Modernized UI</div>
-                        <div style="overflow:hidden;">
-                            <img src="assets/dashboard-after.png" alt="Dashboard after redesign" style="width:100%;display:block;">
+                    </figure>
+                    <figure class="cs-compare-cell">
+                        <figcaption class="cs-compare-eyebrow">After</figcaption>
+                        <div class="cs-compare-shot">
+                            <img src="assets/dashboard-after.png" alt="Dashboard after redesign" loading="lazy" decoding="async">
                         </div>
-                        <p style="font-size:14px;color:#888;padding:16px 20px;line-height:1.6;">The redesign focused on modernizing the visual layer of the interface while keeping the existing structure and workflows intact.</p>
-                    </div>
+                    </figure>
                 </div>
 
             </section>
