@@ -383,10 +383,12 @@
         }
 
         .cs-section-title {
-            font-family: var(--font-heading);
-            font-size: 28px;
-            font-weight: 600;
-            color: var(--text-color);
+            font-family: 'Manrope', sans-serif;
+            font-size: clamp(32px, 4vw, 52px);
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            color: #0e0e0e;
             margin: 0;
         }
 
@@ -655,7 +657,7 @@
             background: linear-gradient(135deg, #0d6e6e 0%, #0a9396 60%, #48cae4 100%);
             border-radius: 0;
             width: 100%;
-            padding: 60px max(60px, calc((100vw - 1200px)/2 + 60px));
+            padding: 100px max(20px, calc((100vw - 1280px) / 2));
             box-sizing: border-box;
             display: flex;
             justify-content: space-between;
@@ -729,7 +731,7 @@
             background: transparent;
             color: var(--white);
             border: 1.5px solid rgba(255,255,255,0.7);
-            border-radius: 100px;
+            border-radius: 4px;
             padding: 14px 32px;
             font-family: var(--font-heading);
             font-size: 16px;
@@ -875,7 +877,6 @@
 
             <!-- Challenges & Constraints -->
             <section class="cs-section">
-                <p class="cs-section-label">Context</p>
                 <h2 class="cs-section-title">Challenges & Constraints</h2>
                 <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:32px;">
                     <div style="padding:32px 40px 32px 0;border-right:1px solid rgba(0,0,0,0.08);">
@@ -900,7 +901,6 @@
 
             <!-- Branding -->
             <section class="cs-section">
-                <p class="cs-section-label">Branding</p>
                 <h2 class="cs-section-title">A product that finally got its own logo</h2>
                 <p class="cs-section-body" style="max-width:680px;margin-bottom:48px;">Configuration Studio had always relied on the TINQIN corporate logo — there was no dedicated product identity. As part of this project I designed a logo for it, keeping the same geometric language and weight as the company mark.</p>
 
@@ -930,7 +930,6 @@
 
             <!-- Design System -->
             <section class="cs-section">
-                <p class="cs-section-label">Design System</p>
                 <h2 class="cs-section-title">Design system & components</h2>
                 <p class="cs-section-body">Typography, color tokens, form elements, accordions, cards, tables, and tree components — all documented in Figma to ensure consistency and give the front-end team a clear implementation reference.</p>
 
@@ -1017,13 +1016,12 @@
 
             <!-- Before / After -->
             <section class="cs-section" style="padding:0;">
-                <p class="cs-section-label">Design</p>
                 <h2 class="cs-section-title">Before &amp; after</h2>
                 <p class="cs-section-body" style="margin-top:12px;">The main screen — the dashboard agents use daily to navigate policies, tasks, and client data.</p>
             </section>
 
             <!-- Before/After full-bleed -->
-            <div style="width:100vw;margin-left:calc(50% - 50vw);padding:56px max(60px, calc((100vw - 1280px)/2 + 60px));box-sizing:border-box;">
+            <div style="width:100vw;margin-left:calc(50% - 50vw);padding:56px max(20px, calc((100vw - 1280px)/2));box-sizing:border-box;">
                 <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;width:100%;">
                     <figure style="margin:0;">
                         <figcaption style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.14em;color:rgba(0,0,0,0.38);margin-bottom:16px;display:block;">Before</figcaption>
@@ -1083,7 +1081,6 @@
 
             <!-- Reflection -->
             <section class="cs-section">
-                <p class="cs-section-label">Takeaway</p>
                 <h2 class="cs-section-title">Constraints as a design brief</h2>
                 <p class="cs-section-body" style="max-width:680px;">Working within an unchangeable HTML structure forced me to focus entirely on the visual layer — typography, colour, spacing. Defining the design system upfront made implementation fast and consistent. The biggest lesson: enterprise users have strong mental models, so the goal was to make things feel familiar but dramatically cleaner — not reinvent the interaction model entirely.</p>
             </section>
@@ -1095,7 +1092,6 @@
     <!-- Next project banner -->
     <div class="cs-next">
         <div class="cs-next-text">
-            <span class="cs-next-eyebrow">Up next</span>
             <span class="cs-next-title">PMU Academy Platform</span>
         </div>
         <a href="project-pmu.html" class="btn-white-outline">View Case Study</a>
