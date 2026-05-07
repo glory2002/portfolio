@@ -27,14 +27,14 @@
     <link rel="apple-touch-icon" href="assets/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="styles.css?v=6.5">
 </head>
 <body>
     <!-- Preloader -->
     <div id="preloader">
         <svg class="preloader-icon" viewBox="0 0 42 45" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M41.5574 30.7311L30.327 11.2799C29.9972 10.7109 29.4901 10.2451 28.8676 10.0348C27.6349 9.62665 26.3609 10.1544 25.7549 11.2057L17.3156 25.825C16.9858 26.3939 16.8374 27.0659 16.9693 27.7091C17.2331 28.9789 18.3257 29.8199 19.5378 29.8199H30.2034L27.1814 24.5882H24.0646L28.0142 17.7444L36.371 32.2235C32.9697 37.1007 27.3174 39.8712 21.2982 39.5332C9.8534 38.3705 4.98442 29.8158 5.23591 21.8383C5.4874 13.869 10.8882 5.64406 22.3866 5.22766H26.8351L23.7718 0H22.2011C7.4086 0.535959 0.329821 11.6097 0.0123683 21.6734C-0.305084 31.7576 6.07695 43.2808 20.8406 44.7443C20.8735 44.7443 20.9107 44.7526 20.9436 44.7526C21.3971 44.7814 21.8506 44.7938 22.3 44.7938C30.2034 44.7938 37.4594 40.6999 41.5368 33.8726C42.114 32.9079 42.1223 31.704 41.5574 30.7311Z" fill="#7b61ff"/>
+            <path d="M41.5574 30.7311L30.327 11.2799C29.9972 10.7109 29.4901 10.2451 28.8676 10.0348C27.6349 9.62665 26.3609 10.1544 25.7549 11.2057L17.3156 25.825C16.9858 26.3939 16.8374 27.0659 16.9693 27.7091C17.2331 28.9789 18.3257 29.8199 19.5378 29.8199H30.2034L27.1814 24.5882H24.0646L28.0142 17.7444L36.371 32.2235C32.9697 37.1007 27.3174 39.8712 21.2982 39.5332C9.8534 38.3705 4.98442 29.8158 5.23591 21.8383C5.4874 13.869 10.8882 5.64406 22.3866 5.22766H26.8351L23.7718 0H22.2011C7.4086 0.535959 0.329821 11.6097 0.0123683 21.6734C-0.305084 31.7576 6.07695 43.2808 20.8406 44.7443C20.8735 44.7443 20.9107 44.7526 20.9436 44.7526C21.3971 44.7814 21.8506 44.7938 22.3 44.7938C30.2034 44.7938 37.4594 40.6999 41.5368 33.8726C42.114 32.9079 42.1223 31.704 41.5574 30.7311Z" fill="#0e0e0e"/>
         </svg>
     </div>
 
@@ -42,8 +42,9 @@
     <header class="header">
         <div class="header-content">
             <div class="logo-container">
-                <a href="index.html">
+                <a href="index.html" class="logo-link">
                     <img src="assets/ga-logo.svg" alt="Gloria Logo" class="logo">
+                    <span class="logo-greeting" aria-hidden="true">That's me.</span>
                 </a>
             </div>
             <button class="menu-toggle" aria-label="Toggle menu">
@@ -65,9 +66,20 @@
             <div class="hero-wrapper">
                 <div class="hero-content">
                     <div class="hero-text">
-                        <h1>Hello! I'm Gloria Angelova.<br><span class="tagline-highlight">UX/UI Designer</span> who enjoys turning complex challenges into simple solutions.</h1>
+                        <h1><span class="hero-h1-intro">Hallo! I'm</span>Gloria Angelova</h1>
+                        <ul class="hero-intro-list">
+                            <li>UX / UI Designer</li>
+                            <li>AI Explorer</li>
+                            <li>Embroidery Lover</li>
+                        </ul>
                     </div>
-
+                    <div class="hero-location">
+                        <span class="hero-location-place">Based in Eindhoven, NL</span>
+                        <span class="hero-location-available">
+                            <span class="hero-available-dot"></span>
+                            Available remotely
+                        </span>
+                    </div>
                 </div>
                 <div class="hero-image-container">
                     <div class="hero-image-wrapper">
@@ -85,30 +97,31 @@
 
             <div class="projects-list">
                 <!-- Project 1 -->
-                <a href="project-locked.html" class="project-card horizontal">
+                <a href="project-locked.html" class="project-card horizontal project-card--no-bg">
                     <div class="project-info">
                         <div class="project-info-content">
-                            <h3>Modernizing a Legacy Insurance Platform</h3>
+                            <h3>Legacy Enterprise Platform</h3>
                             <div class="project-tags">
                                 <span class="tag">UI Design</span>
                                 <span class="tag">Legacy System</span>
                                 <span class="tag">CSS Implementation</span>
                             </div>
-                            <p class="project-description">Modernizing a legacy insurance platform — new UI, cleaner hierarchy, same underlying architecture.</p>
+                            <p class="project-description">Full UI modernization of a decade-old enterprise platform — improved visual hierarchy, design system, and consistency.</p>
                         </div>
                         <div class="project-info-actions">
                             <span class="btn btn-secondary-outline small btn-lock">
-                                <svg width="16" height="16" viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-right:8px;">
+                                <svg width="14" height="14" viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-right:8px;position:relative;z-index:1;">
                                     <rect x="2" y="6.5" width="11" height="7.5" rx="2"/>
                                     <path d="M5 6.5V4.5a2.5 2.5 0 0 1 5 0v2"/>
                                 </svg>
-                                Enter Password
+                                <span style="position:relative;z-index:1;">Enter Password</span>
                             </span>
                         </div>
                     </div>
                     <div class="project-image project-image--wireframe" role="img" aria-label="Modernizing a Legacy Insurance Platform — design preview">
                         <div class="project-image-wireframe-inner">
-                            <svg class="project-image-wireframe-icon" width="88" height="88" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <img src="assets/cs_cover_v3.svg" alt="Configuration Studio cover" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;">
+                            <svg class="project-image-wireframe-icon" width="88" height="88" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:none;">
                                 <rect x="5" y="9" width="54" height="40" rx="4" stroke="currentColor" stroke-width="2"/>
                                 <path d="M5 22h54M5 31h54M5 40h38" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 4" opacity="0.55"/>
                                 <rect x="45" y="35" width="10" height="8" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
@@ -119,7 +132,7 @@
                 </a>
 
                 <!-- Project 3 -->
-                <a href="project-locked-pmu.html" class="project-card horizontal">
+                <a href="project-locked-pmu.html" class="project-card horizontal project-card--no-bg">
                     <div class="project-info">
                         <div class="project-info-content">
                             <h3>TH Academy</h3>
@@ -130,58 +143,37 @@
                         </div>
                         <div class="project-info-actions">
                             <span class="btn btn-secondary-outline small btn-lock">
-                                <svg width="16" height="16" viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-right:8px;">
+                                <svg width="14" height="14" viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-right:8px;position:relative;z-index:1;">
                                     <rect x="2" y="6.5" width="11" height="7.5" rx="2"/>
                                     <path d="M5 6.5V4.5a2.5 2.5 0 0 1 5 0v2"/>
                                 </svg>
-                                Enter Password
+                                <span style="position:relative;z-index:1;">Enter Password</span>
                             </span>
                         </div>
                     </div>
                     <div class="project-image project-image--wireframe" role="img" aria-label="TH Academy — design preview">
                         <div class="project-image-wireframe-inner">
-                            <img src="assets/mockup-phone-01.jpg" alt="TH Academy — mobile product mockup" loading="lazy" decoding="async" width="5024" height="5292">
+                            <img src="assets/TH-cover2.png" alt="TH Academy — mobile product mockup" loading="lazy" decoding="async" width="5024" height="5292">
                         </div>
                     </div>
                 </a>
 
                 <!-- Live site -->
-                <a href="https://tanyahristova-pmu.com/en" class="project-card horizontal project-card--live" target="_blank" rel="noopener noreferrer">
+                <a href="https://tanyahristova-pmu.com/en" class="project-card horizontal project-card--live project-card--no-bg" target="_blank" rel="noopener noreferrer">
                     <div class="project-info">
                         <div class="project-info-content">
                             <h3>Tanya Hristova - PMU expert</h3>
                             <p class="project-description">PMU studio &amp; Academy — training and professional services.</p>
                         </div>
                         <div class="project-info-actions">
-                            <span class="btn btn-secondary-outline small">View Live Site</span>
+                            <span class="btn btn-secondary-outline small"><span style="position:relative;z-index:1;">Explore Live</span></span>
                         </div>
                     </div>
                     <div class="project-image">
-                        <img src="assets/MacBook_Mockup_TH.png" alt="Tanya Hristova Studio &amp; Academy — MacBook mockup" loading="lazy">
+                        <img src="assets/TH-cover.png" alt="Tanya Hristova Studio &amp; Academy — cover" loading="lazy">
                     </div>
                 </a>
 
-                <a href="project-pmu.html" class="project-card horizontal project-card--live">
-                    <div class="project-info">
-                        <div class="project-info-content">
-                            <h3>TH Academy — case study</h3>
-                            <p class="project-description">Screens, flows, and design decisions for the microblading academy LMS — a Progressive Web App used mostly on phones by students and the instructor, with a full desktop experience too.</p>
-                        </div>
-                        <div class="project-info-actions">
-                            <span class="btn btn-secondary-outline small">View Live Site</span>
-                        </div>
-                    </div>
-                    <div class="project-image project-image--wireframe" role="img" aria-label="TH Academy case study — design preview">
-                        <div class="project-image-wireframe-inner">
-                            <svg class="project-image-wireframe-icon" width="88" height="88" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <rect x="5" y="9" width="54" height="40" rx="4" stroke="currentColor" stroke-width="2"/>
-                                <path d="M5 22h54M5 31h54M5 40h38" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 4" opacity="0.55"/>
-                                <rect x="45" y="35" width="10" height="8" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
-                                <path d="M26 53h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                        </div>
-                    </div>
-                </a>
             </div>
         </section>
 
@@ -380,6 +372,76 @@
                 setTimeout(function() { preloader.remove(); }, 600);
             }
         });
+
+    </script>
+
+    <script>
+    /* ── Always start at the very top on load/reload ────────────── */
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+
+    /* ── Hero intro list: scroll-to-reveal ─────────────────────────
+       While the page is at the top, each downward scroll/swipe
+       reveals the next list item. Only after all 3 are shown does
+       the page scroll freely.
+    ───────────────────────────────────────────────────────────────── */
+    (function () {
+        const items = Array.from(document.querySelectorAll('.hero-intro-list li'));
+        if (!items.length) return;
+
+        let revealed = 0;
+        let locked = true;
+        let busy = false;
+
+        function revealNext() {
+            if (busy || revealed >= items.length) return;
+            busy = true;
+            items[revealed].classList.add('visible');
+            revealed++;
+            setTimeout(() => { busy = false; }, 380);
+
+            if (revealed >= items.length) {
+                setTimeout(() => { locked = false; }, 420);
+            }
+        }
+
+        /* Wheel */
+        window.addEventListener('wheel', function (e) {
+            if (!locked) return;
+            if (window.scrollY > 10) { locked = false; return; }
+            if (e.deltaY > 0) {
+                e.preventDefault();
+                revealNext();
+            }
+        }, { passive: false });
+
+        /* Touch */
+        let touchY = 0;
+        window.addEventListener('touchstart', function (e) {
+            touchY = e.touches[0].clientY;
+        }, { passive: true });
+        window.addEventListener('touchmove', function (e) {
+            if (!locked) return;
+            if (window.scrollY > 10) { locked = false; return; }
+            const dy = touchY - e.touches[0].clientY;
+            if (dy > 18) {
+                e.preventDefault();
+                touchY = e.touches[0].clientY;
+                revealNext();
+            }
+        }, { passive: false });
+
+        /* Keyboard */
+        window.addEventListener('keydown', function (e) {
+            if (!locked) return;
+            if (['ArrowDown', 'PageDown', 'Space'].includes(e.code)) {
+                e.preventDefault();
+                revealNext();
+            }
+        });
+    })();
     </script>
 </body>
 </html>
