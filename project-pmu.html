@@ -2532,10 +2532,12 @@
         .cs-role-panel--2 { background: #E0EDDA; }
         .cs-role-panel--3 { background: #D5E5F5; }
         .cs-role-icon {
-            width: 28px; height: 28px;
+            width: 40px; height: 40px;
             flex-shrink: 0;
-            color: rgba(0,0,0,.35);
         }
+        .cs-role-panel--1 .cs-role-icon { color: #B8783A; }
+        .cs-role-panel--2 .cs-role-icon { color: #4E9445; }
+        .cs-role-panel--3 .cs-role-icon { color: #3A7BB8; }
         .cs-role-title {
             font-size: var(--text-h2);
             font-weight: 300; color: rgba(0,0,0,.65);
@@ -2577,19 +2579,53 @@
             font-weight: 300; letter-spacing: -.02em; line-height: 1.1;
             color: var(--ink-1);
         }
+        .cs-scroll-wf-sub {
+            margin-top: var(--sp-3);
+            font-family: var(--font-body);
+            font-size: 14px;
+            font-weight: 300;
+            color: rgba(14,14,14,0.5);
+            line-height: 1.5;
+        }
         .cs-scroll-wf-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--grid-gap);
+            display: flex;
+            justify-content: center;
+            gap: 56px;
             align-items: start;
         }
+        #pmu-scroll-col {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            width: 368px;
+            flex-shrink: 0;
+        }
+        .cs-scroll-wf-col-headers {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding-bottom: var(--sp-4);
+            border-bottom: 1px solid rgba(14,14,14,0.10);
+            margin-bottom: var(--sp-3);
+        }
+        .cs-scroll-wf-col-label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--ink-label, rgba(14,14,14,0.4));
+        }
         .cs-scroll-item {
-            padding: var(--sp-6) 0;
+            padding: var(--sp-5) 0;
+            height: 827px;
             display: flex;
             flex-direction: column;
             gap: var(--sp-3);
-            min-height: 600px;
+            min-height: 620px;
             justify-content: center;
+            align-items: flex-start;
+            text-align: left;
+            width: 100%;
         }
         .cs-scroll-item-label {
             /* 12px uppercase — min size for AA label */
@@ -2598,25 +2634,34 @@
             color: var(--ink-label);
         }
         .cs-scroll-item-img {
-            border-radius: 18px;
+            border-radius: 24px;
             overflow: hidden;
-            max-width: 300px;
+            width: 368px;
+            flex: 1;
+            min-height: 0;
+            flex-shrink: 0;
             border: 1px solid rgba(14,14,14,0.08);
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
         }
         .cs-scroll-item-img img {
             width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: top;
             display: block;
-            border-radius: 0;
-            box-shadow: none;
         }
         .cs-scroll-role-tag {
             display: inline-flex; align-items: center;
-            font-size: 12px; font-weight: 600;
+            font-size: 10px; font-weight: 600;
             letter-spacing: 0.06em; text-transform: uppercase;
-            padding: 5px 12px;
+            padding: 3px 8px;
             border-radius: 100px;
             border: 1px solid;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
         .cs-scroll-role-tag--admin { color: #3a6b32; border-color: #b0d4a8; background: #E0EDDA; }
         .cs-scroll-role-tag--builder { color: #2a5080; border-color: #a8c4e0; background: #D5E5F5; }
@@ -2631,11 +2676,13 @@
             font-weight: 300;
             line-height: 1.6;
             color: var(--ink-1);
-            max-width: 280px;
+            max-width: 320px;
         }
         .cs-sticky-hifi {
             position: sticky; top: 120px;
-            display: flex; flex-direction: column; align-items: center; gap: var(--sp-3);
+            display: flex; flex-direction: column; align-items: flex-start; gap: var(--sp-3);
+            flex-shrink: 0;
+            width: 368px;
         }
         .cs-sticky-hifi-label {
             font-size: var(--text-label); font-weight: 600;
@@ -2683,8 +2730,27 @@
         .cs-hifi-screen.active { display: block; }
         .cs-hifi-screen img, .cs-hifi-screen video { width: 100%; display: block; }
         @media (max-width: 768px) {
-            .cs-scroll-wf-grid { grid-template-columns: 1fr; gap: 0; }
-            .cs-sticky-hifi { display: none; }
+            .cs-scroll-wf-grid { flex-direction: row; gap: 8px; align-items: start; }
+            #pmu-scroll-col { width: calc(50% - 4px); flex-shrink: 0; align-items: flex-start; }
+            .cs-scroll-item { align-items: flex-start; text-align: left; min-height: unset; padding: var(--sp-4) 0; }
+            .cs-scroll-item-img {
+                width: 100%;
+                height: auto;
+                aspect-ratio: 368 / 822;
+                border-radius: 16px;
+            }
+            .cs-scroll-item-title { font-size: 13px; }
+            .cs-scroll-item-desc { font-size: 12px; max-width: 100%; }
+            .cs-sticky-hifi {
+                display: flex;
+                width: calc(50% - 4px);
+                flex-shrink: 0;
+                top: 80px;
+            }
+            .cs-phone-shell { max-width: 100%; border-radius: 28px; border-width: 5px; }
+            .cs-phone-notch { width: 54px; height: 18px; border-radius: 0 0 12px 12px; }
+            .cs-phone-status-bar { height: 28px; padding: 4px 14px 2px; }
+            .cs-phone-time { font-size: 10px; }
         }
 
         /* ── Hi-fi screens grid — phone bubbles ── */
@@ -2944,6 +3010,36 @@
             .cs-review-arrow { display: none; }
         }
 
+        /* ── Screens row ── */
+        .cs-screens-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1px;
+            width: 100vw;
+            margin-left: calc(50% - 50vw);
+            background: var(--line);
+        }
+        .cs-screens-img {
+            width: 100%;
+            height: 600px;
+            display: block;
+            object-fit: contain;
+            object-position: center;
+        }
+        .cs-screens-img:first-child {
+            object-fit: cover;
+            object-position: center;
+            background: none;
+        }
+        .cs-screens-img:last-child {
+            object-fit: cover;
+            object-position: center;
+            background: none;
+        }
+        @media (max-width: 768px) {
+            .cs-screens-row { grid-template-columns: 1fr; }
+        }
+
         /* ── Design System section ── */
         .cs-ds-section {
             width: 100%;
@@ -3036,7 +3132,7 @@
             <div class="logo-container">
                 <a href="index.html" class="logo-link">
                     <img src="assets/ga-logo.svg" alt="Gloria Logo" class="logo">
-                    <span class="logo-greeting" aria-hidden="true">That's me.</span>
+                    <span class="logo-greeting" aria-hidden="true">← I made this.</span>
                 </a>
             </div>
             <button class="menu-toggle" aria-label="Toggle menu">
@@ -3079,12 +3175,12 @@
                     <span class="cs-hero-meta-v">PWA · Mobile-first</span>
                 </div>
                 <div class="cs-hero-meta-item">
-                    <span class="cs-hero-meta-k">Year</span>
-                    <span class="cs-hero-meta-v">2026</span>
-                </div>
-                <div class="cs-hero-meta-item">
                     <span class="cs-hero-meta-k">Workflow</span>
                     <span class="cs-hero-meta-v">Designer + AI</span>
+                </div>
+                <div class="cs-hero-meta-item">
+                    <span class="cs-hero-meta-k">Year</span>
+                    <span class="cs-hero-meta-v">2026</span>
                 </div>
             </div>
         </section>
@@ -3131,7 +3227,7 @@
             <!-- Three roles panel -->
             <div class="cs-roles-panel">
                 <div class="cs-role-panel cs-role-panel--1">
-                    <svg class="cs-role-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.657 2.686 3 6 3s6-1.343 6-3v-5"/></svg>
+                    <svg class="cs-role-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.657 2.686 3 6 3s6-1.343 6-3v-5"/></svg>
                     <div>
                         <p class="cs-role-title">Student</p>
                         <div class="cs-role-items">
@@ -3143,7 +3239,7 @@
                     </div>
                 </div>
                 <div class="cs-role-panel cs-role-panel--3">
-                    <svg class="cs-role-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                    <svg class="cs-role-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
                     <div>
                         <p class="cs-role-title">Course Builder</p>
                         <div class="cs-role-items">
@@ -3155,7 +3251,7 @@
                     </div>
                 </div>
                 <div class="cs-role-panel cs-role-panel--2">
-                    <svg class="cs-role-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                    <svg class="cs-role-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
                     <div>
                         <p class="cs-role-title">Admin</p>
                         <div class="cs-role-items">
@@ -3180,91 +3276,83 @@
                     <!-- Left: scrollable low-fi -->
                     <div id="pmu-scroll-col">
                         <div class="cs-scroll-item" data-wf-index="0">
-                            
-                            <div class="cs-scroll-item-img">
-                                <img src="assets/14.png" alt="Scoreboard wireframe" loading="lazy" decoding="async">
-                            </div>
                             <div>
                                 <span class="cs-scroll-role-tag cs-scroll-role-tag--admin">Admin</span>
                                 <p class="cs-scroll-item-title">Scoreboard</p>
                                 <p class="cs-scroll-item-desc">The trainer's home screen. A quick overview of all students and what needs attention.</p>
                             </div>
+                            <div class="cs-scroll-item-img">
+                                <img src="assets/14.png" alt="Scoreboard wireframe" loading="lazy" decoding="async">
+                            </div>
                         </div>
                         <div class="cs-scroll-item" data-wf-index="1">
-                            
-                            <div class="cs-scroll-item-img">
-                                <img src="assets/16.png" alt="Students list wireframe" loading="lazy" decoding="async">
-                            </div>
                             <div>
                                 <span class="cs-scroll-role-tag cs-scroll-role-tag--admin">Admin</span>
                                 <p class="cs-scroll-item-title">Students List</p>
                                 <p class="cs-scroll-item-desc">All students in one place. Filter by status, course, or feedback state.</p>
                             </div>
+                            <div class="cs-scroll-item-img">
+                                <img src="assets/16.png" alt="Students list wireframe" loading="lazy" decoding="async">
+                            </div>
                         </div>
                         <div class="cs-scroll-item" data-wf-index="2">
-                            
-                            <div class="cs-scroll-item-img">
-                                <img src="assets/12.png" alt="Course builder wireframe" loading="lazy" decoding="async">
-                            </div>
                             <div>
                                 <span class="cs-scroll-role-tag cs-scroll-role-tag--builder">Course Builder</span>
                                 <p class="cs-scroll-item-title">Course Builder</p>
                                 <p class="cs-scroll-item-desc">The trainer creates a course — adds theory, builds levels, and publishes when ready.</p>
                             </div>
+                            <div class="cs-scroll-item-img">
+                                <img src="assets/12.png" alt="Course builder wireframe" loading="lazy" decoding="async">
+                            </div>
                         </div>
                         <div class="cs-scroll-item" data-wf-index="3">
-                            
-                            <div class="cs-scroll-item-img">
-                                <img src="assets/13.png" alt="Level chat wireframe" loading="lazy" decoding="async">
-                            </div>
                             <div>
                                 <span class="cs-scroll-role-tag cs-scroll-role-tag--admin">Admin</span>
                                 <p class="cs-scroll-item-title">Level Chat</p>
                                 <p class="cs-scroll-item-desc">The feedback channel for each level. The trainer reviews and approves or returns.</p>
                             </div>
+                            <div class="cs-scroll-item-img">
+                                <img src="assets/13.png" alt="Level chat wireframe" loading="lazy" decoding="async">
+                            </div>
                         </div>
                         <div class="cs-scroll-item" data-wf-index="4">
-                            
-                            <div class="cs-scroll-item-img">
-                                <img src="assets/19.png" alt="Level progress wireframe" loading="lazy" decoding="async">
-                            </div>
                             <div>
                                 <span class="cs-scroll-role-tag cs-scroll-role-tag--student">Student</span>
                                 <p class="cs-scroll-item-title">Level Progress</p>
                                 <p class="cs-scroll-item-desc">The student's view of their course — which levels are done, in progress, or locked.</p>
                             </div>
+                            <div class="cs-scroll-item-img">
+                                <img src="assets/19.png" alt="Level progress wireframe" loading="lazy" decoding="async">
+                            </div>
                         </div>
                         <div class="cs-scroll-item" data-wf-index="5">
-                            
-                            <div class="cs-scroll-item-img">
-                                <img src="assets/22.png" alt="Student profile wireframe" loading="lazy" decoding="async">
-                            </div>
                             <div>
                                 <span class="cs-scroll-role-tag cs-scroll-role-tag--admin">Admin</span>
                                 <p class="cs-scroll-item-title">Student Profile</p>
                                 <p class="cs-scroll-item-desc">Individual student view — enrolled courses, progress status, and certificates.</p>
                             </div>
+                            <div class="cs-scroll-item-img">
+                                <img src="assets/22.png" alt="Student profile wireframe" loading="lazy" decoding="async">
+                            </div>
                         </div>
                         <div class="cs-scroll-item" data-wf-index="6">
-                            
-                            <div class="cs-scroll-item-img">
-                                <img src="assets/20.png" alt="Courses wireframe" loading="lazy" decoding="async">
-                            </div>
                             <div>
                                 <span class="cs-scroll-role-tag cs-scroll-role-tag--builder">Course Builder</span>
                                 <p class="cs-scroll-item-title">Courses</p>
                                 <p class="cs-scroll-item-desc">All published courses in one place. Each shows how many students are enrolled.</p>
                             </div>
+                            <div class="cs-scroll-item-img">
+                                <img src="assets/20.png" alt="Courses wireframe" loading="lazy" decoding="async">
+                            </div>
                         </div>
                         <div class="cs-scroll-item" data-wf-index="7">
-                            
-                            <div class="cs-scroll-item-img">
-                                <img src="assets/9.png" alt="Student dashboard wireframe" loading="lazy" decoding="async">
-                            </div>
                             <div>
                                 <span class="cs-scroll-role-tag cs-scroll-role-tag--student">Student</span>
                                 <p class="cs-scroll-item-title">Student Dashboard</p>
                                 <p class="cs-scroll-item-desc">The student's home — active courses, progress bars, and a quick way to continue.</p>
+                            </div>
+                            <div class="cs-scroll-item-img">
+                                <img src="assets/9.png" alt="Student dashboard wireframe" loading="lazy" decoding="async">
                             </div>
                         </div>
                     </div>
@@ -3387,26 +3475,10 @@
                 </div>
             </section>
 
-            <!-- Core Feature + Design Decision (split) -->
-            <div class="cs-feat-split">
-                <div class="cs-feat-left">
-                    <h2 class="cs-feat-title">The review loop</h2>
-                    <p class="cs-feat-text">Each level has its own chat. The trainer reviews the submission, previews the level content, then approves — unlocking the next level — or returns it for correction. Feedback stays in context.</p>
-                    <div class="cs-feat-img-row">
-                        <img class="cs-feat-img" src="assets/3.3.png" alt="The review loop — app screen" loading="lazy" decoding="async">
-                        <div class="cs-status-row cs-status-row--col">
-                            <span class="cs-st cs-st--completed"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Completed</span>
-                            <span class="cs-st cs-st--progress"><svg width="7" height="7" viewBox="0 0 10 10" fill="currentColor"><circle cx="5" cy="5" r="5"/></svg> In progress</span>
-                            <span class="cs-st cs-st--locked"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Locked</span>
-                            <span class="cs-st cs-st--correction"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg> For correction</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="cs-feat-right">
-                    <h2 class="cs-feat-title">One photo per level</h2>
-                    <p class="cs-feat-text">We worked this out with the trainer. With 20 students, each sending 3–4 photos per level — that adds up. One photo slot, replaceable. Plus two text messages for context. Simple constraint, clear result.</p>
-                    <img class="cs-feat-img" src="assets/9.9.png" alt="One photo per level — app screen" loading="lazy" decoding="async">
-                </div>
+            <!-- TH Screens showcase -->
+            <div class="cs-screens-row">
+                <img src="assets/TH-tablet-mob.png" alt="TH Academy — tablet and mobile" loading="lazy" decoding="async" class="cs-screens-img">
+                <img src="assets/TH-mockup-1.png" alt="TH Academy — mockup" loading="lazy" decoding="async" class="cs-screens-img">
             </div>
 
             <!-- Design System -->
@@ -3550,9 +3622,35 @@
             lastScrollY = currentY;
         }, { passive: true });
 
+        // Footer expand on scroll
+        const footer = document.getElementById('contact');
+        if (footer) {
+            const footerObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        footer.classList.add('footer--expanded');
+                    } else {
+                        footer.classList.remove('footer--expanded');
+                    }
+                });
+            }, { threshold: 0.05 });
+            footerObserver.observe(footer);
+
+            const contactNavLink = document.querySelector('a[href="#contact"]');
+            if (contactNavLink) {
+                contactNavLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    footer.classList.add('footer--no-transition', 'footer--expanded');
+                    requestAnimationFrame(() => {
+                        footer.classList.remove('footer--no-transition');
+                        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+                    });
+                });
+            }
+        }
+
         // Pulsing get-in-touch button when footer is visible
         const getInTouchBtn = document.getElementById('get-in-touch-btn');
-        const footer = document.getElementById('contact');
         let pulseTimeout = null;
 
         function startPulsing() {

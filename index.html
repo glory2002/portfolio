@@ -44,7 +44,7 @@
             <div class="logo-container">
                 <a href="index.html" class="logo-link">
                     <img src="assets/ga-logo.svg" alt="Gloria Logo" class="logo">
-                    <span class="logo-greeting" aria-hidden="true">That's me.</span>
+                    <span class="logo-greeting" aria-hidden="true">← I made this.</span>
                 </a>
             </div>
             <button class="menu-toggle" aria-label="Toggle menu">
@@ -63,29 +63,60 @@
     <div class="container">
         <!-- Hero Section -->
         <section class="hero">
-            <div class="hero-wrapper">
-                <div class="hero-content">
-                    <div class="hero-text">
-                        <h1><span class="hero-h1-intro">Hallo! I'm</span>Gloria Angelova</h1>
-                        <ul class="hero-intro-list">
-                            <li>UX / UI Designer</li>
-                            <li>AI Explorer</li>
-                            <li>Embroidery Lover</li>
-                        </ul>
-                    </div>
-                    <div class="hero-location">
-                        <span class="hero-location-place">Based in Eindhoven, NL</span>
-                        <span class="hero-location-available">
-                            <span class="hero-available-dot"></span>
-                            Available remotely
-                        </span>
+
+            <!-- Cursor-follow photo (shown on name hover) -->
+            <div class="hero-hover-photo" id="hero-hover-photo">
+                <img src="assets/gloria-profile-about-new.png" alt="Gloria Angelova">
+            </div>
+
+            <!-- Content -->
+            <div class="hero-content">
+
+                <!-- Mobile only photo -->
+                <div class="hero-mobile-photo">
+                    <img src="assets/gloria-profile-about-new.png" alt="Gloria Angelova">
+                </div>
+
+                <div class="hero-location">
+                    <span class="hero-location-place">Based in Eindhoven, NL</span>
+                    <span class="hero-location-available">
+                        <span class="hero-available-dot"></span>
+                        Available remotely
+                    </span>
+                </div>
+
+                <div class="hero-text">
+                    <div class="hero-name-block">
+                        <span class="hero-h1-intro">Hallo! I'm</span>
+                        <div class="hero-name-wrapper">
+                            <div class="hero-name-tip" id="hero-name-tip">
+                                <span class="hero-name-tip-text">Go on, hover my name</span>
+                                <svg class="hero-name-tip-arrow" width="80" height="70" viewBox="0 0 80 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M70 8 C60 10, 20 20, 10 58" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+                                    <path d="M10 58 L6 46 M10 58 L22 52" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+                                </svg>
+                            </div>
+                            <h1><span class="hero-name" id="hero-name-hover">Gloria Angelova</span></h1>
+                        </div>
+                        <p class="hero-tagline">
+                            <span>UX / UI Designer</span>
+                            <span class="hero-tagline-sep">·</span>
+                            <span>AI Explorer</span>
+                            <span class="hero-tagline-sep">·</span>
+                            <span>Embroidery Lover</span>
+                        </p>
                     </div>
                 </div>
-                <div class="hero-image-container">
-                    <div class="hero-image-wrapper">
-                        <img src="assets/gloria-profile-about-new.png" alt="Gloria Angelova">
+
+                <div class="hero-bottom">
+                    <div class="hero-scroll-cue">
+                        <div class="hero-scroll-circle">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                        </div>
+                        <span>Scroll to see my projects</span>
                     </div>
                 </div>
+
             </div>
         </section>
 
@@ -95,82 +126,53 @@
                 <h2 class="section-title">Projects</h2>
             </div>
 
-            <div class="projects-list">
+            <div class="projects-list projects-editorial">
+
                 <!-- Project 1 -->
-                <a href="project-locked.html" class="project-card horizontal project-card--no-bg">
-                    <div class="project-info">
-                        <div class="project-info-content">
-                            <h3>Legacy Enterprise Platform</h3>
-                            <div class="project-tags">
-                                <span class="tag">UI Design</span>
-                                <span class="tag">Legacy System</span>
-                                <span class="tag">CSS Implementation</span>
-                            </div>
-                            <p class="project-description">Full UI modernization of a decade-old enterprise platform — improved visual hierarchy, design system, and consistency.</p>
+                <a href="project-locked.html" class="project-card project-editorial-card">
+                    <div class="pe-header">
+                        <h3 class="pe-title">Legacy Enterprise<br>Platform</h3>
+                        <div class="pe-meta">
+                            <span class="pe-type">UI Design · Legacy System · CSS Implementation</span>
                         </div>
-                        <div class="project-info-actions">
-                            <span class="btn btn-secondary-outline small btn-lock">
-                                <svg width="14" height="14" viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-right:8px;position:relative;z-index:1;">
-                                    <rect x="2" y="6.5" width="11" height="7.5" rx="2"/>
-                                    <path d="M5 6.5V4.5a2.5 2.5 0 0 1 5 0v2"/>
-                                </svg>
-                                <span style="position:relative;z-index:1;">Enter Password</span>
-                            </span>
-                        </div>
+                        <span class="pe-action btn-lock">
+                            <svg width="12" height="12" viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6.5" width="11" height="7.5" rx="2"/><path d="M5 6.5V4.5a2.5 2.5 0 0 1 5 0v2"/></svg>
+                            Enter Password
+                        </span>
                     </div>
-                    <div class="project-image project-image--wireframe" role="img" aria-label="Modernizing a Legacy Insurance Platform — design preview">
-                        <div class="project-image-wireframe-inner">
-                            <img src="assets/cs_cover_v3.svg" alt="Configuration Studio cover" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;">
-                            <svg class="project-image-wireframe-icon" width="88" height="88" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:none;">
-                                <rect x="5" y="9" width="54" height="40" rx="4" stroke="currentColor" stroke-width="2"/>
-                                <path d="M5 22h54M5 31h54M5 40h38" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 4" opacity="0.55"/>
-                                <rect x="45" y="35" width="10" height="8" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
-                                <path d="M26 53h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
+                    <div class="pe-image">
+                        <img src="assets/cs_cover_v3.svg" alt="Configuration Studio cover" loading="lazy" decoding="async">
+                    </div>
+                </a>
+
+                <!-- Project 2 -->
+                <a href="project-locked-pmu.html" class="project-card project-editorial-card">
+                    <div class="pe-header">
+                        <h3 class="pe-title">TH Academy</h3>
+                        <div class="pe-meta">
+                            <span class="pe-type">UI/UX Design · PWA · Mobile-first</span>
                         </div>
+                        <span class="pe-action btn-lock">
+                            <svg width="12" height="12" viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6.5" width="11" height="7.5" rx="2"/><path d="M5 6.5V4.5a2.5 2.5 0 0 1 5 0v2"/></svg>
+                            Enter Password
+                        </span>
+                    </div>
+                    <div class="pe-image">
+                        <img src="assets/TH-cover2.png" alt="TH Academy — mobile product mockup" loading="lazy" decoding="async">
                     </div>
                 </a>
 
                 <!-- Project 3 -->
-                <a href="project-locked-pmu.html" class="project-card horizontal project-card--no-bg">
-                    <div class="project-info">
-                        <div class="project-info-content">
-                            <h3>TH Academy</h3>
-                            <div class="project-tags">
-                                <span class="tag">UI/UX Design</span>
-                            </div>
-                            <p class="project-description">Full LMS design for a microblading academy — student onboarding, a realtime instructor feedback loop, course authoring, and certificate generation.</p>
+                <a href="https://tanyahristova-pmu.com/en" class="project-card project-editorial-card" target="_blank" rel="noopener noreferrer">
+                    <div class="pe-header">
+                        <h3 class="pe-title">Tanya Hristova<br>PMU Expert</h3>
+                        <div class="pe-meta">
+                            <span class="pe-type">Live Site · PMU Studio & Academy</span>
                         </div>
-                        <div class="project-info-actions">
-                            <span class="btn btn-secondary-outline small btn-lock">
-                                <svg width="14" height="14" viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-right:8px;position:relative;z-index:1;">
-                                    <rect x="2" y="6.5" width="11" height="7.5" rx="2"/>
-                                    <path d="M5 6.5V4.5a2.5 2.5 0 0 1 5 0v2"/>
-                                </svg>
-                                <span style="position:relative;z-index:1;">Enter Password</span>
-                            </span>
-                        </div>
+                        <span class="pe-action">Explore Live</span>
                     </div>
-                    <div class="project-image project-image--wireframe" role="img" aria-label="TH Academy — design preview">
-                        <div class="project-image-wireframe-inner">
-                            <img src="assets/TH-cover2.png" alt="TH Academy — mobile product mockup" loading="lazy" decoding="async" width="5024" height="5292">
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Live site -->
-                <a href="https://tanyahristova-pmu.com/en" class="project-card horizontal project-card--live project-card--no-bg" target="_blank" rel="noopener noreferrer">
-                    <div class="project-info">
-                        <div class="project-info-content">
-                            <h3>Tanya Hristova - PMU expert</h3>
-                            <p class="project-description">PMU studio &amp; Academy — training and professional services.</p>
-                        </div>
-                        <div class="project-info-actions">
-                            <span class="btn btn-secondary-outline small"><span style="position:relative;z-index:1;">Explore Live</span></span>
-                        </div>
-                    </div>
-                    <div class="project-image">
-                        <img src="assets/TH-cover.png" alt="Tanya Hristova Studio &amp; Academy — cover" loading="lazy">
+                    <div class="pe-image">
+                        <img src="assets/TH-cover.png" alt="Tanya Hristova Studio & Academy — cover" loading="lazy">
                     </div>
                 </a>
 
@@ -380,66 +382,27 @@
     if ('scrollRestoration' in history) {
         history.scrollRestoration = 'manual';
     }
-    window.scrollTo(0, 0);
 
-    /* ── Hero intro list: scroll-to-reveal ─────────────────────────
-       While the page is at the top, each downward scroll/swipe
-       reveals the next list item. Only after all 3 are shown does
-       the page scroll freely.
-    ───────────────────────────────────────────────────────────────── */
+    /* ── Name hover: cursor-following photo ── */
     (function () {
-        const items = Array.from(document.querySelectorAll('.hero-intro-list li'));
-        if (!items.length) return;
+        const nameEl  = document.getElementById('hero-name-hover');
+        const photoEl = document.getElementById('hero-hover-photo');
+        if (!nameEl || !photoEl) return;
 
-        let revealed = 0;
-        let locked = true;
-        let busy = false;
+        document.addEventListener('mousemove', function (e) {
+            photoEl.style.left = e.clientX + 'px';
+            photoEl.style.top  = e.clientY + 'px';
+        });
 
-        function revealNext() {
-            if (busy || revealed >= items.length) return;
-            busy = true;
-            items[revealed].classList.add('visible');
-            revealed++;
-            setTimeout(() => { busy = false; }, 380);
+        const tip = document.getElementById('hero-name-tip');
 
-            if (revealed >= items.length) {
-                setTimeout(() => { locked = false; }, 420);
-            }
-        }
-
-        /* Wheel */
-        window.addEventListener('wheel', function (e) {
-            if (!locked) return;
-            if (window.scrollY > 10) { locked = false; return; }
-            if (e.deltaY > 0) {
-                e.preventDefault();
-                revealNext();
-            }
-        }, { passive: false });
-
-        /* Touch */
-        let touchY = 0;
-        window.addEventListener('touchstart', function (e) {
-            touchY = e.touches[0].clientY;
-        }, { passive: true });
-        window.addEventListener('touchmove', function (e) {
-            if (!locked) return;
-            if (window.scrollY > 10) { locked = false; return; }
-            const dy = touchY - e.touches[0].clientY;
-            if (dy > 18) {
-                e.preventDefault();
-                touchY = e.touches[0].clientY;
-                revealNext();
-            }
-        }, { passive: false });
-
-        /* Keyboard */
-        window.addEventListener('keydown', function (e) {
-            if (!locked) return;
-            if (['ArrowDown', 'PageDown', 'Space'].includes(e.code)) {
-                e.preventDefault();
-                revealNext();
-            }
+        nameEl.addEventListener('mouseenter', function () {
+            photoEl.classList.add('visible');
+            if (tip) { tip.style.animationPlayState = 'paused'; tip.style.opacity = '0'; }
+        });
+        nameEl.addEventListener('mouseleave', function () {
+            photoEl.classList.remove('visible');
+            if (tip) { tip.style.animationPlayState = 'running'; tip.style.opacity = ''; }
         });
     })();
     </script>
