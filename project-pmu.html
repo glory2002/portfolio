@@ -2554,7 +2554,7 @@
 
         /* ── Workflow statement (border top + bottom) ── */
         .cs-workflow-statement {
-            padding: 56px 0 !important;
+            padding: 120px 0 !important;
             box-sizing: border-box;
         }
 
@@ -2667,15 +2667,15 @@
         .cs-scroll-role-tag--builder { color: #2a5080; border-color: #a8c4e0; background: #D5E5F5; }
         .cs-scroll-role-tag--student { color: #8a5a2a; border-color: #e0c0a0; background: #F5E4CE; }
         .cs-scroll-item-title {
-            font-size: var(--text-body-lg); font-weight: 700;
-            color: var(--ink-1); margin-bottom: var(--sp-1);
+            font-size: clamp(20px, 2.5vw, 28px); font-weight: 400;
+            color: var(--ink); margin-bottom: var(--sp-1);
         }
         .cs-scroll-item-desc {
             font-family: var(--font-body);
-            font-size: var(--text-sm);
-            font-weight: 300;
-            line-height: 1.6;
-            color: var(--ink-1);
+            font-size: var(--text-body-lg);
+            font-weight: 400;
+            line-height: 1.55;
+            color: var(--ink);
             max-width: 320px;
         }
         .cs-sticky-hifi {
@@ -2726,8 +2726,18 @@
             align-items: center;
             gap: 6px;
         }
-        .cs-hifi-screen { display: none; width: 100%; }
-        .cs-hifi-screen.active { display: block; }
+        .cs-hifi-screen { 
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            opacity: 0;
+            transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            pointer-events: none;
+        }
+        .cs-hifi-screen.active { 
+            opacity: 1;
+            pointer-events: auto;
+        }
         .cs-hifi-screen img, .cs-hifi-screen video { width: 100%; display: block; }
         @media (max-width: 768px) {
             .cs-scroll-wf-grid { flex-direction: row; gap: 8px; align-items: start; }
@@ -3220,55 +3230,113 @@
 
 
             <!-- Workflow statement -->
-            <section class="cs-section cs-workflow-statement">
-                <p class="cs-workflow-text"><strong>I sketched. Figma Make prototyped. Cursor built.</strong> <span>I directed, selected, and styled. The decisions were mine — the execution was shared. A continuous back-and-forth, not a linear process.</span></p>
-            </section>
-
-            <!-- Three roles panel -->
-            <div class="cs-roles-panel">
-                <div class="cs-role-panel cs-role-panel--1">
-                    <svg class="cs-role-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.657 2.686 3 6 3s6-1.343 6-3v-5"/></svg>
-                    <div>
-                        <p class="cs-role-title">Student</p>
-                        <div class="cs-role-items">
-                            <p>Dashboard &amp; progress</p>
-                            <p>Course levels</p>
-                            <p>Level chat &amp; feedback</p>
-                            <p>Certificates</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="cs-role-panel cs-role-panel--3">
-                    <svg class="cs-role-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
-                    <div>
-                        <p class="cs-role-title">Course Builder</p>
-                        <div class="cs-role-items">
-                            <p>Create &amp; structure courses</p>
-                            <p>Theory &amp; materials</p>
-                            <p>Levels &amp; steps</p>
-                            <p>Draft → Published</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="cs-role-panel cs-role-panel--2">
-                    <svg class="cs-role-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-                    <div>
-                        <p class="cs-role-title">Admin</p>
-                        <div class="cs-role-items">
-                            <p>Scoreboard</p>
-                            <p>Student management</p>
-                            <p>Review &amp; approve levels</p>
-                            <p>Issue certificates</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
             <!-- Scrollable wireframes + sticky hi-fi -->
             <div class="cs-scroll-wf">
+                <h2 class="cs-section-title" style="margin-bottom:32px;margin-top:80px;">Information architecture</h2>
+                <div style="margin-bottom:32px;">
+                    <img src="assets/ia.png" alt="Information architecture" loading="lazy" decoding="async" style="width:100%;max-width:1280px;height:auto;display:block;">
+                </div>
+                <h2 class="cs-section-title" style="margin-bottom:32px;">Wireframes</h2>
+                <div style="width:100vw;margin-left:calc(50% - 50vw);margin-bottom:0;">
+                    <img src="assets/TH-whireframes.png" alt="TH Academy wireframes" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;">
+                </div>
+
+
+                <section class="cs-section cs-workflow-statement">
+                    <p class="cs-workflow-text"><strong>I sketched. Figma Make prototyped. Cursor built.</strong> <span>I directed, selected, and styled. The decisions were mine — the execution was shared. A continuous back-and-forth, not a linear process.</span></p>
+                </section>
+
+                <!-- Three roles panel -->
+                <div class="cs-roles-panel" id="roles-panel">
+                    <div class="cs-role-panel cs-role-panel--1" style="--rp-dl:0s">
+                        <svg class="cs-role-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.657 2.686 3 6 3s6-1.343 6-3v-5"/></svg>
+                        <div>
+                            <p class="cs-role-title">Student</p>
+                            <div class="cs-role-items">
+                                <p>Dashboard &amp; progress</p>
+                                <p>Course levels</p>
+                                <p>Level chat &amp; feedback</p>
+                                <p>Certificates</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cs-role-panel cs-role-panel--3" style="--rp-dl:0.12s">
+                        <svg class="cs-role-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                        <div>
+                            <p class="cs-role-title">Course Builder</p>
+                            <div class="cs-role-items">
+                                <p>Create &amp; structure courses</p>
+                                <p>Theory &amp; materials</p>
+                                <p>Levels &amp; steps</p>
+                                <p>Draft → Published</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cs-role-panel cs-role-panel--2" style="--rp-dl:0.24s">
+                        <svg class="cs-role-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                        <div>
+                            <p class="cs-role-title">Admin</p>
+                            <div class="cs-role-items">
+                                <p>Scoreboard</p>
+                                <p>Student management</p>
+                                <p>Review &amp; approve levels</p>
+                                <p>Issue certificates</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <style>
+                    .cs-role-panel {
+                        opacity: 0;
+                        transform: translateY(40px);
+                        transition:
+                            opacity   0.7s cubic-bezier(0.16, 1, 0.3, 1) var(--rp-dl, 0s),
+                            transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) var(--rp-dl, 0s);
+                    }
+                    #roles-panel.rp-visible .cs-role-panel {
+                        opacity: 1;
+                        transform: none;
+                    }
+                    .cs-role-icon {
+                        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) calc(var(--rp-dl, 0s) + 0.3s);
+                        transform: scale(0.6) rotate(-15deg);
+                        transform-origin: center;
+                    }
+                    #roles-panel.rp-visible .cs-role-icon {
+                        transform: scale(1) rotate(0deg);
+                    }
+                    .cs-role-items p {
+                        opacity: 0;
+                        transform: translateX(-8px);
+                        transition:
+                            opacity   0.4s ease calc(var(--rp-dl, 0s) + 0.4s),
+                            transform 0.4s ease calc(var(--rp-dl, 0s) + 0.4s);
+                    }
+                    .cs-role-items p:nth-child(2) { transition-delay: calc(var(--rp-dl, 0s) + 0.48s); }
+                    .cs-role-items p:nth-child(3) { transition-delay: calc(var(--rp-dl, 0s) + 0.56s); }
+                    .cs-role-items p:nth-child(4) { transition-delay: calc(var(--rp-dl, 0s) + 0.64s); }
+                    #roles-panel.rp-visible .cs-role-items p {
+                        opacity: 1;
+                        transform: none;
+                    }
+                </style>
+                <script>
+                (function() {
+                    var panel = document.getElementById('roles-panel');
+                    if (!panel) return;
+                    var io = new IntersectionObserver(function(entries) {
+                        if (entries[0].isIntersecting) {
+                            panel.classList.add('rp-visible');
+                        } else {
+                            panel.classList.remove('rp-visible');
+                        }
+                    }, { threshold: 0.25 });
+                    io.observe(panel);
+                })();
+                </script>
+
                 <div class="cs-scroll-wf-intro">
-                    <span class="cs-brief-eyebrow">From low-fi to high-fi</span>
                     <h2 class="cs-scroll-wf-title">Same structure.<br>Different execution.</h2>
                 </div>
 
@@ -3281,18 +3349,12 @@
                                 <p class="cs-scroll-item-title">Scoreboard</p>
                                 <p class="cs-scroll-item-desc">The trainer's home screen. A quick overview of all students and what needs attention.</p>
                             </div>
-                            <div class="cs-scroll-item-img">
-                                <img src="assets/14.png" alt="Scoreboard wireframe" loading="lazy" decoding="async">
-                            </div>
                         </div>
                         <div class="cs-scroll-item" data-wf-index="1">
                             <div>
                                 <span class="cs-scroll-role-tag cs-scroll-role-tag--admin">Admin</span>
                                 <p class="cs-scroll-item-title">Students List</p>
                                 <p class="cs-scroll-item-desc">All students in one place. Filter by status, course, or feedback state.</p>
-                            </div>
-                            <div class="cs-scroll-item-img">
-                                <img src="assets/16.png" alt="Students list wireframe" loading="lazy" decoding="async">
                             </div>
                         </div>
                         <div class="cs-scroll-item" data-wf-index="2">
@@ -3301,18 +3363,12 @@
                                 <p class="cs-scroll-item-title">Course Builder</p>
                                 <p class="cs-scroll-item-desc">The trainer creates a course — adds theory, builds levels, and publishes when ready.</p>
                             </div>
-                            <div class="cs-scroll-item-img">
-                                <img src="assets/12.png" alt="Course builder wireframe" loading="lazy" decoding="async">
-                            </div>
                         </div>
                         <div class="cs-scroll-item" data-wf-index="3">
                             <div>
                                 <span class="cs-scroll-role-tag cs-scroll-role-tag--admin">Admin</span>
                                 <p class="cs-scroll-item-title">Level Chat</p>
                                 <p class="cs-scroll-item-desc">The feedback channel for each level. The trainer reviews and approves or returns.</p>
-                            </div>
-                            <div class="cs-scroll-item-img">
-                                <img src="assets/13.png" alt="Level chat wireframe" loading="lazy" decoding="async">
                             </div>
                         </div>
                         <div class="cs-scroll-item" data-wf-index="4">
@@ -3321,18 +3377,12 @@
                                 <p class="cs-scroll-item-title">Level Progress</p>
                                 <p class="cs-scroll-item-desc">The student's view of their course — which levels are done, in progress, or locked.</p>
                             </div>
-                            <div class="cs-scroll-item-img">
-                                <img src="assets/19.png" alt="Level progress wireframe" loading="lazy" decoding="async">
-                            </div>
                         </div>
                         <div class="cs-scroll-item" data-wf-index="5">
                             <div>
                                 <span class="cs-scroll-role-tag cs-scroll-role-tag--admin">Admin</span>
                                 <p class="cs-scroll-item-title">Student Profile</p>
                                 <p class="cs-scroll-item-desc">Individual student view — enrolled courses, progress status, and certificates.</p>
-                            </div>
-                            <div class="cs-scroll-item-img">
-                                <img src="assets/22.png" alt="Student profile wireframe" loading="lazy" decoding="async">
                             </div>
                         </div>
                         <div class="cs-scroll-item" data-wf-index="6">
@@ -3341,18 +3391,12 @@
                                 <p class="cs-scroll-item-title">Courses</p>
                                 <p class="cs-scroll-item-desc">All published courses in one place. Each shows how many students are enrolled.</p>
                             </div>
-                            <div class="cs-scroll-item-img">
-                                <img src="assets/20.png" alt="Courses wireframe" loading="lazy" decoding="async">
-                            </div>
                         </div>
                         <div class="cs-scroll-item" data-wf-index="7">
                             <div>
                                 <span class="cs-scroll-role-tag cs-scroll-role-tag--student">Student</span>
                                 <p class="cs-scroll-item-title">Student Dashboard</p>
                                 <p class="cs-scroll-item-desc">The student's home — active courses, progress bars, and a quick way to continue.</p>
-                            </div>
-                            <div class="cs-scroll-item-img">
-                                <img src="assets/9.png" alt="Student dashboard wireframe" loading="lazy" decoding="async">
                             </div>
                         </div>
                     </div>
@@ -3385,7 +3429,7 @@
                                     </svg>
                                 </div>
                             </div>
-                            <div>
+                            <div style="position:relative;width:100%;aspect-ratio:368/750;">
                                 <video class="cs-hifi-screen active" src="assets/V.1.mp4" autoplay loop muted playsinline></video>
                                 <video class="cs-hifi-screen" src="assets/V.2.mp4" autoplay loop muted playsinline></video>
                                 <img class="cs-hifi-screen" src="assets/4.44.png" alt="Course builder hi-fi" loading="lazy" decoding="async">
@@ -3405,6 +3449,7 @@
                 var items = document.querySelectorAll('#pmu-scroll-col .cs-scroll-item');
                 var screens = document.querySelectorAll('.cs-hifi-screen');
                 var current = 0;
+
                 function showScreen(idx) {
                     if (idx === current) return;
                     screens[current].classList.remove('active');
@@ -3420,26 +3465,8 @@
             })();
             </script>
 
-            <!-- Hi-fi screens -->
-            <section class="cs-hifi-section">
-                <div style="padding: 80px 0 48px;">
-                    <h2 class="cs-scroll-wf-title">High-fidelity screens</h2>
-                </div>
-                <div class="cs-hifi-grid">
-                    <div class="cs-hifi-row">
-                        <img src="assets/1.1.png" alt="Screen 1" loading="lazy" decoding="async">
-                        <img src="assets/2.2.png" alt="Screen 2" loading="lazy" decoding="async">
-                        <img src="assets/3.3.png" alt="Screen 3" loading="lazy" decoding="async">
-                        <img src="assets/4.4.png" alt="Screen 4" loading="lazy" decoding="async">
-                    </div>
-                    <div class="cs-hifi-row">
-                        <img src="assets/5.5.png" alt="Screen 5" loading="lazy" decoding="async">
-                        <img src="assets/6.6.png" alt="Screen 6" loading="lazy" decoding="async">
-                        <img src="assets/7.7.png" alt="Screen 7" loading="lazy" decoding="async">
-                        <img src="assets/8.8.png" alt="Screen 8" loading="lazy" decoding="async">
-                    </div>
-                </div>
-            </section>
+
+            <!-- TH Screens showcase -->
 
             <!-- Devices section -->
             <section class="cs-devices-section">

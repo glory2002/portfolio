@@ -27,7 +27,7 @@
     <link rel="apple-touch-icon" href="assets/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Caveat:wght@500&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="styles.css?v=6.5">
 </head>
 <body>
@@ -99,7 +99,9 @@
                             <span class="hero-tagline-sep">·</span>
                             <span>AI Explorer</span>
                             <span class="hero-tagline-sep">·</span>
-                            <span>Embroidery Lover</span>
+                            <span>Creative Technologist</span>
+                            <span class="hero-tagline-sep">·</span>
+                            <span style="font-family:'Caveat',cursive;font-size:1.45em;font-weight:500;letter-spacing:0.01em;vertical-align:middle;">Embroidery Lover</span>
                         </p>
                     </div>
                 </div>
@@ -118,19 +120,14 @@
 
         <!-- Projects Section -->
         <section id="projects" class="projects-section">
-            <div class="section-header">
-                <h2 class="section-title">Projects</h2>
-            </div>
 
             <div class="projects-list projects-editorial">
 
                 <!-- Project 1 -->
                 <a href="project-locked.html" class="project-card project-editorial-card">
                     <div class="pe-header">
+                        <span class="pe-index">01 / Enterprise</span>
                         <h3 class="pe-title">Legacy Enterprise<br>Platform</h3>
-                        <div class="pe-meta">
-                            <span class="pe-type">UI Design · Legacy System · CSS Implementation</span>
-                        </div>
                         <span class="pe-action btn-lock">
                             <svg width="12" height="12" viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6.5" width="11" height="7.5" rx="2"/><path d="M5 6.5V4.5a2.5 2.5 0 0 1 5 0v2"/></svg>
                             Enter Password
@@ -144,10 +141,8 @@
                 <!-- Project 2 -->
                 <a href="project-locked-pmu.html" class="project-card project-editorial-card">
                     <div class="pe-header">
+                        <span class="pe-index">02 / Product Design</span>
                         <h3 class="pe-title">TH Academy</h3>
-                        <div class="pe-meta">
-                            <span class="pe-type">UI/UX Design · PWA · Mobile-first</span>
-                        </div>
                         <span class="pe-action btn-lock">
                             <svg width="12" height="12" viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6.5" width="11" height="7.5" rx="2"/><path d="M5 6.5V4.5a2.5 2.5 0 0 1 5 0v2"/></svg>
                             Enter Password
@@ -161,10 +156,8 @@
                 <!-- Project 3 -->
                 <a href="https://tanyahristova-pmu.com/en" class="project-card project-editorial-card" target="_blank" rel="noopener noreferrer">
                     <div class="pe-header">
+                        <span class="pe-index">03 / Live Website</span>
                         <h3 class="pe-title">Tanya Hristova<br>PMU Expert</h3>
-                        <div class="pe-meta">
-                            <span class="pe-type">Live Site · PMU Studio & Academy</span>
-                        </div>
                         <span class="pe-action">Explore Live</span>
                     </div>
                     <div class="pe-image">
@@ -186,6 +179,10 @@
                         </svg>
                     </a>
                     <p class="footer-tagline">Open to new opportunities and collaborations.<br>Browse my work and feel free to reach out.</p>
+                    <div style="margin-top:20px;display:flex;flex-direction:column;gap:6px;">
+                        <a href="mailto:glory.angelova@gmail.com" style="font-family:var(--font-body);font-size:15px;font-weight:400;color:rgba(255,255,255,0.65);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">glory.angelova@gmail.com</a>
+                        <a href="tel:+31647355880" style="font-family:var(--font-body);font-size:15px;font-weight:400;color:rgba(255,255,255,0.65);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">+31 6 473 55 880</a>
+                    </div>
                 </div>
                 
                 <div class="contact-info-section">
@@ -379,24 +376,59 @@
         history.scrollRestoration = 'manual';
     }
 
-    /* ── Name hover: cursor-following photo ── */
+    /* ── Name hover: magnetic photo ── */
     (function () {
         const nameEl  = document.getElementById('hero-name-hover');
         const photoEl = document.getElementById('hero-hover-photo');
         if (!nameEl || !photoEl) return;
 
-        document.addEventListener('mousemove', function (e) {
-            photoEl.style.left = e.clientX + 'px';
-            photoEl.style.top  = e.clientY + 'px';
-        });
+        const tip    = document.getElementById('hero-name-tip');
+        const MAX    = 14;      /* max magnetic offset px */
+        const LERP   = 0.07;   /* smoothing — lower = lazier */
 
-        const tip = document.getElementById('hero-name-tip');
+        let curX = 0, curY = 0;   /* current lerped magnetic offset */
+        let tgtX = 0, tgtY = 0;   /* target magnetic offset */
+        let baseLeft = 0, baseTop = 0;  /* fixed anchor position */
+        let rafId = null;
+        let active = false;
+
+        function loop() {
+            curX += (tgtX - curX) * LERP;
+            curY += (tgtY - curY) * LERP;
+            photoEl.style.transform = 'translate(' + curX.toFixed(2) + 'px,' + curY.toFixed(2) + 'px)';
+            if (active || Math.abs(tgtX - curX) > 0.1 || Math.abs(tgtY - curY) > 0.1) {
+                rafId = requestAnimationFrame(loop);
+            }
+        }
 
         nameEl.addEventListener('mouseenter', function () {
+            /* Set fixed anchor at name center — stays constant during hover */
+            const r  = nameEl.getBoundingClientRect();
+            baseLeft = r.left + r.width  * 0.5;
+            baseTop  = r.top  + r.height * 0.5;
+            photoEl.style.left = baseLeft + 'px';
+            photoEl.style.top  = baseTop  + 'px';
+
+            curX = 0; curY = 0; tgtX = 0; tgtY = 0;
+            active = true;
             photoEl.classList.add('visible');
+            if (rafId) cancelAnimationFrame(rafId);
+            rafId = requestAnimationFrame(loop);
             if (tip) { tip.style.animationPlayState = 'paused'; tip.style.opacity = '0'; }
         });
+
+        nameEl.addEventListener('mousemove', function (e) {
+            const r  = nameEl.getBoundingClientRect();
+            /* Normalise cursor position within the name: -1 … 1 */
+            const nx = Math.max(-1, Math.min(1, (e.clientX - (r.left + r.width  / 2)) / (r.width  / 2)));
+            const ny = Math.max(-1, Math.min(1, (e.clientY - (r.top  + r.height / 2)) / (r.height / 2)));
+            tgtX = nx * MAX;
+            tgtY = ny * MAX;
+        });
+
         nameEl.addEventListener('mouseleave', function () {
+            active = false;
+            tgtX = 0; tgtY = 0;
             photoEl.classList.remove('visible');
             if (tip) { tip.style.animationPlayState = 'running'; tip.style.opacity = ''; }
         });

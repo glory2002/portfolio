@@ -285,20 +285,23 @@ ul {
         /* Cursor-following photo */
         .hero-hover-photo {
             position: fixed;
-            width: 300px;
-            height: 380px;
+            width: 255px;
+            height: 323px;
             border-radius: 12px;
             overflow: hidden;
             pointer-events: none;
             opacity: 0;
             z-index: 9999;
-            transform: translate(-50%, -65%);
-            transition: opacity 0.25s ease;
-            box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+            transform: translate(0, 0) scale(0.94);
+            transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                        scale    0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.14);
             will-change: transform, left, top;
+            translate: -38% -55%;
         }
         .hero-hover-photo.visible {
             opacity: 1;
+            scale: 1;
         }
         .hero-hover-photo img {
             width: 100%;
@@ -521,7 +524,7 @@ ul {
     font-family: var(--font-body);
     font-size: 15px;
     font-weight: 400;
-    color: var(--ink);
+    color: rgba(14,14,14,0.4);
     white-space: nowrap;
     padding-top: 4px;
 }
@@ -529,11 +532,17 @@ ul {
 .hero-name-tip-arrow {
     flex-shrink: 0;
     margin-top: 2px;
+    animation: tip-arrow-bounce 1.4s ease-in-out infinite;
 }
 
 @keyframes tip-pop {
     0%, 40%, 100% { opacity: 0; transform: translateY(8px); }
     50%, 85%      { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes tip-arrow-bounce {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(6px); }
 }
 
 .hero-scroll-cue {
@@ -915,14 +924,25 @@ ul {
     height: 220px;
 }
 
+.pe-index {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(14,14,14,0.32);
+    display: block;
+    margin-bottom: 8px;
+}
+
 .pe-title {
-    font-family: 'DM Sans', sans-serif;
     font-size: clamp(20px, 2.2vw, 30px);
     font-weight: 400;
     line-height: 1.15;
     letter-spacing: -0.01em;
     color: var(--text-color);
     margin: 0;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .pe-meta {
@@ -951,6 +971,12 @@ ul {
     margin-top: auto;
     font-size: 12px;
     font-weight: 500;
+    opacity: 0.5;
+    transform: translateY(4px);
+    transition: background 0.3s ease,
+                color     0.3s ease,
+                opacity   0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--ink);
@@ -961,9 +987,15 @@ ul {
     transition: background 0.25s ease;
 }
 
+.project-editorial-card:hover .pe-title {
+    transform: none;
+}
+
 .project-editorial-card:hover .pe-action {
     background: var(--ink);
     color: var(--parchment);
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .project-editorial-card:hover .pe-action svg {
@@ -989,7 +1021,7 @@ ul {
 }
 
 .project-editorial-card:hover .pe-image img {
-    transform: scale(1.03);
+    transform: scale(1.05);
 }
 
 @media (max-width: 900px) {
