@@ -365,6 +365,7 @@
             display: flex;
             flex-direction: column;
             gap: 80px;
+            overflow: visible;
         }
 
         .cs-section {
@@ -557,10 +558,14 @@
 
         /* ── Before / After comparison (minimal) ── */
         .cs-compare-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 32px 48px;
             margin-top: 32px;
+        }
+        .cs-compare-cell {
+            flex: 0 1 560px;
         }
 
         .cs-compare-cell {
@@ -826,12 +831,12 @@
                     <span class="cs-hero-meta-v">Insurance</span>
                 </div>
                 <div class="cs-hero-meta-item">
-                    <span class="cs-hero-meta-k">Year</span>
-                    <span class="cs-hero-meta-v">2025</span>
-                </div>
-                <div class="cs-hero-meta-item">
                     <span class="cs-hero-meta-k">Tools</span>
                     <span class="cs-hero-meta-v">Figma · CSS</span>
+                </div>
+                <div class="cs-hero-meta-item">
+                    <span class="cs-hero-meta-k">Year</span>
+                    <span class="cs-hero-meta-v">2025</span>
                 </div>
             </div>
         </section>
@@ -845,10 +850,9 @@
         <div class="cs-body">
 
             <!-- Brief -->
-            <section class="cs-section" style="padding: 64px 0;">
+            <section class="cs-section" style="padding: 0 0 64px;">
                 <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 80px;align-items:start;">
                     <div>
-                        <span style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.13em;color:#0a9396;display:block;margin-bottom:16px;">Overview</span>
                         <p style="font-family:var(--font-body);font-size:clamp(18px,2vw,22px);font-weight:300;line-height:1.55;color:var(--text-color);margin:0;">Redesigning a decade-old enterprise insurance system — improving visual hierarchy, usability, and consistency without touching the underlying architecture.</p>
                         <p style="font-family:var(--font-body);font-size:clamp(18px,2vw,22px);font-weight:300;line-height:1.55;color:var(--text-color);margin:24px 0 0;">A UI modernization project for a 10-year-old enterprise insurance platform used daily by insurance agents across France. The goal was to bring the interface up to modern standards — improving visual clarity, consistency, and usability without restructuring the existing system or workflows.</p>
                     </div>
@@ -882,17 +886,17 @@
                     <div style="padding:32px 40px 32px 0;border-right:1px solid rgba(0,0,0,0.08);">
                         <p style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:#0a9396;margin:0 0 20px;">Architecture</p>
                         <p style="font-size:clamp(18px,2vw,22px);font-weight:300;color:var(--text-color);margin:0 0 12px;line-height:1.25;letter-spacing:-0.01em;">No structural changes</p>
-                        <p style="font-size:14px;color:#888;margin:0;line-height:1.65;font-weight:400;">The existing system architecture had to remain completely untouched.</p>
+                        <p style="font-size:15px;font-weight:400;color:var(--text-color);margin:0;line-height:1.65;">The existing system architecture had to remain completely untouched.</p>
                     </div>
                     <div style="padding:32px 40px;border-right:1px solid rgba(0,0,0,0.08);">
                         <p style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:#0a9396;margin:0 0 20px;">Workflows</p>
                         <p style="font-size:clamp(18px,2vw,22px);font-weight:300;color:var(--text-color);margin:0 0 12px;line-height:1.25;letter-spacing:-0.01em;">Familiar patterns preserved</p>
-                        <p style="font-size:14px;color:#888;margin:0;line-height:1.65;font-weight:400;">Existing user workflows had to remain intact — no relearning for agents.</p>
+                        <p style="font-size:15px;font-weight:400;color:var(--text-color);margin:0;line-height:1.65;">Existing user workflows had to remain intact — no relearning for agents.</p>
                     </div>
                     <div style="padding:32px 0 32px 40px;">
                         <p style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:#0a9396;margin:0 0 20px;">Implementation</p>
                         <p style="font-size:clamp(18px,2vw,22px);font-weight:300;color:var(--text-color);margin:0 0 12px;line-height:1.25;letter-spacing:-0.01em;">CSS only</p>
-                        <p style="font-size:14px;color:#888;margin:0;line-height:1.65;font-weight:400;">All visual improvements through CSS — no HTML restructuring.</p>
+                        <p style="font-size:15px;font-weight:400;color:var(--text-color);margin:0;line-height:1.65;">All visual improvements through CSS — no HTML restructuring.</p>
                     </div>
                 </div>
             </section>
@@ -911,7 +915,7 @@
                         </div>
                         <figcaption style="margin-top:14px;display:flex;flex-direction:column;gap:2px;align-items:center;text-align:center;">
                             <span style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:#0a9396;">TINQIN</span>
-                            <span style="font-size:14px;color:#888;font-weight:400;">Corporate brand</span>
+                            <span style="font-size:15px;font-weight:400;color:var(--text-color);">Corporate brand</span>
                         </figcaption>
                     </figure>
                     <figure style="margin:0;">
@@ -920,7 +924,7 @@
                         </div>
                         <figcaption style="margin-top:14px;display:flex;flex-direction:column;gap:2px;align-items:center;text-align:center;">
                             <span style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:#0a9396;">Configuration Studio</span>
-                            <span style="font-size:14px;color:#888;font-weight:400;">Product logo — designed by me</span>
+                            <span style="font-size:15px;font-weight:400;color:var(--text-color);">Product logo — designed by me</span>
                         </figcaption>
                     </figure>
                 </div>
@@ -931,20 +935,14 @@
             <!-- Design System -->
             <section class="cs-section">
                 <h2 class="cs-section-title">Design system & components</h2>
-                <p class="cs-section-body">Typography, color tokens, form elements, accordions, cards, tables, and tree components — all documented in Figma to ensure consistency and give the front-end team a clear implementation reference.</p>
+                <p class="cs-section-body">I designed the full system in Figma — typography, colour tokens, form elements, accordions, cards, tables, and tree components — then implemented it directly in CSS in close collaboration with the front-end team.</p>
 
-                <div class="ds-carousel" style="position:relative;margin-top:32px;overflow:hidden;">
-                    <div class="ds-carousel-track" style="display:flex;gap:0;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:6px 0 12px;cursor:grab;align-items:center;">
-                        <div class="ds-carousel-slide"><img src="assets/DS-1.png" alt="Design system 1" loading="lazy" decoding="async" class="ds-carousel-img"></div>
-                        <div class="ds-carousel-slide"><img src="assets/DS-2.png" alt="Design system 2" loading="lazy" decoding="async" class="ds-carousel-img"></div>
-                        <div class="ds-carousel-slide"><img src="assets/DS-3.png" alt="Design system 3" loading="lazy" decoding="async" class="ds-carousel-img"></div>
-                        <div class="ds-carousel-slide"><img src="assets/DS-4.png" alt="Design system 4" loading="lazy" decoding="async" class="ds-carousel-img"></div>
-                        <div class="ds-carousel-slide"><img src="assets/DS-5.png" alt="Design system 5" loading="lazy" decoding="async" class="ds-carousel-img"></div>
-                        <div class="ds-carousel-slide"><img src="assets/DS-6.png" alt="Design system 6" loading="lazy" decoding="async" class="ds-carousel-img"></div>
-                        <div class="ds-carousel-slide ds-carousel-slide--last"><img src="assets/DS-7.png" alt="Design system 7" loading="lazy" decoding="async" class="ds-carousel-img"></div>
+                <div class="ds-carousel" style="position:relative;margin-top:32px;">
+                    <div style="width:100vw;margin-left:calc(50% - 50vw);overflow:hidden;">
+                        <img src="assets/DS.png" alt="Design system overview" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;">
                     </div>
                     <!-- dot indicators -->
-                    <div class="ds-dots" style="display:flex;justify-content:center;gap:8px;margin-top:20px;">
+                    <div class="ds-dots" style="display:flex;justify-content:center;gap:8px;margin-top:20px;display:none;">
                         <span class="ds-dot ds-dot--active"></span>
                         <span class="ds-dot"></span>
                         <span class="ds-dot"></span>
@@ -1014,6 +1012,22 @@
 
             <div class="cs-divider"></div>
 
+            <!-- CS-1 Feature Split -->
+            <section class="cs-section" style="padding:0;overflow:visible;">
+                <div style="display:flex;align-items:stretch;width:100vw;margin-left:calc(50% - 50vw);">
+                    <div style="flex:0 0 50%;overflow:hidden;">
+                        <img src="assets/CSS-1.png" alt="Configuration Studio redesign" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;">
+                    </div>
+                    <div style="flex:0 0 50%;display:flex;flex-direction:column;justify-content:center;padding:clamp(40px,6vw,96px) clamp(32px,4vw,80px);">
+                        <h2 class="cs-section-title">Design through implementation</h2>
+                        <p class="cs-section-body" style="margin-top:20px;">The design process didn't stop at handoff — I implemented the visual layer directly in CSS, working alongside the front-end team in the codebase.</p>
+                        <p class="cs-section-body" style="margin-top:16px;">Fewer handoff gaps, faster iteration, and consistent results across every state.</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="cs-divider"></div>
+
             <!-- Before / After -->
             <section class="cs-section" style="padding:0;">
                 <h2 class="cs-section-title">Before &amp; after</h2>
@@ -1021,59 +1035,259 @@
             </section>
 
             <!-- Before/After full-bleed -->
-            <div style="width:100vw;margin-left:calc(50% - 50vw);padding:56px max(20px, calc((100vw - 1280px)/2));box-sizing:border-box;">
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;width:100%;">
-                    <figure style="margin:0;">
-                        <figcaption style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.14em;color:rgba(0,0,0,0.38);margin-bottom:16px;display:block;">Before</figcaption>
-                        <div style="border-radius:10px;overflow:hidden;border:1px solid rgba(0,0,0,0.08);">
-                            <img src="assets/dashboard-before.png" alt="Dashboard before redesign" loading="lazy" decoding="async" style="width:100%;display:block;">
+            <div style="width:100vw;margin-left:calc(50% - 50vw);">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;width:100%;">
+                    <figure style="margin:0;padding:0;display:flex;flex-direction:column;overflow:hidden;">
+                        <div style="flex:1;overflow:hidden;display:flex;align-items:stretch;">
+                            <img src="assets/OLD-1.png" alt="Dashboard before redesign" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;">
                         </div>
                     </figure>
-                    <figure style="margin:0;">
-                        <figcaption style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.14em;color:#0a9396;margin-bottom:16px;display:block;">After</figcaption>
-                        <div style="border-radius:10px;overflow:hidden;border:1px solid rgba(0,0,0,0.08);">
-                            <img src="assets/CS-1.png" alt="Configuration Studio after redesign" loading="lazy" decoding="async" style="width:100%;display:block;">
+                    <figure style="margin:0;padding:32px 40px;background:#eeecea;display:flex;flex-direction:column;justify-content:center;">
+                        <div style="flex:1;overflow:hidden;display:flex;align-items:center;justify-content:center;">
+                            <img src="assets/CS-1.png" alt="Configuration Studio after redesign" loading="lazy" decoding="async" style="width:100%;display:block;border-radius:6px 6px 0 0;box-shadow:0 4px 24px rgba(0,0,0,0.12);">
                         </div>
                     </figure>
                 </div>
             </div>
 
-            <!-- More screens -->
-            <section class="cs-section">
-                <p class="cs-section-label">Screens</p>
-                <h2 class="cs-section-title">More from the platform</h2>
-                <div class="cs-compare-grid" style="margin-top:32px;">
-                    <figure class="cs-compare-cell">
-                        <div class="cs-compare-shot">
-                            <img src="assets/insurance-screen-rules.png" alt="Applicability Rule editor" loading="lazy" decoding="async">
+            <section class="cs-section" style="overflow:visible;">
+                <!-- Before / After pair 2 -->
+                <div class="cs-stack-scroll cs-ba-stack-2" style="margin-top:32px;height:200vh;">
+                    <div class="cs-stack-sticky">
+                        <div class="cs-ba-label" style="position:absolute;top:24px;left:50%;transform:translateX(-50%);z-index:10;font-family:'Manrope',sans-serif;font-size:clamp(24px,3vw,40px);font-weight:300;letter-spacing:-0.02em;color:#0e0e0e;transition:opacity 0.3s;white-space:nowrap;" id="ba2-label-before">Before</div>
+                        <div class="cs-ba-label" style="position:absolute;top:24px;left:50%;transform:translateX(-50%);z-index:10;font-family:'Manrope',sans-serif;font-size:clamp(24px,3vw,40px);font-weight:300;letter-spacing:-0.02em;color:#0a9396;opacity:0;transition:opacity 0.3s;white-space:nowrap;" id="ba2-label-after">After</div>
+                        <div class="cs-stack-item" data-ba-idx="0" style="z-index:2;">
+                            <img src="assets/dashboard-before.png" alt="Before — Dashboard" loading="lazy" decoding="async">
                         </div>
-                    </figure>
-                    <figure class="cs-compare-cell">
-                        <div class="cs-compare-shot">
-                            <img src="assets/CS-5.png" alt="Configuration Studio screen" loading="lazy" decoding="async">
+                        <div class="cs-stack-item" data-ba-idx="1" style="z-index:1;">
+                            <img src="assets/CS-1.png" alt="After — Configuration Studio screen" loading="lazy" decoding="async">
                         </div>
-                    </figure>
-                    <figure class="cs-compare-cell">
-                        <div class="cs-compare-shot">
-                            <img src="assets/insurance-screen-pds.png" alt="PDS Library — Multi-criteria Table" loading="lazy" decoding="async">
+                    </div>
+                </div>
+                <script>
+                (function() {
+                    var stack = document.querySelector('.cs-ba-stack-2');
+                    if (!stack) return;
+                    var items = stack.querySelectorAll('.cs-stack-item');
+                    var labelBefore = document.getElementById('ba2-label-before');
+                    var labelAfter  = document.getElementById('ba2-label-after');
+                    var ticking = false;
+                    function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
+                    function update() {
+                        var rect = stack.getBoundingClientRect();
+                        var scrollable = rect.height - window.innerHeight;
+                        if (scrollable <= 0) return;
+                        var p = clamp(-rect.top / scrollable, 0, 1);
+                        var scale0 = 1 - p * 0.12;
+                        items[0].style.transform = 'scale(' + scale0 + ')';
+                        items[0].style.filter    = 'blur(' + (p * 12) + 'px)';
+                        items[0].style.opacity   = 1 - p;
+                        items[1].style.transform = 'translateY(' + ((1 - p) * 100) + '%)';
+                        items[1].style.filter    = 'blur(0px)';
+                        items[1].style.opacity   = clamp(p * 1.5, 0, 1);
+                        if (labelBefore) labelBefore.style.opacity = 1 - p * 2;
+                        if (labelAfter)  labelAfter.style.opacity  = clamp((p - 0.4) * 3, 0, 1);
+                        ticking = false;
+                    }
+                    window.addEventListener('scroll', function() {
+                        if (!ticking) { requestAnimationFrame(update); ticking = true; }
+                    }, { passive: true });
+                    update();
+                })();
+                </script>
+
+                <div class="cs-stack-scroll cs-ba-stack" style="margin-top:32px;height:200vh;">
+                    <div class="cs-stack-sticky">
+                        <div class="cs-ba-label" style="position:absolute;top:24px;left:50%;transform:translateX(-50%);z-index:10;font-family:'Manrope',sans-serif;font-size:clamp(24px,3vw,40px);font-weight:300;letter-spacing:-0.02em;color:#0e0e0e;transition:opacity 0.3s;white-space:nowrap;" id="ba-label-before">Before</div>
+                        <div class="cs-ba-label" style="position:absolute;top:24px;left:50%;transform:translateX(-50%);z-index:10;font-family:'Manrope',sans-serif;font-size:clamp(24px,3vw,40px);font-weight:300;letter-spacing:-0.02em;color:#0a9396;opacity:0;transition:opacity 0.3s;white-space:nowrap;" id="ba-label-after">After</div>
+                        <div class="cs-stack-item" data-ba-idx="0" style="z-index:2;">
+                            <img src="assets/insurance-screen-rules.png" alt="Before — Applicability Rule editor" loading="lazy" decoding="async">
                         </div>
-                    </figure>
-                    <figure class="cs-compare-cell">
-                        <div class="cs-compare-shot">
+                        <div class="cs-stack-item" data-ba-idx="1" style="z-index:1;">
+                            <img src="assets/CS-5.png" alt="After — Configuration Studio screen" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                </div>
+                <script>
+                (function() {
+                    var stack = document.querySelector('.cs-ba-stack');
+                    if (!stack) return;
+                    var items = stack.querySelectorAll('.cs-stack-item');
+                    var labelBefore = document.getElementById('ba-label-before');
+                    var labelAfter  = document.getElementById('ba-label-after');
+                    var ticking = false;
+
+                    function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
+
+                    function update() {
+                        var rect = stack.getBoundingClientRect();
+                        var scrollable = rect.height - window.innerHeight;
+                        if (scrollable <= 0) return;
+                        var p = clamp(-rect.top / scrollable, 0, 1);
+                        var scale0 = 1 - p * 0.12;
+                        items[0].style.transform = 'scale(' + scale0 + ')';
+                        items[0].style.filter    = 'blur(' + (p * 12) + 'px)';
+                        items[0].style.opacity   = 1 - p;
+                        items[1].style.transform = 'translateY(' + ((1 - p) * 100) + '%)';
+                        items[1].style.filter    = 'blur(0px)';
+                        items[1].style.opacity   = clamp(p * 1.5, 0, 1);
+                        if (labelBefore) labelBefore.style.opacity = 1 - p * 2;
+                        if (labelAfter)  labelAfter.style.opacity  = clamp((p - 0.4) * 3, 0, 1);
+                        ticking = false;
+                    }
+
+                    window.addEventListener('scroll', function() {
+                        if (!ticking) { requestAnimationFrame(update); ticking = true; }
+                    }, { passive: true });
+                    update();
+                })();
+                </script>
+
+                <div class="cs-stack-scroll cs-more-stack" style="margin-top:32px;">
+                    <div class="cs-stack-sticky">
+                        <div style="position:absolute;top:24px;left:50%;transform:translateX(-50%);z-index:10;font-family:'Manrope',sans-serif;font-size:clamp(24px,3vw,40px);font-weight:300;letter-spacing:-0.02em;color:#0e0e0e;white-space:nowrap;">More screens</div>
+                        <div class="cs-stack-item" data-stack-idx="0" style="z-index:4;padding-top:96px;">
                             <img src="assets/CS-2.png" alt="Configuration Studio screen" loading="lazy" decoding="async">
                         </div>
-                    </figure>
-                </div>
-
-                <div style="position:relative;margin-top:32px;width:100vw;margin-left:calc(50% - 50vw);">
-                    <div class="cs-hscroll">
-                        <img src="assets/CS-3.png" alt="Configuration Studio screen" loading="lazy" decoding="async" class="cs-hscroll-img">
-                        <img src="assets/CS-6.png" alt="Configuration Studio screen" loading="lazy" decoding="async" class="cs-hscroll-img">
-                        <img src="assets/CS-4.png" alt="Configuration Studio screen" loading="lazy" decoding="async" class="cs-hscroll-img">
+                        <div class="cs-stack-item" data-stack-idx="1" style="z-index:3;padding-top:96px;">
+                            <img src="assets/CS-3.png" alt="Configuration Studio screen" loading="lazy" decoding="async">
+                        </div>
+                        <div class="cs-stack-item" data-stack-idx="2" style="z-index:2;padding-top:96px;">
+                            <img src="assets/CS-6.png" alt="Configuration Studio screen" loading="lazy" decoding="async">
+                        </div>
+                        <div class="cs-stack-item" data-stack-idx="3" style="z-index:1;padding-top:96px;">
+                            <img src="assets/CS-4.png" alt="Configuration Studio screen" loading="lazy" decoding="async">
+                        </div>
                     </div>
-                    <div class="cs-hscroll-fade-left"></div>
-                    <div class="cs-hscroll-fade-right"></div>
                 </div>
+                <style>
+                    .cs-stack-scroll {
+                        position: relative;
+                        height: 400vh;
+                    }
+                    .cs-stack-sticky {
+                        position: sticky;
+                        top: 80px;
+                        height: calc(100vh - 80px);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        overflow: visible;
+                    }
+                    .cs-stack-item {
+                        position: absolute;
+                        inset: 24px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        will-change: transform, opacity, filter;
+                    }
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                        border-radius: 12px;
+                        border: 1px solid rgba(0,0,0,0.07);
+                        display: block;
+                    }
+                    .cs-more-stack .cs-stack-sticky,
+                    .cs-ba-stack .cs-stack-sticky,
+                    .cs-ba-stack-2 .cs-stack-sticky,
+                    .cs-more-stack,
+                    .cs-ba-stack,
+                    .cs-ba-stack-2 {
+                        overflow: visible !important;
+                    }
+                    .cs-ba-stack .cs-stack-sticky,
+                    .cs-ba-stack-2 .cs-stack-sticky,
+                    .cs-more-stack .cs-stack-sticky {
+                        padding: 0 20px;
+                        box-sizing: border-box;
+                        align-items: flex-start;
+                    }
+                    .cs-ba-stack .cs-stack-item,
+                    .cs-ba-stack-2 .cs-stack-item,
+                    .cs-more-stack .cs-stack-item {
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        left: -40px;
+                        right: -40px;
+                        align-items: flex-start;
+                        padding-top: 96px;
+                        padding-left: 40px;
+                        padding-right: 40px;
+                        box-sizing: border-box;
+                        will-change: auto;
+                    }
+                    .cs-ba-stack .cs-stack-item img,
+                    .cs-ba-stack-2 .cs-stack-item img,
+                    .cs-more-stack .cs-stack-item img {
+                        width: 100%;
+                        height: auto;
+                        object-fit: unset;
+                        border: none;
+                        border-radius: 8px;
+                        box-shadow: 0 8px 48px rgba(0,0,0,0.14), 0 2px 12px rgba(0,0,0,0.08);
+                        will-change: transform, opacity, filter;
+                    }                        height: auto;
+                        object-fit: unset;
+                    }
+                    .cs-ba-stack .cs-stack-item img,
+                    .cs-ba-stack-2 .cs-stack-item img {
+                        border: none;
+                        border-radius: 8px;
+                        box-shadow: 0 8px 48px rgba(0,0,0,0.14), 0 2px 12px rgba(0,0,0,0.08);
+                    }
+                </style>
+                <script>
+                (function() {
+                    var stack = document.querySelector('.cs-more-stack');
+                    if (!stack) return;
+                    var items = stack.querySelectorAll('.cs-stack-item');
+                    var n = items.length;
+                    var numT = n - 1;
+                    var ticking = false;
+
+                    function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
+
+                    function update() {
+                        var rect = stack.getBoundingClientRect();
+                        var scrollable = rect.height - window.innerHeight;
+                        if (scrollable <= 0) return;
+                        var progress = clamp(-rect.top / scrollable, 0, 1);
+
+                        for (var i = 0; i < n; i++) {
+                            var item = items[i];
+
+                            // Enter progress: how much this item has come in (0→1)
+                            var enterP = (i === 0) ? 1 : clamp((progress - (i - 1) / numT) / (1 / numT), 0, 1);
+                            // Exit progress: how much this item is going away (0→1)
+                            var exitP  = (i === n - 1) ? 0 : clamp((progress - i / numT) / (1 / numT), 0, 1);
+
+                            if (exitP > 0) {
+                                // Outgoing: scale down into distance + blur + fade
+                                var scale = 1 - exitP * 0.12;
+                                item.style.transform  = 'scale(' + scale + ')';
+                                item.style.filter     = 'blur(' + (exitP * 12) + 'px)';
+                                item.style.opacity    = 1 - exitP;
+                            } else {
+                                // Incoming: slide up from below + fade in
+                                var ty = (1 - enterP) * 100; // translateY %
+                                item.style.transform  = 'translateY(' + ty + '%)';
+                                item.style.filter     = 'blur(0px)';
+                                item.style.opacity    = clamp(enterP * 1.5, 0, 1);
+                            }
+                        }
+                        ticking = false;
+                    }
+
+                    window.addEventListener('scroll', function() {
+                        if (!ticking) { requestAnimationFrame(update); ticking = true; }
+                    }, { passive: true });
+
+                    update();
+                })();
+                </script>
 
             </section>
 
@@ -1081,8 +1295,8 @@
 
             <!-- Reflection -->
             <section class="cs-section">
-                <h2 class="cs-section-title">Constraints as a design brief</h2>
-                <p class="cs-section-body" style="max-width:680px;">Working within an unchangeable HTML structure forced me to focus entirely on the visual layer — typography, colour, spacing. Defining the design system upfront made implementation fast and consistent. The biggest lesson: enterprise users have strong mental models, so the goal was to make things feel familiar but dramatically cleaner — not reinvent the interaction model entirely.</p>
+                <h2 class="cs-section-title">Reflection</h2>
+                <p class="cs-section-body" style="max-width:680px;">Working within an unchangeable HTML structure forced me to focus entirely on the visual layer — typography, colour, spacing. Defining the design system upfront made implementation fast and consistent. Enterprise users have strong mental models — the goal wasn't to reinvent interactions, but to make everything feel dramatically cleaner.</p>
             </section>
 
         </div>
@@ -1204,6 +1418,32 @@
         const getInTouchBtn = document.getElementById('get-in-touch-btn');
         const footer = document.getElementById('contact');
         let pulseTimeout = null;
+
+        /* Footer expand on scroll */
+        if (footer) {
+            const footerObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        footer.classList.add('footer--expanded');
+                    } else {
+                        footer.classList.remove('footer--expanded');
+                    }
+                });
+            }, { threshold: 0.05 });
+            footerObserver.observe(footer);
+
+            const contactNavLink = document.querySelector('a[href="#contact"]');
+            if (contactNavLink) {
+                contactNavLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    footer.classList.add('footer--no-transition', 'footer--expanded');
+                    requestAnimationFrame(() => {
+                        footer.classList.remove('footer--no-transition');
+                        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+                    });
+                });
+            }
+        }
 
         function startPulsing() {
             if (getInTouchBtn && !getInTouchBtn.classList.contains('pulsing')) {
