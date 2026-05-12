@@ -28,7 +28,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Caveat:wght@500&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="styles.css?v=6.5">
+        <link rel="stylesheet" href="styles.css?v=6.6">
 </head>
 <body>
     <!-- Preloader -->
@@ -204,6 +204,30 @@
     </div>
 
     <script>
+        // Letter-spacing parallax on hero name
+        (function() {
+            var heroName = document.getElementById('hero-name-hover');
+            var hero     = document.querySelector('.hero');
+            if (!heroName || !hero) return;
+
+            function onScroll() {
+                var heroH   = hero.offsetHeight;
+                var scrollY = window.scrollY;
+                var progress = Math.min(Math.max(scrollY / heroH, 0), 1); // 0 → 1
+
+                // letter-spacing: 0em at top → 0.18em at bottom of hero
+                var ls = (progress * 0.18).toFixed(4);
+                // opacity: 1 → 0.35 as you scroll
+                var op = (1 - progress * 0.65).toFixed(4);
+
+                heroName.style.letterSpacing = ls + 'em';
+                heroName.style.opacity       = op;
+            }
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll(); // initial state
+        })();
+
         // Mobile menu functionality
         const menuToggle = document.querySelector('.menu-toggle');
         const nav = document.querySelector('.nav');

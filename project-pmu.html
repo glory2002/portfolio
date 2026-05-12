@@ -2590,13 +2590,13 @@
             line-height: 1.5;
         }
         .cs-scroll-wf-grid {
-            /* Full viewport width so phone sits at true page centre */
             width: 100vw;
             margin-left: calc(-50vw + 50%);
             padding: 0 clamp(24px, 6vw, 89px);
             box-sizing: border-box;
             display: grid;
-            grid-template-columns: 1fr 368px 1fr;   /* phone locked to centre */
+            grid-template-columns: 1fr clamp(220px, 28vw, 300px);
+            gap: clamp(40px, 6vw, 100px);
             align-items: start;
             border-bottom: none !important;
         }
@@ -2605,7 +2605,7 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            padding-right: 60px;
+            padding-right: 0;
         }
         .cs-scroll-wf-col-headers {
             display: grid;
@@ -2707,7 +2707,7 @@
             flex-direction: column;
             align-items: center;
             gap: var(--sp-3);
-            width: 368px;
+            width: 100%;
         }
         .cs-sticky-hifi-label {
             font-size: var(--text-label); font-weight: 600;
@@ -2720,7 +2720,7 @@
             box-shadow: 0 16px 56px rgba(0,0,0,.22);
             background: #1a1a1a;
             position: relative;
-            width: 100%; max-width: 368px;
+            width: 100%;
         }
         .cs-phone-notch {
             position: absolute; top: 0; left: 50%;

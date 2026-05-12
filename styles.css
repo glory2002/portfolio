@@ -397,8 +397,23 @@ ul {
 }
 
 .hero-text h1 .hero-name {
-    animation: hero-fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+    animation: hero-fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both,
+               hero-name-gradient 6s ease infinite 0.9s;
     cursor: default;
+    background: linear-gradient(90deg,
+        #e879f9, #a855f7, #818cf8,
+        #38bdf8, #34d399, #facc15,
+        #fb923c, #f43f5e, #e879f9);
+    background-size: 400% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+@keyframes hero-name-gradient {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .hero-intro-list li:nth-child(1) { animation: hero-fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both; }
@@ -873,7 +888,7 @@ ul {
 
 .pe-title {
     font-size: clamp(20px, 2.2vw, 30px);
-    font-weight: 400;
+    font-weight: 500;
     line-height: 1.15;
     letter-spacing: -0.01em;
     color: var(--text-color);
@@ -974,6 +989,28 @@ ul {
 @media (max-width: 600px) {
     .projects-editorial {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: clamp(44px, 13vw, 64px);
+    }
+
+    .hero-h1-intro {
+        font-size: clamp(22px, 6vw, 32px);
+    }
+
+    .hero-mobile-photo {
+        height: 260px;
+    }
+
+    .pe-image {
+        min-height: 220px;
+    }
+
+    .home-statement-text {
+        font-size: clamp(22px, 7vw, 32px);
     }
 }
 
@@ -2237,30 +2274,19 @@ h3.experience-job-title-new,
     }
 
     .hero {
-        height: auto;
-        min-height: var(--hero-height);
+        height: var(--hero-height);
+        min-height: unset;
         overflow: hidden;
     }
 
     .hero-content {
-        padding: var(--s34) var(--s21);
-        justify-content: flex-start;
-        gap: var(--s34);
+        padding: 20px 20px 24px;
+        justify-content: space-between;
+        gap: 12px;
     }
 
     .hero-mobile-photo {
-        display: block;
-        width: 100%;
-        height: 320px;
-        border-radius: 16px;
-        overflow: hidden;
-    }
-
-    .hero-mobile-photo img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center top;
+        display: none;
     }
 
     .hero-text h1 {
@@ -2281,7 +2307,7 @@ h3.experience-job-title-new,
     }
 
     .hero-bottom {
-        margin-top: var(--s34);
+        margin-top: 0;
     }
 
     .hero-scroll-cue {
@@ -2697,5 +2723,83 @@ h3.experience-job-title-new,
     .trainings-card,
     .skills-card {
         padding: 40px 30px;
+    }
+
+    /* ── Home page mobile fixes ── */
+
+    /* Hero location — left-aligned on mobile */
+    .hero-content .hero-location {
+        align-self: flex-start;
+    }
+
+    /* Editorial card header — remove fixed height so it wraps naturally */
+    .pe-header {
+        height: auto;
+        min-height: 0;
+        padding: 24px 20px 20px;
+        gap: 10px;
+    }
+
+    .pe-title {
+        font-size: clamp(22px, 6vw, 28px);
+    }
+
+    /* Show action always on touch (no hover) */
+    .pe-action {
+        opacity: 1;
+        transform: translateY(0);
+        font-size: 11px;
+        padding: 8px 12px;
+        margin-left: -12px;
+    }
+
+    /* Project image — reduce tall min-height on mobile */
+    .pe-image {
+        min-height: 260px;
+    }
+
+    /* Home statement section */
+    .home-statement {
+        padding: 56px 24px;
+    }
+
+    .home-statement-text {
+        font-size: clamp(24px, 7vw, 36px);
+    }
+
+    /* statement-footer-wrap — reset the desktop negative-margin trick on mobile */
+    .statement-footer-wrap {
+        grid-column: 1 / -1;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    /* Cancel the footer's desktop full-bleed negative margins inside the wrap */
+    .statement-footer-wrap .footer {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+    }
+
+    /* home-statement full-bleed padding instead of negative margins */
+    .statement-footer-wrap .home-statement {
+        padding: 48px 24px;
+    }
+
+    /* Footer mobile */
+    .footer {
+        min-height: unset;
+        padding: 0;
+    }
+
+    .footer-content {
+        padding: 40px 24px;
+        gap: 32px;
+    }
+
+    .contact-column p,
+    .contact-column a {
+        font-size: 18px;
     }
 }
