@@ -385,29 +385,14 @@
             skillIcons.forEach(icon => iconObserver.observe(icon));
         }
 
-        // Footer expand on scroll or Contact click
+        // Smooth scroll for Contact nav link
         const footer = document.getElementById('contact');
         if (footer) {
-            const footerObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        footer.classList.add('footer--expanded');
-                    } else {
-                        footer.classList.remove('footer--expanded');
-                    }
-                });
-            }, { threshold: 0.05 });
-            footerObserver.observe(footer);
-
             const contactNavLink = document.querySelector('a[href="#contact"]');
             if (contactNavLink) {
                 contactNavLink.addEventListener('click', (e) => {
                     e.preventDefault();
-                    footer.classList.add('footer--no-transition', 'footer--expanded');
-                    requestAnimationFrame(() => {
-                        footer.classList.remove('footer--no-transition');
-                        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-                    });
+                    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
                 });
             }
         }
