@@ -282,33 +282,6 @@ ul {
             background: var(--parchment);
         }
 
-        /* Cursor-following photo */
-        .hero-hover-photo {
-            position: fixed;
-            width: 255px;
-            height: 323px;
-            border-radius: 12px;
-            overflow: hidden;
-            pointer-events: none;
-            opacity: 0;
-            z-index: 9999;
-            transform: translate(0, 0) scale(0.94);
-            transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-                        scale    0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.14);
-            will-change: transform, left, top;
-            translate: -38% -55%;
-        }
-        .hero-hover-photo.visible {
-            opacity: 1;
-            scale: 1;
-        }
-        .hero-hover-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center top;
-        }
 
         /* Content layer */
         .hero-content {
@@ -474,8 +447,9 @@ ul {
     margin: var(--s8) 0 0;
 }
 
+
 .hero-h1-intro {
-    font-size: clamp(var(--t21), 2vw, var(--t34));
+    font-size: clamp(var(--t34), 3.2vw, 52px);
     font-weight: 800;
     color: var(--ink);
     letter-spacing: -0.01em;
@@ -486,7 +460,7 @@ ul {
 .hero-tagline {
     font-family: var(--font-body);
     font-size: clamp(18px, 1.8vw, 24px);
-    font-weight: 600;
+    font-weight: 400;
     color: var(--ink);
     margin-top: var(--s55);
     letter-spacing: 0.01em;
@@ -506,44 +480,6 @@ ul {
     display: inline-block;
 }
 
-.hero-name-tip {
-    position: absolute;
-    bottom: calc(100% - 10px);
-    right: 0;
-    display: flex;
-    align-items: flex-start;
-    gap: 4px;
-    pointer-events: none;
-    opacity: 0;
-    animation: tip-pop 6s ease-in-out 2s infinite;
-    z-index: 10;
-    color: var(--ink);
-}
-
-.hero-name-tip-text {
-    font-family: var(--font-body);
-    font-size: 15px;
-    font-weight: 400;
-    color: rgba(14,14,14,0.4);
-    white-space: nowrap;
-    padding-top: 4px;
-}
-
-.hero-name-tip-arrow {
-    flex-shrink: 0;
-    margin-top: 2px;
-    animation: tip-arrow-bounce 1.4s ease-in-out infinite;
-}
-
-@keyframes tip-pop {
-    0%, 40%, 100% { opacity: 0; transform: translateY(8px); }
-    50%, 85%      { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes tip-arrow-bounce {
-    0%, 100% { transform: translateY(0); }
-    50%      { transform: translateY(6px); }
-}
 
 .hero-scroll-cue {
     display: inline-flex;
@@ -1017,11 +953,12 @@ ul {
     object-fit: cover;
     object-position: top;
     display: block;
+    transform: scale(1.06);
     transition: transform 0.6s cubic-bezier(0.16,1,0.3,1);
 }
 
 .project-editorial-card:hover .pe-image img {
-    transform: scale(1.05);
+    transform: scale(1.11);
 }
 
 @media (max-width: 900px) {
@@ -1755,8 +1692,8 @@ ul {
 .about-hero-image-wrapper {
     position: relative;
     width: 100%;
-    height: 480px;
-    border-radius: 4px;
+    height: 360px;
+    border-radius: 12px;
     overflow: hidden;
     animation: none;
     z-index: 1;
@@ -1775,6 +1712,23 @@ ul {
 }
 
 /* Experience Section */
+/* About page section titles — match project page cs-section-title style */
+.about-hero > .section-title,
+.about-experience .section-title,
+.about-education-trainings .section-title,
+.about-skills-section .section-title {
+    font-family: 'Manrope', var(--font-heading), sans-serif;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    color: var(--ink);
+    text-transform: none;
+    padding-top: 0;
+    margin-bottom: 48px;
+    border-top: none;
+}
+
 .about-experience {
     padding: 0 var(--s89) var(--s144); /* 89 · 144 — Fibonacci */
 }
@@ -1857,7 +1811,7 @@ h3.experience-job-title-new,
 .experience-job-title-new {
     font-family: var(--font-body);
     font-size: 20px;
-    font-weight: 500 !important;
+    font-weight: 300 !important;
     color: var(--text-color);
     margin: 0;
     line-height: 1.4;
@@ -1866,7 +1820,7 @@ h3.experience-job-title-new,
 .experience-date {
     font-family: var(--font-body);
     font-size: 20px;
-    font-weight: 500 !important;
+    font-weight: 300 !important;
     color: var(--text-color);
     margin: 0;
     line-height: 1.4;
@@ -1930,7 +1884,7 @@ h3.experience-job-title-new,
 .experience-date {
     font-family: var(--font-body);
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 300;
     color: var(--text-color);
     margin: 0;
     line-height: 1.4;
@@ -1947,7 +1901,7 @@ h3.experience-job-title-new,
 .experience-job-title-new {
     font-family: var(--font-body);
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 300;
     color: var(--text-color);
     margin: 0;
     line-height: 1.4;
@@ -2002,7 +1956,7 @@ h3.experience-job-title-new,
 .education-year-p {
     font-family: var(--font-body);
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 300;
     line-height: 1.4;
     color: var(--text-color);
     margin: 0;
@@ -2025,7 +1979,7 @@ h3.experience-job-title-new,
 .education-program {
     font-family: var(--font-body);
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 300;
     line-height: 1.4;
     color: var(--text-color);
     margin: 0;
@@ -2239,7 +2193,7 @@ h3.experience-job-title-new,
     }
 
     .hero-h1-intro {
-        font-size: clamp(22px, 6vw, 32px);
+        font-size: clamp(28px, 7vw, 44px);
     }
 
     .hero-scroll-circle {
@@ -2272,9 +2226,6 @@ h3.experience-job-title-new,
         display: none;
     }
 
-    .hero-name-tip {
-        display: none;
-    }
 
     .hero-actions {
         grid-column: 1 / -1;

@@ -2565,6 +2565,8 @@
             padding: 0 max(0px, calc((100vw - 1280px) / 2));
             box-sizing: border-box;
             background: #f7f6f2;
+            border: none !important;
+            outline: none;
         }
         @media (max-width: 1280px) {
             .cs-scroll-wf { padding: 0 20px; }
@@ -2592,6 +2594,7 @@
             justify-content: center;
             gap: 56px;
             align-items: start;
+            border-bottom: none !important;
         }
         #pmu-scroll-col {
             display: flex;
@@ -2726,13 +2729,19 @@
             align-items: center;
             gap: 6px;
         }
-        .cs-hifi-screen { 
+        .cs-hifi-screen {
             position: absolute;
-            inset: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
             width: 100%;
+            height: 100%;
+            object-fit: fill;
             opacity: 0;
             transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             pointer-events: none;
+            display: block;
         }
         .cs-hifi-screen.active { 
             opacity: 1;
@@ -2812,7 +2821,6 @@
             gap: 80px;
             align-items: center;
             padding: 100px 0;
-            border-top: 1px solid var(--line);
         }
         .cs-devices-title {
             font-family: var(--font-heading);
@@ -3232,7 +3240,8 @@
             <!-- Workflow statement -->
             <!-- Scrollable wireframes + sticky hi-fi -->
             <div class="cs-scroll-wf">
-                <h2 class="cs-section-title" style="margin-bottom:32px;margin-top:80px;">Information architecture</h2>
+                <h2 class="cs-section-title" style="margin-bottom:16px;margin-top:80px;">Information architecture</h2>
+                <p style="font-family:var(--font-body);font-size:var(--text-body-lg,18px);font-weight:400;line-height:1.55;color:var(--ink);max-width:680px;margin:0 0 32px;">Before designing any screens, I mapped out how the platform would be structured — the key user types, their journeys, and how the content hierarchy should flow.</p>
                 <div style="margin-bottom:32px;">
                     <img src="assets/ia.png" alt="Information architecture" loading="lazy" decoding="async" style="width:100%;max-width:1280px;height:auto;display:block;">
                 </div>
@@ -3246,98 +3255,37 @@
                     <p class="cs-workflow-text"><strong>I sketched. Figma Make prototyped. Cursor built.</strong> <span>I directed, selected, and styled. The decisions were mine — the execution was shared. A continuous back-and-forth, not a linear process.</span></p>
                 </section>
 
-                <!-- Three roles panel -->
-                <div class="cs-roles-panel" id="roles-panel">
-                    <div class="cs-role-panel cs-role-panel--1" style="--rp-dl:0s">
-                        <svg class="cs-role-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.657 2.686 3 6 3s6-1.343 6-3v-5"/></svg>
-                        <div>
-                            <p class="cs-role-title">Student</p>
-                            <div class="cs-role-items">
-                                <p>Dashboard &amp; progress</p>
-                                <p>Course levels</p>
-                                <p>Level chat &amp; feedback</p>
-                                <p>Certificates</p>
-                            </div>
-                        </div>
+                <!-- Design System -->
+                <div class="cs-ds-section">
+                    <div class="cs-ds-header">
+                        <h2 class="cs-ds-title">Design System</h2>
                     </div>
-                    <div class="cs-role-panel cs-role-panel--3" style="--rp-dl:0.12s">
-                        <svg class="cs-role-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
-                        <div>
-                            <p class="cs-role-title">Course Builder</p>
-                            <div class="cs-role-items">
-                                <p>Create &amp; structure courses</p>
-                                <p>Theory &amp; materials</p>
-                                <p>Levels &amp; steps</p>
-                                <p>Draft → Published</p>
-                            </div>
-                        </div>
+                    <div class="cs-ui-embed">
+                        <iframe
+                            id="cs-ui-iframe"
+                            src="th-academy-ui.html"
+                            title="TH Academy — UI showcase"
+                            loading="lazy"
+                            sandbox="allow-scripts allow-same-origin"
+                            scrolling="no"
+                        ></iframe>
                     </div>
-                    <div class="cs-role-panel cs-role-panel--2" style="--rp-dl:0.24s">
-                        <svg class="cs-role-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-                        <div>
-                            <p class="cs-role-title">Admin</p>
-                            <div class="cs-role-items">
-                                <p>Scoreboard</p>
-                                <p>Student management</p>
-                                <p>Review &amp; approve levels</p>
-                                <p>Issue certificates</p>
-                            </div>
-                        </div>
-                    </div>
+                    <script>
+                        (function () {
+                            var iframe = document.getElementById('cs-ui-iframe');
+                            if (!iframe) return;
+                            window.addEventListener('message', function (e) {
+                                if (e.data && e.data.type === 'iframeHeight' && e.data.height > 200) {
+                                    iframe.style.height = e.data.height + 'px';
+                                }
+                            });
+                        })();
+                    </script>
                 </div>
-
-                <style>
-                    .cs-role-panel {
-                        opacity: 0;
-                        transform: translateY(40px);
-                        transition:
-                            opacity   0.7s cubic-bezier(0.16, 1, 0.3, 1) var(--rp-dl, 0s),
-                            transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) var(--rp-dl, 0s);
-                    }
-                    #roles-panel.rp-visible .cs-role-panel {
-                        opacity: 1;
-                        transform: none;
-                    }
-                    .cs-role-icon {
-                        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) calc(var(--rp-dl, 0s) + 0.3s);
-                        transform: scale(0.6) rotate(-15deg);
-                        transform-origin: center;
-                    }
-                    #roles-panel.rp-visible .cs-role-icon {
-                        transform: scale(1) rotate(0deg);
-                    }
-                    .cs-role-items p {
-                        opacity: 0;
-                        transform: translateX(-8px);
-                        transition:
-                            opacity   0.4s ease calc(var(--rp-dl, 0s) + 0.4s),
-                            transform 0.4s ease calc(var(--rp-dl, 0s) + 0.4s);
-                    }
-                    .cs-role-items p:nth-child(2) { transition-delay: calc(var(--rp-dl, 0s) + 0.48s); }
-                    .cs-role-items p:nth-child(3) { transition-delay: calc(var(--rp-dl, 0s) + 0.56s); }
-                    .cs-role-items p:nth-child(4) { transition-delay: calc(var(--rp-dl, 0s) + 0.64s); }
-                    #roles-panel.rp-visible .cs-role-items p {
-                        opacity: 1;
-                        transform: none;
-                    }
-                </style>
-                <script>
-                (function() {
-                    var panel = document.getElementById('roles-panel');
-                    if (!panel) return;
-                    var io = new IntersectionObserver(function(entries) {
-                        if (entries[0].isIntersecting) {
-                            panel.classList.add('rp-visible');
-                        } else {
-                            panel.classList.remove('rp-visible');
-                        }
-                    }, { threshold: 0.25 });
-                    io.observe(panel);
-                })();
-                </script>
 
                 <div class="cs-scroll-wf-intro">
                     <h2 class="cs-scroll-wf-title">Same structure.<br>Different execution.</h2>
+                    <p style="font-family:var(--font-body);font-size:var(--text-body-lg,18px);font-weight:400;line-height:1.55;color:var(--ink);max-width:600px;margin:20px 0 0;">The platform covers three distinct user roles — student, course builder, and admin. Each has a different context, different needs, and a different mental model. The design had to serve all three without compromising any.</p>
                 </div>
 
                 <div class="cs-scroll-wf-grid">
@@ -3508,34 +3456,6 @@
                 <img src="assets/TH-mockup-1.png" alt="TH Academy — mockup" loading="lazy" decoding="async" class="cs-screens-img">
             </div>
 
-            <!-- Design System -->
-            <div class="cs-ds-section">
-                <div class="cs-ds-header">
-                    <h2 class="cs-ds-title">Design System</h2>
-                </div>
-                <div class="cs-ui-embed">
-                    <iframe
-                        id="cs-ui-iframe"
-                        src="th-academy-ui.html"
-                        title="TH Academy — UI showcase"
-                        loading="lazy"
-                        sandbox="allow-scripts allow-same-origin"
-                        scrolling="no"
-                    ></iframe>
-                </div>
-                <script>
-                    (function () {
-                        var iframe = document.getElementById('cs-ui-iframe');
-                        if (!iframe) return;
-                        window.addEventListener('message', function (e) {
-                            if (e.data && e.data.type === 'iframeHeight' && e.data.height > 200) {
-                                iframe.style.height = e.data.height + 'px';
-                            }
-                        });
-                    })();
-                </script>
-            </div>
-
             <!-- Learnings -->
             <div class="cs-lr-section">
                 <div class="cs-lr-header">
@@ -3585,6 +3505,10 @@
                         </svg>
                     </a>
                     <p class="footer-tagline">Open to new opportunities and collaborations.<br>Browse my work and feel free to reach out.</p>
+                    <div style="margin-top:20px;display:flex;flex-direction:column;gap:6px;">
+                        <a href="mailto:glory.angelova@gmail.com" style="font-family:var(--font-body);font-size:15px;font-weight:400;color:rgba(255,255,255,0.65);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">glory.angelova@gmail.com</a>
+                        <a href="tel:+31647355880" style="font-family:var(--font-body);font-size:15px;font-weight:400;color:rgba(255,255,255,0.65);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">+31 6 473 55 880</a>
+                    </div>
                 </div>
 
                 <div class="contact-info-section">
