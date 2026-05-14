@@ -2761,38 +2761,85 @@
             height: 100%;
             object-fit: fill;
             opacity: 0;
-            transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: scale(1.04);
+            filter: blur(6px);
+            transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+                        transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                        filter 0.7s cubic-bezier(0.4, 0, 0.2, 1);
             pointer-events: none;
             display: block;
         }
         .cs-hifi-screen.active { 
             opacity: 1;
+            transform: scale(1);
+            filter: blur(0px);
             pointer-events: auto;
         }
         .cs-hifi-screen img, .cs-hifi-screen video { width: 100%; display: block; }
+        /* ── Mobile: static horizontal phone strip ── */
+        .cs-scroll-wf-mobile-strip {
+            display: none;
+        }
+
         @media (max-width: 768px) {
-            .cs-scroll-wf-grid { grid-template-columns: 1fr 1fr; gap: 8px; padding: 0 16px; }
-            #pmu-scroll-col { grid-column: 1; padding-right: 8px; }
-            .cs-scroll-item { align-items: flex-start; text-align: left; min-height: unset; padding: var(--sp-4) 0; }
-            .cs-scroll-item-img {
-                width: 100%;
-                height: auto;
-                aspect-ratio: 368 / 822;
-                border-radius: 16px;
-            }
-            .cs-scroll-item-title { font-size: 13px; }
-            .cs-scroll-item-desc { font-size: 12px; max-width: 100%; }
-            .cs-sticky-hifi {
-                grid-column: 2;
+            /* Hide the desktop scroll grid entirely */
+            .cs-scroll-wf-grid { display: none; }
+
+            /* Show mobile strip */
+            .cs-scroll-wf-mobile-strip {
                 display: flex;
-                width: 100%;
-                top: 80px;
-                transform: none;
+                gap: 16px;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                padding: 0 20px 24px;
+                scrollbar-width: none;
             }
-            .cs-phone-shell { max-width: 100%; border-radius: 28px; border-width: 5px; }
-            .cs-phone-notch { width: 54px; height: 18px; border-radius: 0 0 12px 12px; }
-            .cs-phone-status-bar { height: 28px; padding: 4px 14px 2px; }
-            .cs-phone-time { font-size: 10px; }
+            .cs-scroll-wf-mobile-strip::-webkit-scrollbar { display: none; }
+
+            .cs-mobile-phone-card {
+                flex: 0 0 auto;
+                width: clamp(180px, 55vw, 240px);
+                scroll-snap-align: center;
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .cs-mobile-phone-shell {
+                border-radius: 32px;
+                border: 6px solid #1a1a1a;
+                background: #1a1a1a;
+                overflow: hidden;
+                box-shadow: 0 8px 32px rgba(0,0,0,0.22);
+                aspect-ratio: 368 / 795;
+                position: relative;
+            }
+
+            .cs-mobile-phone-shell video,
+            .cs-mobile-phone-shell img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
+
+            .cs-mobile-card-title {
+                font-family: var(--font-heading);
+                font-size: 14px;
+                font-weight: 500;
+                color: var(--ink);
+                margin: 0;
+            }
+
+            .cs-mobile-card-desc {
+                font-family: var(--font-body);
+                font-size: 12px;
+                font-weight: 400;
+                color: rgba(14,14,14,0.5);
+                line-height: 1.5;
+                margin: 0;
+            }
         }
 
         /* ── Hi-fi screens grid — phone bubbles ── */
@@ -3239,7 +3286,7 @@
                     <div class="cs-brief-left">
                         <div class="cs-brief-body">
                             <p>A mobile-first learning platform for PMU training. Designed so a master trainer could own, run, and grow her academy — independently.</p>
-                            <p style="margin-top: 20px;">Tanya was running her microblading academy through WhatsApp. As her student base grew, she needed a platform she could own — not borrow from someone else.</p>
+                            <p style="margin-top: 20px;">Tanya had been teaching through Phi Academy CraftMaster and knew exactly what a professional training platform should feel like. As her reputation grew, she wanted to step out on her own — building a platform under her name, on her terms, with a curriculum she designed herself.</p>
                         </div>
                     </div>
                     <div class="cs-brief-right">
@@ -3376,6 +3423,38 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <!-- Mobile-only horizontal strip -->
+            <div class="cs-scroll-wf-mobile-strip">
+                <div class="cs-mobile-phone-card">
+                    <div class="cs-mobile-phone-shell">
+                        <video src="assets/App-video-1.mp4" autoplay loop muted playsinline></video>
+                    </div>
+                    <p class="cs-mobile-card-title">Log in & Dashboard</p>
+                    <p class="cs-mobile-card-desc">Students log in and land on their personal dashboard.</p>
+                </div>
+                <div class="cs-mobile-phone-card">
+                    <div class="cs-mobile-phone-shell">
+                        <video src="assets/App-video-2.mp4" autoplay loop muted playsinline></video>
+                    </div>
+                    <p class="cs-mobile-card-title">Level Review</p>
+                    <p class="cs-mobile-card-desc">The trainer reviews submitted work and approves or returns it.</p>
+                </div>
+                <div class="cs-mobile-phone-card">
+                    <div class="cs-mobile-phone-shell">
+                        <video src="assets/App-video-4.mp4" autoplay loop muted playsinline></video>
+                    </div>
+                    <p class="cs-mobile-card-title">Student Filters</p>
+                    <p class="cs-mobile-card-desc">Filter students by course, status, or feedback response.</p>
+                </div>
+                <div class="cs-mobile-phone-card">
+                    <div class="cs-mobile-phone-shell">
+                        <video src="assets/App-video-3.mp4" autoplay loop muted playsinline></video>
+                    </div>
+                    <p class="cs-mobile-card-title">Course Builder</p>
+                    <p class="cs-mobile-card-desc">The trainer creates a course — adds theory, builds levels, and publishes.</p>
                 </div>
             </div>
 
