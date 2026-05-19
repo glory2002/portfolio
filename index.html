@@ -106,54 +106,45 @@
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="projects-section">
+        <!-- Custom project cursor -->
+        <div id="proj-cursor" aria-hidden="true">View</div>
 
-            <div class="projects-list projects-editorial">
+        <!-- Projects Section — sticky scroll stack -->
+        <section id="projects" class="projects-section proj-stack-section">
 
-                <!-- Project 1 -->
-                <a href="project-locked.html" class="project-card project-editorial-card">
-                    <div class="pe-header">
-                        <span class="pe-index">01 / Enterprise</span>
-                        <h3 class="pe-title">Legacy Enterprise<br>Platform</h3>
-                        <span class="pe-action btn-lock">
-                            Enter Password
-                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4"/><path d="M14 13.12c0 2.38 0 6.38-1 8.88"/><path d="M17.29 21.02c.12-.6.43-2.3.5-3.02"/><path d="M2 12a10 10 0 0 1 18-6"/><path d="M2 16h.01"/><path d="M21.8 16c.2-2 .131-5.354 0-6"/><path d="M5 19.5C5.5 18 6 15 6 12a6 6 0 0 1 .34-2"/><path d="M8.65 22c.21-.66.45-1.32.57-2"/><path d="M9 6.8a6 6 0 0 1 9 5.2v2"/></svg>
-                        </span>
-                    </div>
-                    <div class="pe-image">
-                        <img src="assets/cs_cover_v3.svg" alt="Configuration Studio cover" loading="lazy" decoding="async">
+            <div class="proj-stack-wrapper" data-card-idx="0">
+                <a href="project-locked.html" class="proj-stack-card" data-card-idx="0" data-cursor="Enter">
+                    <img src="assets/cs_cover_v3.svg" alt="Legacy Enterprise Platform" loading="lazy" decoding="async">
+                    <div class="proj-stack-label">
+                        <span class="proj-stack-num">01</span>
+                        <span class="proj-stack-title">Legacy Enterprise Platform</span>
+                        <span class="proj-stack-type">Enterprise · UX/UI</span>
                     </div>
                 </a>
-
-                <!-- Project 2 -->
-                <a href="project-locked-pmu.html" class="project-card project-editorial-card">
-                    <div class="pe-header">
-                        <span class="pe-index">02 / Product Design</span>
-                        <h3 class="pe-title">TH Academy</h3>
-                        <span class="pe-action btn-lock">
-                            Enter Password
-                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4"/><path d="M14 13.12c0 2.38 0 6.38-1 8.88"/><path d="M17.29 21.02c.12-.6.43-2.3.5-3.02"/><path d="M2 12a10 10 0 0 1 18-6"/><path d="M2 16h.01"/><path d="M21.8 16c.2-2 .131-5.354 0-6"/><path d="M5 19.5C5.5 18 6 15 6 12a6 6 0 0 1 .34-2"/><path d="M8.65 22c.21-.66.45-1.32.57-2"/><path d="M9 6.8a6 6 0 0 1 9 5.2v2"/></svg>
-                        </span>
-                    </div>
-                    <div class="pe-image">
-                        <img src="assets/TH-cover2.png" alt="TH Academy — mobile product mockup" loading="lazy" decoding="async">
-                    </div>
-                </a>
-
-                <!-- Project 3 -->
-                <a href="https://tanyahristova-pmu.com/en" class="project-card project-editorial-card" target="_blank" rel="noopener noreferrer">
-                    <div class="pe-header">
-                        <span class="pe-index">03 / Live Website</span>
-                        <h3 class="pe-title">Tanya Hristova<br>PMU Expert</h3>
-                        <span class="pe-action">Explore Live</span>
-                    </div>
-                    <div class="pe-image">
-                        <img src="assets/TH-cover.png" alt="Tanya Hristova Studio & Academy — cover" loading="lazy">
-                    </div>
-                </a>
-
             </div>
+
+            <div class="proj-stack-wrapper" data-card-idx="1">
+                <a href="project-locked-pmu.html" class="proj-stack-card" data-card-idx="1" data-cursor="Enter">
+                    <img src="assets/TH-cover2.png" alt="TH Academy" loading="lazy" decoding="async">
+                    <div class="proj-stack-label">
+                        <span class="proj-stack-num">02</span>
+                        <span class="proj-stack-title">TH Academy</span>
+                        <span class="proj-stack-type">Product Design</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="proj-stack-wrapper" data-card-idx="2">
+                <a href="https://tanyahristova-pmu.com/en" class="proj-stack-card" data-card-idx="2" data-cursor="View Live" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/TH-cover.png" alt="Tanya Hristova PMU Expert" loading="lazy">
+                    <div class="proj-stack-label">
+                        <span class="proj-stack-num">03</span>
+                        <span class="proj-stack-title">Tanya Hristova PMU Expert</span>
+                        <span class="proj-stack-type">Live Website</span>
+                    </div>
+                </a>
+            </div>
+
         </section>
 
         <!-- Statement + Footer together fill one screen -->
@@ -204,29 +195,6 @@
     </div>
 
     <script>
-        // Letter-spacing parallax on hero name
-        (function() {
-            var heroName = document.getElementById('hero-name-hover');
-            var hero     = document.querySelector('.hero');
-            if (!heroName || !hero) return;
-
-            function onScroll() {
-                var heroH   = hero.offsetHeight;
-                var scrollY = window.scrollY;
-                var progress = Math.min(Math.max(scrollY / heroH, 0), 1); // 0 → 1
-
-                // letter-spacing: 0em at top → 0.18em at bottom of hero
-                var ls = (progress * 0.18).toFixed(4);
-                // opacity: 1 → 0.35 as you scroll
-                var op = (1 - progress * 0.65).toFixed(4);
-
-                heroName.style.letterSpacing = ls + 'em';
-                heroName.style.opacity       = op;
-            }
-
-            window.addEventListener('scroll', onScroll, { passive: true });
-            onScroll(); // initial state
-        })();
 
         // Mobile menu functionality
         const menuToggle = document.querySelector('.menu-toggle');
@@ -421,6 +389,65 @@
 
 
 
+    </script>
+
+    <script>
+    /* ── Project stack: custom cursor + scale-shrink on overlap ── */
+    (function () {
+        var cursor   = document.getElementById('proj-cursor');
+        var cards    = Array.from(document.querySelectorAll('.proj-stack-card'));
+        var section  = document.getElementById('projects');
+        if (!cursor || !cards.length || !section) return;
+
+        var mouseX = 0, mouseY = 0, curX = 0, curY = 0;
+        var raf;
+
+        /* Smooth cursor follow */
+        function loop() {
+            curX += (mouseX - curX) * 0.18;
+            curY += (mouseY - curY) * 0.18;
+            cursor.style.left = curX + 'px';
+            cursor.style.top  = curY + 'px';
+            raf = requestAnimationFrame(loop);
+        }
+
+        document.addEventListener('mousemove', function (e) {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        /* Show/hide cursor + update label per card */
+        cards.forEach(function (card) {
+            card.addEventListener('mouseenter', function () {
+                cursor.textContent = card.dataset.cursor || 'View';
+                cursor.classList.add('visible');
+                if (!raf) loop();
+            });
+            card.addEventListener('mouseleave', function () {
+                cursor.classList.remove('visible');
+                cancelAnimationFrame(raf);
+                raf = null;
+            });
+        });
+
+        /* Scale-shrink: when a card is sticky and the next one starts covering it */
+        function onScroll() {
+            var headerH = 72;
+            cards.forEach(function (card, i) {
+                var rect = card.getBoundingClientRect();
+                /* rect.top goes below headerH once the card is stuck */
+                var stickyTop = headerH;
+                if (rect.top <= stickyTop && i < cards.length - 1) {
+                    card.classList.add('is-shrinking');
+                } else {
+                    card.classList.remove('is-shrinking');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+    })();
     </script>
 </body>
 </html>
