@@ -1309,36 +1309,37 @@ ul {
 
     /* Order assignment: 1 title · 2 image · 3 desc · 4 tags · 5 cta */
     .proj-item .proj-title {
-        order: 1;
-        font-size: clamp(28px, 8vw, 40px);
+        order: 3;
+        font-size: clamp(20px, 5.5vw, 26px);
         font-weight: 700;
-        margin-bottom: 20px;
+        margin-bottom: 12px;
     }
 
     .proj-item .proj-item-image {
-        order: 2;
+        order: 1;
         width: calc(100% + 88px);
         margin-left: -44px;
         margin-right: -44px;
         aspect-ratio: 3 / 4;
         border-radius: 0;
         overflow: hidden;
-        margin-bottom: 28px;
+        margin-top: 0;
+        margin-bottom: 24px;
     }
 
     .proj-item .proj-desc {
-        order: 3;
+        order: 4;
         max-width: none;
         margin-bottom: 16px;
     }
 
     .proj-item .proj-tags {
-        order: 4;
+        order: 5;
         margin-bottom: 20px;
     }
 
     .proj-item .proj-cta {
-        order: 5;
+        order: 6;
     }
 }
 
