@@ -2029,25 +2029,32 @@
         }
 
         .btn-white-outline {
-            background: transparent;
-            color: #ffffff;
-            border: 1.5px solid rgba(255, 255, 255, 0.35);
-            border-radius: 4px;
-            padding: 14px 32px;
-            font-family: var(--font-heading);
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
             display: inline-flex;
             align-items: center;
+            gap: 10px;
+            background: transparent;
+            color: #ffffff;
+            border: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+            padding: 0 0 3px 0;
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 400;
+            letter-spacing: 0.03em;
+            cursor: pointer;
+            transition: border-color 0.3s ease, gap 0.3s ease;
             white-space: nowrap;
+            text-decoration: none;
+        }
+
+        .btn-white-outline::after {
+            content: '→';
+            transition: transform 0.3s ease;
         }
 
         .btn-white-outline:hover {
-            background: rgba(255, 255, 255, 0.08);
             border-color: #ffffff;
-            color: #ffffff;
+            gap: 16px;
         }
 
         /* ── Responsive ── */
