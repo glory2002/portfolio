@@ -1273,6 +1273,145 @@ ul {
 }
 
 /* ── Mobile ── */
+/* ═══════════════════════════════════════════════════════════
+   JOURNAL  —  Kenya Hara editorial minimalism
+   ═══════════════════════════════════════════════════════════ */
+
+.journal {
+    grid-column: 1 / -1;
+    padding: 160px var(--s89) 160px;
+}
+
+/* Standalone journal page — not inside the homepage grid */
+.journal--page {
+    display: block;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-top: none;
+    background: #ffffff;
+    border-top: 1px solid var(--hairline);
+    position: relative;
+    z-index: 1;
+}
+
+.journal-header {
+    margin-bottom: var(--s89);
+}
+
+.journal-h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(52px, 6vw, 89px);
+    font-weight: 300;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+    line-height: var(--lh-tight);
+    margin-bottom: var(--s13);
+}
+
+.journal-header-divider {
+    width: 34px;
+    height: 1px;
+    background: var(--ink);
+    margin-bottom: var(--s21);
+}
+
+.journal-subtitle {
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--stone);
+    line-height: var(--lh-base);
+}
+
+.journal-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.journal-item {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 0 var(--s89);
+    align-items: start;
+    padding: var(--s55) 0;
+    border-top: 1px solid var(--hairline);
+    cursor: default;
+}
+
+.journal-item:last-child {
+    border-bottom: 1px solid var(--hairline);
+}
+
+.journal-item-text {
+    display: flex;
+    flex-direction: column;
+    padding-top: var(--s5);
+}
+
+.journal-item-num {
+    font-family: var(--font-body);
+    font-size: var(--t13);
+    font-weight: 400;
+    color: var(--stone);
+    letter-spacing: 0.05em;
+    margin-bottom: var(--s13);
+}
+
+.journal-item-title {
+    font-family: var(--font-heading);
+    font-size: clamp(20px, 2vw, 28px);
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    margin-bottom: var(--s13);
+}
+
+.journal-item-excerpt {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--stone);
+    line-height: var(--lh-base);
+    margin-bottom: var(--s21);
+}
+
+.journal-item-link {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: 0.01em;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 2px;
+    align-self: flex-start;
+    transition: opacity 0.25s ease;
+}
+
+.journal-item-link:hover {
+    opacity: 0.4;
+}
+
+.journal-item-image {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: var(--parchment);
+}
+
+.journal-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.7s cubic-bezier(0.25, 0, 0, 1);
+}
+
+.journal-item:hover .journal-item-image img {
+    transform: scale(1.04);
+}
+
 @media (max-width: 768px) {
     html, body {
         overflow-x: hidden;
@@ -3385,5 +3524,38 @@ h3.experience-job-title-new,
     .contact-column p,
     .contact-column a {
         font-size: 18px;
+    }
+
+    /* ── Journal mobile ── */
+    .journal,
+    .journal--page {
+        grid-column: 1 / -1;
+        padding: 80px 24px 80px;
+    }
+
+    .journal-header {
+        margin-bottom: var(--s55);
+    }
+
+    .journal-h1 {
+        font-size: clamp(44px, 12vw, 72px);
+    }
+
+    .journal-item {
+        grid-template-columns: 1fr;
+        gap: var(--s21) 0;
+        padding: var(--s34) 0;
+    }
+
+    .journal-item-image {
+        order: -1;
+        aspect-ratio: 4 / 3;
+        width: calc(100% + 48px);
+        margin-left: -24px;
+        margin-right: -24px;
+    }
+
+    .journal-item-title {
+        font-size: clamp(18px, 5vw, 24px);
     }
 }
