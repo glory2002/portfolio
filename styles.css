@@ -1311,15 +1311,15 @@ ul {
     .proj-item .proj-title {
         order: 3;
         font-size: clamp(20px, 5.5vw, 26px);
-        font-weight: 700;
+        font-weight: 600;
         margin-bottom: 12px;
     }
 
     .proj-item .proj-item-image {
         order: 1;
-        width: calc(100% + 88px);
-        margin-left: -44px;
-        margin-right: -44px;
+        width: calc(100% + 80px);
+        margin-left: -40px;
+        margin-right: -40px;
         aspect-ratio: 3 / 4;
         border-radius: 0;
         overflow: hidden;
@@ -2729,7 +2729,7 @@ h3.experience-job-title-new,
         display: grid;
         grid-template-columns: repeat(6, 1fr);
         gap: 12px;
-        padding: 0 20px;
+        padding: 0 16px;
     }
 
             /* Case study pages: reset home-page grid (children never get grid-column spans) */
@@ -2756,7 +2756,7 @@ h3.experience-job-title-new,
     }
 
     .header-content {
-        padding: 15px 20px;
+        padding: 15px 16px;
                 max-width: 100%;
         width: 100%;
         justify-content: space-between;
@@ -3353,11 +3353,11 @@ h3.experience-job-title-new,
         margin-right: 0;
     }
 
-    /* Break footer out of container's 20px padding to reach screen edges */
+    /* Break footer out of container's 16px padding to reach screen edges */
     .statement-footer-wrap .footer {
-        margin-left: -20px;
-        margin-right: -20px;
-        width: calc(100% + 40px);
+        margin-left: -16px;
+        margin-right: -16px;
+        width: calc(100% + 32px);
     }
 
     /* home-statement full-bleed padding instead of negative margins */
