@@ -28,7 +28,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Caveat:wght@500&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="styles.css?v=6.6">
+        <link rel="stylesheet" href="styles.css?v=7.3">
 </head>
 <body>
     <!-- Preloader -->
@@ -44,7 +44,7 @@
             <div class="logo-container">
                 <a href="index.html" class="logo-link">
                     <img src="assets/ga-logo.svg" alt="Gloria Logo" class="logo">
-                    <span class="logo-greeting" aria-hidden="true">← Designed by me.</span>
+                    <span class="logo-greeting" aria-hidden="true">Gloria Angelova</span>
                 </a>
             </div>
             <button class="menu-toggle" aria-label="Toggle menu">
@@ -53,8 +53,9 @@
                 <span></span>
             </button>
             <nav class="nav">
+                <a href="#projects" class="nav-link">Work</a>
                 <a href="about.html" class="nav-link">About</a>
-                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#" class="nav-link">Journal</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </nav>
         </div>
@@ -64,102 +65,101 @@
         <!-- Hero Section -->
         <section class="hero">
 
-            <!-- Content -->
-            <div class="hero-content">
-
-                <!-- Mobile only photo -->
-                <div class="hero-mobile-photo">
-                    <img src="assets/gloria-profile-about-new.png" alt="Gloria Angelova">
-                </div>
-
-                <div class="hero-location">
-                    <span class="hero-location-place">Based in Eindhoven, NL</span>
-                </div>
-
-                <div class="hero-text">
-                    <div class="hero-name-block">
-                        <span class="hero-h1-intro">Hallo! I'm</span>
-                        <div class="hero-name-wrapper">
-                            <h1><span class="hero-name" id="hero-name-hover">Gloria Angelova</span></h1>
-                        </div>
-                        <p class="hero-tagline">
-                            <span>UX / UI Designer</span>
-                            <span class="hero-tagline-sep">·</span>
-                            <span>AI Explorer</span>
-                            <span class="hero-tagline-sep">·</span>
-                            <span>Creative Technologist</span>
-                            <span class="hero-tagline-sep">·</span>
-                            <span id="embroidery-typewriter" style="font-family:'Caveat',cursive;font-size:1.45em;font-weight:500;letter-spacing:0.01em;vertical-align:middle;"></span>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="hero-bottom">
-                    <div class="hero-scroll-cue">
-                        <div class="hero-scroll-circle">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-                        </div>
-                        <span>Scroll to see my projects</span>
-                    </div>
-                </div>
-
+            <!-- Background photo — fixed right side, fades on scroll -->
+            <div class="hero-photo-bg" aria-hidden="true">
+                <img src="assets/Glory-img.png" alt="">
+                <div class="hero-photo-fade"></div>
             </div>
+
+            <!-- Text content -->
+            <div class="hero-content">
+                <div class="hero-left">
+                    <h1 class="hero-name">Gloria Angelova</h1>
+                    <div class="hero-name-divider"></div>
+                    <p class="hero-tagline">
+                        Designing intuitive digital<br>
+                        products and experiences.
+                    </p>
+                </div>
+            </div>
+
+
+            <!-- Intersection bar — bottom -->
+            <div class="hero-intersection">
+                <p class="hero-intersection-label">I WORK AT THE INTERSECTION OF</p>
+                <div class="hero-disciplines">
+                    <span>Product Design</span>
+                    <span class="hero-disc-sep">|</span>
+                    <span>UX Strategy</span>
+                    <span class="hero-disc-sep">|</span>
+                    <span>AI Exploration</span>
+                    <span class="hero-disc-sep">|</span>
+                    <span>Design Systems</span>
+                </div>
+            </div>
+
         </section>
 
-        <!-- Custom project cursor -->
-        <div id="proj-cursor" aria-hidden="true">View</div>
+        <!-- Projects — editorial layout -->
+        <section id="projects" class="proj-editorial">
 
-        <!-- Projects Section — sticky scroll stack -->
-        <section id="projects" class="projects-section proj-stack-section">
+            <header class="proj-editorial-header">
+                <span class="proj-editorial-eyebrow">Selected Work</span>
+            </header>
 
-            <div class="proj-stack-wrapper" data-card-idx="0">
-                <a href="project-locked.html" class="proj-stack-card" data-card-idx="0" data-cursor="Enter">
-                    <img src="assets/cs_cover_v3.svg" alt="Legacy Enterprise Platform" loading="lazy" decoding="async">
-                    <div class="proj-stack-label">
-                        <span class="proj-stack-num">01</span>
-                        <span class="proj-stack-title">Legacy Enterprise Platform</span>
-                        <span class="proj-stack-type">Enterprise · UX/UI</span>
-                    </div>
+            <!-- 01 · Text left 33% · Dominant image right 67% -->
+            <article class="proj-item proj-item--01">
+                <div class="proj-item-text">
+                    <h3 class="proj-title">TH Academy</h3>
+                    <p class="proj-desc">End-to-end product design for a beauty education platform serving students and instructors across Europe.</p>
+                    <p class="proj-tags">Product Design · Research</p>
+                    <a href="project-locked-pmu.html" class="proj-cta">View case study</a>
+                </div>
+                <a href="project-locked-pmu.html" class="proj-item-image">
+                    <img src="assets/TH-cover2.png" alt="TH Academy" loading="lazy">
                 </a>
-            </div>
+            </article>
 
-            <div class="proj-stack-wrapper" data-card-idx="1">
-                <a href="project-locked-pmu.html" class="proj-stack-card" data-card-idx="1" data-cursor="Enter">
-                    <img src="assets/TH-cover2.png" alt="TH Academy" loading="lazy" decoding="async">
-                    <div class="proj-stack-label">
-                        <span class="proj-stack-num">02</span>
-                        <span class="proj-stack-title">TH Academy</span>
-                        <span class="proj-stack-type">Product Design</span>
-                    </div>
+            <!-- 02 · Dominant image left 62% · Text right 38%, bottom-aligned -->
+            <article class="proj-item proj-item--02">
+                <a href="project-locked.html" class="proj-item-image">
+                    <img src="assets/cs_cover_v3.svg" alt="Legacy Enterprise Platform" loading="lazy">
                 </a>
-            </div>
+                <div class="proj-item-text">
+                    <h3 class="proj-title">Legacy Enterprise<br>Platform</h3>
+                    <p class="proj-desc">Transforming a fragmented enterprise ecosystem into a scalable, human-centred experience used daily by thousands.</p>
+                    <p class="proj-tags">Enterprise · UX/UI</p>
+                    <a href="project-locked.html" class="proj-cta">View case study</a>
+                </div>
+            </article>
 
-            <div class="proj-stack-wrapper" data-card-idx="2">
-                <a href="https://tanyahristova-pmu.com/en" class="proj-stack-card" data-card-idx="2" data-cursor="View Live" target="_blank" rel="noopener noreferrer">
+            <!-- 03 · Closing piece — text above, full-width image below -->
+            <article class="proj-item proj-item--03">
+                <div class="proj-item-text">
+                    <h3 class="proj-title">Tanya Hristova<br>PMU Expert</h3>
+                    <p class="proj-desc">Brand identity and live website for a permanent makeup artist — designed to feel elevated, personal, and trustworthy.</p>
+                    <p class="proj-tags">Live Website · Branding</p>
+                    <a href="https://tanyahristova-pmu.com/en" class="proj-cta" target="_blank" rel="noopener noreferrer">View live site</a>
+                </div>
+                <a href="https://tanyahristova-pmu.com/en" class="proj-item-image" target="_blank" rel="noopener noreferrer">
                     <img src="assets/TH-cover.png" alt="Tanya Hristova PMU Expert" loading="lazy">
-                    <div class="proj-stack-label">
-                        <span class="proj-stack-num">03</span>
-                        <span class="proj-stack-title">Tanya Hristova PMU Expert</span>
-                        <span class="proj-stack-type">Live Website</span>
-                    </div>
                 </a>
-            </div>
+            </article>
 
         </section>
 
         <!-- Statement + Footer together fill one screen -->
         <div class="statement-footer-wrap">
 
-        <!-- About statement section -->
+        <!-- Editorial statement -->
         <section class="home-statement">
-            <div class="home-statement-inner">
-                <p class="home-statement-text">
-                    I design in the space between business, technology, and people — translating complexity into clear experiences.
-                </p>
-                <div class="home-statement-photo">
-                    <img src="assets/gloria-profile-about-new.png" alt="Gloria Angelova">
-                </div>
-            </div>
+            <p class="home-statement-eyebrow">The thinking behind the work</p>
+            <p class="home-statement-text">
+                For more than a decade, I've helped<br>
+                teams turn complex ideas into products<br>
+                people actually enjoy using.
+            </p>
+            <a href="about.html" class="home-statement-link">Find out more about me →</a>
         </section>
 
         <!-- Footer -->
@@ -169,12 +169,12 @@
 
                     <a href="mailto:glory.angelova@gmail.com" class="footer-logo-link" id="get-in-touch-btn">
                         <svg width="48" height="52" viewBox="0 0 42 45" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M41.5574 30.7311L30.327 11.2799C29.9972 10.7109 29.4901 10.2451 28.8676 10.0348C27.6349 9.62665 26.3609 10.1544 25.7549 11.2057L17.3156 25.825C16.9858 26.3939 16.8374 27.0659 16.9693 27.7091C17.2331 28.9789 18.3257 29.8199 19.5378 29.8199H30.2034L27.1814 24.5882H24.0646L28.0142 17.7444L36.371 32.2235C32.9697 37.1007 27.3174 39.8712 21.2982 39.5332C9.8534 38.3705 4.98442 29.8158 5.23591 21.8383C5.4874 13.869 10.8882 5.64406 22.3866 5.22766H26.8351L23.7718 0H22.2011C7.4086 0.535959 0.329821 11.6097 0.0123683 21.6734C-0.305084 31.7576 6.07695 43.2808 20.8406 44.7443C20.8735 44.7443 20.9107 44.7526 20.9436 44.7526C21.3971 44.7814 21.8506 44.7938 22.3 44.7938C30.2034 44.7938 37.4594 40.6999 41.5368 33.8726C42.114 32.9079 42.1223 31.704 41.5574 30.7311Z" fill="#0e0e0e"/>
+                            <path d="M41.5574 30.7311L30.327 11.2799C29.9972 10.7109 29.4901 10.2451 28.8676 10.0348C27.6349 9.62665 26.3609 10.1544 25.7549 11.2057L17.3156 25.825C16.9858 26.3939 16.8374 27.0659 16.9693 27.7091C17.2331 28.9789 18.3257 29.8199 19.5378 29.8199H30.2034L27.1814 24.5882H24.0646L28.0142 17.7444L36.371 32.2235C32.9697 37.1007 27.3174 39.8712 21.2982 39.5332C9.8534 38.3705 4.98442 29.8158 5.23591 21.8383C5.4874 13.869 10.8882 5.64406 22.3866 5.22766H26.8351L23.7718 0H22.2011C7.4086 0.535959 0.329821 11.6097 0.0123683 21.6734C-0.305084 31.7576 6.07695 43.2808 20.8406 44.7443C20.8735 44.7443 20.9107 44.7526 20.9436 44.7526C21.3971 44.7814 21.8506 44.7938 22.3 44.7938C30.2034 44.7938 37.4594 40.6999 41.5368 33.8726C42.114 32.9079 42.1223 31.704 41.5574 30.7311Z" fill="#ffffff"/>
                         </svg>
                     </a>
                     <div style="margin-top:20px;display:flex;flex-direction:column;gap:6px;">
-                        <a href="mailto:glory.angelova@gmail.com" style="font-family:var(--font-body);font-size:15px;font-weight:400;color:#0e0e0e;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='rgba(14,14,14,0.4)'" onmouseout="this.style.color='#0e0e0e'">glory.angelova@gmail.com</a>
-                        <a href="tel:+31647355880" style="font-family:var(--font-body);font-size:15px;font-weight:400;color:#0e0e0e;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='rgba(14,14,14,0.4)'" onmouseout="this.style.color='#0e0e0e'">+31 6 473 55 880</a>
+                        <a href="mailto:glory.angelova@gmail.com" style="font-family:var(--font-body);font-size:15px;font-weight:400;color:#ffffff;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.45)'" onmouseout="this.style.color='#ffffff'">glory.angelova@gmail.com</a>
+                        <a href="tel:+31647355880" style="font-family:var(--font-body);font-size:15px;font-weight:400;color:#ffffff;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.45)'" onmouseout="this.style.color='#ffffff'">+31 6 473 55 880</a>
                     </div>
                 </div>
                 
@@ -367,87 +367,31 @@
     </script>
 
     <script>
-    /* ── Always start at the very top on load/reload ────────────── */
+    /* ── Always start at the very top on load/reload ── */
     if ('scrollRestoration' in history) {
         history.scrollRestoration = 'manual';
     }
 
-    /* ── Typewriter: "Embroidery Lover" ── */
+    /* ── Hero photo: brighten to white on scroll ── */
     (function () {
-        var el   = document.getElementById('embroidery-typewriter');
-        if (!el) return;
-        var text  = 'Embroidery Lover';
-        var delay = 1400;   /* ms before typing starts */
-        var speed = 72;     /* ms per character */
-        var i = 0;
-        setTimeout(function type() {
-            el.textContent = text.slice(0, ++i);
-            if (i < text.length) setTimeout(type, speed);
-        }, delay);
-    })();
+        var fade  = document.querySelector('.hero-photo-fade');
+        var hero  = document.querySelector('.hero');
+        var photo = document.querySelector('.hero-photo-bg');
+        if (!fade || !hero || !photo) return;
 
-
-
-
-    </script>
-
-    <script>
-    /* ── Project stack: custom cursor + scale-shrink on overlap ── */
-    (function () {
-        var cursor   = document.getElementById('proj-cursor');
-        var cards    = Array.from(document.querySelectorAll('.proj-stack-card'));
-        var section  = document.getElementById('projects');
-        if (!cursor || !cards.length || !section) return;
-
-        var mouseX = 0, mouseY = 0, curX = 0, curY = 0;
-        var raf;
-
-        /* Smooth cursor follow */
-        function loop() {
-            curX += (mouseX - curX) * 0.18;
-            curY += (mouseY - curY) * 0.18;
-            cursor.style.left = curX + 'px';
-            cursor.style.top  = curY + 'px';
-            raf = requestAnimationFrame(loop);
+        function update() {
+            var heroH   = hero.offsetHeight;
+            var scrollY = window.scrollY;
+            var progress = Math.min(1, scrollY / (heroH * 0.45));
+            fade.style.opacity = progress;
+            /* hide completely once faded */
+            photo.style.visibility = progress >= 1 ? 'hidden' : 'visible';
         }
 
-        document.addEventListener('mousemove', function (e) {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-        });
-
-        /* Show/hide cursor + update label per card */
-        cards.forEach(function (card) {
-            card.addEventListener('mouseenter', function () {
-                cursor.textContent = card.dataset.cursor || 'View';
-                cursor.classList.add('visible');
-                if (!raf) loop();
-            });
-            card.addEventListener('mouseleave', function () {
-                cursor.classList.remove('visible');
-                cancelAnimationFrame(raf);
-                raf = null;
-            });
-        });
-
-        /* Scale-shrink: when a card is sticky and the next one starts covering it */
-        function onScroll() {
-            var headerH = 72;
-            cards.forEach(function (card, i) {
-                var rect = card.getBoundingClientRect();
-                /* rect.top goes below headerH once the card is stuck */
-                var stickyTop = headerH;
-                if (rect.top <= stickyTop && i < cards.length - 1) {
-                    card.classList.add('is-shrinking');
-                } else {
-                    card.classList.remove('is-shrinking');
-                }
-            });
-        }
-
-        window.addEventListener('scroll', onScroll, { passive: true });
-        onScroll();
+        window.addEventListener('scroll', update, { passive: true });
+        update();
     })();
     </script>
+
 </body>
 </html>
