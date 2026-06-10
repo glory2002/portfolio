@@ -1311,6 +1311,7 @@ ul {
     .proj-item .proj-title {
         order: 1;
         font-size: clamp(28px, 8vw, 40px);
+        font-weight: 700;
         margin-bottom: 20px;
     }
 
@@ -1319,7 +1320,7 @@ ul {
         width: calc(100% + 88px);
         margin-left: -44px;
         margin-right: -44px;
-        aspect-ratio: 4 / 3;
+        aspect-ratio: 3 / 4;
         border-radius: 0;
         overflow: hidden;
         margin-bottom: 28px;
