@@ -2301,7 +2301,7 @@ ul {
 .contact-column {
             display: flex;
             flex-direction: column;
-    gap: 24px;
+    gap: 16px;
             text-align: left;
         }
 
@@ -2315,43 +2315,24 @@ ul {
         }
 
 .contact-column p, .contact-column a {
-    font-size: 24px;
+    font-family: var(--font-body);
+    font-size: 15px;
     font-weight: 300;
+    letter-spacing: 0.01em;
     line-height: 1.4;
     margin: 0;
-    color: #ffffff;
+    color: rgba(255,255,255,0.55);
     position: relative;
     display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    transition: color 0.3s ease;
-}
-
-.contact-column a::after {
-    content: '↗';
-    display: inline-block;
-    font-size: 20px;
-    color: #ffffff;
-    transform: translate(0, 0);
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.contact-column a[href^="mailto"] {
-    color: #ffffff;
-}
-
-.contact-column a[href^="mailto"]::after {
-    color: #ffffff;
+    align-self: flex-start;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+    transition: color 0.3s ease, border-color 0.3s ease;
 }
 
 .contact-column a:hover {
-    color: rgba(255,255,255,0.45);
-}
-
-.contact-column a:hover::after {
-    transform: translate(4px, -4px);
-    color: rgba(255,255,255,0.45);
-    opacity: 1;
+    color: rgba(255,255,255,0.95);
+    border-color: rgba(255,255,255,0.3);
 }
 
         .footer-bottom {
@@ -3253,7 +3234,7 @@ h3.experience-job-title-new,
     }
 
     .contact-column p, .contact-column a {
-        font-size: 20px;
+        font-size: 15px;
     }
 
     .about-hero-wrapper {
@@ -3534,7 +3515,7 @@ h3.experience-job-title-new,
 
     .contact-column p,
     .contact-column a {
-        font-size: 18px;
+        font-size: 14px;
     }
 
     /* ── Journal mobile ── */
