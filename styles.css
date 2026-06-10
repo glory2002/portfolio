@@ -3349,11 +3349,11 @@ h3.experience-job-title-new,
         margin-right: 0;
     }
 
-    /* Cancel the footer's desktop full-bleed negative margins inside the wrap */
+    /* Break footer out of container's 20px padding to reach screen edges */
     .statement-footer-wrap .footer {
-        margin-left: 0;
-        margin-right: 0;
-        width: 100%;
+        margin-left: -20px;
+        margin-right: -20px;
+        width: calc(100% + 40px);
     }
 
     /* home-statement full-bleed padding instead of negative margins */
