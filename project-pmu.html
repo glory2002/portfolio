@@ -100,7 +100,7 @@
         }
 
         /* ── Base ── */
-        body { background: #f7f6f2; }
+        body { background: #ffffff; }
         .cs-page, .cs-page * {
             font-family: var(--font-body);
             -webkit-font-smoothing: antialiased;
@@ -203,6 +203,17 @@
             font-weight: 300;
         }
 
+        .cs-hero-subtitle {
+            font-family: var(--font-body);
+            font-size: clamp(16px, 1.6vw, 20px);
+            font-weight: 300;
+            line-height: 1.55;
+            letter-spacing: -0.01em;
+            color: var(--ink-3);
+            margin: 16px 0 0;
+            max-width: 520px;
+        }
+
         .cs-hero-desc {
             font-family: 'DM Sans', sans-serif;
             font-size: clamp(18px, 2vw, 22px);
@@ -252,7 +263,7 @@
 
         .cs-hero-right {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
+            grid-template-columns: repeat(6, 1fr);
             gap: 0;
             width: 100%;
             margin-top: 52px;
@@ -286,6 +297,12 @@
         }
 
         .cs-hero .cs-subtitle { display: none; }
+
+        .cs-hero-meta-v--status {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+        }
 
         @media (max-width: 900px) {
             .cs-hero-desc { max-width: 100%; }
@@ -931,7 +948,9 @@
             margin-left: calc(50% - 50vw);
             margin-bottom: -56px;
             padding: 48px max(var(--wf-band-pad-x), calc((100vw - 1280px) / 2 + var(--wf-band-pad-x))) 56px;
-            background: #f4f4f4;
+            background: #ffffff;
+            border-top: 1px solid rgba(0,0,0,0.07);
+            border-bottom: 1px solid rgba(0,0,0,0.07);
             border-radius: 0;
             box-sizing: border-box;
         }
@@ -1556,12 +1575,13 @@
 
         /* ── Design Decision section ── */
         .cs-dd-section {
-            background: #f4f4f4;
+            background: #ffffff;
+            border-top: 1px solid rgba(0,0,0,0.07);
+            border-bottom: 1px solid rgba(0,0,0,0.07);
             width: 100vw;
             margin-left: calc(50% - 50vw);
             box-sizing: border-box;
             padding: 60px max(var(--cs-body-pad-x), calc((100vw - 1280px) / 2 + var(--cs-body-pad-x)));
-            box-sizing: border-box;
         }
 
         .cs-dd-grid {
@@ -2096,6 +2116,7 @@
                 padding: 60px 32px 40px;
                 gap: 0;
             }
+            .cs-hero-right { grid-template-columns: repeat(3, 1fr); }
             .cs-body { --cs-body-pad-x: 32px; padding: 0 max(var(--cs-body-pad-x), calc((100vw - 1280px) / 2 + var(--cs-body-pad-x))); gap: 0; }
             .cs-overview-split { grid-template-columns: 1fr; gap: 28px; }
             .cs-insight-grid { grid-template-columns: 1fr 1fr; }
@@ -2110,6 +2131,7 @@
         @media (max-width: 600px) {
             .cs-section--wireframes { --wf-band-pad-x: 20px; }
             .cs-hero { padding: 40px 20px 32px; grid-template-columns: 1fr; gap: 24px; }
+            .cs-hero-right { grid-template-columns: repeat(2, 1fr); row-gap: 20px; }
             .cs-body { --cs-body-pad-x: 20px; padding: 0 var(--cs-body-pad-x); gap: 0; }
             .cs-insight-grid { grid-template-columns: 1fr; }
             .cs-wireframe-grid { grid-template-columns: 1fr; }
@@ -2167,10 +2189,8 @@
         }
 
         .cs-brief {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0 80px;
-            align-items: start;
+            display: block;
+            max-width: 720px;
         }
 
         .cs-brief-left {
@@ -2187,6 +2207,12 @@
             color: var(--ink-label);
         }
 
+        .cs-brief-body {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
         .cs-brief-body p {
             font-family: var(--font-body);
             font-size: var(--text-body-lg);
@@ -2195,6 +2221,636 @@
             color: var(--ink-1);
             margin: 0;
             font-weight: 300;
+        }
+
+        .cs-brief-lead {
+            font-weight: 400 !important;
+            color: var(--ink-1) !important;
+            margin-bottom: 4px !important;
+        }
+
+        .cs-context {
+            padding: var(--sp-8) 0;
+            border-top: 1px solid var(--line);
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            max-width: 720px;
+        }
+
+        .cs-context-body {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .cs-context-body p {
+            font-family: var(--font-body);
+            font-size: var(--text-body-lg);
+            font-weight: 300;
+            line-height: 1.6;
+            letter-spacing: -0.01em;
+            color: var(--ink-3);
+            margin: 0;
+        }
+
+        .cs-roles {
+            padding: var(--sp-8) 0;
+            border-top: 1px solid var(--line);
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+        }
+
+        .cs-roles-lead {
+            font-family: var(--font-body);
+            font-size: var(--text-body-lg);
+            font-weight: 300;
+            line-height: 1.6;
+            letter-spacing: -0.01em;
+            color: var(--ink-3);
+            margin: -24px 0 0;
+            max-width: 600px;
+        }
+
+        .cs-roles-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+        }
+
+        .cs-role-card {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 32px 40px 32px 0;
+            border-right: 1px solid var(--line);
+        }
+
+        .cs-role-card:last-child {
+            border-right: none;
+            padding-right: 0;
+            padding-left: 40px;
+        }
+
+        .cs-role-card:not(:first-child):not(:last-child) {
+            padding-left: 40px;
+        }
+
+        .cs-role-num {
+            font-family: var(--font-body);
+            font-size: var(--text-micro);
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            color: var(--ink-label);
+            display: block;
+        }
+
+        .cs-role-title {
+            font-family: var(--font-heading);
+            font-size: clamp(18px, 1.8vw, 22px);
+            font-weight: 400;
+            letter-spacing: -0.01em;
+            color: var(--ink-1);
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .cs-role-desc {
+            font-family: var(--font-body);
+            font-size: var(--text-sm);
+            font-weight: 300;
+            line-height: 1.65;
+            color: var(--ink-4);
+            margin: 0;
+        }
+
+        @media (max-width: 640px) {
+            .cs-roles-grid {
+                grid-template-columns: 1fr;
+            }
+            .cs-role-card,
+            .cs-role-card:last-child,
+            .cs-role-card:not(:first-child):not(:last-child) {
+                padding: 24px 0;
+                border-right: none;
+                border-bottom: 1px solid var(--line);
+            }
+            .cs-role-card:last-child {
+                border-bottom: none;
+            }
+        }
+
+        /* ── Learning journey ── */
+        .cs-journey {
+            padding: var(--sp-8) 0;
+            border-top: 1px solid var(--line);
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+        }
+
+        .cs-journey-lead {
+            font-family: var(--font-body);
+            font-size: var(--text-body-lg);
+            font-weight: 300;
+            line-height: 1.6;
+            letter-spacing: -0.01em;
+            color: var(--ink-3);
+            margin: -24px 0 0;
+            max-width: 680px;
+        }
+
+        .cs-journey-flow {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0;
+            padding: 40px;
+            background: var(--surface-1, #fafafa);
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            row-gap: 20px;
+        }
+
+        .cs-journey-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            min-width: 80px;
+        }
+
+        .cs-journey-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--ink-2);
+            flex-shrink: 0;
+        }
+
+        .cs-journey-step--trainer .cs-journey-dot {
+            background: var(--accent, #2d7a4f);
+            box-shadow: 0 0 0 3px rgba(45,122,79,.15);
+        }
+
+        .cs-journey-step--end .cs-journey-dot {
+            background: var(--ink-1);
+            box-shadow: 0 0 0 3px rgba(15,15,15,.12);
+            width: 12px;
+            height: 12px;
+        }
+
+        .cs-journey-label {
+            font-family: var(--font-body);
+            font-size: 12px;
+            font-weight: 400;
+            color: var(--ink-2);
+            letter-spacing: 0.01em;
+            text-align: center;
+            line-height: 1.4;
+            white-space: nowrap;
+        }
+
+        .cs-journey-step--trainer .cs-journey-label {
+            color: var(--accent, #2d7a4f);
+            font-weight: 500;
+        }
+
+        .cs-journey-step--end .cs-journey-label {
+            font-weight: 600;
+            color: var(--ink-1);
+        }
+
+        .cs-journey-or {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 300;
+            color: var(--ink-label);
+            margin: 0 2px;
+        }
+
+        .cs-journey-arrow {
+            font-size: 14px;
+            color: rgba(0,0,0,0.2);
+            padding: 0 6px;
+            margin-bottom: 20px;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 900px) {
+            .cs-journey-flow {
+                gap: 0;
+                row-gap: 16px;
+                padding: 28px 24px;
+            }
+            .cs-journey-label {
+                white-space: normal;
+                max-width: 64px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .cs-journey-flow {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0;
+            }
+            .cs-journey-step {
+                flex-direction: row;
+                min-width: 0;
+                gap: 14px;
+            }
+            .cs-journey-label {
+                white-space: normal;
+                max-width: none;
+                text-align: left;
+            }
+            .cs-journey-arrow {
+                padding: 0 0 0 11px;
+                margin: 0;
+                transform: rotate(90deg);
+            }
+        }
+
+        /* ── Logic / Statuses section ── */
+        .cs-logic {
+            padding: var(--sp-8) 0;
+            border-top: 1px solid var(--line);
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+        }
+
+        .cs-logic-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .cs-logic-group {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding: 32px 36px;
+            border-right: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .cs-logic-group:nth-child(even) {
+            border-right: none;
+        }
+
+        .cs-logic-group:nth-last-child(-n+2) {
+            border-bottom: none;
+        }
+
+        .cs-logic-label {
+            font-family: var(--font-body);
+            font-size: var(--text-label);
+            font-weight: 500;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+            color: var(--ink-label);
+        }
+
+        .cs-logic-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .cs-lpill {
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 400;
+            padding: 5px 12px;
+            border-radius: 100px;
+            border: 1px solid transparent;
+            letter-spacing: 0.01em;
+        }
+
+        .cs-lpill--muted {
+            background: var(--surface-2, #f4f4f4);
+            color: var(--ink-3);
+            border-color: var(--line);
+        }
+
+        .cs-lpill--neutral {
+            background: #f0f0f0;
+            color: var(--ink-2);
+            border-color: #e0e0e0;
+        }
+
+        .cs-lpill--active {
+            background: #eaf4ff;
+            color: #1a5fa8;
+            border-color: #b8d8f5;
+        }
+
+        .cs-lpill--done {
+            background: #eaf7ed;
+            color: #2a7a3b;
+            border-color: #b2ddb9;
+        }
+
+        .cs-lpill--locked {
+            background: #f4f4f4;
+            color: #999;
+            border-color: #e0e0e0;
+        }
+
+        .cs-lpill--review {
+            background: #fff8e6;
+            color: #7a5200;
+            border-color: #e8d479;
+        }
+
+        .cs-lpill--correction {
+            background: #fff0f0;
+            color: #9b2626;
+            border-color: #f0b8b8;
+        }
+
+        .cs-logic-note {
+            font-family: var(--font-body);
+            font-size: var(--text-body-lg);
+            font-weight: 300;
+            line-height: 1.5;
+            letter-spacing: -0.01em;
+            color: var(--ink-3);
+            margin: -16px 0 0;
+            max-width: 640px;
+        }
+
+        /* ── Status dependencies ── */
+        .cs-deps {
+            padding: var(--sp-8) 0;
+            border-top: 1px solid var(--line);
+            display: flex;
+            flex-direction: column;
+            gap: 56px;
+        }
+
+        .cs-deps-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        /* Flow column */
+        .cs-deps-flow {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+        }
+
+        .cs-deps-node {
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 400;
+            padding: 10px 20px;
+            border-radius: 100px;
+            border: 1px solid transparent;
+            text-align: center;
+            white-space: nowrap;
+            letter-spacing: 0.01em;
+        }
+
+        .cs-deps-node--active   { background: #eaf4ff; color: #1a5fa8; border-color: #b8d8f5; }
+        .cs-deps-node--action   { background: var(--surface-2,#f4f4f4); color: var(--ink-2); border-color: var(--line); }
+        .cs-deps-node--review   { background: #fff8e6; color: #7a5200; border-color: #e8d479; }
+        .cs-deps-node--trainer  { background: var(--accent-bg,rgba(45,122,79,.08)); color: var(--accent,#2d7a4f); border-color: var(--accent-border,rgba(45,122,79,.22)); font-weight: 500; }
+        .cs-deps-node--done     { background: #eaf7ed; color: #2a7a3b; border-color: #b2ddb9; }
+        .cs-deps-node--correction { background: #fff0f0; color: #9b2626; border-color: #f0b8b8; }
+
+        .cs-deps-connector {
+            font-size: 16px;
+            color: rgba(0,0,0,0.2);
+            line-height: 1;
+            padding: 6px 0;
+            flex-shrink: 0;
+        }
+
+        /* Branch split */
+        .cs-deps-branch {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            position: relative;
+        }
+
+        .cs-deps-branch-line {
+            width: 50%;
+            height: 1px;
+            background: rgba(0,0,0,0.12);
+            align-self: center;
+            margin: 0 0 0 0;
+        }
+
+        .cs-deps-branch > .cs-deps-branch-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Override: branch is a row of two cols */
+        .cs-deps-branch {
+            flex-direction: row;
+            justify-content: center;
+            gap: 0;
+            align-items: flex-start;
+        }
+
+        .cs-deps-branch-line { display: none; }
+
+        .cs-deps-branch-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            padding: 0 8px;
+            position: relative;
+        }
+
+        .cs-deps-branch-col::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            right: 50%;
+            height: 1px;
+        }
+
+        /* Horizontal connector line above the branch */
+        .cs-deps-branch::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 25%;
+            right: 25%;
+            height: 1px;
+            background: rgba(0,0,0,0.12);
+        }
+
+        /* Rules column */
+        .cs-deps-rules {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            padding-top: 8px;
+        }
+
+        .cs-deps-rule {
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 24px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .cs-deps-rule:first-child {
+            border-top: 1px solid var(--line);
+        }
+
+        .cs-deps-rule-if {
+            font-family: var(--font-body);
+            font-size: var(--text-sm);
+            font-weight: 300;
+            color: var(--ink-3);
+            flex: 0 1 auto;
+        }
+
+        .cs-deps-rule-arrow {
+            font-size: 14px;
+            color: rgba(0,0,0,0.2);
+            flex-shrink: 0;
+        }
+
+        .cs-deps-rule-then {
+            font-family: var(--font-body);
+            font-size: var(--text-sm);
+            font-weight: 300;
+            color: var(--ink-1);
+        }
+
+        .cs-deps-rule-then strong {
+            font-weight: 500;
+        }
+
+        @media (max-width: 900px) {
+            .cs-deps-inner {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+        }
+
+        /* ── Product decisions ── */
+        .cs-decisions {
+            padding: var(--sp-8) 0;
+            border-top: 1px solid var(--line);
+            display: flex;
+            flex-direction: column;
+            gap: 56px;
+        }
+
+        .cs-decisions-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+
+        .cs-decision {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 40px 48px 40px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .cs-decision:nth-child(even) {
+            padding-left: 48px;
+            padding-right: 0;
+            border-left: 1px solid var(--line);
+        }
+
+        .cs-decision:nth-last-child(-n+2) {
+            border-bottom: none;
+        }
+
+        .cs-decision-num {
+            font-family: var(--font-body);
+            font-size: var(--text-micro);
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            color: var(--ink-label);
+            display: block;
+        }
+
+        .cs-decision-title {
+            font-family: var(--font-heading);
+            font-size: clamp(18px, 1.8vw, 22px);
+            font-weight: 400;
+            letter-spacing: -0.01em;
+            line-height: 1.25;
+            color: var(--ink-1);
+            margin: 0;
+        }
+
+        .cs-decision-body {
+            font-family: var(--font-body);
+            font-size: var(--text-sm);
+            font-weight: 300;
+            line-height: 1.7;
+            color: var(--ink-4);
+            margin: 0;
+        }
+
+        @media (max-width: 640px) {
+            .cs-decisions-grid {
+                grid-template-columns: 1fr;
+            }
+            .cs-decision,
+            .cs-decision:nth-child(even) {
+                padding: 32px 0;
+                border-left: none;
+                border-bottom: 1px solid var(--line);
+            }
+            .cs-decision:last-child {
+                border-bottom: none;
+            }
+            .cs-decision:nth-last-child(-n+2) {
+                border-bottom: 1px solid var(--line);
+            }
+            .cs-decision:last-child {
+                border-bottom: none;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .cs-logic-grid {
+                grid-template-columns: 1fr;
+            }
+            .cs-logic-group {
+                border-right: none;
+                border-bottom: 1px solid var(--line);
+            }
+            .cs-logic-group:last-child {
+                border-bottom: none;
+            }
+            .cs-logic-group:nth-last-child(-n+2) {
+                border-bottom: 1px solid var(--line);
+            }
+            .cs-logic-group:last-child {
+                border-bottom: none;
+            }
         }
 
         .cs-brief-right {
@@ -2230,6 +2886,201 @@
 
         @media (max-width: 900px) {
             .cs-brief { grid-template-columns: 1fr; gap: 40px; }
+        }
+
+        /* ── Wireframes intro ── */
+        .cs-wireframes-intro {
+            padding: var(--sp-8) 0 0;
+            border-top: 1px solid var(--line);
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .cs-wireframes-intro-lead {
+            font-family: var(--font-body);
+            font-size: var(--text-body-lg);
+            font-weight: 300;
+            line-height: 1.6;
+            letter-spacing: -0.01em;
+            color: var(--ink-3);
+            margin: -8px 0 0;
+            max-width: 680px;
+        }
+
+        .cs-wireframes-fullbleed {
+            width: 100vw;
+            margin-left: calc(50% - 50vw);
+            margin-top: 16px;
+        }
+
+        .cs-wireframes-fullbleed img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ── Interface system ── */
+        .cs-ui-system {
+            padding: var(--sp-8) 0;
+            border-top: 1px solid var(--line);
+            display: flex;
+            flex-direction: column;
+            gap: 56px;
+        }
+
+        .cs-ui-system-lead {
+            font-family: var(--font-body);
+            font-size: var(--text-body-lg);
+            font-weight: 300;
+            line-height: 1.6;
+            letter-spacing: -0.01em;
+            color: var(--ink-3);
+            margin: -24px 0 0;
+            max-width: 680px;
+        }
+
+        .cs-ui-showcase {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .cs-ui-block {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 32px 36px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .cs-ui-block:last-child {
+            border-bottom: none;
+        }
+
+        .cs-ui-block-label {
+            font-family: var(--font-body);
+            font-size: var(--text-label);
+            font-weight: 500;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+            color: var(--ink-label);
+        }
+
+        .cs-ui-block-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+        }
+
+        /* Buttons */
+        .cs-ui-btn {
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 400;
+            padding: 9px 18px;
+            border-radius: 8px;
+            cursor: default;
+            border: 1px solid transparent;
+            letter-spacing: 0.01em;
+            white-space: nowrap;
+        }
+
+        .cs-ui-btn--primary {
+            background: var(--ink-1);
+            color: #fff;
+            border-color: var(--ink-1);
+        }
+
+        .cs-ui-btn--outline {
+            background: transparent;
+            color: var(--ink-2);
+            border-color: var(--line);
+        }
+
+        .cs-ui-btn--ghost {
+            background: var(--surface-2, #f4f4f4);
+            color: var(--ink-3);
+            border-color: var(--line);
+        }
+
+        .cs-ui-btn--danger {
+            background: #fff0f0;
+            color: #9b2626;
+            border-color: #f0b8b8;
+        }
+
+        /* Cards */
+        .cs-ui-cards-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .cs-ui-card {
+            background: var(--surface-1, #fafafa);
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .cs-ui-card-top {
+            display: flex;
+        }
+
+        .cs-ui-card-title {
+            font-family: var(--font-heading);
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--ink-1);
+            margin: 0;
+            line-height: 1.3;
+            letter-spacing: -0.01em;
+        }
+
+        .cs-ui-card-meta {
+            font-family: var(--font-body);
+            font-size: 12px;
+            font-weight: 300;
+            color: var(--ink-4);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .cs-ui-card-progress {
+            height: 3px;
+            background: var(--line);
+            border-radius: 99px;
+            overflow: hidden;
+            margin-top: 4px;
+        }
+
+        .cs-ui-card-progress-bar {
+            height: 100%;
+            background: var(--accent, #2d7a4f);
+            border-radius: 99px;
+        }
+
+        .cs-ui-card-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .cs-ui-cards-row {
+                grid-template-columns: 1fr;
+            }
+            .cs-ui-block {
+                padding: 24px 20px;
+            }
         }
 
         /* ── Workflow statement ── */
@@ -2571,8 +3422,10 @@
             margin-left: calc(50% - 50vw);
             padding: 0 max(0px, calc((100vw - 1280px) / 2));
             box-sizing: border-box;
-            background: #f7f6f2;
+            background: #ffffff;
             border: none !important;
+            border-top: 1px solid rgba(0,0,0,0.07) !important;
+            border-bottom: 1px solid rgba(0,0,0,0.07) !important;
             outline: none;
         }
         @media (max-width: 1280px) {
@@ -3105,6 +3958,154 @@
             .cs-review-arrow { display: none; }
         }
 
+        /* ── Role-based experiences ── */
+        .cs-roles-exp {
+            padding: var(--sp-8) 0;
+            border-top: 1px solid var(--line);
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+        }
+        .cs-roles-exp-lead {
+            font-family: var(--font-body);
+            font-size: var(--text-body-lg);
+            font-weight: 300;
+            line-height: 1.6;
+            letter-spacing: -0.01em;
+            color: var(--ink-3);
+            margin: -24px 0 0;
+            max-width: 680px;
+        }
+        .cs-roles-exp-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .cs-role-block {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .cs-role-block-text {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .cs-role-block-label {
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: .13em;
+            text-transform: uppercase;
+            color: var(--ink-label, #999);
+        }
+        .cs-role-block-title {
+            font-family: var(--font-heading);
+            font-size: 22px;
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            color: var(--ink-1);
+            margin: 0;
+        }
+        .cs-role-block-desc {
+            font-family: var(--font-body);
+            font-size: 15px;
+            font-weight: 300;
+            line-height: 1.6;
+            color: var(--ink-3);
+            margin: 0;
+        }
+        .cs-role-block-screen {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            background: #f7f8fa;
+            aspect-ratio: 9 / 16;
+        }
+        .cs-role-block-screen img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            display: block;
+        }
+        @media (max-width: 900px) {
+            .cs-roles-exp-grid { grid-template-columns: 1fr; gap: 40px; }
+            .cs-role-block { flex-direction: column; }
+            .cs-role-block-screen { aspect-ratio: 4 / 3; }
+        }
+
+        /* ── Outcome ── */
+        .cs-outcome {
+            padding: var(--sp-8) 0;
+            border-top: 1px solid var(--line);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            max-width: 720px;
+        }
+        .cs-outcome-label {
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: .13em;
+            text-transform: uppercase;
+            color: var(--ink-label, #999);
+        }
+        .cs-outcome-title {
+            font-family: var(--font-heading);
+            font-size: clamp(26px, 3vw, 36px);
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+            color: var(--ink-1);
+            margin: 0;
+        }
+        .cs-outcome-body {
+            font-family: var(--font-body);
+            font-size: var(--text-body-lg);
+            font-weight: 300;
+            line-height: 1.65;
+            color: var(--ink-3);
+            margin: 0;
+        }
+
+        /* ── Working with AI ── */
+        .cs-ai-note {
+            padding: var(--sp-8) 0;
+            border-top: 1px solid var(--line);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            max-width: 720px;
+        }
+        .cs-ai-note-label {
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: .13em;
+            text-transform: uppercase;
+            color: var(--ink-label, #999);
+        }
+        .cs-ai-note-title {
+            font-family: var(--font-heading);
+            font-size: clamp(26px, 3vw, 36px);
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+            color: var(--ink-1);
+            margin: 0;
+        }
+        .cs-ai-note-body {
+            font-family: var(--font-body);
+            font-size: var(--text-body-lg);
+            font-weight: 300;
+            line-height: 1.65;
+            color: var(--ink-3);
+            margin: 0;
+        }
+
         /* ── Screens row ── */
         .cs-screens-row {
             display: grid;
@@ -3227,7 +4228,6 @@
             <div class="logo-container">
                 <a href="index.html" class="logo-link">
                     <img src="assets/ga-logo.svg" alt="Gloria Logo" class="logo">
-                    <span class="logo-greeting" aria-hidden="true">← I made this.</span>
                 </a>
             </div>
             <button class="menu-toggle" aria-label="Toggle menu">
@@ -3236,9 +4236,9 @@
                 <span></span>
             </button>
             <nav class="nav">
-
+                <a href="index.html#projects" class="nav-link">Work</a>
                 <a href="about.html" class="nav-link">About</a>
-                <a href="index.html#projects" class="nav-link">Projects</a>
+                <a href="journal.html" class="nav-link">Journal</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </nav>
         </div>
@@ -3250,10 +4250,7 @@
         <section class="cs-hero">
             <div class="cs-hero-left">
                 <h1 class="cs-title">Tanya Hristova<br><span class="cs-title-light">Studio & Academy</span></h1>
-                <div class="cs-hero-status">
-                    <span class="cs-hero-status-dot"></span>
-                    <span class="cs-hero-status-text">Live and in active use</span>
-                </div>
+                <p class="cs-hero-subtitle">Designing a training management system for a growing beauty academy.</p>
             </div>
 
             <div class="cs-hero-right">
@@ -3277,6 +4274,13 @@
                     <span class="cs-hero-meta-k">Year</span>
                     <span class="cs-hero-meta-v">2026</span>
                 </div>
+                <div class="cs-hero-meta-item">
+                    <span class="cs-hero-meta-k">Status</span>
+                    <span class="cs-hero-meta-v cs-hero-meta-v--status">
+                        <span class="cs-hero-status-dot" style="width:7px;height:7px;flex-shrink:0;"></span>
+                        Live and in active use
+                    </span>
+                </div>
             </div>
         </section>
 
@@ -3291,218 +4295,352 @@
             <section class="cs-section">
                 <div class="cs-brief">
                     <div class="cs-brief-left">
+                        <h2 class="cs-section-title">The challenge wasn't content. It was coordinating learning, reviews, and progression.</h2>
                         <div class="cs-brief-body">
-                            <p>A mobile-first learning platform for PMU training. Designed so a master trainer could own, run, and grow her academy — independently.</p>
-                            <p style="margin-top: 20px;">Tanya had been teaching through Phi Academy CraftMaster and knew exactly what a professional training platform should feel like. As her reputation grew, she wanted to step out on her own — building a platform under her name, on her terms, with a curriculum she designed herself.</p>
-                        </div>
-                    </div>
-                    <div class="cs-brief-right">
-                        <div class="cs-brief-group">
-                            <span class="cs-brief-group-label">Deliverables</span>
-                            <span class="cs-brief-group-value">User Research · IA · User Flows · Wireframes · UI Design · Design System</span>
-                        </div>
-                        <div class="cs-brief-group">
-                            <span class="cs-brief-group-label">Tools</span>
-                            <span class="cs-brief-group-value">Figma · Figma Make · Cursor</span>
-                        </div>
-                        <div class="cs-brief-group">
-                            <span class="cs-brief-group-label">Research</span>
-                            <span class="cs-brief-group-value">Client interview · Expert interview with one of the most recognized PMU trainers in the country</span>
+                            <p>Tanya needed more than a website with lessons. She needed a system where students could learn step by step, submit work, receive feedback, repeat corrections, and eventually graduate.</p>
+                            <p>The core challenge was designing a clear workflow across students, courses, levels, reviews, and statuses — without making the platform feel complex.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-
-            <!-- Workflow statement -->
-            <!-- Scrollable wireframes + sticky hi-fi -->
-            <div class="cs-scroll-wf">
-                <h2 class="cs-section-title" style="margin-bottom:16px;margin-top:80px;">Information architecture</h2>
-                <p style="font-family:var(--font-body);font-size:var(--text-body-lg,18px);font-weight:400;line-height:1.55;color:var(--ink);max-width:680px;margin:0 0 32px;">Before designing any screens, I mapped out how the platform would be structured — the key user types, their journeys, and how the content hierarchy should flow.</p>
-                <div style="margin-bottom:32px;">
-                    <img src="assets/ia.png" alt="Information architecture" loading="lazy" decoding="async" style="width:100%;max-width:1280px;height:auto;display:block;">
+            <!-- Context section -->
+            <section class="cs-section cs-context">
+                <h2 class="cs-section-title">From trainer-led teaching to an independent digital academy</h2>
+                <div class="cs-context-body">
+                    <p>Tanya had been teaching through an existing academy model, but wanted to build a platform under her own name, with her own curriculum, students, and review process.</p>
+                    <p>The platform had to support her existing way of teaching, not force her into a generic LMS structure.</p>
                 </div>
-                <h2 class="cs-section-title" style="margin-bottom:32px;">Wireframes</h2>
-                <div style="width:100vw;margin-left:calc(50% - 50vw);margin-bottom:0;">
-                    <img src="assets/TH-whireframes.png" alt="TH Academy wireframes" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;">
-                </div>
+            </section>
 
-
-                <section class="cs-section cs-workflow-statement">
-                    <p class="cs-workflow-text"><strong>I sketched. Figma Make prototyped. Cursor built.</strong> <span>I directed, selected, and styled. The decisions were mine — the execution was shared. A continuous back-and-forth, not a linear process.</span></p>
-                </section>
-
-                <!-- Design System -->
-                <div class="cs-ds-section">
-                    <div class="cs-ds-header">
-                        <h2 class="cs-ds-title">Design System</h2>
+            <!-- Roles section -->
+            <section class="cs-section cs-roles">
+                <h2 class="cs-section-title">One platform. Three different mental models.</h2>
+                <p class="cs-roles-lead">Each role interacted with the same system, but from a completely different perspective.</p>
+                <div class="cs-roles-grid">
+                    <div class="cs-role-card">
+                        <span class="cs-role-num">01</span>
+                        <h3 class="cs-role-title">Student</h3>
+                        <p class="cs-role-desc">Learns, submits assignments, tracks progress.</p>
                     </div>
-                    <div class="cs-ui-embed">
-                        <iframe
-                            id="cs-ui-iframe"
-                            src="th-academy-ui.html"
-                            title="TH Academy — UI showcase"
-                            loading="lazy"
-                            sandbox="allow-scripts allow-same-origin"
-                            scrolling="no"
-                        ></iframe>
+                    <div class="cs-role-card">
+                        <span class="cs-role-num">02</span>
+                        <h3 class="cs-role-title">Trainer</h3>
+                        <p class="cs-role-desc">Reviews work, gives feedback, approves or returns levels.</p>
                     </div>
-                    <script>
-                        (function () {
-                            var iframe = document.getElementById('cs-ui-iframe');
-                            if (!iframe) return;
-                            window.addEventListener('message', function (e) {
-                                if (e.data && e.data.type === 'iframeHeight' && e.data.height > 200) {
-                                    iframe.style.height = e.data.height + 'px';
-                                }
-                            });
-                        })();
-                    </script>
+                    <div class="cs-role-card">
+                        <span class="cs-role-num">03</span>
+                        <h3 class="cs-role-title">Admin / Course Builder</h3>
+                        <p class="cs-role-desc">Creates courses, manages students, publishes content.</p>
+                    </div>
                 </div>
+            </section>
 
-                <div class="cs-scroll-wf-intro">
-                    <h2 class="cs-scroll-wf-title">Same structure.<br>Different execution.</h2>
-                    <p style="font-family:var(--font-body);font-size:var(--text-body-lg,18px);font-weight:400;line-height:1.55;color:var(--ink);max-width:600px;margin:20px 0 0;">The platform covers three distinct user roles — student, course builder, and admin. Each has a different context, different needs, and a different mental model. The design had to serve all three without compromising any.</p>
+            <!-- Learning journey section -->
+            <section class="cs-section cs-journey">
+                <h2 class="cs-section-title">Mapping the learning journey before designing screens</h2>
+                <p class="cs-journey-lead">Before moving into interface design, I mapped the full learning flow and identified where each role enters the system, what actions they need, and which status changes happen automatically.</p>
+                <div class="cs-journey-flow">
+                    <div class="cs-journey-step">
+                        <span class="cs-journey-dot"></span>
+                        <span class="cs-journey-label">Invited student</span>
+                    </div>
+                    <span class="cs-journey-arrow">→</span>
+                    <div class="cs-journey-step">
+                        <span class="cs-journey-dot"></span>
+                        <span class="cs-journey-label">Active student</span>
+                    </div>
+                    <span class="cs-journey-arrow">→</span>
+                    <div class="cs-journey-step">
+                        <span class="cs-journey-dot"></span>
+                        <span class="cs-journey-label">Starts course</span>
+                    </div>
+                    <span class="cs-journey-arrow">→</span>
+                    <div class="cs-journey-step">
+                        <span class="cs-journey-dot"></span>
+                        <span class="cs-journey-label">Completes level</span>
+                    </div>
+                    <span class="cs-journey-arrow">→</span>
+                    <div class="cs-journey-step">
+                        <span class="cs-journey-dot"></span>
+                        <span class="cs-journey-label">Submits work</span>
+                    </div>
+                    <span class="cs-journey-arrow">→</span>
+                    <div class="cs-journey-step cs-journey-step--trainer">
+                        <span class="cs-journey-dot"></span>
+                        <span class="cs-journey-label">Trainer reviews</span>
+                    </div>
+                    <span class="cs-journey-arrow">→</span>
+                    <div class="cs-journey-step cs-journey-step--split">
+                        <span class="cs-journey-dot"></span>
+                        <span class="cs-journey-label">Approved <span class="cs-journey-or">or</span> Correction</span>
+                    </div>
+                    <span class="cs-journey-arrow">→</span>
+                    <div class="cs-journey-step">
+                        <span class="cs-journey-dot"></span>
+                        <span class="cs-journey-label">Course completed</span>
+                    </div>
+                    <span class="cs-journey-arrow">→</span>
+                    <div class="cs-journey-step cs-journey-step--end">
+                        <span class="cs-journey-dot"></span>
+                        <span class="cs-journey-label">Graduated</span>
+                    </div>
                 </div>
+            </section>
 
-                <div class="cs-scroll-wf-grid">
-                    <!-- Left: scrollable low-fi -->
-                    <div id="pmu-scroll-col">
-                        <div class="cs-scroll-item" data-wf-index="0">
-                            <div>
-                                <p class="cs-scroll-item-title">Log in & Dashboard</p>
-                                <p class="cs-scroll-item-desc">Students log in and land on their personal dashboard — a clear overview of active courses and where they left off.</p>
-                            </div>
+            <!-- Logic / Statuses section -->
+            <section class="cs-section cs-logic">
+                <h2 class="cs-section-title">Designing the logic before the interface</h2>
+                <div class="cs-logic-grid">
+                    <div class="cs-logic-group">
+                        <span class="cs-logic-label">Review status</span>
+                        <div class="cs-logic-pills">
+                            <span class="cs-lpill cs-lpill--neutral">Pending review</span>
+                            <span class="cs-lpill cs-lpill--muted">No submission</span>
                         </div>
-                        <div class="cs-scroll-item" data-wf-index="1">
-                            <div>
-                                <p class="cs-scroll-item-title">Level Review</p>
-                                <p class="cs-scroll-item-desc">The trainer sees what the student submitted for each level — reviews the work and either approves it or sends it back with feedback.</p>
-                            </div>
+                    </div>
+                    <div class="cs-logic-group">
+                        <span class="cs-logic-label">Training status</span>
+                        <div class="cs-logic-pills">
+                            <span class="cs-lpill cs-lpill--muted">Waiting</span>
+                            <span class="cs-lpill cs-lpill--active">In progress</span>
+                            <span class="cs-lpill cs-lpill--done">Completed</span>
                         </div>
-                        <div class="cs-scroll-item" data-wf-index="2">
-                            <div>
-                                <p class="cs-scroll-item-title">Student Filters</p>
-                                <p class="cs-scroll-item-desc">See at a glance which students have submitted feedback and who's still waiting — filter by course, status, or response.</p>
-                            </div>
+                    </div>
+                    <div class="cs-logic-group">
+                        <span class="cs-logic-label">Student status</span>
+                        <div class="cs-logic-pills">
+                            <span class="cs-lpill cs-lpill--muted">Invited</span>
+                            <span class="cs-lpill cs-lpill--active">Active</span>
+                            <span class="cs-lpill cs-lpill--neutral">Inactive</span>
+                            <span class="cs-lpill cs-lpill--done">Graduated</span>
                         </div>
-                        <div class="cs-scroll-item" data-wf-index="3">
-                            <div>
-                                <p class="cs-scroll-item-title">Course Builder</p>
-                                <p class="cs-scroll-item-desc">The trainer creates a course — adds theory, builds levels, and publishes when ready.</p>
+                    </div>
+                    <div class="cs-logic-group">
+                        <span class="cs-logic-label">Level status</span>
+                        <div class="cs-logic-pills">
+                            <span class="cs-lpill cs-lpill--locked">Locked</span>
+                            <span class="cs-lpill cs-lpill--active">In progress</span>
+                            <span class="cs-lpill cs-lpill--review">Under review</span>
+                            <span class="cs-lpill cs-lpill--correction">Needs correction</span>
+                            <span class="cs-lpill cs-lpill--done">Completed</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="cs-logic-note">The complexity wasn't in the number of statuses, but in how they depended on each other.</p>
+            </section>
+
+            <!-- Status dependencies section -->
+            <section class="cs-section cs-deps">
+                <h2 class="cs-section-title">How the statuses connect</h2>
+
+                <div class="cs-deps-inner">
+                    <!-- Vertical flow -->
+                    <div class="cs-deps-flow">
+                        <div class="cs-deps-node cs-deps-node--active">Level in progress</div>
+                        <div class="cs-deps-connector">↓</div>
+                        <div class="cs-deps-node cs-deps-node--action">Student submits assignment</div>
+                        <div class="cs-deps-connector">↓</div>
+                        <div class="cs-deps-node cs-deps-node--review">Level under review</div>
+                        <div class="cs-deps-connector">↓</div>
+                        <div class="cs-deps-node cs-deps-node--review">Review pending</div>
+                        <div class="cs-deps-connector">↓</div>
+                        <div class="cs-deps-node cs-deps-node--trainer">Trainer decision</div>
+
+                        <!-- Branch -->
+                        <div class="cs-deps-branch">
+                            <div class="cs-deps-branch-line"></div>
+                            <div class="cs-deps-branch-col">
+                                <div class="cs-deps-connector">↓</div>
+                                <div class="cs-deps-node cs-deps-node--done">Approved</div>
+                                <div class="cs-deps-connector">↓</div>
+                                <div class="cs-deps-node cs-deps-node--done">Level completed</div>
+                            </div>
+                            <div class="cs-deps-branch-col">
+                                <div class="cs-deps-connector">↓</div>
+                                <div class="cs-deps-node cs-deps-node--correction">Needs correction</div>
+                                <div class="cs-deps-connector">↓</div>
+                                <div class="cs-deps-node cs-deps-node--active">Back to in progress</div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Right: sticky phone -->
-                    <div class="cs-sticky-hifi">
-                        <div class="cs-phone-shell">
-                            <div class="cs-phone-notch"></div>
-                            <div class="cs-phone-status-bar">
-                                <span class="cs-phone-time">9:41</span>
-                                <div class="cs-phone-icons">
-                                    <!-- Signal -->
-                                    <svg width="17" height="12" viewBox="0 0 17 12" fill="#0e0e0e" xmlns="http://www.w3.org/2000/svg">
-                                        <rect x="0" y="8" width="3" height="4" rx="0.6"/>
-                                        <rect x="4.7" y="5.5" width="3" height="6.5" rx="0.6"/>
-                                        <rect x="9.4" y="3" width="3" height="9" rx="0.6"/>
-                                        <rect x="14" y="0" width="3" height="12" rx="0.6"/>
-                                    </svg>
-                                    <!-- WiFi -->
-                                    <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M8 9.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z" fill="#0e0e0e"/>
-                                        <path d="M4.5 7.2C5.5 6.2 6.7 5.6 8 5.6s2.5.6 3.5 1.6" stroke="#0e0e0e" stroke-width="1.4" stroke-linecap="round" fill="none"/>
-                                        <path d="M1.5 4.5C3.2 2.8 5.5 1.8 8 1.8s4.8 1 6.5 2.7" stroke="#0e0e0e" stroke-width="1.4" stroke-linecap="round" fill="none"/>
-                                    </svg>
-                                    <!-- Battery -->
-                                    <svg width="25" height="12" viewBox="0 0 25 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect x="0.5" y="0.5" width="21" height="11" rx="3" stroke="#0e0e0e" stroke-width="1"/>
-                                        <rect x="2" y="2" width="16" height="8" rx="1.5" fill="#0e0e0e"/>
-                                        <path d="M22.5 4v4a1.5 1.5 0 0 0 0-4z" fill="#0e0e0e"/>
-                                    </svg>
+                    <!-- Rules -->
+                    <div class="cs-deps-rules">
+                        <div class="cs-deps-rule">
+                            <span class="cs-deps-rule-if">When all levels are completed</span>
+                            <span class="cs-deps-rule-arrow">→</span>
+                            <span class="cs-deps-rule-then">Training becomes <strong>completed</strong></span>
+                        </div>
+                        <div class="cs-deps-rule">
+                            <span class="cs-deps-rule-if">When required trainings are completed</span>
+                            <span class="cs-deps-rule-arrow">→</span>
+                            <span class="cs-deps-rule-then">Student can <strong>graduate</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key product decisions -->
+            <section class="cs-section cs-decisions">
+                <h2 class="cs-section-title">Product decisions that shaped the experience</h2>
+                <div class="cs-decisions-grid">
+                    <div class="cs-decision">
+                        <span class="cs-decision-num">01</span>
+                        <h3 class="cs-decision-title">Courses are built in levels</h3>
+                        <p class="cs-decision-body">Because PMU training requires step-by-step progression and trainer approval before students move forward.</p>
+                    </div>
+                    <div class="cs-decision">
+                        <span class="cs-decision-num">02</span>
+                        <h3 class="cs-decision-title">Reviews live inside the learning flow</h3>
+                        <p class="cs-decision-body">Because feedback is part of the education, not a separate messaging feature.</p>
+                    </div>
+                    <div class="cs-decision">
+                        <span class="cs-decision-num">03</span>
+                        <h3 class="cs-decision-title">Statuses are visible, but simplified</h3>
+                        <p class="cs-decision-body">Because the trainer needs operational clarity, while students need reassurance.</p>
+                    </div>
+                    <div class="cs-decision">
+                        <span class="cs-decision-num">04</span>
+                        <h3 class="cs-decision-title">Mobile first, iPad comfortable</h3>
+                        <p class="cs-decision-body">Because students mostly learn on phones, while trainers review better on larger screens.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Wireframes section -->
+            <section class="cs-section cs-wireframes-intro">
+                <h2 class="cs-section-title">Exploring the workflow through low-fidelity screens</h2>
+                <p class="cs-wireframes-intro-lead">I used wireframes to test whether the structure could support all roles, edge cases, and status changes before investing in UI detail.</p>
+                <div class="cs-wireframes-fullbleed">
+                    <img src="assets/TH-whireframes.png" alt="TH Academy wireframes" loading="lazy" decoding="async">
+                </div>
+            </section>
+
+            <!-- Interface system section -->
+            <section class="cs-section cs-ui-system">
+                <h2 class="cs-section-title">A calm interface for a complex workflow</h2>
+                <p class="cs-ui-system-lead">The visual system was intentionally quiet. Most complexity lives in the logic, so the interface needed to feel calm, familiar, and easy to scan.</p>
+
+                <div class="cs-ui-showcase">
+
+                    <!-- Statuses -->
+                    <div class="cs-ui-block">
+                        <span class="cs-ui-block-label">Status badges</span>
+                        <div class="cs-ui-block-row">
+                            <span class="cs-lpill cs-lpill--muted">Waiting</span>
+                            <span class="cs-lpill cs-lpill--active">In progress</span>
+                            <span class="cs-lpill cs-lpill--review">Under review</span>
+                            <span class="cs-lpill cs-lpill--correction">Needs correction</span>
+                            <span class="cs-lpill cs-lpill--done">Completed</span>
+                            <span class="cs-lpill cs-lpill--done">Graduated</span>
+                            <span class="cs-lpill cs-lpill--locked">Locked</span>
+                        </div>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="cs-ui-block">
+                        <span class="cs-ui-block-label">Buttons</span>
+                        <div class="cs-ui-block-row">
+                            <button class="cs-ui-btn cs-ui-btn--primary">Approve level</button>
+                            <button class="cs-ui-btn cs-ui-btn--outline">Return for revision</button>
+                            <button class="cs-ui-btn cs-ui-btn--ghost">View submission</button>
+                            <button class="cs-ui-btn cs-ui-btn--danger">Request correction</button>
+                        </div>
+                    </div>
+
+                    <!-- Cards row -->
+                    <div class="cs-ui-block">
+                        <span class="cs-ui-block-label">Content cards</span>
+                        <div class="cs-ui-cards-row">
+                            <div class="cs-ui-card">
+                                <div class="cs-ui-card-top">
+                                    <span class="cs-lpill cs-lpill--active" style="font-size:11px;padding:3px 10px;">In progress</span>
+                                </div>
+                                <h4 class="cs-ui-card-title">Microblading Basic Training</h4>
+                                <p class="cs-ui-card-meta">Level 1 of 3 · 2 students enrolled</p>
+                                <div class="cs-ui-card-progress">
+                                    <div class="cs-ui-card-progress-bar" style="width:38%"></div>
                                 </div>
                             </div>
-                            <div style="position:relative;width:100%;aspect-ratio:368/750;">
-                                <video class="cs-hifi-screen active" src="assets/App-video-1.mp4" autoplay loop muted playsinline></video>
-                                <video class="cs-hifi-screen" src="assets/App-video-2.mp4" autoplay loop muted playsinline></video>
-                                <video class="cs-hifi-screen" src="assets/App-video-4.mp4" autoplay loop muted playsinline></video>
-                                <video class="cs-hifi-screen" src="assets/App-video-3.mp4" autoplay loop muted playsinline></video>
+                            <div class="cs-ui-card">
+                                <div class="cs-ui-card-top">
+                                    <span class="cs-lpill cs-lpill--review" style="font-size:11px;padding:3px 10px;">Under review</span>
+                                </div>
+                                <h4 class="cs-ui-card-title">Level 2 — Shading technique</h4>
+                                <p class="cs-ui-card-meta">Submitted 2 days ago · awaiting trainer</p>
+                                <div class="cs-ui-card-actions">
+                                    <button class="cs-ui-btn cs-ui-btn--primary" style="font-size:12px;padding:7px 14px;">Approve</button>
+                                    <button class="cs-ui-btn cs-ui-btn--outline" style="font-size:12px;padding:7px 14px;">Return</button>
+                                </div>
+                            </div>
+                            <div class="cs-ui-card">
+                                <div class="cs-ui-card-top">
+                                    <span class="cs-lpill cs-lpill--muted" style="font-size:11px;padding:3px 10px;">Invited</span>
+                                </div>
+                                <h4 class="cs-ui-card-title">Kate Peterson</h4>
+                                <p class="cs-ui-card-meta">Added 5 days ago · not started yet</p>
+                                <div class="cs-ui-card-actions">
+                                    <button class="cs-ui-btn cs-ui-btn--ghost" style="font-size:12px;padding:7px 14px;">View profile</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            <!-- Mobile-only horizontal strip -->
-            <div class="cs-scroll-wf-mobile-strip">
-                <div class="cs-mobile-phone-card">
-                    <div class="cs-mobile-phone-shell">
-                        <video src="assets/App-video-1.mp4" autoplay loop muted playsinline></video>
+                </div>
+            </section>
+
+            <!-- Role-based experiences section -->
+            <section class="cs-section cs-roles-exp">
+                <h2 class="cs-section-title">Role-based experiences</h2>
+                <p class="cs-roles-exp-lead">The same platform, built to feel right for three completely different people using it.</p>
+                <div class="cs-roles-exp-grid">
+
+                    <!-- Student -->
+                    <div class="cs-role-block">
+                        <div class="cs-role-block-text">
+                            <span class="cs-role-block-label">Student</span>
+                            <h3 class="cs-role-block-title">Student experience</h3>
+                            <p class="cs-role-block-desc">Students log in, continue their course, submit work, and see where they stand. The interface is calm and focused — one step at a time, no noise around what matters next.</p>
+                        </div>
+                        <div class="cs-role-block-screen">
+                            <img src="assets/th-academy-student.png" alt="Student experience — TH Academy" loading="lazy" decoding="async">
+                        </div>
                     </div>
-                    <p class="cs-mobile-card-title">Log in & Dashboard</p>
-                    <p class="cs-mobile-card-desc">Students log in and land on their personal dashboard.</p>
-                </div>
-                <div class="cs-mobile-phone-card">
-                    <div class="cs-mobile-phone-shell">
-                        <video src="assets/App-video-2.mp4" autoplay loop muted playsinline></video>
+
+                    <!-- Trainer -->
+                    <div class="cs-role-block">
+                        <div class="cs-role-block-text">
+                            <span class="cs-role-block-label">Trainer</span>
+                            <h3 class="cs-role-block-title">Trainer experience</h3>
+                            <p class="cs-role-block-desc">The trainer sees who needs attention, reviews submitted work, and gives feedback. Everything is organised around the review queue — so nothing gets missed and the workflow stays efficient.</p>
+                        </div>
+                        <div class="cs-role-block-screen">
+                            <img src="assets/th-admin-dashboard.png" alt="Trainer experience — TH Academy" loading="lazy" decoding="async">
+                        </div>
                     </div>
-                    <p class="cs-mobile-card-title">Level Review</p>
-                    <p class="cs-mobile-card-desc">The trainer reviews submitted work and approves or returns it.</p>
-                </div>
-                <div class="cs-mobile-phone-card">
-                    <div class="cs-mobile-phone-shell">
-                        <video src="assets/App-video-4.mp4" autoplay loop muted playsinline></video>
+
+                    <!-- Course builder -->
+                    <div class="cs-role-block">
+                        <div class="cs-role-block-text">
+                            <span class="cs-role-block-label">Course builder</span>
+                            <h3 class="cs-role-block-title">Course builder experience</h3>
+                            <p class="cs-role-block-desc">The trainer can create and publish courses independently. Levels, assignments, and content are structured in one place — no technical knowledge required.</p>
+                        </div>
+                        <div class="cs-role-block-screen">
+                            <img src="assets/th-admin-course-create.png" alt="Course builder experience — TH Academy" loading="lazy" decoding="async">
+                        </div>
                     </div>
-                    <p class="cs-mobile-card-title">Student Filters</p>
-                    <p class="cs-mobile-card-desc">Filter students by course, status, or feedback response.</p>
+
                 </div>
-                <div class="cs-mobile-phone-card">
-                    <div class="cs-mobile-phone-shell">
-                        <video src="assets/App-video-3.mp4" autoplay loop muted playsinline></video>
-                    </div>
-                    <p class="cs-mobile-card-title">Course Builder</p>
-                    <p class="cs-mobile-card-desc">The trainer creates a course — adds theory, builds levels, and publishes.</p>
-                </div>
-            </div>
+            </section>
 
-            <script>
-            (function() {
-                var items   = document.querySelectorAll('#pmu-scroll-col .cs-scroll-item');
-                var screens = document.querySelectorAll('.cs-hifi-screen');
-                var current = 0;
-
-                // Activate first item immediately
-                if (items[0])   items[0].classList.add('active');
-                if (screens[0]) screens[0].classList.add('active');
-
-                function activate(idx) {
-                    if (idx === current) return;
-                    // Swap phone screen
-                    screens[current].classList.remove('active');
-                    screens[idx].classList.add('active');
-                    // Restart video from beginning if it's a video element
-                    if (screens[idx].tagName === 'VIDEO') {
-                        screens[idx].currentTime = 0;
-                        screens[idx].play();
-                    }
-                    // Swap text item
-                    items[current].classList.remove('active');
-                    items[idx].classList.add('active');
-                    current = idx;
-                }
-
-                var obs = new IntersectionObserver(function(entries) {
-                    entries.forEach(function(e) {
-                        if (e.isIntersecting) activate(parseInt(e.target.dataset.wfIndex));
-                    });
-                }, { threshold: 0.5 });
-
-                items.forEach(function(item) { obs.observe(item); });
-            })();
-            </script>
-
-
-            <!-- TH Screens showcase -->
+            <!-- Outcome section -->
+            <section class="cs-section cs-outcome">
+                <span class="cs-outcome-label">Outcome</span>
+                <h2 class="cs-outcome-title">Live and used by real students</h2>
+                <p class="cs-outcome-body">The platform is live and actively used by Tanya's academy to manage courses, students, submissions, reviews, and progress.</p>
+            </section>
 
             <!-- Devices section -->
             <section class="cs-devices-section">
@@ -3545,32 +4683,6 @@
             </div>
 
             <!-- Learnings -->
-            <div class="cs-lr-section">
-                <div class="cs-lr-header">
-                    <h2 class="cs-lr-title">What I took away</h2>
-                </div>
-                <div class="cs-lr-items">
-                    <div class="cs-lr-item">
-                        <div class="cs-lr-left">
-                            <div><h3 class="cs-lr-item-title">The status logic didn't come together at once</h3></div>
-                        </div>
-                        <p class="cs-lr-body">The hardest part was mapping how all the statuses connect. I kept adding things, fixing dependencies, and iterating until the logic finally clicked. It was gradual — not something I figured out in one go.</p>
-                    </div>
-                    <div class="cs-lr-item">
-                        <div class="cs-lr-left">
-                            <div><h3 class="cs-lr-item-title">AI is a good executor, not a decision-maker</h3></div>
-                        </div>
-                        <p class="cs-lr-body">Some AI suggestions were off. Others were genuinely good. The workflow only worked because there was always a designer selecting, directing, and deciding. The taste and judgment stayed human throughout.</p>
-                    </div>
-                    <div class="cs-lr-item">
-                        <div class="cs-lr-left">
-                            <div><h3 class="cs-lr-item-title">The one-photo rule came from a real conversation</h3></div>
-                        </div>
-                        <p class="cs-lr-body">Constraints that fit the domain work better than open flexibility. This one came from sitting with the trainer and thinking through what actually happens when you have 20 students submitting work at the same time.</p>
-                    </div>
-                </div>
-            </div>
-
         </div>
 
         <!-- Next project banner -->
@@ -3586,25 +4698,26 @@
         <footer id="contact" class="footer">
             <div class="footer-content">
                 <div class="connect-section">
-
                     <a href="mailto:glory.angelova@gmail.com" class="footer-logo-link" id="get-in-touch-btn">
-                        <svg width="48" height="52" viewBox="0 0 42 45" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M41.5574 30.7311L30.327 11.2799C29.9972 10.7109 29.4901 10.2451 28.8676 10.0348C27.6349 9.62665 26.3609 10.1544 25.7549 11.2057L17.3156 25.825C16.9858 26.3939 16.8374 27.0659 16.9693 27.7091C17.2331 28.9789 18.3257 29.8199 19.5378 29.8199H30.2034L27.1814 24.5882H24.0646L28.0142 17.7444L36.371 32.2235C32.9697 37.1007 27.3174 39.8712 21.2982 39.5332C9.8534 38.3705 4.98442 29.8158 5.23591 21.8383C5.4874 13.869 10.8882 5.64406 22.3866 5.22766H26.8351L23.7718 0H22.2011C7.4086 0.535959 0.329821 11.6097 0.0123683 21.6734C-0.305084 31.7576 6.07695 43.2808 20.8406 44.7443C20.8735 44.7443 20.9107 44.7526 20.9436 44.7526C21.3971 44.7814 21.8506 44.7938 22.3 44.7938C30.2034 44.7938 37.4594 40.6999 41.5368 33.8726C42.114 32.9079 42.1223 31.704 41.5574 30.7311Z" fill="#0e0e0e"/>
+                        <svg width="36" height="39" viewBox="0 0 42 45" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:0.6">
+                            <path d="M41.5574 30.7311L30.327 11.2799C29.9972 10.7109 29.4901 10.2451 28.8676 10.0348C27.6349 9.62665 26.3609 10.1544 25.7549 11.2057L17.3156 25.825C16.9858 26.3939 16.8374 27.0659 16.9693 27.7091C17.2331 28.9789 18.3257 29.8199 19.5378 29.8199H30.2034L27.1814 24.5882H24.0646L28.0142 17.7444L36.371 32.2235C32.9697 37.1007 27.3174 39.8712 21.2982 39.5332C9.8534 38.3705 4.98442 29.8158 5.23591 21.8383C5.4874 13.869 10.8882 5.64406 22.3866 5.22766H26.8351L23.7718 0H22.2011C7.4086 0.535959 0.329821 11.6097 0.0123683 21.6734C-0.305084 31.7576 6.07695 43.2808 20.8406 44.7443C20.8735 44.7443 20.9107 44.7526 20.9436 44.7526C21.3971 44.7814 21.8506 44.7938 22.3 44.7938C30.2034 44.7938 37.4594 40.6999 41.5368 33.8726C42.114 32.9079 42.1223 31.704 41.5574 30.7311Z" fill="#ffffff"/>
                         </svg>
                     </a>
-                    <p class="footer-tagline">Open to new opportunities and collaborations.<br>Browse my work and feel free to reach out.</p>
-                    <div style="margin-top:20px;display:flex;flex-direction:column;gap:6px;">
-                        <a href="mailto:glory.angelova@gmail.com" style="font-family:var(--font-body);font-size:15px;font-weight:400;color:rgba(255,255,255,0.65);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">glory.angelova@gmail.com</a>
-                        <a href="tel:+31647355880" style="font-family:var(--font-body);font-size:15px;font-weight:400;color:rgba(255,255,255,0.65);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">+31 6 473 55 880</a>
+                    <div class="footer-contacts">
+                        <a href="mailto:glory.angelova@gmail.com" class="footer-email">glory.angelova@gmail.com</a>
+                        <a href="tel:+31647355880" class="footer-link">+31 6 473 55 880</a>
+                    </div>
+                    <div class="footer-availability">
+                        <span>Based in Eindhoven, NL</span>
+                        <span>Available for selected projects</span>
                     </div>
                 </div>
-
                 <div class="contact-info-section">
                     <div class="contact-column">
-                        <p><a href="https://www.linkedin.com/in/gloria-angelova-9172aa99/" target="_blank">LinkedIn</a></p>
-                        <p><a href="#">Instagram</a></p>
-                        <p><a href="https://www.behance.net/gloryangelova" target="_blank">Behance</a></p>
-                        <p><a href="mailto:glory.angelova@gmail.com">Say Hello</a></p>
+                        <a href="https://www.linkedin.com/in/gloria-angelova-9172aa99/" target="_blank">LinkedIn</a>
+                        <a href="#">Instagram</a>
+                        <a href="https://www.behance.net/gloryangelova" target="_blank">Behance</a>
+                        <a href="mailto:glory.angelova@gmail.com">Say Hello</a>
                     </div>
                 </div>
             </div>

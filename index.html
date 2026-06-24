@@ -28,7 +28,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Caveat:wght@500&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="styles.css?v=9.0">
+        <link rel="stylesheet" href="styles.css?v=11.0">
 </head>
 <body>
     <!-- Preloader -->
@@ -44,7 +44,6 @@
             <div class="logo-container">
                 <a href="index.html" class="logo-link">
                     <img src="assets/ga-logo.svg" alt="Gloria Logo" class="logo">
-                    <span class="logo-greeting" aria-hidden="true">Gloria Angelova</span>
                 </a>
             </div>
             <button class="menu-toggle" aria-label="Toggle menu">
@@ -80,6 +79,8 @@
                         feel effortless — even when the<br>
                         problems behind them are complex.
                     </p>
+
+
                 </div>
             </div>
 
@@ -99,52 +100,35 @@
             </div>
 
         </section>
+        <!-- Reserves hero height in the document flow -->
+        <div class="hero-spacer" aria-hidden="true"></div>
 
-        <!-- Projects — editorial layout -->
+        <!-- Projects — sticky card with content swap on scroll -->
         <section id="projects" class="proj-editorial">
 
-            <header class="proj-editorial-header">
-                <span class="proj-editorial-eyebrow">Selected Work</span>
-            </header>
+            <!-- psw-track owns the scroll height; psw-sticky freezes the card -->
+            <div id="psw-track" class="psw-track">
+                <div id="psw-sticky" class="psw-sticky">
 
-            <!-- 01 · Text left 33% · Dominant image right 67% -->
-            <article class="proj-item proj-item--01">
-                <div class="proj-item-text">
-                    <h3 class="proj-title">TH Academy</h3>
-                    <p class="proj-desc">End-to-end product design for a beauty education platform serving students and instructors across Europe.</p>
-                    <p class="proj-tags">Product Design · Research</p>
-                    <a href="project-locked-pmu.html" class="proj-cta">View case study</a>
-                </div>
-                <a href="project-locked-pmu.html" class="proj-item-image">
-                    <img src="assets/TH-cover2.png" alt="TH Academy" loading="lazy">
-                </a>
-            </article>
+                    <header class="proj-editorial-header">
+                        <span class="proj-editorial-eyebrow">Selected Work</span>
+                    </header>
 
-            <!-- 02 · Dominant image left 62% · Text right 38%, bottom-aligned -->
-            <article class="proj-item proj-item--02">
-                <a href="project-locked.html" class="proj-item-image">
-                    <img src="assets/cs_cover_v3.svg" alt="Legacy Enterprise Platform" loading="lazy">
-                </a>
-                <div class="proj-item-text">
-                    <h3 class="proj-title">Legacy Enterprise<br>Platform</h3>
-                    <p class="proj-desc">Transforming a fragmented enterprise ecosystem into a scalable, human-centred experience used daily by thousands.</p>
-                    <p class="proj-tags">Enterprise · UX/UI</p>
-                    <a href="project-locked.html" class="proj-cta">View case study</a>
-                </div>
-            </article>
+                    <!-- Original proj-item--01 layout — JS swaps content -->
+                    <article class="proj-item proj-item--01">
+                        <div class="proj-item-text">
+                            <h3 class="proj-title" id="psw-title">TH Academy</h3>
+                            <p class="proj-desc body-text" id="psw-desc">End-to-end product design for a beauty education platform serving students and instructors across Europe.</p>
+                            <p class="proj-tags" id="psw-tags">Product Design · Research</p>
+                            <a href="project-locked-pmu.html" class="proj-cta" id="psw-cta">View case study</a>
+                        </div>
+                        <a href="project-locked-pmu.html" class="proj-item-image" id="psw-imglink">
+                            <img src="assets/TH-cover2.png" id="psw-img" alt="TH Academy" loading="eager">
+                        </a>
+                    </article>
 
-            <!-- 03 · Closing piece — text above, full-width image below -->
-            <article class="proj-item proj-item--03">
-                <div class="proj-item-text">
-                    <h3 class="proj-title">Tanya Hristova<br>PMU Expert</h3>
-                    <p class="proj-desc">Brand identity and live website for a permanent makeup artist — designed to feel elevated, personal, and trustworthy.</p>
-                    <p class="proj-tags">Live Website · Branding</p>
-                    <a href="https://tanyahristova-pmu.com/en" class="proj-cta" target="_blank" rel="noopener noreferrer">View live site</a>
                 </div>
-                <a href="https://tanyahristova-pmu.com/en" class="proj-item-image" target="_blank" rel="noopener noreferrer">
-                    <img src="assets/TH-cover.png" alt="Tanya Hristova PMU Expert" loading="lazy">
-                </a>
-            </article>
+            </div>
 
         </section>
 
@@ -159,29 +143,37 @@
                 teams turn complex ideas into products<br>
                 people actually enjoy using.
             </p>
-            <a href="about.html" class="proj-cta">Find out more about me</a>
         </section>
 
         <!-- Footer -->
         <footer id="contact" class="footer">
-            <div class="footer-inner">
-                <div class="footer-identity">
-                    <span class="footer-name">Gloria Angelova</span>
-                    <span class="footer-role">UI/UX Designer</span>
+            <div class="footer-content">
+                <div class="connect-section">
+
+                    <a href="mailto:glory.angelova@gmail.com" class="footer-logo-link" id="get-in-touch-btn">
+                        <svg width="36" height="39" viewBox="0 0 42 45" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:0.6">
+                            <path d="M41.5574 30.7311L30.327 11.2799C29.9972 10.7109 29.4901 10.2451 28.8676 10.0348C27.6349 9.62665 26.3609 10.1544 25.7549 11.2057L17.3156 25.825C16.9858 26.3939 16.8374 27.0659 16.9693 27.7091C17.2331 28.9789 18.3257 29.8199 19.5378 29.8199H30.2034L27.1814 24.5882H24.0646L28.0142 17.7444L36.371 32.2235C32.9697 37.1007 27.3174 39.8712 21.2982 39.5332C9.8534 38.3705 4.98442 29.8158 5.23591 21.8383C5.4874 13.869 10.8882 5.64406 22.3866 5.22766H26.8351L23.7718 0H22.2011C7.4086 0.535959 0.329821 11.6097 0.0123683 21.6734C-0.305084 31.7576 6.07695 43.2808 20.8406 44.7443C20.8735 44.7443 20.9107 44.7526 20.9436 44.7526C21.3971 44.7814 21.8506 44.7938 22.3 44.7938C30.2034 44.7938 37.4594 40.6999 41.5368 33.8726C42.114 32.9079 42.1223 31.704 41.5574 30.7311Z" fill="#ffffff"/>
+                        </svg>
+                    </a>
+                    <div class="footer-contacts">
+                        <a href="mailto:glory.angelova@gmail.com" class="footer-email">glory.angelova@gmail.com</a>
+                        <a href="tel:+31647355880" class="footer-link">+31 6 473 55 880</a>
+                    </div>
+                    <div class="footer-availability">
+                        <span>Based in Eindhoven, NL</span>
+                        <span>Available for selected projects</span>
+                    </div>
                 </div>
-                <div class="footer-contact">
-                    <a href="mailto:glory.angelova@gmail.com" class="footer-link">glory.angelova@gmail.com</a>
-                    <a href="tel:+31647355880" class="footer-link">+31 6 473 55 880</a>
+                
+                <div class="contact-info-section">
+
+                    <div class="contact-column">
+                        <a href="https://www.linkedin.com/in/gloria-angelova-9172aa99/" target="_blank">LinkedIn</a>
+                        <a href="#">Instagram</a>
+                        <a href="https://www.behance.net/gloryangelova" target="_blank">Behance</a>
+                        <a href="mailto:glory.angelova@gmail.com">Say Hello</a>
+                    </div>
                 </div>
-                <div class="footer-nav">
-                    <a href="https://www.linkedin.com/in/gloria-angelova-9172aa99/" target="_blank" class="footer-link">LinkedIn</a>
-                    <a href="#" class="footer-link">Instagram</a>
-                    <a href="https://www.behance.net/gloryangelova" target="_blank" class="footer-link">Behance</a>
-                    <a href="mailto:glory.angelova@gmail.com" class="footer-link">Say Hello</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <span>© 2025 Gloria Angelova</span>
             </div>
         </footer>
 
@@ -366,24 +358,160 @@
         history.scrollRestoration = 'manual';
     }
 
-    /* ── Hero photo: brighten to white on scroll ── */
+    /* ── Hero: fade out photo + text on scroll ── */
     (function () {
-        var fade  = document.querySelector('.hero-photo-fade');
-        var hero  = document.querySelector('.hero');
-        var photo = document.querySelector('.hero-photo-bg');
-        if (!fade || !hero || !photo) return;
+        var fade    = document.querySelector('.hero-photo-fade');
+        var hero    = document.querySelector('.hero');
+        var photo   = document.querySelector('.hero-photo-bg');
+        var content = document.querySelector('.hero-content');
+        if (!fade || !hero) return;
 
         function update() {
-            var heroH   = hero.offsetHeight;
-            var scrollY = window.scrollY;
+            var heroH    = hero.offsetHeight;
+            var scrollY  = window.scrollY;
             var progress = Math.min(1, scrollY / (heroH * 0.45));
-            fade.style.opacity = progress;
-            /* hide completely once faded */
-            photo.style.visibility = progress >= 1 ? 'hidden' : 'visible';
+            if (fade)    fade.style.opacity    = progress;
+            if (content) content.style.opacity = 1 - progress;
+            var hidden = progress >= 1;
+            if (photo) photo.style.visibility = hidden ? 'hidden' : '';
+            hero.style.visibility = hidden ? 'hidden' : '';
         }
 
         window.addEventListener('scroll', update, { passive: true });
         update();
+    })();
+
+    /* ── Sticky project card: content swap on scroll (desktop only) ── */
+    (function () {
+        /* runs on all screen sizes */
+
+        var PROJECTS = [
+            {
+                title: 'TH Academy',
+                desc:  'End-to-end product design for a beauty education platform serving students and instructors across Europe.',
+                tags:  'Product Design · Research',
+                cta:   'View case study',
+                href:  'project-locked-pmu.html',
+                img:   'assets/TH-cover2.png',
+                ext:   false
+            },
+            {
+                title: 'Legacy Enterprise<br>Platform',
+                desc:  'Transforming a fragmented enterprise ecosystem into a scalable, human-centred experience used daily by thousands.',
+                tags:  'Enterprise · UX/UI',
+                cta:   'View case study',
+                href:  'project-locked.html',
+                img:   'assets/cover-image-legacy.png',
+                ext:   false
+            },
+            {
+                title: 'Tanya Hristova<br>PMU Expert',
+                desc:  'Brand identity and live website for a permanent makeup artist — designed to feel elevated, personal, and trustworthy.',
+                tags:  'Live Website · Branding',
+                cta:   'View live site',
+                href:  'https://tanyahristova-pmu.com/en',
+                img:   'assets/TH-cover.png',
+                ext:   true
+            }
+        ];
+
+        var track   = document.getElementById('psw-track');
+        var sticky  = document.getElementById('psw-sticky');
+        var card    = sticky ? sticky.querySelector('.proj-item--01') : null;
+        var titleEl = document.getElementById('psw-title');
+        var descEl  = document.getElementById('psw-desc');
+        var tagsEl  = document.getElementById('psw-tags');
+        var ctaEl   = document.getElementById('psw-cta');
+        var imgEl   = document.getElementById('psw-img');
+        var imgLink = document.getElementById('psw-imglink');
+
+        if (!track || !card) return;
+
+        /* Preload images */
+        PROJECTS.forEach(function (p) { (new Image()).src = p.img; });
+
+        var current = 0;
+        var busy    = false;
+
+        function swap(idx, goingUp) {
+            if (busy || idx === current) return;
+            busy = true;
+
+            /* 1. Set direction, then exit */
+            if (goingUp) {
+                card.classList.add('psw-dir-up');
+            } else {
+                card.classList.remove('psw-dir-up');
+            }
+            card.classList.add('psw-fading');
+
+            setTimeout(function () {
+                /* 2. Swap content while invisible */
+                var p = PROJECTS[idx];
+                titleEl.innerHTML  = p.title;
+                descEl.textContent = p.desc;
+                tagsEl.textContent = p.tags;
+                ctaEl.textContent  = p.cta;
+                ctaEl.href = imgLink.href = p.href;
+                imgEl.src  = p.img;
+                imgEl.alt  = p.title.replace(/<br>/g, ' ');
+                if (p.ext) {
+                    ctaEl.setAttribute('target', '_blank');
+                    ctaEl.setAttribute('rel', 'noopener noreferrer');
+                    imgLink.setAttribute('target', '_blank');
+                    imgLink.setAttribute('rel', 'noopener noreferrer');
+                } else {
+                    ctaEl.removeAttribute('target');
+                    ctaEl.removeAttribute('rel');
+                    imgLink.removeAttribute('target');
+                    imgLink.removeAttribute('rel');
+                }
+                current = idx;
+
+                /* 3. Reset to enter-from-below position (no transition) */
+                card.classList.remove('psw-fading');
+                card.classList.add('psw-entering');
+
+                /* 4. One rAF later: remove entering → triggers staggered entrance */
+                requestAnimationFrame(function () {
+                    requestAnimationFrame(function () {
+                        card.classList.remove('psw-entering');
+                        /* unlock after longest stagger + transition */
+                        setTimeout(function () {
+                            busy = false;
+                            card.classList.remove('psw-dir-up');
+                        }, 600);
+                    });
+                });
+            }, 320);
+        }
+
+        window.addEventListener('scroll', function () {
+            var rect    = track.getBoundingClientRect();
+            var trackH  = track.offsetHeight;
+            var panelH  = sticky.offsetHeight;
+            var scrolled = -rect.top;
+            var range   = trackH - panelH;
+            if (scrolled < 0 || scrolled > range) return;
+
+            /* Hold zones: first/last 15% of range stay on first/last card */
+            var HOLD     = range * 0.22;
+            var active   = range - 2 * HOLD;
+            var progress = (scrolled - HOLD) / active;
+            var idx;
+            if (progress <= 0) {
+                idx = 0;
+            } else if (progress >= 1) {
+                idx = PROJECTS.length - 1;
+            } else {
+                idx = Math.min(
+                    Math.floor(progress * PROJECTS.length),
+                    PROJECTS.length - 1
+                );
+            }
+
+            if (idx !== current) swap(idx, idx < current);
+        }, { passive: true });
     })();
     </script>
 

@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оферта — GrowthSpace × Gloria Angelova</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink:        #0e0e0e;
+            --stone:      #6b6b6b;
+            --parchment:  #f7f6f2;
+            --hairline:   rgba(14,14,14,0.1);
+            --accent:     #0e0e0e;
+            --font-h:     'Manrope', sans-serif;
+            --font-b:     'Inter', sans-serif;
+            --r:          3px;
+        }
+
+        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-b);
+            font-size: 16px;
+            color: var(--ink);
+            background: #fff;
+            line-height: 1.618;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── Password Gate ── */
+        #gate {
+            position: fixed;
+            inset: 0;
+            background: #fff;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        #gate.unlocked {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        .gate-logo {
+            width: 36px;
+            margin-bottom: 34px;
+        }
+        .gate-label {
+            font-family: var(--font-h);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--stone);
+            margin-bottom: 13px;
+        }
+        .gate-title {
+            font-family: var(--font-h);
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        .gate-sub {
+            font-size: 14px;
+            color: var(--stone);
+            margin-bottom: 34px;
+            text-align: center;
+        }
+        .gate-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 280px;
+        }
+        .gate-input {
+            font-family: var(--font-b);
+            font-size: 15px;
+            padding: 13px 16px;
+            border: 1px solid var(--hairline);
+            border-radius: var(--r);
+            outline: none;
+            background: var(--parchment);
+            color: var(--ink);
+            transition: border-color 0.2s;
+            letter-spacing: 0.05em;
+        }
+        .gate-input:focus {
+            border-color: var(--ink);
+        }
+        .gate-input.error {
+            border-color: #e05c5c;
+            animation: shake 0.3s ease;
+        }
+        @keyframes shake {
+            0%,100%{transform:translateX(0)}
+            25%{transform:translateX(-6px)}
+            75%{transform:translateX(6px)}
+        }
+        .gate-btn {
+            font-family: var(--font-h);
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            padding: 13px 24px;
+            background: var(--ink);
+            color: #fff;
+            border: none;
+            border-radius: var(--r);
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .gate-btn:hover { opacity: 0.8; }
+        .gate-error {
+            font-size: 13px;
+            color: #e05c5c;
+            text-align: center;
+            height: 18px;
+        }
+
+        /* ── Offer content (hidden until unlocked) ── */
+        #offer {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.6s ease 0.4s;
+        }
+        #offer.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* ── Header strip ── */
+        .offer-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #fff;
+            border-bottom: 1px solid var(--hairline);
+            padding: 0 55px;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .offer-header-logo { width: 30px; }
+        .offer-header-label {
+            font-family: var(--font-h);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--stone);
+        }
+
+        /* ── Layout ── */
+        .offer-wrap {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 89px 34px 144px;
+        }
+
+        /* ── Hero block ── */
+        .offer-hero {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 34px;
+            align-items: end;
+            padding-bottom: 55px;
+            border-bottom: 1px solid var(--hairline);
+            margin-bottom: 89px;
+        }
+        .offer-eyebrow {
+            font-family: var(--font-h);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--stone);
+            margin-bottom: 13px;
+        }
+        .offer-client-name {
+            font-family: var(--font-h);
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.1;
+            color: var(--ink);
+            margin-bottom: 8px;
+        }
+        .offer-client-sub {
+            font-size: 16px;
+            font-weight: 300;
+            color: var(--stone);
+            margin-bottom: 0;
+        }
+        .offer-author {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 10px;
+            text-align: right;
+        }
+        .offer-author-photo {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+        }
+        .offer-author-name {
+            font-family: var(--font-h);
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--ink);
+        }
+        .offer-author-title {
+            font-size: 12px;
+            color: var(--stone);
+            font-weight: 300;
+        }
+
+        /* ── Section spacing ── */
+        .offer-section {
+            margin-bottom: 89px;
+        }
+        .offer-section:last-child { margin-bottom: 0; }
+
+        /* ── Section titles ── */
+        .section-eyebrow {
+            font-family: var(--font-h);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--stone);
+            margin-bottom: 21px;
+        }
+        .section-h1 {
+            font-family: var(--font-h);
+            font-size: 34px;
+            font-weight: 800;
+            line-height: 1.2;
+            color: var(--ink);
+            margin-bottom: 21px;
+        }
+        .section-h2 {
+            font-family: var(--font-h);
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 1.3;
+            color: var(--ink);
+            margin-bottom: 16px;
+            margin-top: 44px;
+        }
+        .section-h2:first-child { margin-top: 0; }
+        .section-h3 {
+            font-family: var(--font-h);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--stone);
+            margin-bottom: 8px;
+            margin-top: 34px;
+        }
+        .section-body {
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.75;
+            color: rgba(14,14,14,0.75);
+            margin-bottom: 16px;
+        }
+        .section-body:last-child { margin-bottom: 0; }
+
+        /* ── List ── */
+        .offer-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 16px;
+        }
+        .offer-list li {
+            font-size: 15px;
+            font-weight: 300;
+            color: rgba(14,14,14,0.75);
+            padding-left: 20px;
+            position: relative;
+            line-height: 1.6;
+        }
+        .offer-list li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: var(--stone);
+            font-weight: 400;
+        }
+
+        /* ── Divider ── */
+        .offer-divider {
+            border: none;
+            border-top: 1px solid var(--hairline);
+            margin: 55px 0;
+        }
+
+        /* ── Key opportunities ── */
+        .opportunity-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 21px;
+        }
+        .opportunity-item {
+            font-size: 15px;
+            font-weight: 300;
+            color: rgba(14,14,14,0.75);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            line-height: 1.6;
+        }
+        .opportunity-dot {
+            width: 4px;
+            height: 4px;
+            background: var(--stone);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        /* ── Phase cards ── */
+        .phase-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            margin-top: 21px;
+        }
+        .phase-card {
+            background: var(--parchment);
+            border-radius: var(--r);
+            padding: 24px 28px;
+        }
+        .phase-number {
+            font-family: var(--font-h);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--stone);
+            margin-bottom: 6px;
+        }
+        .phase-title {
+            font-family: var(--font-h);
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 13px;
+        }
+
+        /* ── Deliverables ── */
+        .deliverable-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 21px;
+        }
+        .deliverable-list li {
+            font-size: 15px;
+            font-weight: 400;
+            color: var(--ink);
+            padding-left: 24px;
+            position: relative;
+            line-height: 1.5;
+        }
+        .deliverable-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            font-weight: 600;
+            color: var(--ink);
+        }
+
+        /* ── Investment cards ── */
+        .investment-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3px;
+            margin-top: 21px;
+        }
+        .investment-card {
+            background: var(--parchment);
+            border-radius: var(--r);
+            padding: 28px;
+        }
+        .investment-card.accent {
+            background: var(--ink);
+            color: #fff;
+        }
+        .investment-card-title {
+            font-family: var(--font-h);
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 13px;
+            line-height: 1.3;
+        }
+        .investment-card.accent .investment-card-title { color: #fff; }
+        .investment-card-includes {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--stone);
+            margin-bottom: 8px;
+        }
+        .investment-card.accent .investment-card-includes { color: rgba(255,255,255,0.5); }
+        .investment-card-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-bottom: 21px;
+        }
+        .investment-card-list li {
+            font-size: 13px;
+            font-weight: 300;
+            color: rgba(14,14,14,0.7);
+            padding-left: 14px;
+            position: relative;
+            line-height: 1.5;
+        }
+        .investment-card-list li::before {
+            content: '·';
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+        }
+        .investment-card.accent .investment-card-list li { color: rgba(255,255,255,0.65); }
+        .investment-card.accent .investment-card-list li::before { color: rgba(255,255,255,0.65); }
+        .investment-price {
+            font-family: var(--font-h);
+            font-size: 34px;
+            font-weight: 800;
+            color: var(--ink);
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+        .investment-card.accent .investment-price { color: #fff; }
+        .investment-price-note {
+            font-size: 12px;
+            color: var(--stone);
+            font-weight: 300;
+        }
+        .investment-card.accent .investment-price-note { color: rgba(255,255,255,0.5); }
+
+        /* ── Example box ── */
+        .example-box {
+            margin-top: 21px;
+            border: 1px solid var(--hairline);
+            border-radius: var(--r);
+            padding: 24px 28px;
+        }
+        .example-box-label {
+            font-family: var(--font-h);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--stone);
+            margin-bottom: 8px;
+        }
+        .example-box-main {
+            font-family: var(--font-h);
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--ink);
+            margin-bottom: 4px;
+        }
+        .example-box-sub {
+            font-size: 13px;
+            color: var(--stone);
+            font-weight: 300;
+        }
+
+        /* ── Closing statement ── */
+        .offer-closing {
+            margin-top: 89px;
+            padding-top: 55px;
+            border-top: 1px solid var(--hairline);
+        }
+        .offer-closing-text {
+            font-family: var(--font-h);
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 1.6;
+            color: rgba(14,14,14,0.8);
+            max-width: 580px;
+        }
+        .offer-closing-sig {
+            margin-top: 34px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .offer-closing-photo {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center top;
+        }
+        .offer-closing-name {
+            font-family: var(--font-h);
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--ink);
+        }
+        .offer-closing-role {
+            font-size: 12px;
+            color: var(--stone);
+            font-weight: 300;
+        }
+
+        /* ── Contacts ── */
+        .offer-contacts {
+            margin-top: 55px;
+            padding-top: 44px;
+            border-top: 1px solid var(--hairline);
+        }
+        .offer-contacts-label {
+            font-family: var(--font-h);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--stone);
+            margin-bottom: 21px;
+        }
+        .offer-contacts-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px 55px;
+        }
+        .offer-contact-item {
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .offer-contact-type {
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--stone);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+        .offer-contact-value {
+            font-size: 15px;
+            font-weight: 400;
+            color: var(--ink);
+            transition: opacity 0.15s;
+        }
+        .offer-contact-item:hover .offer-contact-value { opacity: 0.5; }
+
+        /* ── Footer ── */
+        .offer-footer {
+            border-top: 1px solid var(--hairline);
+            padding: 28px 55px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 89px;
+        }
+        .offer-footer-note {
+            font-size: 12px;
+            color: var(--stone);
+        }
+        .offer-footer-logo { width: 22px; opacity: 0.4; }
+
+        /* ── Mobile ── */
+        @media (max-width: 640px) {
+            /* Header */
+            .offer-header { padding: 0 20px; height: 60px; }
+            .offer-header-label { display: none; }
+
+            /* Gate */
+            .gate-title { font-size: 18px; }
+            .gate-form { width: 100%; max-width: 320px; }
+
+            /* Layout */
+            .offer-wrap { padding: 40px 20px 72px; }
+
+            /* Hero */
+            .offer-hero {
+                grid-template-columns: 1fr;
+                gap: 24px;
+                padding-bottom: 40px;
+                margin-bottom: 55px;
+            }
+            .offer-author {
+                align-items: flex-start;
+                text-align: left;
+                flex-direction: row;
+                gap: 14px;
+            }
+            .offer-author-photo { width: 52px; height: 52px; }
+            .offer-client-name { font-size: 30px; }
+            .offer-client-sub { font-size: 14px; }
+
+            /* Section spacing */
+            .offer-section { margin-bottom: 55px; }
+
+            /* Typography */
+            .section-h1 { font-size: 24px; }
+            .section-h2 { font-size: 18px; }
+            .section-body { font-size: 15px; }
+            .offer-list li { font-size: 14px; }
+
+            /* Phase cards */
+            .phase-card { padding: 20px; }
+
+            /* Deliverables */
+            .deliverable-list li { font-size: 14px; }
+
+            /* Investment */
+            .investment-grid { grid-template-columns: 1fr; }
+            .investment-card { padding: 22px; }
+            .investment-price { font-size: 28px; }
+
+            /* Closing */
+            .offer-closing-text { font-size: 17px; }
+            .offer-contacts-grid { gap: 24px 34px; }
+            .offer-contact-value { font-size: 13px; }
+
+            /* Footer */
+            .offer-footer {
+                flex-direction: column;
+                gap: 12px;
+                align-items: flex-start;
+                padding: 24px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ── Password Gate ── -->
+<div id="gate">
+    <svg class="gate-logo" viewBox="0 0 42 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M41.5574 30.7311L30.327 11.2799C29.9972 10.7109 29.4901 10.2451 28.8676 10.0348C27.6349 9.62665 26.3609 10.1544 25.7549 11.2057L17.3156 25.825C16.9858 26.3939 16.8374 27.0659 16.9693 27.7091C17.2331 28.9789 18.3257 29.8199 19.5378 29.8199H30.2034L27.1814 24.5882H24.0646L28.0142 17.7444L36.371 32.2235C32.9697 37.1007 27.3174 39.8712 21.2982 39.5332C9.8534 38.3705 4.98442 29.8158 5.23591 21.8383C5.4874 13.869 10.8882 5.64406 22.3866 5.22766H26.8351L23.7718 0H22.2011C7.4086 0.535959 0.329821 11.6097 0.0123683 21.6734C-0.305084 31.7576 6.07695 43.2808 20.8406 44.7443C20.8735 44.7443 20.9107 44.7526 20.9436 44.7526C21.3971 44.7814 21.8506 44.7938 22.3 44.7938C30.2034 44.7938 37.4594 40.6999 41.5368 33.8726C42.114 32.9079 42.1223 31.704 41.5574 30.7311Z" fill="#0e0e0e"/>
+    </svg>
+    <p class="gate-label">Лична оферта</p>
+    <h1 class="gate-title">GrowthSpace × Gloria Angelova</h1>
+    <p class="gate-sub">Въведи паролата, за да видиш офертата</p>
+    <form class="gate-form" onsubmit="checkPassword(event)">
+        <input class="gate-input" type="password" id="gate-pw" placeholder="Парола" autocomplete="off">
+        <button class="gate-btn" type="submit">Виж офертата</button>
+        <p class="gate-error" id="gate-error"></p>
+    </form>
+</div>
+
+<!-- ── Offer Content ── -->
+<div id="offer">
+
+    <header class="offer-header">
+        <svg class="offer-header-logo" viewBox="0 0 42 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M41.5574 30.7311L30.327 11.2799C29.9972 10.7109 29.4901 10.2451 28.8676 10.0348C27.6349 9.62665 26.3609 10.1544 25.7549 11.2057L17.3156 25.825C16.9858 26.3939 16.8374 27.0659 16.9693 27.7091C17.2331 28.9789 18.3257 29.8199 19.5378 29.8199H30.2034L27.1814 24.5882H24.0646L28.0142 17.7444L36.371 32.2235C32.9697 37.1007 27.3174 39.8712 21.2982 39.5332C9.8534 38.3705 4.98442 29.8158 5.23591 21.8383C5.4874 13.869 10.8882 5.64406 22.3866 5.22766H26.8351L23.7718 0H22.2011C7.4086 0.535959 0.329821 11.6097 0.0123683 21.6734C-0.305084 31.7576 6.07695 43.2808 20.8406 44.7443C20.8735 44.7443 20.9107 44.7526 20.9436 44.7526C21.3971 44.7814 21.8506 44.7938 22.3 44.7938C30.2034 44.7938 37.4594 40.6999 41.5368 33.8726C42.114 32.9079 42.1223 31.704 41.5574 30.7311Z" fill="#0e0e0e"/>
+        </svg>
+        <span class="offer-header-label">Оферта · Конфиденциално</span>
+    </header>
+
+    <main class="offer-wrap">
+
+        <!-- Hero -->
+        <div class="offer-hero">
+            <div>
+                <p class="offer-eyebrow">Изготвено за</p>
+                <h1 class="offer-client-name">GrowthSpace</h1>
+                <p class="offer-client-sub">LinkedIn дизайн на съдържание &amp; визуално присъствие</p>
+            </div>
+            <div class="offer-author">
+                <img src="assets/Glory-img.png" alt="Gloria Angelova" class="offer-author-photo">
+                <div>
+                    <p class="offer-author-name">Gloria Angelova</p>
+                    <p class="offer-author-title">UX/UI &amp; Visual Designer</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- About -->
+        <section class="offer-section">
+            <h2 class="section-h1">Вярвам, че добрият дизайн не е декорация, а начин на мислене.</h2>
+            <p class="section-body">Стойностните идеи са повече от добра визия. Те заслужават форма, която разкрива техния вътрешен смисъл и създава връзка с хората — не само чрез това, което виждат, но и чрез това, което усещат.</p>
+            <ul class="offer-list" style="margin-top:24px">
+                <li>UX/UI Дизайн</li>
+                <li>Визуални дизайн системи</li>
+                <li>Дизайн на съдържание</li>
+                <li>Бранд последователност</li>
+                <li>Информационна архитектура</li>
+            </ul>
+        </section>
+
+        <hr class="offer-divider">
+
+        <!-- Opportunity -->
+        <section class="offer-section">
+            <h2 class="section-h1">Разликата между експертиза и видимост</h2>
+            <p class="section-body">GrowthSpace има силно експертно позициониране, ценни услуги и съдържателен контент. В същото време визуалната комуникация все още не отразява напълно нивото на експертиза и професионализъм зад бранда.</p>
+            <div class="opportunity-grid">
+                <div class="opportunity-item"><span class="opportunity-dot"></span>Изграждане на разпознаваем визуален език за LinkedIn</div>
+                <div class="opportunity-item"><span class="opportunity-dot"></span>Създаване на последователност в целия контент</div>
+                <div class="opportunity-item"><span class="opportunity-dot"></span>Подобряване на четимостта и информационната йерархия</div>
+                <div class="opportunity-item"><span class="opportunity-dot"></span>Изграждане на професионално визуално присъствие, което подкрепя експертизата на GrowthSpace</div>
+                <div class="opportunity-item"><span class="opportunity-dot"></span>Разработване на шаблони за бъдещо създаване на съдържание</div>
+            </div>
+        </section>
+
+        <hr class="offer-divider">
+
+        <!-- My Approach -->
+        <section class="offer-section">
+            <p class="section-eyebrow">Моят подход</p>
+            <h2 class="section-h1">Всяка публикация — част от цялото</h2>
+            <p class="section-body">Не разглеждам всеки карусел като самостоятелен дизайн, а като част от цялостната визуална комуникация на бранда.</p>
+            <p class="section-body">Затова работата ми не се ограничава единствено до оформлението на съдържание, а включва анализ и стратегически поглед върху начина, по който брандът се представя визуално.</p>
+            <ul class="offer-list" style="margin-top:21px">
+                <li>Анализ на съществуващата визуална идентичност</li>
+                <li>Идентифициране на възможности за подобрение</li>
+                <li>Препоръки за типография и визуална йерархия</li>
+                <li>Създаване на последователна система за съдържание</li>
+                <li>Изграждане на шаблони и компоненти за бъдещи публикации</li>
+                <li>Дизайн на материали, съобразен с цялостното бранд присъствие</li>
+            </ul>
+            <p class="section-body" style="margin-top:21px">Целта е всяка публикация да работи не само като отделен материал, а като част от разпознаваема и последователна визуална система, която подкрепя експертния образ на GrowthSpace.</p>
+        </section>
+
+
+
+        <hr class="offer-divider">
+
+        <!-- Deliverables -->
+        <section class="offer-section">
+            <h2 class="section-h1">Какво получава GrowthSpace</h2>
+            <ul class="deliverable-list">
+                <li>Последователна LinkedIn визуална идентичност</li>
+                <li>Шаблони за съдържание за многократна употреба</li>
+                <li>По-силно разпознаване на бранда</li>
+                <li>По-професионално представяне на съдържанието</li>
+                <li>Мащабируема основа за бъдеща комуникация</li>
+            </ul>
+        </section>
+
+        <hr class="offer-divider">
+
+        <!-- Investment -->
+        <section class="offer-section">
+            <h2 class="section-h1">Инвестиция</h2>
+            <div class="investment-grid">
+                <div class="investment-card accent">
+                    <p class="investment-card-title">Дефиниране на визуален стил &amp; система</p>
+                    <p class="investment-card-includes">Включва</p>
+                    <ul class="investment-card-list">
+                        <li>Избор на типография</li>
+                        <li>Визуална йерархия</li>
+                        <li>Структура на карусели</li>
+                        <li>Графични компоненти</li>
+                        <li>Шаблони за карусели</li>
+                    </ul>
+                    <p class="investment-price">300 €</p>
+                    <p class="investment-price-note">Еднократна такса за изграждане</p>
+                </div>
+                <div class="investment-card">
+                    <p class="investment-card-title">Дизайн на LinkedIn карусел</p>
+                    <p class="investment-card-includes">Включва</p>
+                    <ul class="investment-card-list">
+                        <li>Дизайн по предоставено съдържание</li>
+                        <li>До 8–10 слайда</li>
+                        <li>Адаптация към бранда</li>
+                    </ul>
+                    <p class="investment-price">60 €</p>
+                    <p class="investment-price-note">На карусел · цената зависи от сложността</p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Closing -->
+        <div class="offer-closing">
+            <p class="offer-closing-text">Целта не е само да се създават отделни карусели, а да се изгради разпознаваемо и професионално визуално присъствие, което подкрепя експертизата на GrowthSpace и дългосрочния растеж на бранда.</p>
+            <div class="offer-closing-sig">
+                <img src="assets/Glory-img.png" alt="Gloria Angelova" class="offer-closing-photo">
+                <div>
+                    <p class="offer-closing-name">Gloria Angelova</p>
+                    <p class="offer-closing-role">UX/UI &amp; Visual Designer · gloryangelova.com</p>
+                </div>
+            </div>
+
+            <div class="offer-contacts">
+                <p class="offer-contacts-label">Свържи се с мен</p>
+                <div class="offer-contacts-grid">
+                    <a href="mailto:glory.angelova@gmail.com" class="offer-contact-item">
+                        <span class="offer-contact-type">Имейл</span>
+                        <span class="offer-contact-value">glory.angelova@gmail.com</span>
+                    </a>
+                    <a href="https://gloryangelova.com" target="_blank" rel="noopener noreferrer" class="offer-contact-item">
+                        <span class="offer-contact-type">Уебсайт</span>
+                        <span class="offer-contact-value">gloryangelova.com</span>
+                    </a>
+                    <a href="tel:+31647355880" class="offer-contact-item">
+                        <span class="offer-contact-type">Телефон</span>
+                        <span class="offer-contact-value">+31 6 473 55 880</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/gloria-angelova" target="_blank" rel="noopener noreferrer" class="offer-contact-item">
+                        <span class="offer-contact-type">LinkedIn</span>
+                        <span class="offer-contact-value">linkedin.com/in/gloria-angelova</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="offer-footer">
+        <p class="offer-footer-note">Тази оферта е конфиденциална и изготвена единствено за GrowthSpace.</p>
+        <svg class="offer-footer-logo" viewBox="0 0 42 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M41.5574 30.7311L30.327 11.2799C29.9972 10.7109 29.4901 10.2451 28.8676 10.0348C27.6349 9.62665 26.3609 10.1544 25.7549 11.2057L17.3156 25.825C16.9858 26.3939 16.8374 27.0659 16.9693 27.7091C17.2331 28.9789 18.3257 29.8199 19.5378 29.8199H30.2034L27.1814 24.5882H24.0646L28.0142 17.7444L36.371 32.2235C32.9697 37.1007 27.3174 39.8712 21.2982 39.5332C9.8534 38.3705 4.98442 29.8158 5.23591 21.8383C5.4874 13.869 10.8882 5.64406 22.3866 5.22766H26.8351L23.7718 0H22.2011C7.4086 0.535959 0.329821 11.6097 0.0123683 21.6734C-0.305084 31.7576 6.07695 43.2808 20.8406 44.7443C20.8735 44.7443 20.9107 44.7526 20.9436 44.7526C21.3971 44.7814 21.8506 44.7938 22.3 44.7938C30.2034 44.7938 37.4594 40.6999 41.5368 33.8726C42.114 32.9079 42.1223 31.704 41.5574 30.7311Z" fill="#0e0e0e"/>
+        </svg>
+    </footer>
+
+</div>
+
+<script>
+    /* Simple hash check — enough for a client proposal page */
+    const HASH = 'e8d20b8b32ac447fd4d9e92db698bf600f4ae5a248eaf443adcb0bc99b667cfd'; /* sha256 of "growthspace2026" */
+
+    async function sha256(str) {
+        const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+        return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
+    }
+
+    async function checkPassword(e) {
+        e.preventDefault();
+        const val = document.getElementById('gate-pw').value;
+        const hash = await sha256(val);
+        if (hash === HASH) {
+            document.getElementById('gate').classList.add('unlocked');
+            document.getElementById('offer').classList.add('visible');
+            sessionStorage.setItem('gs-unlocked', '1');
+        } else {
+            const input = document.getElementById('gate-pw');
+            input.classList.add('error');
+            document.getElementById('gate-error').textContent = 'Грешна парола. Моля, опитай отново.';
+            setTimeout(() => input.classList.remove('error'), 400);
+        }
+    }
+
+    /* Auto-unlock if already authenticated this session */
+    if (sessionStorage.getItem('gs-unlocked') === '1') {
+        document.getElementById('gate').classList.add('unlocked');
+        document.getElementById('offer').classList.add('visible');
+    }
+
+    document.getElementById('gate-pw').addEventListener('input', () => {
+        document.getElementById('gate-error').textContent = '';
+    });
+</script>
+
+</body>
+</html>

@@ -3,32 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Journal — thoughts on product design, AI, simplicity, and the craft of building useful things. By Gloria Angelova.">
-    <meta name="keywords" content="UI/UX Design, Journal, Product Design, AI, Design Systems, Gloria Angelova">
+    <meta name="description" content="Design as Translation — on being a designer who bridges business, technology, and people. By Gloria Angelova.">
     <meta name="author" content="Gloria Angelova">
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://gloryangelova.com/journal.html">
-    <meta property="og:title" content="Journal - Gloria Angelova | UI/UX Designer">
-    <meta property="og:description" content="Thoughts on product design, AI, simplicity, and the craft of building useful things.">
-    <meta property="og:image" content="https://gloryangelova.com/assets/gloria-profile-about-new.png">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://gloryangelova.com/journal.html">
-    <meta property="twitter:title" content="Journal - Gloria Angelova | UI/UX Designer">
-    <meta property="twitter:description" content="Thoughts on product design, AI, simplicity, and the craft of building useful things.">
-    <meta property="twitter:image" content="https://gloryangelova.com/assets/gloria-profile-about-new.png">
-
-    <title>Journal - Gloria Angelova | UI/UX Designer</title>
+    <title>Design as Translation — Journal by Gloria Angelova</title>
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <link rel="shortcut icon" href="assets/favicon.svg">
     <link rel="apple-touch-icon" href="assets/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=11.2">
+    <link rel="stylesheet" href="styles.css?v=11.1">
 </head>
 <body>
     <!-- Preloader -->
@@ -62,31 +47,70 @@
 
     <div class="container">
 
-        <div class="journal journal--page">
+        <article class="article-page">
 
-            <header class="journal-header">
-                <h1 class="journal-h1">Journal</h1>
-                <p class="journal-subtitle body-text">Thoughts on product design, AI,<br>simplicity, and the craft of<br>building useful things.</p>
+            <!-- Back link -->
+            <a href="journal.html" class="article-back">← Journal</a>
+
+            <!-- Article header -->
+            <header class="article-header">
+                <p class="article-meta">01 &nbsp;·&nbsp; Design thinking</p>
+                <h1 class="article-title">Design as Translation</h1>
+                <p class="article-lead body-text">On understanding what design actually is — not what it produces, but how it works.</p>
             </header>
 
-            <div class="journal-list" style="margin-top:80px">
+            <!-- Cover image -->
+            <div class="article-cover">
+                <img src="assets/pexels-project-new.png" alt="Design as Translation" loading="lazy">
+            </div>
 
-                <article class="journal-item">
-                    <div class="journal-item-text">
-                        <span class="journal-item-num">01</span>
-                        <h2 class="journal-item-title">Design as Translation</h2>
-                        <p class="journal-item-excerpt body-text">On understanding what design actually is — not what it produces, but how it works.</p>
-                        <a href="journal-design-as-translation.html" class="proj-cta">Read article</a>
-                    </div>
-                    <div class="journal-item-image">
-                        <img src="assets/pexels-project-new.png" alt="Designing for clarity" loading="lazy">
-                    </div>
-                </article>
+            <!-- Article body -->
+            <div class="article-body">
 
+                <p class="body-text">For a long time, I never really asked myself what design was.</p>
+
+                <p class="body-text">Of course, like every designer, I had read countless definitions. Design solves problems. Design communicates. Design creates experiences.</p>
+
+                <p class="body-text">But knowing those definitions is not the same as truly understanding them.</p>
+
+                <p class="body-text">I don't think I had genuinely experienced the meaning of design itself.</p>
+
+                <p class="body-text article-spacer">Perhaps that only comes with time. Perhaps it takes years of practice, mistakes, projects, conversations, and observations before the question begins to feel real.</p>
+
+                <h2 class="article-subheading">The more interesting question</h2>
+
+                <p class="body-text">At some point, I became less interested in what design produces and more interested in what design actually is.</p>
+
+                <p class="body-text">Not what design does, but how it works.</p>
+
+                <p class="body-text">Because when we say that design solves problems, communicates ideas, or creates emotions — we are describing the outcome, not its nature.</p>
+
+                <p class="body-text">A more interesting question is: how does design achieve all of this?</p>
+
+                <h2 class="article-subheading">Neither art nor craft</h2>
+
+                <p class="body-text">Design borrows from art. It uses form, color, composition, rhythm, symbols, and metaphor. It also borrows from craft. It depends on technique, process, repetition, and discipline.</p>
+
+                <p class="body-text">Yet design is neither art nor craft.</p>
+
+                <p class="body-text">An artist can create without solving a problem. A craftsperson can produce something skillfully without communicating an idea. A designer is expected to do both — to create meaning through form.</p>
+
+                <p class="body-text">Perhaps this is why design has always existed somewhere between art and craft. Not quite one. Not quite the other. And yet impossible without either.</p>
+
+                <blockquote class="article-quote">
+                    Design is translation. A translation of human needs into forms, interfaces, objects, systems, and experiences.
+                </blockquote>
+
+                <p class="body-text">The definition that feels closest to me is this. And the better we understand people, the better that translation becomes.</p>
 
             </div>
 
-        </div>
+            <!-- Article footer -->
+            <div class="article-footer">
+                <a href="journal.html" class="proj-cta">← Back to Journal</a>
+            </div>
+
+        </article>
 
         <!-- Footer -->
         <footer id="contact" class="footer">
@@ -120,7 +144,6 @@
     </div>
 
     <script>
-        // Mobile menu
         const menuToggle = document.querySelector('.menu-toggle');
         const nav = document.querySelector('.nav');
         if (nav) nav.classList.remove('active');
@@ -152,24 +175,19 @@
             });
         }
 
-        // Sticky header
         const header = document.querySelector('.header');
         let lastScrollY = window.scrollY;
         function handleScroll() {
             const currentScrollY = window.scrollY;
             header.classList.toggle('scrolled', currentScrollY > 10);
-            if (currentScrollY > lastScrollY && currentScrollY > 50) {
-                header.classList.add('hide');
-            } else {
-                header.classList.remove('hide');
-            }
+            if (currentScrollY > lastScrollY && currentScrollY > 50) header.classList.add('hide');
+            else header.classList.remove('hide');
             if (currentScrollY <= 10) header.classList.remove('hide');
             lastScrollY = currentScrollY;
         }
         window.addEventListener('scroll', handleScroll);
         handleScroll();
 
-        // Smooth scroll for Contact nav link
         const footer = document.getElementById('contact');
         if (footer) {
             const contactNavLink = document.querySelector('a[href="#contact"]');
@@ -181,7 +199,6 @@
             }
         }
 
-        // Preloader
         document.addEventListener('DOMContentLoaded', function() {
             const preloader = document.getElementById('preloader');
             if (preloader) {
