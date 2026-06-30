@@ -1306,6 +1306,7 @@ ul {
 }
 /* Image container clips the sliding img */
 .proj-item--01 .proj-item-image {
+    position: relative;
     overflow: hidden;
 }
 
@@ -1405,7 +1406,6 @@ ul {
 .journal--page {
     display: block;
     border-top: none;
-}
     z-index: 1;
 }
 
