@@ -756,7 +756,6 @@
         .cs-flows {
             margin-top: 48px;
             padding-top: 40px;
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
         }
 
         .cs-flows .cs-section-lead {
@@ -949,8 +948,6 @@
             margin-bottom: -56px;
             padding: 48px max(var(--wf-band-pad-x), calc((100vw - 1280px) / 2 + var(--wf-band-pad-x))) 56px;
             background: #ffffff;
-            border-top: 1px solid rgba(0,0,0,0.07);
-            border-bottom: 1px solid rgba(0,0,0,0.07);
             border-radius: 0;
             box-sizing: border-box;
         }
@@ -1576,8 +1573,6 @@
         /* ── Design Decision section ── */
         .cs-dd-section {
             background: #ffffff;
-            border-top: 1px solid rgba(0,0,0,0.07);
-            border-bottom: 1px solid rgba(0,0,0,0.07);
             width: 100vw;
             margin-left: calc(50% - 50vw);
             box-sizing: border-box;
@@ -2231,7 +2226,6 @@
 
         .cs-context {
             padding: var(--sp-8) 0;
-            border-top: 1px solid var(--line);
             display: flex;
             flex-direction: column;
             gap: 32px;
@@ -2256,7 +2250,6 @@
 
         .cs-roles {
             padding: var(--sp-8) 0;
-            border-top: 1px solid var(--line);
             display: flex;
             flex-direction: column;
             gap: 48px;
@@ -2344,7 +2337,6 @@
         /* ── Learning journey ── */
         .cs-journey {
             padding: var(--sp-8) 0;
-            border-top: 1px solid var(--line);
             display: flex;
             flex-direction: column;
             gap: 48px;
@@ -2568,7 +2560,6 @@
         /* ── Logic / Statuses section ── */
         .cs-logic {
             padding: var(--sp-8) 0;
-            border-top: 1px solid var(--line);
             display: flex;
             flex-direction: column;
             gap: 48px;
@@ -2681,7 +2672,6 @@
         /* ── Status dependencies ── */
         .cs-deps {
             padding: var(--sp-8) 0;
-            border-top: 1px solid var(--line);
             display: flex;
             flex-direction: column;
             gap: 56px;
@@ -2914,10 +2904,6 @@
             border-bottom: 1px solid var(--line);
         }
 
-        .cs-deps-rule:first-child {
-            border-top: 1px solid var(--line);
-        }
-
         .cs-deps-rule-if {
             font-family: var(--font-body);
             font-size: var(--text-sm);
@@ -2953,7 +2939,6 @@
         /* ── Product decisions ── */
         .cs-decisions {
             padding: var(--sp-8) 0;
-            border-top: 1px solid var(--line);
             display: flex;
             flex-direction: column;
             gap: 56px;
@@ -3089,7 +3074,6 @@
         /* ── Wireframes intro ── */
         .cs-wireframes-intro {
             padding: var(--sp-8) 0;
-            border-top: 1px solid var(--line);
             display: flex;
             flex-direction: column;
             gap: 48px;
@@ -3123,7 +3107,6 @@
         /* ── Interface system ── */
         .cs-ui-system {
             padding: var(--sp-8) 0;
-            border-top: 1px solid var(--line);
             display: flex;
             flex-direction: column;
             gap: 56px;
@@ -3657,8 +3640,6 @@
             box-sizing: border-box;
             background: #ffffff;
             border: none !important;
-            border-top: 1px solid rgba(0,0,0,0.07) !important;
-            border-bottom: 1px solid rgba(0,0,0,0.07) !important;
             outline: none;
         }
         @media (max-width: 1280px) {
@@ -4194,7 +4175,6 @@
         /* ── Role-based experiences ── */
         .cs-roles-exp {
             padding: var(--sp-8) 0;
-            border-top: 1px solid var(--line);
             display: flex;
             flex-direction: column;
             gap: 48px;
@@ -4207,6 +4187,17 @@
             letter-spacing: -0.01em;
             color: var(--ink-3);
             margin: -24px 0 0;
+            max-width: 680px;
+        }
+
+        .cs-roles-exp-note {
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 300;
+            line-height: 1.55;
+            letter-spacing: 0.01em;
+            color: var(--ink-label, #999);
+            margin: -28px 0 0;
             max-width: 680px;
         }
         .cs-roles-exp-grid {
@@ -4424,11 +4415,45 @@
         /* ── Outcome ── */
         .cs-outcome {
             padding: var(--sp-8) 0;
-            border-top: 1px solid var(--line);
+            display: flex;
+            flex-direction: column;
+            gap: clamp(40px, 6vw, 64px);
+        }
+
+        .cs-outcome-intro {
             display: flex;
             flex-direction: column;
             gap: 16px;
             max-width: 720px;
+        }
+
+        .cs-outcome-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: clamp(12px, 2vw, 24px);
+        }
+
+        .cs-outcome-photo {
+            margin: 0;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            background: #f8f8f6;
+            aspect-ratio: 9 / 16;
+        }
+
+        .cs-outcome-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            display: block;
+        }
+
+        @media (max-width: 900px) {
+            .cs-outcome-gallery {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
         }
         .cs-outcome-label {
             font-family: var(--font-body);
@@ -4437,15 +4462,6 @@
             letter-spacing: .13em;
             text-transform: uppercase;
             color: var(--ink-label, #999);
-        }
-        .cs-outcome-title {
-            font-family: var(--font-heading);
-            font-size: clamp(26px, 3vw, 36px);
-            font-weight: 300;
-            letter-spacing: -0.02em;
-            line-height: 1.15;
-            color: var(--ink-1);
-            margin: 0;
         }
         .cs-outcome-body {
             font-family: var(--font-body);
@@ -4456,10 +4472,61 @@
             margin: 0;
         }
 
+        /* ── Impact ── */
+        .cs-impact {
+            padding: var(--sp-8) 0;
+            display: flex;
+            flex-direction: column;
+            gap: clamp(24px, 4vw, 40px);
+            max-width: 720px;
+        }
+
+        .cs-impact-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px 40px;
+        }
+
+        .cs-impact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-family: var(--font-body);
+            font-size: var(--text-body-lg);
+            font-weight: 300;
+            line-height: 1.5;
+            color: var(--ink-3);
+        }
+
+        .cs-impact-mark {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 1.375rem;
+            height: 1.375rem;
+            margin-top: calc((1lh - 1.375rem) / 2);
+            color: var(--ink-3);
+        }
+
+        .cs-impact-mark svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        @media (max-width: 640px) {
+            .cs-impact-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* ── Working with AI ── */
         .cs-ai-note {
             padding: var(--sp-8) 0;
-            border-top: 1px solid var(--line);
             display: flex;
             flex-direction: column;
             gap: 16px;
@@ -4943,36 +5010,11 @@
                 </figure>
             </section>
 
-            <!-- Interface system section -->
-            <section class="cs-section cs-ui-system">
-                <h2 class="cs-section-title">Building a reusable system.</h2>
-                <p class="cs-ui-system-lead">The visual system was intentionally quiet. Most complexity lives in the logic, so the interface needed to feel calm, familiar, and easy to scan.</p>
-
-                <div class="cs-ui-showcase">
-
-                    <!-- Statuses -->
-                    <div class="cs-ui-block">
-                        <span class="cs-ui-block-label">Status badges</span>
-                        <figure class="cs-ui-block-asset cs-ui-block-asset--badges">
-                            <img src="assets/components.png" alt="TH Academy status badges and stat cards" loading="lazy" decoding="async">
-                        </figure>
-                    </div>
-
-                    <!-- Buttons -->
-                    <div class="cs-ui-block">
-                        <span class="cs-ui-block-label">Buttons</span>
-                        <figure class="cs-ui-block-asset cs-ui-block-asset--buttons">
-                            <img src="assets/components.png" alt="TH Academy button components" loading="lazy" decoding="async">
-                        </figure>
-                    </div>
-
-                </div>
-            </section>
-
             <!-- Role-based experiences section -->
             <section class="cs-section cs-roles-exp">
                 <h2 class="cs-section-title">Role-based experiences</h2>
                 <p class="cs-roles-exp-lead">The same platform, built to feel right for three completely different people using it.</p>
+                <p class="cs-roles-exp-note">The previews are screen recordings from the live platform — not prototypes or concept mockups.</p>
                 <div class="cs-roles-exp-grid">
 
                     <!-- Student -->
@@ -5035,13 +5077,6 @@
                 </div>
             </section>
 
-            <!-- Outcome section -->
-            <section class="cs-section cs-outcome">
-                <span class="cs-outcome-label">Outcome</span>
-                <h2 class="cs-outcome-title">Live and used by real students</h2>
-                <p class="cs-outcome-body">The platform is live and actively used by Tanya's academy to manage courses, students, submissions, reviews, and progress.</p>
-            </section>
-
             <!-- Devices section -->
             <section class="cs-devices-section">
                 <div class="cs-devices-text">
@@ -5081,6 +5116,38 @@
                 <img src="assets/TH-tablet-mob.png" alt="TH Academy — tablet and mobile" loading="lazy" decoding="async" class="cs-screens-img">
                 <img src="assets/TH-mockup-1.png" alt="TH Academy — mockup" loading="lazy" decoding="async" class="cs-screens-img">
             </div>
+
+            <!-- Outcome section -->
+            <section class="cs-section cs-outcome">
+                <div class="cs-outcome-intro">
+                    <span class="cs-outcome-label">Outcome</span>
+                    <h2 class="cs-section-title">A product that became part of the learning experience.</h2>
+                    <p class="cs-outcome-body">Today, the platform is the primary tool Tanya's academy uses to manage students, courses, certificates and submissions. Learning continues beyond the academy — after completing the in-person training, every student moves to the platform to continue practicing, complete learning levels, and unlock their certificate.</p>
+                    <p class="cs-outcome-body">These photos show one of the first students to complete her course entirely through the platform.</p>
+                </div>
+                <div class="cs-outcome-gallery">
+                    <figure class="cs-outcome-photo">
+                        <img src="assets/student-4.jpg" alt="TH Academy student app screen" loading="lazy" decoding="async">
+                    </figure>
+                    <figure class="cs-outcome-photo">
+                        <img src="assets/student-3.jpg" alt="TH Academy student app screen" loading="lazy" decoding="async">
+                    </figure>
+                    <figure class="cs-outcome-photo">
+                        <img src="assets/student-1.jpg" alt="TH Academy student app screen" loading="lazy" decoding="async">
+                    </figure>
+                </div>
+            </section>
+
+            <!-- Impact section -->
+            <section class="cs-section cs-impact">
+                <h2 class="cs-section-title">Impact</h2>
+                <ul class="cs-impact-list">
+                    <li class="cs-impact-item"><span class="cs-impact-mark" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="6.25" stroke="currentColor" stroke-width="0.9"/><path d="M5.2 8.1 7.2 10.1 10.8 6.3" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Used daily by academy staff</li>
+                    <li class="cs-impact-item"><span class="cs-impact-mark" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="6.25" stroke="currentColor" stroke-width="0.9"/><path d="M5.2 8.1 7.2 10.1 10.8 6.3" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Students receive digital certificates</li>
+                    <li class="cs-impact-item"><span class="cs-impact-mark" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="6.25" stroke="currentColor" stroke-width="0.9"/><path d="M5.2 8.1 7.2 10.1 10.8 6.3" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Course submissions managed online</li>
+                    <li class="cs-impact-item"><span class="cs-impact-mark" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="6.25" stroke="currentColor" stroke-width="0.9"/><path d="M5.2 8.1 7.2 10.1 10.8 6.3" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Progress tracked in one place</li>
+                </ul>
+            </section>
 
             <!-- Learnings -->
         </div>
